@@ -6,13 +6,13 @@ import org.fest.assertions.api.AbstractAssert;
 import static org.fest.assertions.api.Assertions.assertThat;
 
 /** Assertions for {@link OrientationEventListener} instances. */
-public class OrientationEventListenerAsserts
-    extends AbstractAssert<OrientationEventListenerAsserts, OrientationEventListener> {
-  public OrientationEventListenerAsserts(OrientationEventListener actual) {
-    super(actual, OrientationEventListenerAsserts.class);
+public class OrientationEventListenerAssert
+    extends AbstractAssert<OrientationEventListenerAssert, OrientationEventListener> {
+  public OrientationEventListenerAssert(OrientationEventListener actual) {
+    super(actual, OrientationEventListenerAssert.class);
   }
 
-  public OrientationEventListenerAsserts isDetectingOrientation() {
+  public OrientationEventListenerAssert isDetectingOrientation() {
     isNotNull();
     assertThat(actual.canDetectOrientation()) //
         .overridingErrorMessage("Expected to be able to detect orientation but could not.") //
@@ -20,7 +20,7 @@ public class OrientationEventListenerAsserts
     return this;
   }
 
-  public OrientationEventListenerAsserts isNotDetectingOrientation() {
+  public OrientationEventListenerAssert isNotDetectingOrientation() {
     isNotNull();
     assertThat(actual.canDetectOrientation()) //
         .overridingErrorMessage("Expected to not be able to detect orientation but could.") //

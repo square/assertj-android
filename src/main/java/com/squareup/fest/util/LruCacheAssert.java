@@ -7,7 +7,7 @@ import static org.fest.assertions.api.Assertions.assertThat;
 
 /** Assertions for {@link LruCache} instances. */
 public class LruCacheAssert extends AbstractAssert<LruCacheAssert, LruCache> {
-  protected LruCacheAssert(LruCache actual) {
+  public LruCacheAssert(LruCache actual) {
     super(actual, LruCacheAssert.class);
   }
 

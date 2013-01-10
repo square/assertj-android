@@ -1,59 +1,289 @@
 // Copyright 2012 Square, Inc.
 package com.squareup.fest;
 
-import android.app.ActionBar;
-import android.app.Activity;
-import android.app.Dialog;
-import android.graphics.Bitmap;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.ViewAnimator;
-import com.squareup.fest.app.ActionBarAssert;
-import com.squareup.fest.app.ActivityAssert;
-import com.squareup.fest.app.DialogAssert;
-import com.squareup.fest.graphics.BitmapAssert;
-import com.squareup.fest.view.MenuItemAssert;
-import com.squareup.fest.view.ViewAssert;
-import com.squareup.fest.view.ViewGroupAssert;
-import com.squareup.fest.widget.AdapterAssert;
-import com.squareup.fest.widget.ViewAnimatorAssert;
-
 public class Assertions extends org.fest.assertions.api.Assertions {
-  public static ActionBarAssert assertThat(ActionBar actionBar) {
-    return new ActionBarAssert(actionBar);
+  public static com.squareup.fest.app.ActionBarAssert assertThat(
+      android.app.ActionBar actual) {
+    return new com.squareup.fest.app.ActionBarAssert(actual);
   }
 
-  public static ActivityAssert assertThat(Activity actual) {
-    return new ActivityAssert(actual);
+  public static com.squareup.fest.app.ActivityAssert assertThat(
+      android.app.Activity actual) {
+    return new com.squareup.fest.app.ActivityAssert(actual);
   }
 
-  public static AdapterAssert assertThat(Adapter actual) {
-    return new AdapterAssert(actual);
+  public static com.squareup.fest.app.DialogAssert assertThat(
+      android.app.Dialog actual) {
+    return new com.squareup.fest.app.DialogAssert(actual);
   }
 
-  public static BitmapAssert assertThat(Bitmap actual) {
-    return new BitmapAssert(actual);
+  public static com.squareup.fest.app.DialogFragmentAssert assertThat(
+      android.app.DialogFragment actual) {
+    return new com.squareup.fest.app.DialogFragmentAssert(actual);
   }
 
-  public static MenuItemAssert assertThat(MenuItem actual) {
-    return new MenuItemAssert(actual);
+  public static com.squareup.fest.app.ExpandableListActivityAssert assertThat(
+      android.app.ExpandableListActivity actual) {
+    return new com.squareup.fest.app.ExpandableListActivityAssert(actual);
   }
 
-  public static ViewAssert assertThat(View actual) {
-    return new ViewAssert(actual);
+  public static com.squareup.fest.app.FragmentAssert assertThat(
+      android.app.Fragment actual) {
+    return new com.squareup.fest.app.FragmentAssert(actual);
   }
 
-  public static ViewAnimatorAssert assertThat(ViewAnimator actual) {
-    return new ViewAnimatorAssert(actual);
+  public static com.squareup.fest.app.FragmentManagerAssert assertThat(
+      android.app.FragmentManager actual) {
+    return new com.squareup.fest.app.FragmentManagerAssert(actual);
   }
 
-  public static ViewGroupAssert assertThat(ViewGroup actual) {
-    return new ViewGroupAssert(actual);
+  public static com.squareup.fest.app.FragmentTransactionAssert assertThat(
+      android.app.FragmentTransaction actual) {
+    return new com.squareup.fest.app.FragmentTransactionAssert(actual);
   }
 
-  public static DialogAssert assertThat(Dialog dialog) {
-    return new DialogAssert(dialog);
+  public static com.squareup.fest.app.KeyguardManagerAssert assertThat(
+      android.app.KeyguardManager actual) {
+    return new com.squareup.fest.app.KeyguardManagerAssert(actual);
+  }
+
+  public static com.squareup.fest.app.ListFragmentAssert assertThat(
+      android.app.ListFragment actual) {
+    return new com.squareup.fest.app.ListFragmentAssert(actual);
+  }
+
+  public static com.squareup.fest.app.LoaderManagerAssert assertThat(
+      android.app.LoaderManager actual) {
+    return new com.squareup.fest.app.LoaderManagerAssert(actual);
+  }
+
+  public static com.squareup.fest.app.LocalActivityManagerAssert assertThat(
+      android.app.LocalActivityManager actual) {
+    return new com.squareup.fest.app.LocalActivityManagerAssert(actual);
+  }
+
+  public static com.squareup.fest.app.NotificationAssert assertThat(
+      android.app.Notification actual) {
+    return new com.squareup.fest.app.NotificationAssert(actual);
+  }
+
+  public static com.squareup.fest.app.PendingIntentAssert assertThat(
+      android.app.PendingIntent actual) {
+    return new com.squareup.fest.app.PendingIntentAssert(actual);
+  }
+
+  public static com.squareup.fest.app.ProgressDialogAssert assertThat(
+      android.app.ProgressDialog actual) {
+    return new com.squareup.fest.app.ProgressDialogAssert(actual);
+  }
+
+  public static com.squareup.fest.app.ServiceAssert assertThat(
+      android.app.Service actual) {
+    return new com.squareup.fest.app.ServiceAssert(actual);
+  }
+
+  public static com.squareup.fest.app.TaskStackBuilderAssert assertThat(
+      android.app.TaskStackBuilder actual) {
+    return new com.squareup.fest.app.TaskStackBuilderAssert(actual);
+  }
+
+  public static com.squareup.fest.app.UiModeManagerAssert assertThat(
+      android.app.UiModeManager actual) {
+    return new com.squareup.fest.app.UiModeManagerAssert(actual);
+  }
+
+  public static com.squareup.fest.content.AsyncTaskLoaderAssert assertThat(
+      android.content.AsyncTaskLoader actual) {
+    return new com.squareup.fest.content.AsyncTaskLoaderAssert(actual);
+  }
+
+  public static com.squareup.fest.content.CursorLoaderAssert assertThat(
+      android.content.CursorLoader actual) {
+    return new com.squareup.fest.content.CursorLoaderAssert(actual);
+  }
+
+  public static com.squareup.fest.content.IntentAssert assertThat(
+      android.content.Intent actual) {
+    return new com.squareup.fest.content.IntentAssert(actual);
+  }
+
+  public static com.squareup.fest.content.LoaderAssert assertThat(
+      android.content.Loader actual) {
+    return new com.squareup.fest.content.LoaderAssert(actual);
+  }
+
+  public static com.squareup.fest.content.res.ConfigurationAssert assertThat(
+      android.content.res.Configuration actual) {
+    return new com.squareup.fest.content.res.ConfigurationAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.BitmapAssert assertThat(
+      android.graphics.Bitmap actual) {
+    return new com.squareup.fest.graphics.BitmapAssert(actual);
+  }
+
+  public static com.squareup.fest.util.DisplayMetricsAssert assertThat(
+      android.util.DisplayMetrics actual) {
+    return new com.squareup.fest.util.DisplayMetricsAssert(actual);
+  }
+
+  public static com.squareup.fest.util.LongSparseArrayAssert assertThat(
+      android.util.LongSparseArray actual) {
+    return new com.squareup.fest.util.LongSparseArrayAssert(actual);
+  }
+
+  public static com.squareup.fest.util.LruCacheAssert assertThat(
+      android.util.LruCache actual) {
+    return new com.squareup.fest.util.LruCacheAssert(actual);
+  }
+
+  public static com.squareup.fest.util.PropertyAssert assertThat(
+      android.util.Property actual) {
+    return new com.squareup.fest.util.PropertyAssert(actual);
+  }
+
+  public static com.squareup.fest.util.SparseArrayAssert assertThat(
+      android.util.SparseArray actual) {
+    return new com.squareup.fest.util.SparseArrayAssert(actual);
+  }
+
+  public static com.squareup.fest.util.SparseBooleanArrayAssert assertThat(
+      android.util.SparseBooleanArray actual) {
+    return new com.squareup.fest.util.SparseBooleanArrayAssert(actual);
+  }
+
+  public static com.squareup.fest.util.SparseIntArrayAssert assertThat(
+      android.util.SparseIntArray actual) {
+    return new com.squareup.fest.util.SparseIntArrayAssert(actual);
+  }
+
+  public static com.squareup.fest.view.ActionModeAssert assertThat(
+      android.view.ActionMode actual) {
+    return new com.squareup.fest.view.ActionModeAssert(actual);
+  }
+
+  public static com.squareup.fest.view.ActionProviderAssert assertThat(
+      android.view.ActionProvider actual) {
+    return new com.squareup.fest.view.ActionProviderAssert(actual);
+  }
+
+  public static com.squareup.fest.view.DisplayAssert assertThat(
+      android.view.Display actual) {
+    return new com.squareup.fest.view.DisplayAssert(actual);
+  }
+
+  public static com.squareup.fest.view.DragEventAssert assertThat(
+      android.view.DragEvent actual) {
+    return new com.squareup.fest.view.DragEventAssert(actual);
+  }
+
+  public static com.squareup.fest.view.KeyCharacterMapAssert assertThat(
+      android.view.KeyCharacterMap actual) {
+    return new com.squareup.fest.view.KeyCharacterMapAssert(actual);
+  }
+
+  public static com.squareup.fest.view.KeyEventAssert assertThat(
+      android.view.KeyEvent actual) {
+    return new com.squareup.fest.view.KeyEventAssert(actual);
+  }
+
+  public static com.squareup.fest.view.MenuItemAssert assertThat(
+      android.view.MenuItem actual) {
+    return new com.squareup.fest.view.MenuItemAssert(actual);
+  }
+
+  public static com.squareup.fest.view.OrientationEventListenerAssert assertThat(
+      android.view.OrientationEventListener actual) {
+    return new com.squareup.fest.view.OrientationEventListenerAssert(actual);
+  }
+
+  public static com.squareup.fest.view.ScaleGestureDetectorAssert assertThat(
+      android.view.ScaleGestureDetector actual) {
+    return new com.squareup.fest.view.ScaleGestureDetectorAssert(actual);
+  }
+
+  public static com.squareup.fest.view.SurfaceAssert assertThat(
+      android.view.Surface actual) {
+    return new com.squareup.fest.view.SurfaceAssert(actual);
+  }
+
+  public static com.squareup.fest.view.TextureViewAssert assertThat(
+      android.view.TextureView actual) {
+    return new com.squareup.fest.view.TextureViewAssert(actual);
+  }
+
+  public static com.squareup.fest.view.VelocityTrackerAssert assertThat(
+      android.view.VelocityTracker actual) {
+    return new com.squareup.fest.view.VelocityTrackerAssert(actual);
+  }
+
+  public static com.squareup.fest.view.ViewAssert assertThat(
+      android.view.View actual) {
+    return new com.squareup.fest.view.ViewAssert(actual);
+  }
+
+  public static com.squareup.fest.view.ViewConfigurationAssert assertThat(
+      android.view.ViewConfiguration actual) {
+    return new com.squareup.fest.view.ViewConfigurationAssert(actual);
+  }
+
+  public static com.squareup.fest.view.ViewGroupAssert assertThat(
+      android.view.ViewGroup actual) {
+    return new com.squareup.fest.view.ViewGroupAssert(actual);
+  }
+
+  public static com.squareup.fest.view.ViewGroupLayoutParamsAssert assertThat(
+      android.view.ViewGroup.LayoutParams actual) {
+    return new com.squareup.fest.view.ViewGroupLayoutParamsAssert(actual);
+  }
+
+  public static com.squareup.fest.view.ViewGroupMarginLayoutParamsAssert assertThat(
+      android.view.ViewGroup.MarginLayoutParams actual) {
+    return new com.squareup.fest.view.ViewGroupMarginLayoutParamsAssert(actual);
+  }
+
+  public static com.squareup.fest.view.ViewPropertyAnimatorAssert assertThat(
+      android.view.ViewPropertyAnimator actual) {
+    return new com.squareup.fest.view.ViewPropertyAnimatorAssert(actual);
+  }
+
+  public static com.squareup.fest.view.ViewStubAssert assertThat(
+      android.view.ViewStub actual) {
+    return new com.squareup.fest.view.ViewStubAssert(actual);
+  }
+
+  public static com.squareup.fest.view.ViewTreeObserverAssert assertThat(
+      android.view.ViewTreeObserver actual) {
+    return new com.squareup.fest.view.ViewTreeObserverAssert(actual);
+  }
+
+  public static com.squareup.fest.view.WindowAssert assertThat(
+      android.view.Window actual) {
+    return new com.squareup.fest.view.WindowAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.AbsListViewAssert assertThat(
+      android.widget.AbsListView actual) {
+    return new com.squareup.fest.widget.AbsListViewAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.AdapterAssert assertThat(
+      android.widget.Adapter actual) {
+    return new com.squareup.fest.widget.AdapterAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.AdapterViewAssert assertThat(
+      android.widget.AdapterView actual) {
+    return new com.squareup.fest.widget.AdapterViewAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.SwitchAssert assertThat(
+      android.widget.Switch actual) {
+    return new com.squareup.fest.widget.SwitchAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.ViewAnimatorAssert assertThat(
+      android.widget.ViewAnimator actual) {
+    return new com.squareup.fest.widget.ViewAnimatorAssert(actual);
   }
 }
