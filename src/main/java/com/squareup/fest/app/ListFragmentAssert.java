@@ -4,6 +4,7 @@ import android.app.ListFragment;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
+/** Assertions for {@link ListFragment} instances. */
 public class ListFragmentAssert extends AbstractFragmentAssert<ListFragmentAssert, ListFragment> {
   public ListFragmentAssert(ListFragment actual) {
     super(actual, ListFragmentAssert.class);
@@ -13,7 +14,7 @@ public class ListFragmentAssert extends AbstractFragmentAssert<ListFragmentAsser
     isNotNull();
     long actualId = actual.getSelectedItemId();
     assertThat(actualId) //
-        .overridingErrorMessage("Expected selected ID <%s> but was <%s>", id, actualId) //
+        .overridingErrorMessage("Expected selected ID <%s> but was <%s>.", id, actualId) //
         .isEqualTo(id);
     return this;
   }
@@ -22,7 +23,7 @@ public class ListFragmentAssert extends AbstractFragmentAssert<ListFragmentAsser
     isNotNull();
     long actualPosition = actual.getSelectedItemPosition();
     assertThat(actualPosition) //
-        .overridingErrorMessage("Expected selected position <%s> but was <%s>", position,
+        .overridingErrorMessage("Expected selected position <%s> but was <%s>.", position,
             actualPosition) //
         .isEqualTo(position);
     return this;

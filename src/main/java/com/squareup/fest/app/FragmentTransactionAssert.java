@@ -5,6 +5,7 @@ import org.fest.assertions.api.AbstractAssert;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
+/** Assertions for {@link FragmentTransaction} instances. */
 public class FragmentTransactionAssert
     extends AbstractAssert<FragmentTransactionAssert, FragmentTransaction> {
   public FragmentTransactionAssert(FragmentTransaction actual) {
@@ -14,7 +15,7 @@ public class FragmentTransactionAssert
   public FragmentTransactionAssert isAddToBackStackAllowed() {
     isNotNull();
     assertThat(actual.isAddToBackStackAllowed()) //
-        .overridingErrorMessage("Expected add to back stack allow but was disallowed") //
+        .overridingErrorMessage("Expected add to back stack to be allowed but was disallowed.") //
         .isTrue();
     return this;
   }
@@ -22,7 +23,7 @@ public class FragmentTransactionAssert
   public FragmentTransactionAssert isAddToBackStackDisallowed() {
     isNotNull();
     assertThat(actual.isAddToBackStackAllowed()) //
-        .overridingErrorMessage("Expected add to back stack disallowed but as allowed") //
+        .overridingErrorMessage("Expected add to back stack to be disallowed but was allowed.") //
         .isFalse();
     return this;
   }
@@ -30,7 +31,7 @@ public class FragmentTransactionAssert
   public FragmentTransactionAssert isEmpty() {
     isNotNull();
     assertThat(actual.isEmpty()) //
-        .overridingErrorMessage("Expected empty transaction but was not empty") //
+        .overridingErrorMessage("Expected empty transaction but was not empty.") //
         .isTrue();
     return this;
   }
@@ -38,7 +39,7 @@ public class FragmentTransactionAssert
   public FragmentTransactionAssert isNotEmpty() {
     isNotNull();
     assertThat(actual.isEmpty()) //
-        .overridingErrorMessage("Expected not empty transaction but was empty") //
+        .overridingErrorMessage("Expected non-empty transaction but was empty.") //
         .isFalse();
     return this;
   }

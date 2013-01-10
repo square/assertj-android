@@ -6,6 +6,7 @@ import org.fest.assertions.api.AbstractAssert;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
+/** Assertions for {@link TaskStackBuilder} instances. */
 public class TaskStackBuilderAssert extends AbstractAssert<TaskStackBuilderAssert, TaskStackBuilder> {
   public TaskStackBuilderAssert(TaskStackBuilder actual) {
     super(actual, TaskStackBuilderAssert.class);
@@ -15,7 +16,7 @@ public class TaskStackBuilderAssert extends AbstractAssert<TaskStackBuilderAsser
     isNotNull();
     int actualCount = actual.getIntentCount();
     assertThat(actualCount) //
-        .overridingErrorMessage("Expected intent count <%s> but was <%s>", count, actualCount) //
+        .overridingErrorMessage("Expected intent count <%s> but was <%s>.", count, actualCount) //
         .isEqualTo(count);
     return this;
   }

@@ -10,10 +10,13 @@ import static android.content.res.Configuration.UI_MODE_TYPE_NORMAL;
 import static android.content.res.Configuration.UI_MODE_TYPE_TELEVISION;
 import static android.content.res.Configuration.UI_MODE_TYPE_UNDEFINED;
 
+/** Assertions for {@link Configuration} instances. */
 public class ConfigurationAssert extends AbstractAssert<ConfigurationAssert, Configuration> {
   public ConfigurationAssert(Configuration actual) {
     super(actual, ConfigurationAssert.class);
   }
+
+  // TODO a lot!
 
   public static String uiModeTypeToString(int mode) {
     switch (mode) {

@@ -4,6 +4,7 @@ import android.content.AsyncTaskLoader;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
+/** Assertions for {@link AsyncTaskLoader} instances. */
 public class AsyncTaskLoaderAssert
     extends AbstractLoaderAssert<AsyncTaskLoaderAssert, AsyncTaskLoader> {
   public AsyncTaskLoaderAssert(AsyncTaskLoader actual) {
@@ -13,7 +14,7 @@ public class AsyncTaskLoaderAssert
   public AsyncTaskLoaderAssert hasLoadInBackgroundCancelled() {
     isNotNull();
     assertThat(actual.isLoadInBackgroundCanceled()) //
-        .overridingErrorMessage("Expected load in background cancelled but was not cancelled") //
+        .overridingErrorMessage("Expected load in background cancelled but was not cancelled.") //
         .isTrue();
     return this;
   }
@@ -21,7 +22,7 @@ public class AsyncTaskLoaderAssert
   public AsyncTaskLoaderAssert hasLoadInBackgroundNotCancelled() {
     isNotNull();
     assertThat(actual.isLoadInBackgroundCanceled()) //
-        .overridingErrorMessage("Expected load in background not cancelled but was cancelled") //
+        .overridingErrorMessage("Expected load in background not cancelled but was cancelled.") //
         .isFalse();
     return this;
   }

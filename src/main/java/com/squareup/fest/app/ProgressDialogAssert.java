@@ -4,7 +4,9 @@ import android.app.ProgressDialog;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
-public class ProgressDialogAssert extends AbstractDialogAssert<ProgressDialogAssert, ProgressDialog> {
+/** Assertions for {@link ProgressDialog} instances. */
+public class ProgressDialogAssert
+    extends AbstractDialogAssert<ProgressDialogAssert, ProgressDialog> {
   public ProgressDialogAssert(ProgressDialog actual) {
     super(actual, ProgressDialogAssert.class);
   }
@@ -13,7 +15,7 @@ public class ProgressDialogAssert extends AbstractDialogAssert<ProgressDialogAss
     isNotNull();
     int actualMax = actual.getMax();
     assertThat(actualMax) //
-        .overridingErrorMessage("Expected max <%s> but was <%s>", max, actualMax) //
+        .overridingErrorMessage("Expected max <%s> but was <%s>.", max, actualMax) //
         .isEqualTo(max);
     return this;
   }
@@ -22,7 +24,7 @@ public class ProgressDialogAssert extends AbstractDialogAssert<ProgressDialogAss
     isNotNull();
     int actualProgress = actual.getProgress();
     assertThat(actualProgress) //
-        .overridingErrorMessage("Expected progress <%s> but was <%s>", progress, actualProgress) //
+        .overridingErrorMessage("Expected progress <%s> but was <%s>.", progress, actualProgress) //
         .isEqualTo(progress);
     return this;
   }
@@ -31,7 +33,7 @@ public class ProgressDialogAssert extends AbstractDialogAssert<ProgressDialogAss
     isNotNull();
     int actualProgress = actual.getSecondaryProgress();
     assertThat(actualProgress) //
-        .overridingErrorMessage("Expected secondary progress <%s> but was <%s>", progress,
+        .overridingErrorMessage("Expected secondary progress <%s> but was <%s>.", progress,
             actualProgress) //
         .isEqualTo(progress);
     return this;
@@ -40,7 +42,7 @@ public class ProgressDialogAssert extends AbstractDialogAssert<ProgressDialogAss
   public ProgressDialogAssert isIndeterminate() {
     isNotNull();
     assertThat(actual.isIndeterminate()) //
-        .overridingErrorMessage("Expected indeterminate but was determinate") //
+        .overridingErrorMessage("Expected to be indeterminate but was determinate.") //
         .isTrue();
     return this;
   }
@@ -48,7 +50,7 @@ public class ProgressDialogAssert extends AbstractDialogAssert<ProgressDialogAss
   public ProgressDialogAssert isDeterminate() {
     isNotNull();
     assertThat(actual.isIndeterminate()) //
-        .overridingErrorMessage("Expected determinate but was indeterminate") //
+        .overridingErrorMessage("Expected to be determinate but was indeterminate.") //
         .isFalse();
     return this;
   }

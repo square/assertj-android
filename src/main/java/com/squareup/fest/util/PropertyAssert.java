@@ -5,6 +5,7 @@ import org.fest.assertions.api.AbstractAssert;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
+/** Assertions for {@link Property} instances. */
 public class PropertyAssert extends AbstractAssert<PropertyAssert, Property> {
   public PropertyAssert(Property actual) {
     super(actual, PropertyAssert.class);
@@ -12,13 +13,19 @@ public class PropertyAssert extends AbstractAssert<PropertyAssert, Property> {
 
   public PropertyAssert isName(String name) {
     isNotNull();
-    assertThat(actual.getName()).isEqualTo(name);
+    String actualName = actual.getName();
+    assertThat(actualName) //
+        .overridingErrorMessage("Expected name <%s> but was <%s>", name, actualName) //
+        .isEqualTo(name);
     return this;
   }
 
-  public PropertyAssert isType(Class<?> cls) {
+  public PropertyAssert isType(Class<?> type) {
     isNotNull();
-    assertThat(actual.getType()).isEqualTo(cls);
+    Class actualType = actual.getType();
+    assertThat(actualType) //
+        .overridingErrorMessage("Expected type <%s> but was <%s>", type, actualType) //
+        .isEqualTo(type);
     return this;
   }
 

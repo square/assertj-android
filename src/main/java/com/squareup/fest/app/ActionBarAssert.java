@@ -13,6 +13,7 @@ import static android.app.ActionBar.NAVIGATION_MODE_STANDARD;
 import static android.app.ActionBar.NAVIGATION_MODE_TABS;
 import static org.fest.assertions.api.Assertions.assertThat;
 
+/** Assertions for {@link ActionBar} instances. */
 public class ActionBarAssert extends AbstractAssert<ActionBarAssert, ActionBar> {
   public ActionBarAssert(ActionBar actual) {
     super(actual, ActionBarAssert.class);
@@ -21,7 +22,7 @@ public class ActionBarAssert extends AbstractAssert<ActionBarAssert, ActionBar> 
   public ActionBarAssert hasDisplayOption(int option) {
     isNotNull();
     assertThat(actual.getDisplayOptions() & option) //
-        .overridingErrorMessage("Expected display option <%s> but was not present",
+        .overridingErrorMessage("Expected display option <%s> but was not present.",
             displayOptionToString(option)) //
         .isNotZero();
     return this;
@@ -31,7 +32,7 @@ public class ActionBarAssert extends AbstractAssert<ActionBarAssert, ActionBar> 
     isNotNull();
     final int actualOptions = actual.getDisplayOptions();
     assertThat(actualOptions) //
-        .overridingErrorMessage("Expected display options <%s> but was <%s>", options,
+        .overridingErrorMessage("Expected display options <%s> but was <%s>.", options,
             actualOptions) //
         .isEqualTo(options);
     return this;
@@ -41,7 +42,7 @@ public class ActionBarAssert extends AbstractAssert<ActionBarAssert, ActionBar> 
     isNotNull();
     int actualHeight = actual.getHeight();
     assertThat(actualHeight) //
-        .overridingErrorMessage("Expected height <%s> but was <%s>", height, actualHeight) //
+        .overridingErrorMessage("Expected height <%s> but was <%s>.", height, actualHeight) //
         .isEqualTo(height);
     return this;
   }
@@ -50,7 +51,7 @@ public class ActionBarAssert extends AbstractAssert<ActionBarAssert, ActionBar> 
     isNotNull();
     int actualCount = actual.getNavigationItemCount();
     assertThat(actualCount) //
-        .overridingErrorMessage("Expected count <%s> but was <%s>", count, actualCount) //
+        .overridingErrorMessage("Expected count <%s> but was <%s>.", count, actualCount) //
         .isEqualTo(count);
     return this;
   }
@@ -59,7 +60,7 @@ public class ActionBarAssert extends AbstractAssert<ActionBarAssert, ActionBar> 
     isNotNull();
     int actualMode = actual.getNavigationMode();
     assertThat(actualMode) //
-        .overridingErrorMessage("Expected mode <%s> but was <%s>", navigationModeToString(mode),
+        .overridingErrorMessage("Expected mode <%s> but was <%s>.", navigationModeToString(mode),
             navigationModeToString(actualMode)) //
         .isEqualTo(mode);
     return this;
@@ -69,7 +70,7 @@ public class ActionBarAssert extends AbstractAssert<ActionBarAssert, ActionBar> 
     isNotNull();
     int actualIndex = actual.getSelectedNavigationIndex();
     assertThat(actualIndex) //
-        .overridingErrorMessage("Expected selected index <%s> but was <%s>", index, actualIndex) //
+        .overridingErrorMessage("Expected selected index <%s> but was <%s>.", index, actualIndex) //
         .isEqualTo(index);
     return this;
   }
@@ -88,7 +89,7 @@ public class ActionBarAssert extends AbstractAssert<ActionBarAssert, ActionBar> 
     isNotNull();
     int actualCount = actual.getTabCount();
     assertThat(actualCount) //
-        .overridingErrorMessage("Expected tab count of <%s> but was <%s>", count, actualCount) //
+        .overridingErrorMessage("Expected tab count of <%s> but was <%s>.", count, actualCount) //
         .isEqualTo(count);
     return this;
   }
@@ -106,7 +107,7 @@ public class ActionBarAssert extends AbstractAssert<ActionBarAssert, ActionBar> 
   public ActionBarAssert isShowing() {
     isNotNull();
     assertThat(actual.isShowing()) //
-        .overridingErrorMessage("Expected showing but was not showing") //
+        .overridingErrorMessage("Expected to be showing but was not showing.") //
         .isTrue();
     return this;
   }
@@ -114,7 +115,7 @@ public class ActionBarAssert extends AbstractAssert<ActionBarAssert, ActionBar> 
   public ActionBarAssert isNotShowing() {
     isNotNull();
     assertThat(actual.isShowing()) //
-        .overridingErrorMessage("Expected not showing but was showing") //
+        .overridingErrorMessage("Expected to be not showing but was showing.") //
         .isFalse();
     return this;
   }

@@ -4,6 +4,7 @@ import android.view.KeyEvent;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
+/** Assetions for {@link KeyEvent} instances. */
 public class KeyEventAssert extends AbstractInputEventAssert<KeyEventAssert, KeyEvent> {
   public KeyEventAssert(KeyEvent actual) {
     super(actual, KeyEventAssert.class);
@@ -13,8 +14,7 @@ public class KeyEventAssert extends AbstractInputEventAssert<KeyEventAssert, Key
     isNotNull();
     int actualAction = actual.getAction();
     assertThat(actualAction) //
-        .overridingErrorMessage("Expected key event action <%s> but was <%s>", action,
-            actualAction) //
+        .overridingErrorMessage("Expected action <%s> but was <%s>", action, actualAction) //
         .isEqualTo(action);
     return this;
   }
@@ -23,7 +23,7 @@ public class KeyEventAssert extends AbstractInputEventAssert<KeyEventAssert, Key
     isNotNull();
     char actualLabel = actual.getDisplayLabel();
     assertThat(actualLabel) //
-        .overridingErrorMessage("Expected key event label <%s> but was <%s>", label, actualLabel) //
+        .overridingErrorMessage("Expected label <%s> but was <%s>", label, actualLabel) //
         .isEqualTo(label);
     return this;
   }
@@ -32,7 +32,7 @@ public class KeyEventAssert extends AbstractInputEventAssert<KeyEventAssert, Key
     isNotNull();
     long actualTime = actual.getDownTime();
     assertThat(actualTime) //
-        .overridingErrorMessage("Expected key event time <%s> but was <%s>", time, actualTime) //
+        .overridingErrorMessage("Expected time <%s> but was <%s>", time, actualTime) //
         .isEqualTo(time);
     return this;
   }
@@ -50,8 +50,7 @@ public class KeyEventAssert extends AbstractInputEventAssert<KeyEventAssert, Key
     isNotNull();
     int actualCount = actual.getRepeatCount();
     assertThat(actualCount) //
-        .overridingErrorMessage("Expected key event repeat count <%s> but was <%s>", count,
-            actualCount) //
+        .overridingErrorMessage("Expected repeat count <%s> but was <%s>", count, actualCount) //
         .isEqualTo(count);
     return this;
   }
@@ -60,8 +59,7 @@ public class KeyEventAssert extends AbstractInputEventAssert<KeyEventAssert, Key
     isNotNull();
     int actualSource = actual.getSource();
     assertThat(actualSource) //
-        .overridingErrorMessage("Expected key event source <%s> but was <%s>", source,
-            actualSource) //
+        .overridingErrorMessage("Expected source <%s> but was <%s>", source, actualSource) //
         .isEqualTo(source);
     return this;
   }
@@ -69,8 +67,7 @@ public class KeyEventAssert extends AbstractInputEventAssert<KeyEventAssert, Key
   public KeyEventAssert hasModifiers(int modifiers) {
     isNotNull();
     assertThat(actual.hasModifiers(modifiers)) //
-        .overridingErrorMessage("Expected key event modifiers <%s> but was not present",
-            modifiers) //
+        .overridingErrorMessage("Expected modifiers <%s> but was not present", modifiers) //
         .isTrue();
     return this;
   }
@@ -78,7 +75,7 @@ public class KeyEventAssert extends AbstractInputEventAssert<KeyEventAssert, Key
   public KeyEventAssert hasNoModifiers() {
     isNotNull();
     assertThat(actual.hasNoModifiers()) //
-        .overridingErrorMessage("Expected key event to have no modifiers but modifiers present") //
+        .overridingErrorMessage("Expected to have no modifiers but modifiers present") //
         .isTrue();
     return this;
   }

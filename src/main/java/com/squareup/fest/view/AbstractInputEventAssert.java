@@ -15,7 +15,7 @@ public abstract class AbstractInputEventAssert<S extends AbstractInputEventAsser
     isNotNull();
     int actualId = actual.getDeviceId();
     assertThat(actualId) //
-        .overridingErrorMessage("Expected event device ID <%s> but was <%s>", id, actualId) //
+        .overridingErrorMessage("Expected device ID <%s> but was <%s>", id, actualId) //
         .isEqualTo(id);
     return myself;
   }
@@ -24,7 +24,7 @@ public abstract class AbstractInputEventAssert<S extends AbstractInputEventAsser
     isNotNull();
     long actualTime = actual.getEventTime();
     assertThat(actualTime) //
-        .overridingErrorMessage("Expected event time <%s> but was <%s>", time, actualTime) //
+        .overridingErrorMessage("Expected time <%s> but was <%s>", time, actualTime) //
         .isEqualTo(time);
     return myself;
   }
@@ -33,7 +33,7 @@ public abstract class AbstractInputEventAssert<S extends AbstractInputEventAsser
     isNotNull();
     int actualSource = actual.getSource();
     assertThat(actualSource) //
-        .overridingErrorMessage("Expected event source <%s> but was <%s>", source, actualSource) //
+        .overridingErrorMessage("Expected source <%s> but was <%s>", source, actualSource) //
         .isEqualTo(source);
     return myself;
   }

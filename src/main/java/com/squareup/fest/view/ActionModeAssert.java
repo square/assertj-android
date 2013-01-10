@@ -6,6 +6,7 @@ import org.fest.assertions.api.AbstractAssert;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
+/** Assertions for {@link ActionMode} instances. */
 public class ActionModeAssert extends AbstractAssert<ActionModeAssert, ActionMode> {
   public ActionModeAssert(ActionMode actual) {
     super(actual, ActionModeAssert.class);
@@ -14,7 +15,7 @@ public class ActionModeAssert extends AbstractAssert<ActionModeAssert, ActionMod
   public ActionModeAssert hasCustomView() {
     isNotNull();
     assertThat(actual.getCustomView()) //
-        .overridingErrorMessage("Expected action mode custom view but was not present") //
+        .overridingErrorMessage("Expected custom view but was not present") //
         .isNotNull();
     return this;
   }
@@ -23,8 +24,7 @@ public class ActionModeAssert extends AbstractAssert<ActionModeAssert, ActionMod
     isNotNull();
     View actualView = actual.getCustomView();
     assertThat(actualView) //
-        .overridingErrorMessage("Expected action mode custom view <%s> but was <%s>", view,
-            actualView) //
+        .overridingErrorMessage("Expected custom view <%s> but was <%s>", view, actualView) //
         .isEqualTo(view);
     return this;
   }
@@ -33,8 +33,7 @@ public class ActionModeAssert extends AbstractAssert<ActionModeAssert, ActionMod
     isNotNull();
     CharSequence actualSubtitle = actual.getSubtitle();
     assertThat(actualSubtitle) //
-        .overridingErrorMessage("Expected action mode subtitle <%s> but was <%s>", subtitle,
-            actualSubtitle) //
+        .overridingErrorMessage("Expected subtitle <%s> but was <%s>", subtitle, actualSubtitle) //
         .isEqualTo(subtitle);
     return this;
   }
@@ -43,7 +42,7 @@ public class ActionModeAssert extends AbstractAssert<ActionModeAssert, ActionMod
     isNotNull();
     Object actualTag = actual.getTag();
     assertThat(actualTag) //
-        .overridingErrorMessage("Expected action mode tag <%s> but was <%s>", tag, actualTag) //
+        .overridingErrorMessage("Expected tag <%s> but was <%s>", tag, actualTag) //
         .isEqualTo(tag);
     return this;
   }
@@ -52,8 +51,7 @@ public class ActionModeAssert extends AbstractAssert<ActionModeAssert, ActionMod
     isNotNull();
     CharSequence actualTitle = actual.getTitle();
     assertThat(actualTitle) //
-        .overridingErrorMessage("Expected action mode title <%s> but was <%s>", title,
-            actualTitle) //
+        .overridingErrorMessage("Expected title <%s> but was <%s>", title, actualTitle) //
         .isEqualTo(title);
     return this;
   }
@@ -61,7 +59,7 @@ public class ActionModeAssert extends AbstractAssert<ActionModeAssert, ActionMod
   public ActionModeAssert hasOptionalTitleHint() {
     isNotNull();
     assertThat(actual.getTitleOptionalHint()) //
-        .overridingErrorMessage("Expected optional action mode title hint but was not optional") //
+        .overridingErrorMessage("Expected optional title hint but was not optional") //
         .isTrue();
     return this;
   }
@@ -69,7 +67,7 @@ public class ActionModeAssert extends AbstractAssert<ActionModeAssert, ActionMod
   public ActionModeAssert hasNonOptionalTitleHint() {
     isNotNull();
     assertThat(actual.getTitleOptionalHint()) //
-        .overridingErrorMessage("Expected non-optional action mode title hint but was optional") //
+        .overridingErrorMessage("Expected non-optional title hint but was optional") //
         .isFalse();
     return this;
   }
@@ -77,7 +75,7 @@ public class ActionModeAssert extends AbstractAssert<ActionModeAssert, ActionMod
   public ActionModeAssert hasOptionalTitle() {
     isNotNull();
     assertThat(actual.isTitleOptional()) //
-        .overridingErrorMessage("Expected optional action mode title but was not optional") //
+        .overridingErrorMessage("Expected optional title but was not optional") //
         .isTrue();
     return this;
   }
@@ -85,7 +83,7 @@ public class ActionModeAssert extends AbstractAssert<ActionModeAssert, ActionMod
   public ActionModeAssert hasNonOptionalTitle() {
     isNotNull();
     assertThat(actual.isTitleOptional()) //
-        .overridingErrorMessage("Expected non-optional action mode title but was optional") //
+        .overridingErrorMessage("Expected non-optional title but was optional") //
         .isFalse();
     return this;
   }

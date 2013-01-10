@@ -6,6 +6,7 @@ import org.fest.assertions.api.AbstractAssert;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
+/** Assertions for {@link Display} instances. */
 public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
   public DisplayAssert(Display actual) {
     super(actual, DisplayAssert.class);
@@ -15,7 +16,7 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
     isNotNull();
     int actualId = actual.getDisplayId();
     assertThat(actualId) //
-        .overridingErrorMessage("Expected display ID <%s> but was <%s>", id, actualId) //
+        .overridingErrorMessage("Expected ID <%s> but was <%s>", id, actualId) //
         .isEqualTo(actualId);
     return this;
   }
@@ -42,8 +43,7 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
     isNotNull();
     int actualHeight = actual.getHeight();
     assertThat(actualHeight) //
-        .overridingErrorMessage("Expected display height <%s> but was <%s>", height,
-            actualHeight) //
+        .overridingErrorMessage("Expected height <%s> but was <%s>", height, actualHeight) //
         .isEqualTo(height);
     return this;
   }
@@ -53,7 +53,7 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
   //  isNotNull();
   //  String actualName = actual.getName();
   //  assertThat(actualName) //
-  //      .overridingErrorMessage("Expected display name <%s> but was <%s>", name, actualName) //
+  //      .overridingErrorMessage("Expected name <%s> but was <%s>", name, actualName) //
   //      .isEqualTo(name);
   //  return this;
   //}
@@ -63,7 +63,7 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
     int actualOrientation = actual.getOrientation();
     // TODO convert to string names
     assertThat(actualOrientation) //
-        .overridingErrorMessage("Expected display orientation <%s> but was <%s>", orientation,
+        .overridingErrorMessage("Expected orientation <%s> but was <%s>", orientation,
             actualOrientation) //
         .isEqualTo(orientation);
     return this;
@@ -74,8 +74,7 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
     int actualFormat = actual.getPixelFormat();
     // TODO convert to string names
     assertThat(actualFormat) //
-        .overridingErrorMessage("Expected display pixel format <%s> but was <%s>", format,
-            actualFormat) //
+        .overridingErrorMessage("Expected pixel format <%s> but was <%s>", format, actualFormat) //
         .isEqualTo(format);
     return this;
   }
@@ -86,11 +85,11 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
   //  Point actualSize = new Point();
   //  actual.getRealSize(actualSize);
   //  assertThat(actualSize.x) //
-  //      .overridingErrorMessage("Expected display real size of <%s, %s> but was <%s, %s>", width,
+  //      .overridingErrorMessage("Expected real size of <%s, %s> but was <%s, %s>", width,
   //          height, actualSize.x, actualSize.y) //
   //      .isEqualTo(width);
   //  assertThat(actualSize.y) //
-  //      .overridingErrorMessage("Expected display real size of <%s, %s> but was <%s, %s>", width,
+  //      .overridingErrorMessage("Expected real size of <%s, %s> but was <%s, %s>", width,
   //          height, actualSize.x, actualSize.y) //
   //      .isEqualTo(height);
   //  return this;
@@ -100,8 +99,7 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
     isNotNull();
     float actualRate = actual.getRefreshRate();
     assertThat(actualRate) //
-        .overridingErrorMessage("Expected display refresh rate <%s> but was <%s>", rate,
-            actualRate) //
+        .overridingErrorMessage("Expected refresh rate <%s> but was <%s>", rate, actualRate) //
         .isEqualTo(rate);
     return this;
   }
@@ -110,8 +108,7 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
     isNotNull();
     int actualRotation = actual.getRotation();
     assertThat(actualRotation) //
-        .overridingErrorMessage("Expected display rotation <%s> but was <%s>", rotation,
-            actualRotation) //
+        .overridingErrorMessage("Expected rotation <%s> but was <%s>", rotation, actualRotation) //
         .isEqualTo(rotation);
     return this;
   }
@@ -121,11 +118,11 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
     Point actualSize = new Point();
     actual.getSize(actualSize);
     assertThat(actualSize.x) //
-        .overridingErrorMessage("Expected display size of <%s, %s> but was <%s, %s>", width, height,
+        .overridingErrorMessage("Expected size of <%s, %s> but was <%s, %s>", width, height,
             actualSize.x, actualSize.y) //
         .isEqualTo(width);
     assertThat(actualSize.y) //
-        .overridingErrorMessage("Expected display size of <%s, %s> but was <%s, %s>", width, height,
+        .overridingErrorMessage("Expected size of <%s, %s> but was <%s, %s>", width, height,
             actualSize.x, actualSize.y) //
         .isEqualTo(height);
     return this;
@@ -135,7 +132,7 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
     isNotNull();
     int actualWidth = actual.getWidth();
     assertThat(actualWidth) //
-        .overridingErrorMessage("Expected display width <%s> but was <%s>", width, actualWidth) //
+        .overridingErrorMessage("Expected width <%s> but was <%s>", width, actualWidth) //
         .isEqualTo(width);
     return this;
   }
@@ -144,7 +141,7 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
   //public DisplayAssert isValid() {
   //  isNotNull();
   //  assertThat(actual.isValid()) //
-  //      .overridingErrorMessage("Expected valid display but was not valid") //
+  //      .overridingErrorMessage("Expected valid but was not valid") //
   //      .isTrue();
   //  return this;
   //}
@@ -152,7 +149,7 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
   //public DisplayAssert isNotValid() {
   //  isNotNull();
   //  assertThat(actual.isValid()) //
-  //      .overridingErrorMessage("Expected invalid display but was valid") //
+  //      .overridingErrorMessage("Expected invalid but was valid") //
   //      .isFalse();
   //  return this;
   //}

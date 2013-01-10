@@ -6,8 +6,8 @@ import com.squareup.fest.content.AbstractContextAssert;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
-public abstract class AbstractActivityAssert<S extends AbstractActivityAssert<S, A>, A extends Activity> extends
-    AbstractContextAssert<S, A> {
+public abstract class AbstractActivityAssert<S extends AbstractActivityAssert<S, A>, A extends Activity>
+    extends AbstractContextAssert<S, A> {
   public AbstractActivityAssert(A actual, Class<S> selfType) {
     super(actual, selfType);
   }
@@ -17,27 +17,35 @@ public abstract class AbstractActivityAssert<S extends AbstractActivityAssert<S,
     int actualOrientation = actual.getRequestedOrientation();
     assertThat(actualOrientation) //
         // TODO use string of orientations
-        .overridingErrorMessage("Expected orientation <%s> but was <%s>", orientation, actualOrientation) //
+        .overridingErrorMessage("Expected orientation <%s> but was <%s>.", orientation,
+            actualOrientation) //
         .isEqualTo(orientation);
     return myself;
   }
 
   public S hasTitle(CharSequence title) {
     isNotNull();
-    assertThat(actual.getTitle()).isEqualTo(title);
+    CharSequence actualTitle = actual.getTitle();
+    assertThat(actualTitle) //
+        .overridingErrorMessage("Expected title <%s> but was <%s>.", title, actualTitle) //
+        .isEqualTo(title);
     return myself;
   }
 
   public S hasTitleColot(int color) {
     isNotNull();
-    assertThat(actual.getTitleColor()).isEqualTo(color);
+    int actualColor = actual.getTitleColor();
+    assertThat(actualColor) //
+        .overridingErrorMessage("Expected title color <%s> but was <%s>.",
+            Integer.toHexString(color), Integer.toHexString(actualColor)) //
+        .isEqualTo(color);
     return myself;
   }
 
   public S hasWindowFocus() {
     isNotNull();
     assertThat(actual.hasWindowFocus()) //
-        .overridingErrorMessage("Expected window focus but was not focused") //
+        .overridingErrorMessage("Expected to have focus but was not focused.") //
         .isTrue();
     return myself;
   }
@@ -45,7 +53,7 @@ public abstract class AbstractActivityAssert<S extends AbstractActivityAssert<S,
   public S isChangingConfigurations() {
     isNotNull();
     assertThat(actual.isChangingConfigurations()) //
-        .overridingErrorMessage("Expected changing configurations but was not changing") //
+        .overridingErrorMessage("Expected changing configurations but was not changing.") //
         .isTrue();
     return myself;
   }
@@ -53,7 +61,7 @@ public abstract class AbstractActivityAssert<S extends AbstractActivityAssert<S,
   public S isNotChangingConfigurations() {
     isNotNull();
     assertThat(actual.isChangingConfigurations()) //
-        .overridingErrorMessage("Expected not to be changing configurations but was changing") //
+        .overridingErrorMessage("Expected not to be changing configurations but was changing.") //
         .isFalse();
     return myself;
   }
@@ -61,7 +69,7 @@ public abstract class AbstractActivityAssert<S extends AbstractActivityAssert<S,
   public S isChild() {
     isNotNull();
     assertThat(actual.isChild()) //
-        .overridingErrorMessage("Expected child but was not child") //
+        .overridingErrorMessage("Expected to be a child but was not a child.") //
         .isTrue();
     return myself;
   }
@@ -69,7 +77,7 @@ public abstract class AbstractActivityAssert<S extends AbstractActivityAssert<S,
   public S isNotChild() {
     isNotNull();
     assertThat(actual.isChild()) //
-        .overridingErrorMessage("Expected not to be a child but was child") //
+        .overridingErrorMessage("Expected not to be a child but was a child.") //
         .isFalse();
     return myself;
   }
@@ -78,7 +86,7 @@ public abstract class AbstractActivityAssert<S extends AbstractActivityAssert<S,
   //public S isDestroyed() {
   //  isNotNull();
   //  assertThat(actual.isDestroyed()) //
-  //      .overridingErrorMessage("Expected destroyed but was not destroyed") //
+  //      .overridingErrorMessage("Expected to be destroyed but was not destroyed.") //
   //      .isTrue();
   //  return myself;
   //}
@@ -86,7 +94,7 @@ public abstract class AbstractActivityAssert<S extends AbstractActivityAssert<S,
   //public S isNotDestroyed() {
   //  isNotNull();
   //  assertThat(actual.isDestroyed()) //
-  //      .overridingErrorMessage("Expected not to be destroyed but was destroyed") //
+  //      .overridingErrorMessage("Expected not to be destroyed but was destroyed.") //
   //      .isFalse();
   //  return myself;
   //}
@@ -94,7 +102,7 @@ public abstract class AbstractActivityAssert<S extends AbstractActivityAssert<S,
   public S isFinishing() {
     isNotNull();
     assertThat(actual.isFinishing()) //
-        .overridingErrorMessage("Expected finishing but is not finishing") //
+        .overridingErrorMessage("Expected to be finishing but was not finishing.") //
         .isTrue();
     return myself;
   }
@@ -102,7 +110,7 @@ public abstract class AbstractActivityAssert<S extends AbstractActivityAssert<S,
   public S isNotFinishing() {
     isNotNull();
     assertThat(actual.isFinishing()) //
-        .overridingErrorMessage("Expected not finishing but is finishing") //
+        .overridingErrorMessage("Expected to not be finishing but was finishing.") //
         .isFalse();
     return myself;
   }
@@ -110,7 +118,7 @@ public abstract class AbstractActivityAssert<S extends AbstractActivityAssert<S,
   public S isTaskRoot() {
     isNotNull();
     assertThat(actual.isTaskRoot()) //
-        .overridingErrorMessage("Expected task root but was not task root") //
+        .overridingErrorMessage("Expected to be task root but was not task root.") //
         .isTrue();
     return myself;
   }
@@ -118,7 +126,7 @@ public abstract class AbstractActivityAssert<S extends AbstractActivityAssert<S,
   public S isNotTaskRoot() {
     isNotNull();
     assertThat(actual.isTaskRoot()) //
-        .overridingErrorMessage("Expected not to be task root but was task root") //
+        .overridingErrorMessage("Expected not to be task root but was task root.") //
         .isFalse();
     return myself;
   }

@@ -22,7 +22,7 @@ public class NotificationAssert extends AbstractAssert<NotificationAssert, Notif
     isNotNull();
     int actualDefaults = actual.defaults;
     assertThat(actualDefaults) //
-        .overridingErrorMessage("Expected defaults <%s> but was <%s>", defaults, actualDefaults) //
+        .overridingErrorMessage("Expected defaults <%s> but was <%s>.", defaults, actualDefaults) //
         .isEqualTo(defaults);
     return this;
   }
@@ -37,7 +37,7 @@ public class NotificationAssert extends AbstractAssert<NotificationAssert, Notif
     isNotNull();
     int actualFlags = actual.flags;
     assertThat(actualFlags) //
-        .overridingErrorMessage("Expected flags <%s> but was <%s>", flags, actualFlags) //
+        .overridingErrorMessage("Expected flags <%s> but was <%s>.", flags, actualFlags) //
         .isEqualTo(flags);
     return this;
   }
@@ -52,7 +52,7 @@ public class NotificationAssert extends AbstractAssert<NotificationAssert, Notif
     isNotNull();
     int actualId = actual.icon;
     assertThat(actualId) //
-        .overridingErrorMessage("Expected icon with ID <%s> but was <%s>", resId, actualId) //
+        .overridingErrorMessage("Expected icon with ID <%s> but was <%s>.", resId, actualId) //
         .isEqualTo(resId);
     return this;
   }
@@ -61,7 +61,7 @@ public class NotificationAssert extends AbstractAssert<NotificationAssert, Notif
     isNotNull();
     int actualLevel = actual.iconLevel;
     assertThat(actualLevel) //
-        .overridingErrorMessage("Expected icon level <%s> but was <%s>", level, actualLevel) //
+        .overridingErrorMessage("Expected icon level <%s> but was <%s>.", level, actualLevel) //
         .isEqualTo(level);
     return this;
   }
@@ -76,7 +76,7 @@ public class NotificationAssert extends AbstractAssert<NotificationAssert, Notif
     isNotNull();
     int actualColor = actual.ledARGB;
     assertThat(actualColor) //
-        .overridingErrorMessage("Expected LED color <%s> but was <%s>", Integer.toHexString(color),
+        .overridingErrorMessage("Expected LED color <%s> but was <%s>.", Integer.toHexString(color),
             Integer.toHexString(actualColor)) //
         .isEqualTo(color);
     return this;
@@ -86,7 +86,7 @@ public class NotificationAssert extends AbstractAssert<NotificationAssert, Notif
     isNotNull();
     int actualLength = actual.ledOffMS;
     assertThat(actualLength) //
-        .overridingErrorMessage("Expected LED off time (ms) <%s> but was <%s>", length,
+        .overridingErrorMessage("Expected LED off time (ms) <%s> but was <%s>.", length,
             actualLength) //
         .isEqualTo(length);
     return this;
@@ -96,7 +96,7 @@ public class NotificationAssert extends AbstractAssert<NotificationAssert, Notif
     isNotNull();
     int actualLength = actual.ledOnMS;
     assertThat(actualLength) //
-        .overridingErrorMessage("Expected LED on time (ms) <%s> but was <%s>", length,
+        .overridingErrorMessage("Expected LED on time (ms) <%s> but was <%s>.", length,
             actualLength) //
         .isEqualTo(length);
     return this;
@@ -106,7 +106,7 @@ public class NotificationAssert extends AbstractAssert<NotificationAssert, Notif
     isNotNull();
     int actualNumber = actual.number;
     assertThat(actualNumber) //
-        .overridingErrorMessage("Expected number <%s> but was <%s>", number, actualNumber) //
+        .overridingErrorMessage("Expected number <%s> but was <%s>.", number, actualNumber) //
         .isEqualTo(number);
     return this;
   }
@@ -115,7 +115,7 @@ public class NotificationAssert extends AbstractAssert<NotificationAssert, Notif
     isNotNull();
     int actualPriority = actual.priority;
     assertThat(actualPriority) //
-        .overridingErrorMessage("Expected priority <%s> but was <%s>", priorityToString(priority),
+        .overridingErrorMessage("Expected priority <%s> but was <%s>.", priorityToString(priority),
             priorityToString(actualPriority)) //
         .isEqualTo(priority);
     return this;
@@ -137,7 +137,7 @@ public class NotificationAssert extends AbstractAssert<NotificationAssert, Notif
     isNotNull();
     long actualWhen = actual.when;
     assertThat(actualWhen) //
-        .overridingErrorMessage("Expected when <%s> but was <%s>", when, actualWhen) //
+        .overridingErrorMessage("Expected when <%s> but was <%s>.", when, actualWhen) //
         .isEqualTo(when);
     return this;
   }

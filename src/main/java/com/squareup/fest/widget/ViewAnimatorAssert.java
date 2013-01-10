@@ -7,6 +7,7 @@ import com.squareup.fest.view.AbstractViewGroupAssert;
 
 import static com.squareup.fest.Assertions.assertThat;
 
+/** Assertions for {@link ViewAnimator} instances. */
 public class ViewAnimatorAssert extends AbstractViewGroupAssert<ViewAnimatorAssert, ViewAnimator> {
   public ViewAnimatorAssert(ViewAnimator actual) {
     super(actual, ViewAnimatorAssert.class);
@@ -16,21 +17,28 @@ public class ViewAnimatorAssert extends AbstractViewGroupAssert<ViewAnimatorAsse
     return actual.getChildAt(actual.getDisplayedChild());
   }
 
-  public ViewAnimatorAssert isShowingView(View view) {
+  public ViewAnimatorAssert hasDisplayedChild(View view) {
     isNotNull();
-    assertThat(getDisplayedView()).isSameAs(view);
+    View actualView = getDisplayedView();
+    assertThat(actualView) //
+        .overridingErrorMessage("Expected displayed child <%s> but was <%s>.", view, actualView) //
+        .isSameAs(view);
     return this;
   }
 
-  public ViewAnimatorAssert isShowingId(int id) {
+  public ViewAnimatorAssert hasDisplayedChildId(int id) {
     isNotNull();
     assertThat(getDisplayedView()).hasId(id);
     return this;
   }
 
-  public ViewAnimatorAssert isShowingIndex(int index) {
+  public ViewAnimatorAssert hasDisplayedChild(int index) {
     isNotNull();
-    assertThat(actual.getDisplayedChild()).isEqualTo(index);
+    int actualIndex = actual.getDisplayedChild();
+    assertThat(actualIndex) //
+        .overridingErrorMessage("Expected displayed child index <%s> but was <%s>.", index,
+            actualIndex) //
+        .isEqualTo(index);
     return this;
   }
 }

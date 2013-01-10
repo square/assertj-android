@@ -6,6 +6,7 @@ import org.fest.assertions.api.AbstractAssert;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
+/** Assertions for {@link Adapter} instances. */
 public class AdapterAssert extends AbstractAssert<AdapterAssert, Adapter> {
   public AdapterAssert(Adapter actual) {
     super(actual, AdapterAssert.class);
@@ -13,20 +14,26 @@ public class AdapterAssert extends AbstractAssert<AdapterAssert, Adapter> {
 
   public AdapterAssert hasSize(int size) {
     isNotNull();
-    assertThat(actual.getCount()).isEqualTo(size);
+    int actualSize = actual.getCount();
+    assertThat(actualSize) //
+        .overridingErrorMessage("Expected size <%s> but was <%s>.", size, actualSize) //
+        .isEqualTo(size);
     return this;
   }
 
-  public AdapterAssert hasViewTypes(int size) {
+  public AdapterAssert hasViewTypeCount(int count) {
     isNotNull();
-    assertThat(actual.getViewTypeCount()).isEqualTo(size);
+    int actualCount = actual.getViewTypeCount();
+    assertThat(actualCount) //
+        .overridingErrorMessage("Expected <%s> view types but was <%s>.", count, actualCount) //
+        .isEqualTo(count);
     return this;
   }
 
   public AdapterAssert isEmpty() {
     isNotNull();
     assertThat(actual.isEmpty()) //
-        .overridingErrorMessage("Expected adapter to be empty but was not empty") //
+        .overridingErrorMessage("Expected to be empty but was not empty.") //
         .isTrue();
     return this;
   }
@@ -34,7 +41,7 @@ public class AdapterAssert extends AbstractAssert<AdapterAssert, Adapter> {
   public AdapterAssert isNotEmpty() {
     isNotNull();
     assertThat(actual.isEmpty()) //
-        .overridingErrorMessage("Expected adapter to be not empty but was empty") //
+        .overridingErrorMessage("Expected to be not empty but was empty.") //
         .isFalse();
     return this;
   }

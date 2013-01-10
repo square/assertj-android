@@ -14,7 +14,7 @@ public abstract class AbstractAbsListViewAssert<S extends AbstractAbsListViewAss
     isNotNull();
     int actualCount = actual.getCheckedItemCount();
     assertThat(actualCount) //
-        .overridingErrorMessage("Expected <%s> checked items but was <%s>", count, actualCount) //
+        .overridingErrorMessage("Expected <%s> checked items but was <%s>.", count, actualCount) //
         .isEqualTo(count);
     return myself;
   }

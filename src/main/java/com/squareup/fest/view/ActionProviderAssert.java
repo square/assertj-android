@@ -5,6 +5,7 @@ import org.fest.assertions.api.AbstractAssert;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
+/** Assertions for {@link ActionProvider} instances. */
 public class ActionProviderAssert extends AbstractAssert<ActionProviderAssert, ActionProvider> {
   public ActionProviderAssert(ActionProvider actual) {
     super(actual, ActionProviderAssert.class);

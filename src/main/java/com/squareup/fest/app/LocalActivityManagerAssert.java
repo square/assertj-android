@@ -5,6 +5,7 @@ import org.fest.assertions.api.AbstractAssert;
 
 import static com.squareup.fest.Assertions.assertThat;
 
+/** Assertions for {@link LocalActivityManager} instances. */
 public class LocalActivityManagerAssert extends AbstractAssert<LocalActivityManagerAssert, LocalActivityManager> {
   public LocalActivityManagerAssert(LocalActivityManager actual) {
     super(actual, LocalActivityManagerAssert.class);
@@ -13,7 +14,7 @@ public class LocalActivityManagerAssert extends AbstractAssert<LocalActivityMana
   public LocalActivityManagerAssert hasActivity(String id) {
     isNotNull();
     assertThat(actual.getActivity(id))
-        .overridingErrorMessage("Expected activity with ID <%s> but was not present", id)
+        .overridingErrorMessage("Expected activity with ID <%s> but was not present.", id)
         .isNotNull();
     return this;
   }

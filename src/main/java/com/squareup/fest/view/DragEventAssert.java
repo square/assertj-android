@@ -11,6 +11,7 @@ import static android.view.DragEvent.ACTION_DRAG_STARTED;
 import static android.view.DragEvent.ACTION_DROP;
 import static org.fest.assertions.api.Assertions.assertThat;
 
+/** Assertions for {@link DragEvent} instances. */
 public class DragEventAssert extends AbstractAssert<DragEventAssert, DragEvent> {
   public DragEventAssert(DragEvent actual) {
     super(actual, DragEventAssert.class);
@@ -20,7 +21,7 @@ public class DragEventAssert extends AbstractAssert<DragEventAssert, DragEvent> 
     isNotNull();
     int actualAction = actual.getAction();
     assertThat(actualAction) //
-        .overridingErrorMessage("Expected drag event action <%s> but was <%s>",
+        .overridingErrorMessage("Expected action <%s> but was <%s>",
             dragEventActionToString(action), dragEventActionToString(actualAction)) //
         .isEqualTo(action);
     return this;
@@ -30,7 +31,7 @@ public class DragEventAssert extends AbstractAssert<DragEventAssert, DragEvent> 
     isNotNull();
     Object actualLocalState = actual.getLocalState();
     assertThat(actualLocalState) //
-        .overridingErrorMessage("Expected drag event local state <%s> but was <%s>", localState,
+        .overridingErrorMessage("Expected local state <%s> but was <%s>", localState,
             actualLocalState) //
         .isEqualTo(localState);
     return this;
@@ -39,7 +40,7 @@ public class DragEventAssert extends AbstractAssert<DragEventAssert, DragEvent> 
   public DragEventAssert hasSuccessfulResult() {
     isNotNull();
     assertThat(actual.getResult()) //
-        .overridingErrorMessage("Expected successful drag event result but was unsuccessful") //
+        .overridingErrorMessage("Expected successful result but was unsuccessful") //
         .isTrue();
     return this;
   }
@@ -47,7 +48,7 @@ public class DragEventAssert extends AbstractAssert<DragEventAssert, DragEvent> 
   public DragEventAssert hasUnsuccessfulResult() {
     isNotNull();
     assertThat(actual.getResult()) //
-        .overridingErrorMessage("Expected unsuccessful drag event result but was successful") //
+        .overridingErrorMessage("Expected unsuccessful result but was successful") //
         .isFalse();
     return this;
   }
@@ -56,7 +57,7 @@ public class DragEventAssert extends AbstractAssert<DragEventAssert, DragEvent> 
     isNotNull();
     float actualX = actual.getX();
     assertThat(actualX) //
-        .overridingErrorMessage("Expected drag event X <%s> but was <%s>", x, actualX)
+        .overridingErrorMessage("Expected X <%s> but was <%s>", x, actualX) //
         .isEqualTo(x);
     return this;
   }
@@ -65,7 +66,7 @@ public class DragEventAssert extends AbstractAssert<DragEventAssert, DragEvent> 
     isNotNull();
     float actualY = actual.getY();
     assertThat(actualY) //
-        .overridingErrorMessage("Expected drag event Y <%s> but was <%s>", y, actualY)
+        .overridingErrorMessage("Expected Y <%s> but was <%s>", y, actualY) //
         .isEqualTo(y);
     return this;
   }

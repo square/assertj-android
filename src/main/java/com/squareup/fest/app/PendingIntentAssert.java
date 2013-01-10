@@ -5,21 +5,29 @@ import org.fest.assertions.api.AbstractAssert;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
+/** Assertions for {@link PendingIntent} instances. */
 public class PendingIntentAssert extends AbstractAssert<PendingIntentAssert, PendingIntent> {
   public PendingIntentAssert(PendingIntent actual) {
     super(actual, PendingIntentAssert.class);
   }
 
   // TODO API 17
-  //public PendingIntentAssert hasCreatorPackage(String creatorPackage) {
+  //public PendingIntentAssert hasCreatorPackage(String package) {
   //  isNotNull();
-  //  assertThat(actual.getCreatorPackage()).isEqualTo(creatorPackage);
+  //  String actualPackage = actual.getCreatorPackage();
+  //  assertThat(actualPackage) //
+  //      .overridingErrorMesssage("Expected creator package <%s> but was <%s>.", package,
+  //          actualPackage) //
+  //      .isEqualTo(package);
   //  return this;
   //}
   //
   //public PendingIntentAssert hasCreatorUid(int uid) {
   //  isNotNull();
-  //  assertThat(actual.getCreatorUid()).isEqualTo(uid);
+  //  int actualUid = actual.getCreatorUid();
+  //  assertThat(actualUid) //
+  //      .overridingErroMessage("Expected creator UID <%s> but was <%s>.", uid, actualUid) //
+  //      .isEqualTo(uid);
   //  return this;
   //}
 
@@ -27,7 +35,7 @@ public class PendingIntentAssert extends AbstractAssert<PendingIntentAssert, Pen
     isNotNull();
     String actualPackage = actual.getTargetPackage();
     assertThat(actualPackage) //
-        .overridingErrorMessage("Expected target package <%s> but was <%s>", targetPackage,
+        .overridingErrorMessage("Expected target package <%s> but was <%s>.", targetPackage,
             actualPackage) //
         .isEqualTo(targetPackage);
     return this;

@@ -6,6 +6,7 @@ import org.fest.assertions.api.AbstractAssert;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
+/** Assertions for {@link MenuItem} instances. */
 public class MenuItemAssert extends AbstractAssert<MenuItemAssert, MenuItem> {
   public MenuItemAssert(MenuItem actual) {
     super(actual, MenuItemAssert.class);
@@ -14,7 +15,7 @@ public class MenuItemAssert extends AbstractAssert<MenuItemAssert, MenuItem> {
   public MenuItemAssert isEnabled() {
     isNotNull();
     assertThat(actual.isEnabled()) //
-        .overridingErrorMessage("Expected menu item enabled but was disabled") //
+        .overridingErrorMessage("Expected enabled but was disabled") //
         .isTrue();
     return this;
   }
@@ -22,7 +23,7 @@ public class MenuItemAssert extends AbstractAssert<MenuItemAssert, MenuItem> {
   public MenuItemAssert isDisabled() {
     isNotNull();
     assertThat(actual.isEnabled()) //
-        .overridingErrorMessage("Expected menu item disabled but was enabled") //
+        .overridingErrorMessage("Expected disabled but was enabled") //
         .isFalse();
     return this;
   }

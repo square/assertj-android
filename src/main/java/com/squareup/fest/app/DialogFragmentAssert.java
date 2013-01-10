@@ -4,6 +4,7 @@ import android.app.DialogFragment;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
+/** Assertions for {@link DialogFragment} instances. */
 public class DialogFragmentAssert
     extends AbstractFragmentAssert<DialogFragmentAssert, DialogFragment> {
   public DialogFragmentAssert(DialogFragment actual) {
@@ -13,7 +14,7 @@ public class DialogFragmentAssert
   public DialogFragmentAssert isCancelable() {
     isNotNull();
     assertThat(actual.isCancelable()) //
-        .overridingErrorMessage("Expected cancelable but was not cancelable") //
+        .overridingErrorMessage("Expected to be cancelable but was not cancelable.") //
         .isTrue();
     return this;
   }
@@ -21,7 +22,7 @@ public class DialogFragmentAssert
   public DialogFragmentAssert isNotCancelable() {
     isNotNull();
     assertThat(actual.isCancelable()) //
-        .overridingErrorMessage("Expected not cancelable but was cancelable") //
+        .overridingErrorMessage("Expected to be not cancelable but was cancelable.") //
         .isFalse();
     return this;
   }

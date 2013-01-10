@@ -5,6 +5,7 @@ import org.fest.assertions.api.AbstractAssert;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
+/** Assertions for {@link KeyguardManager} instances. */
 public class KeyguardManagerAssert extends AbstractAssert<KeyguardManagerAssert, KeyguardManager> {
   public KeyguardManagerAssert(KeyguardManager actual) {
     super(actual, KeyguardManagerAssert.class);
@@ -13,7 +14,7 @@ public class KeyguardManagerAssert extends AbstractAssert<KeyguardManagerAssert,
   public KeyguardManagerAssert hasRestrictedInputMode() {
     isNotNull();
     assertThat(actual.inKeyguardRestrictedInputMode()) //
-        .overridingErrorMessage("Expected restricted input mode but was unrestricted") //
+        .overridingErrorMessage("Expected restricted input mode but was unrestricted.") //
         .isTrue();
     return this;
   }
@@ -21,7 +22,7 @@ public class KeyguardManagerAssert extends AbstractAssert<KeyguardManagerAssert,
   public KeyguardManagerAssert hasUnrestrictedInputMode() {
     isNotNull();
     assertThat(actual.inKeyguardRestrictedInputMode()) //
-        .overridingErrorMessage("Expected unrestricted input mode but was restricted") //
+        .overridingErrorMessage("Expected unrestricted input mode but was restricted.") //
         .isFalse();
     return this;
   }
@@ -29,7 +30,7 @@ public class KeyguardManagerAssert extends AbstractAssert<KeyguardManagerAssert,
   public KeyguardManagerAssert hasLockedKeyguard() {
     isNotNull();
     assertThat(actual.isKeyguardLocked()) //
-        .overridingErrorMessage("Expected locked keyguard but was unlocked") //
+        .overridingErrorMessage("Expected locked keyguard but was unlocked.") //
         .isTrue();
     return this;
   }
@@ -37,7 +38,7 @@ public class KeyguardManagerAssert extends AbstractAssert<KeyguardManagerAssert,
   public KeyguardManagerAssert hasUnlockedKeyguard() {
     isNotNull();
     assertThat(actual.isKeyguardLocked()) //
-        .overridingErrorMessage("Expected unlocked keyguard but was locked") //
+        .overridingErrorMessage("Expected unlocked keyguard but was locked.") //
         .isFalse();
     return this;
   }
@@ -45,7 +46,7 @@ public class KeyguardManagerAssert extends AbstractAssert<KeyguardManagerAssert,
   public KeyguardManagerAssert hasSecureKeyguard() {
     isNotNull();
     assertThat(actual.isKeyguardSecure()) //
-        .overridingErrorMessage("Expected secure keyguard but was unsecure") //
+        .overridingErrorMessage("Expected secure keyguard but was unsecure.") //
         .isTrue();
     return this;
   }
@@ -53,7 +54,7 @@ public class KeyguardManagerAssert extends AbstractAssert<KeyguardManagerAssert,
   public KeyguardManagerAssert hasUnsecureKeyguard() {
     isNotNull();
     assertThat(actual.isKeyguardSecure()) //
-        .overridingErrorMessage("Expected unsecure keygaurd but was secure") //
+        .overridingErrorMessage("Expected unsecure keygaurd but was secure.") //
         .isFalse();
     return this;
   }

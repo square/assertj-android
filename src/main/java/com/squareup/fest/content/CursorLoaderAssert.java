@@ -5,6 +5,7 @@ import android.net.Uri;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
+/** Assertions for {@link CursorLoader} instances. */
 public class CursorLoaderAssert extends AbstractLoaderAssert<CursorLoaderAssert, CursorLoader> {
   public CursorLoaderAssert(CursorLoader actual) {
     super(actual, CursorLoaderAssert.class);
@@ -26,7 +27,7 @@ public class CursorLoaderAssert extends AbstractLoaderAssert<CursorLoaderAssert,
     isNotNull();
     String actualSelection = actual.getSelection();
     assertThat(actualSelection) //
-        .overridingErrorMessage("Expected cursor selection <%s> but was <%s>", selection,
+        .overridingErrorMessage("Expected cursor selection <%s> but was <%s>.", selection,
             actualSelection) //
         .isEqualTo(selection);
     return this;
@@ -48,7 +49,7 @@ public class CursorLoaderAssert extends AbstractLoaderAssert<CursorLoaderAssert,
     isNotNull();
     String actualSortOrder = actual.getSortOrder();
     assertThat(actualSortOrder) //
-        .overridingErrorMessage("Expected cursor sort order <%s> but was <%s>", sortOrder,
+        .overridingErrorMessage("Expected cursor sort order <%s> but was <%s>.", sortOrder,
             actualSortOrder) //
         .isEqualTo(sortOrder);
     return this;
@@ -58,7 +59,7 @@ public class CursorLoaderAssert extends AbstractLoaderAssert<CursorLoaderAssert,
     isNotNull();
     Uri actualUri = actual.getUri();
     assertThat(actualUri) //
-        .overridingErrorMessage("Expected cursor URI <%s> but was <%s>", uri, actualUri) //
+        .overridingErrorMessage("Expected cursor URI <%s> but was <%s>.", uri, actualUri) //
         .isEqualTo(uri);
     return this;
   }

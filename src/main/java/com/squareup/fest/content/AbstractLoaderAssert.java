@@ -1,8 +1,9 @@
 package com.squareup.fest.content;
 
 import android.content.Loader;
-import com.squareup.fest.Assertions;
 import org.fest.assertions.api.AbstractAssert;
+
+import static org.fest.assertions.api.Assertions.assertThat;
 
 public abstract class AbstractLoaderAssert<S extends AbstractLoaderAssert<S, A>, A extends Loader>
     extends AbstractAssert<S, A> {
@@ -13,45 +14,57 @@ public abstract class AbstractLoaderAssert<S extends AbstractLoaderAssert<S, A>,
   public S hasId(int id) {
     isNotNull();
     int actualId = actual.getId();
-    Assertions.assertThat(actualId) //
-        .overridingErrorMessage("Expected loader ID <%s> but was <%s>", id, actualId) //
+    assertThat(actualId) //
+        .overridingErrorMessage("Expected ID <%s> but was <%s>.", id, actualId) //
         .isEqualTo(id);
     return myself;
   }
 
   public S isAbandoned() {
     isNotNull();
-    // TODO
+    assertThat(actual.isAbandoned()) //
+        .overridingErrorMessage("Expected to be abandoned but was not abandoned.") //
+        .isTrue();
     return myself;
   }
 
   public S isNotAbandoned() {
     isNotNull();
-    // TODO this
+    assertThat(actual.isAbandoned()) //
+        .overridingErrorMessage("Expected to not be abandoned but was abandoned.") //
+        .isFalse();
     return myself;
   }
 
   public S isReset() {
     isNotNull();
-    // TODO
+    assertThat(actual.isReset()) //
+        .overridingErrorMessage("Expected to be reset but was not reset.") //
+        .isTrue();
     return myself;
   }
 
   public S isNotReset() {
     isNotNull();
-    // TODO
+    assertThat(actual.isReset()) //
+        .overridingErrorMessage("Expected to not be reset but was reset.") //
+        .isFalse();
     return myself;
   }
 
   public S isStarted() {
     isNotNull();
-    // TODO
+    assertThat(actual.isStarted()) //
+        .overridingErrorMessage("Expected to be started but was not started.") //
+        .isTrue();
     return myself;
   }
 
   public S isNotStarted() {
     isNotNull();
-    // TODO
+    assertThat(actual.isStarted()) //
+        .overridingErrorMessage("Expected to not be started but was started.") //
+        .isFalse();
     return myself;
   }
 }
