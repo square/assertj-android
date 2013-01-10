@@ -5,12 +5,12 @@ import org.fest.assertions.api.AbstractAssert;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
-public class SurfaceAsserts extends AbstractAssert<SurfaceAsserts, Surface> {
-  public SurfaceAsserts(Surface actual) {
-    super(actual, SurfaceAsserts.class);
+public class SurfaceAssert extends AbstractAssert<SurfaceAssert, Surface> {
+  public SurfaceAssert(Surface actual) {
+    super(actual, SurfaceAssert.class);
   }
 
-  public SurfaceAsserts isValid() {
+  public SurfaceAssert isValid() {
     isNotNull();
     assertThat(actual.isValid()) //
         .overridingErrorMessage("Expected to be valid but was not valid.") //
@@ -18,7 +18,7 @@ public class SurfaceAsserts extends AbstractAssert<SurfaceAsserts, Surface> {
     return this;
   }
 
-  public SurfaceAsserts isNotValid() {
+  public SurfaceAssert isNotValid() {
     isNotNull();
     assertThat(actual.isValid()) //
         .overridingErrorMessage("Expected to not be valid but was valid.") //
