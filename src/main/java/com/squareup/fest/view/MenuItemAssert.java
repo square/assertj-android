@@ -15,7 +15,7 @@ public class MenuItemAssert extends AbstractAssert<MenuItemAssert, MenuItem> {
   public MenuItemAssert isEnabled() {
     isNotNull();
     assertThat(actual.isEnabled()) //
-        .overridingErrorMessage("Expected enabled but was disabled") //
+        .overridingErrorMessage("Expected to be enabled but was disabled") //
         .isTrue();
     return this;
   }
@@ -23,7 +23,7 @@ public class MenuItemAssert extends AbstractAssert<MenuItemAssert, MenuItem> {
   public MenuItemAssert isDisabled() {
     isNotNull();
     assertThat(actual.isEnabled()) //
-        .overridingErrorMessage("Expected disabled but was enabled") //
+        .overridingErrorMessage("Expected to be disabled but was enabled") //
         .isFalse();
     return this;
   }

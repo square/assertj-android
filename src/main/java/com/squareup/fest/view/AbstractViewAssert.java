@@ -1270,7 +1270,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     return myself;
   }
 
-  public static String visibilityToString(int visibility) {
+  private static String visibilityToString(int visibility) {
     switch (visibility) {
       case VISIBLE:
         return "visible";
@@ -1283,7 +1283,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     }
   }
 
-  public static String layerTypeToString(int type) {
+  private static String layerTypeToString(int type) {
     switch (type) {
       case View.LAYER_TYPE_NONE:
         return "none";
@@ -1297,7 +1297,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
   }
 
   // TODO API 17
-  //public static String layoutDirectionToString(int direction) {
+  //private static String layoutDirectionToString(int direction) {
   //  switch (direction) {
   //    case LAYOUT_DIRECTION_RTL:
   //      return "rtl";
@@ -1308,7 +1308,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
   //  }
   //}
 
-  public static String overScrollModeToString(int mode) {
+  private static String overScrollModeToString(int mode) {
     switch (mode) {
       case OVER_SCROLL_ALWAYS:
         return "always";
@@ -1321,7 +1321,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     }
   }
 
-  public static String scrollBarStyleToString(int style) {
+  private static String scrollBarStyleToString(int style) {
     switch (style) {
       case SCROLLBARS_INSIDE_INSET:
         return "insideInset";
@@ -1336,7 +1336,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     }
   }
 
-  public static String verticalScrollBarPositionToString(int position) {
+  private static String verticalScrollBarPositionToString(int position) {
     switch (position) {
       case SCROLLBAR_POSITION_DEFAULT:
         return "default";

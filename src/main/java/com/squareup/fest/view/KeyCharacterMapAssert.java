@@ -35,7 +35,7 @@ public class KeyCharacterMapAssert extends AbstractAssert<KeyCharacterMapAssert,
     return this;
   }
 
-  public static String keyboardTypeToString(int type) {
+  private static String keyboardTypeToString(int type) {
     switch (type) {
       case NUMERIC:
         return "numeric";

@@ -121,7 +121,7 @@ public abstract class AbstractViewGroupAssert<S extends AbstractViewGroupAssert<
     return myself;
   }
 
-  public static String descendantFocusabilityToString(int focusability) {
+  private static String descendantFocusabilityToString(int focusability) {
     switch (focusability) {
       case FOCUS_AFTER_DESCENDANTS:
         return "afterDescendants";
@@ -134,7 +134,7 @@ public abstract class AbstractViewGroupAssert<S extends AbstractViewGroupAssert<
     }
   }
 
-  public static String persistentDrawingCacheToString(int cache) {
+  private static String persistentDrawingCacheToString(int cache) {
     switch (cache) {
       case PERSISTENT_ALL_CACHES:
         return "all";

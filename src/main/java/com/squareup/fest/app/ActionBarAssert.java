@@ -1,6 +1,9 @@
 package com.squareup.fest.app;
 
 import android.app.ActionBar;
+import com.squareup.fest.Utils;
+import java.util.ArrayList;
+import java.util.List;
 import org.fest.assertions.api.AbstractAssert;
 
 import static android.app.ActionBar.DISPLAY_HOME_AS_UP;
@@ -19,21 +22,12 @@ public class ActionBarAssert extends AbstractAssert<ActionBarAssert, ActionBar> 
     super(actual, ActionBarAssert.class);
   }
 
-  public ActionBarAssert hasDisplayOption(int option) {
-    isNotNull();
-    assertThat(actual.getDisplayOptions() & option) //
-        .overridingErrorMessage("Expected display option <%s> but was not present.",
-            displayOptionToString(option)) //
-        .isNotZero();
-    return this;
-  }
-
   public ActionBarAssert hasDisplayOptions(int options) {
     isNotNull();
     final int actualOptions = actual.getDisplayOptions();
     assertThat(actualOptions) //
-        .overridingErrorMessage("Expected display options <%s> but was <%s>.", options,
-            actualOptions) //
+        .overridingErrorMessage("Expected display options <%s> but was <%s>.",
+            displayOptionsToString(options), displayOptionsToString(actualOptions)) //
         .isEqualTo(options);
     return this;
   }
@@ -77,7 +71,10 @@ public class ActionBarAssert extends AbstractAssert<ActionBarAssert, ActionBar> 
 
   public ActionBarAssert hasSubtitle(CharSequence subtitle) {
     isNotNull();
-    assertThat(actual.getSubtitle()).isEqualTo(subtitle);
+    CharSequence actualSubtitle = actual.getSubtitle();
+    assertThat(actualSubtitle) //
+        .overridingErrorMessage("Expected subtitle <%s> but was <%s>.", subtitle, actualSubtitle) //
+        .isEqualTo(subtitle);
     return this;
   }
 
@@ -96,7 +93,10 @@ public class ActionBarAssert extends AbstractAssert<ActionBarAssert, ActionBar> 
 
   public ActionBarAssert hasTitle(CharSequence title) {
     isNotNull();
-    assertThat(actual.getTitle()).isEqualTo(title);
+    CharSequence actualTitle = actual.getTitle();
+    assertThat(actualTitle) //
+        .overridingErrorMessage("Expected title <%s> but was <%s>.", title, actualTitle) //
+        .isEqualTo(title);
     return this;
   }
 
@@ -120,7 +120,7 @@ public class ActionBarAssert extends AbstractAssert<ActionBarAssert, ActionBar> 
     return this;
   }
 
-  public static String navigationModeToString(int mode) {
+  private static String navigationModeToString(int mode) {
     switch (mode) {
       case NAVIGATION_MODE_LIST:
         return "list";
@@ -133,20 +133,26 @@ public class ActionBarAssert extends AbstractAssert<ActionBarAssert, ActionBar> 
     }
   }
 
-  public static String displayOptionToString(int option) {
-    switch (option) {
-      case DISPLAY_HOME_AS_UP:
-        return "homeAsUp";
-      case DISPLAY_SHOW_CUSTOM:
-        return "showCustom";
-      case DISPLAY_SHOW_HOME:
-        return "showHome";
-      case DISPLAY_SHOW_TITLE:
-        return "showTitle";
-      case DISPLAY_USE_LOGO:
-        return "useLogo";
-      default:
-        throw new IllegalArgumentException("Unknown display option: " + option);
+  private static String displayOptionsToString(int options) {
+    if (options == 0) {
+      return "none";
     }
+    List<String> parts = new ArrayList<String>();
+    if ((options & DISPLAY_HOME_AS_UP) != 0) {
+      parts.add("homeAsUp");
+    }
+    if ((options & DISPLAY_SHOW_CUSTOM) != 0) {
+      parts.add("showCustom");
+    }
+    if ((options & DISPLAY_SHOW_HOME) != 0) {
+      parts.add("showHome");
+    }
+    if ((options & DISPLAY_SHOW_TITLE) != 0) {
+      parts.add("showTitle");
+    }
+    if ((options & DISPLAY_USE_LOGO) != 0) {
+      parts.add("useLogo");
+    }
+    return Utils.join(parts);
   }
 }

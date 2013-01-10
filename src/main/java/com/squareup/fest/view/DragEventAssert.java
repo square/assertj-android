@@ -71,7 +71,7 @@ public class DragEventAssert extends AbstractAssert<DragEventAssert, DragEvent> 
     return this;
   }
 
-  public static String dragEventActionToString(int action) {
+  private static String dragEventActionToString(int action) {
     switch (action) {
       case ACTION_DRAG_ENDED:
         return "drag ended";
