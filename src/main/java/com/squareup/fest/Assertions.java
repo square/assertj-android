@@ -352,6 +352,11 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.widget.RelativeLayoutAssert(actual);
   }
 
+  public static com.squareup.fest.widget.ScrollViewAssert assertThat(
+      android.widget.ScrollView actual) {
+    return new com.squareup.fest.widget.ScrollViewAssert(actual);
+  }
+
   public static com.squareup.fest.widget.SwitchAssert assertThat(
       android.widget.Switch actual) {
     return new com.squareup.fest.widget.SwitchAssert(actual);
