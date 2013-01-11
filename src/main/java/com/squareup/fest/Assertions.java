@@ -187,6 +187,11 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.view.KeyEventAssert(actual);
   }
 
+  public static com.squareup.fest.view.MenuAssert assertThat(
+      android.view.Menu actual) {
+    return new com.squareup.fest.view.MenuAssert(actual);
+  }
+
   public static com.squareup.fest.view.MenuItemAssert assertThat(
       android.view.MenuItem actual) {
     return new com.squareup.fest.view.MenuItemAssert(actual);
