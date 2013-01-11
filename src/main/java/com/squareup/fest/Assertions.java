@@ -297,6 +297,11 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.widget.GridLayoutAssert(actual);
   }
 
+  public static com.squareup.fest.widget.ImageViewAssert assertThat(
+      android.widget.ImageView actual) {
+    return new com.squareup.fest.widget.ImageViewAssert(actual);
+  }
+
   public static com.squareup.fest.widget.LinearLayoutAssert assertThat(
       android.widget.LinearLayout actual) {
     return new com.squareup.fest.widget.LinearLayoutAssert(actual);
