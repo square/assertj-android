@@ -377,6 +377,11 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.widget.TimePickerAssert(actual);
   }
 
+  public static com.squareup.fest.widget.ToastAssert assertThat(
+      android.widget.Toast actual) {
+    return new com.squareup.fest.widget.ToastAssert(actual);
+  }
+
   public static com.squareup.fest.widget.ToggleButtonAssert assertThat(
       android.widget.ToggleButton actual) {
     return new com.squareup.fest.widget.ToggleButtonAssert(actual);
