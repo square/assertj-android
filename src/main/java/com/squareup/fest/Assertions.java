@@ -392,6 +392,11 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.widget.ViewAnimatorAssert(actual);
   }
 
+  public static com.squareup.fest.widget.ViewFlipperAssert assertThat(
+      android.widget.ViewFlipper actual) {
+    return new com.squareup.fest.widget.ViewFlipperAssert(actual);
+  }
+
   public static com.squareup.fest.widget.ViewSwitcherAssert assertThat(
       android.widget.ViewSwitcher actual) {
     return new com.squareup.fest.widget.ViewSwitcherAssert(actual);
