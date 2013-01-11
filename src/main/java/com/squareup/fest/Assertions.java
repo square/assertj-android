@@ -297,6 +297,11 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.widget.AutoCompleteTextViewAssert(actual);
   }
 
+  public static com.squareup.fest.widget.CalendarViewAssert assertThat(
+      android.widget.CalendarView actual) {
+    return new com.squareup.fest.widget.CalendarViewAssert(actual);
+  }
+
   public static com.squareup.fest.widget.CheckedTextViewAssert assertThat(
       android.widget.CheckedTextView actual) {
     return new com.squareup.fest.widget.CheckedTextViewAssert(actual);
@@ -310,6 +315,11 @@ public class Assertions extends org.fest.assertions.api.Assertions {
   public static com.squareup.fest.widget.CompoundButtonAssert assertThat(
       android.widget.CompoundButton actual) {
     return new com.squareup.fest.widget.CompoundButtonAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.DatePickerAssert assertThat(
+      android.widget.DatePicker actual) {
+    return new com.squareup.fest.widget.DatePickerAssert(actual);
   }
 
   public static com.squareup.fest.widget.FrameLayoutAssert assertThat(
@@ -332,6 +342,11 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.widget.LinearLayoutAssert(actual);
   }
 
+  public static com.squareup.fest.widget.NumberPickerAssert assertThat(
+      android.widget.NumberPicker actual) {
+    return new com.squareup.fest.widget.NumberPickerAssert(actual);
+  }
+
   public static com.squareup.fest.widget.RelativeLayoutAssert assertThat(
       android.widget.RelativeLayout actual) {
     return new com.squareup.fest.widget.RelativeLayoutAssert(actual);
@@ -350,6 +365,11 @@ public class Assertions extends org.fest.assertions.api.Assertions {
   public static com.squareup.fest.widget.TextViewAssert assertThat(
       android.widget.TextView actual) {
     return new com.squareup.fest.widget.TextViewAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.TimePickerAssert assertThat(
+      android.widget.TimePicker actual) {
+    return new com.squareup.fest.widget.TimePickerAssert(actual);
   }
 
   public static com.squareup.fest.widget.ToggleButtonAssert assertThat(
