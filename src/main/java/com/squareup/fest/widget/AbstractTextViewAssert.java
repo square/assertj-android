@@ -30,7 +30,7 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
     return myself;
   }
 
-  public S hasCompoundDrawablePaddingBottom(int padding) {
+  public S hasCompoundPaddingBottom(int padding) {
     isNotNull();
     int actualPadding = actual.getCompoundPaddingBottom();
     assertThat(actualPadding) //
@@ -41,7 +41,7 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
   }
 
   // TODO API 17
-  //public S hasCompoundDrawablePaddingEnd(int padding) {
+  //public S hasCompoundPaddingEnd(int padding) {
   //  isNotNull();
   //  int actualPadding = actual.getCompoundPaddingEnd();
   //  assertThat(actualPadding) //
@@ -51,7 +51,7 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
   //  return myself;
   //}
 
-  public S hasCompoundDrawablePaddingLeft(int padding) {
+  public S hasCompoundPaddingLeft(int padding) {
     isNotNull();
     int actualPadding = actual.getCompoundPaddingLeft();
     assertThat(actualPadding) //
@@ -61,7 +61,7 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
     return myself;
   }
 
-  public S hasCompoundDrawablePaddingRight(int padding) {
+  public S hasCompoundPaddingRight(int padding) {
     isNotNull();
     int actualPadding = actual.getCompoundPaddingRight();
     assertThat(actualPadding) //
@@ -72,7 +72,7 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
   }
 
   // TODO API 17
-  //public S hasCompoundDrawablePaddingStart(int padding) {
+  //public S hasCompoundPaddingStart(int padding) {
   //  isNotNull();
   //  int actualPadding = actual.getCompoundPaddingStart();
   //  assertThat(actualPadding) //
@@ -82,7 +82,7 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
   //  return myself;
   //}
 
-  public S hasCompoundDrawablePaddingTop(int padding) {
+  public S hasCompoundPaddingTop(int padding) {
     isNotNull();
     int actualPadding = actual.getCompoundPaddingTop();
     assertThat(actualPadding) //

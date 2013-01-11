@@ -122,6 +122,11 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.graphics.BitmapAssert(actual);
   }
 
+  public static com.squareup.fest.inputmethodservice.ExtractEditTextAssert assertThat(
+      android.inputmethodservice.ExtractEditText actual) {
+    return new com.squareup.fest.inputmethodservice.ExtractEditTextAssert(actual);
+  }
+
   public static com.squareup.fest.util.DisplayMetricsAssert assertThat(
       android.util.DisplayMetrics actual) {
     return new com.squareup.fest.util.DisplayMetricsAssert(actual);
@@ -287,6 +292,26 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.widget.AdapterViewAssert(actual);
   }
 
+  public static com.squareup.fest.widget.AutoCompleteTextViewAssert assertThat(
+      android.widget.AutoCompleteTextView actual) {
+    return new com.squareup.fest.widget.AutoCompleteTextViewAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.CheckedTextViewAssert assertThat(
+      android.widget.CheckedTextView actual) {
+    return new com.squareup.fest.widget.CheckedTextViewAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.ChronometerAssert assertThat(
+      android.widget.Chronometer actual) {
+    return new com.squareup.fest.widget.ChronometerAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.CompoundButtonAssert assertThat(
+      android.widget.CompoundButton actual) {
+    return new com.squareup.fest.widget.CompoundButtonAssert(actual);
+  }
+
   public static com.squareup.fest.widget.FrameLayoutAssert assertThat(
       android.widget.FrameLayout actual) {
     return new com.squareup.fest.widget.FrameLayoutAssert(actual);
@@ -325,6 +350,11 @@ public class Assertions extends org.fest.assertions.api.Assertions {
   public static com.squareup.fest.widget.TextViewAssert assertThat(
       android.widget.TextView actual) {
     return new com.squareup.fest.widget.TextViewAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.ToggleButtonAssert assertThat(
+      android.widget.ToggleButton actual) {
+    return new com.squareup.fest.widget.ToggleButtonAssert(actual);
   }
 
   public static com.squareup.fest.widget.ViewAnimatorAssert assertThat(
