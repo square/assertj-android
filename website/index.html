@@ -84,6 +84,31 @@ assertThat(layout.getShowDividers()).isEqualTo(SHOW_DIVIDERS_MIDDLE);</pre>
     </div>
     <div class="row section">
       <div class="span10 offset1">
+        <h5>Extending</h5>
+        <p>The provided assertions have also been designed to be extended for any custom controls you have developed.</p>
+        <pre class="prettyprint">public class CustomLayout extends LinearLayout {
+  public int getBehavior() {
+    /* ... */
+  }
+}</pre>
+        <p>Use the following pattern to set up your assertions.</p>
+        <pre class="prettyprint">public class CustomLayoutAssert extends AbstractLinearLayoutAssert&lt;CustomLayoutAssert, CustomLayout> {
+  public CustomLayoutAssert(CustomLayout actual) {
+    super(actual, CustomLayoutAssert.class);
+  }
+
+  public CustomLayoutAssert hasSomeBehavior() {
+    isNotNull();
+    assertThat(actual.getBehavior())
+        .overridingErrorMessage("Expected some behavior but was doing other behavior.")
+        .isEqualTo(42)
+    return this;
+  }
+}</pre>
+      </div>
+    </div>
+    <div class="row section">
+      <div class="span10 offset1">
         <h5>Download</h5>
         <p>Download <a href="#">the latest jar</a> or grab via Maven:</p>
         <pre class-"prettyprint">&lt;dependency>

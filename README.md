@@ -71,6 +71,39 @@ Assertions exist for nearly every object that you would ever want to test, from 
 
 
 
+Extending
+---------
+
+The provided assertions have also been designed to be extended for any custom controls you have developed.
+
+```java
+public class CustomLayout extends LinearLayout {
+  public int getBehavior() {
+    /* ... */
+  }
+}
+```
+
+Use the following pattern to set up your assertions.
+
+```java
+public class CustomLayoutAssert extends AbstractLinearLayoutAssert<CustomLayoutAssert, CustomLayout> {
+  public CustomLayoutAssert(CustomLayout actual) {
+    super(actual, CustomLayoutAssert.class);
+  }
+
+  public CustomLayoutAssert hasSomeBehavior() {
+    isNotNull();
+    assertThat(actual.getBehavior())
+        .overridingErrorMessage("Expected some behavior but was doing other behavior.")
+        .isEqualTo(42)
+    return this;
+  }
+}
+```
+
+
+
 Download
 --------
 
