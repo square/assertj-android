@@ -267,6 +267,11 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.widget.AbsListViewAssert(actual);
   }
 
+  public static com.squareup.fest.widget.AbsoluteLayoutAssert assertThat(
+      android.widget.AbsoluteLayout actual) {
+    return new com.squareup.fest.widget.AbsoluteLayoutAssert(actual);
+  }
+
   public static com.squareup.fest.widget.AdapterAssert assertThat(
       android.widget.Adapter actual) {
     return new com.squareup.fest.widget.AdapterAssert(actual);
@@ -277,14 +282,34 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.widget.AdapterViewAssert(actual);
   }
 
+  public static com.squareup.fest.widget.FrameLayoutAssert assertThat(
+      android.widget.FrameLayout actual) {
+    return new com.squareup.fest.widget.FrameLayoutAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.GridLayoutAssert assertThat(
+      android.widget.GridLayout actual) {
+    return new com.squareup.fest.widget.GridLayoutAssert(actual);
+  }
+
   public static com.squareup.fest.widget.LinearLayoutAssert assertThat(
       android.widget.LinearLayout actual) {
     return new com.squareup.fest.widget.LinearLayoutAssert(actual);
   }
 
+  public static com.squareup.fest.widget.RelativeLayoutAssert assertThat(
+      android.widget.RelativeLayout actual) {
+    return new com.squareup.fest.widget.RelativeLayoutAssert(actual);
+  }
+
   public static com.squareup.fest.widget.SwitchAssert assertThat(
       android.widget.Switch actual) {
     return new com.squareup.fest.widget.SwitchAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.TableLayoutAssert assertThat(
+      android.widget.TableLayout actual) {
+    return new com.squareup.fest.widget.TableLayoutAssert(actual);
   }
 
   public static com.squareup.fest.widget.TextViewAssert assertThat(
