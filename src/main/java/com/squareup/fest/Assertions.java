@@ -386,4 +386,9 @@ public class Assertions extends org.fest.assertions.api.Assertions {
       android.widget.ViewAnimator actual) {
     return new com.squareup.fest.widget.ViewAnimatorAssert(actual);
   }
+
+  public static com.squareup.fest.widget.ViewSwitcherAssert assertThat(
+      android.widget.ViewSwitcher actual) {
+    return new com.squareup.fest.widget.ViewSwitcherAssert(actual);
+  }
 }
