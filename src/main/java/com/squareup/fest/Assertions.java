@@ -252,6 +252,16 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.graphics.drawable.shapes.ShapeAssert(actual);
   }
 
+  public static com.squareup.fest.hardware.SensorAssert assertThat(
+      android.hardware.Sensor actual) {
+    return new com.squareup.fest.hardware.SensorAssert(actual);
+  }
+
+  public static com.squareup.fest.hardware.SensorEventAssert assertThat(
+      android.hardware.SensorEvent actual) {
+    return new com.squareup.fest.hardware.SensorEventAssert(actual);
+  }
+
   public static com.squareup.fest.inputmethodservice.ExtractEditTextAssert assertThat(
       android.inputmethodservice.ExtractEditText actual) {
     return new com.squareup.fest.inputmethodservice.ExtractEditTextAssert(actual);
