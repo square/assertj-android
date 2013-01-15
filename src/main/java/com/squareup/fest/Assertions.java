@@ -122,6 +122,96 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.graphics.BitmapAssert(actual);
   }
 
+  public static com.squareup.fest.graphics.BitmapRegionDecoderAssert assertThat(
+      android.graphics.BitmapRegionDecoder actual) {
+    return new com.squareup.fest.graphics.BitmapRegionDecoderAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.CameraAssert assertThat(
+      android.graphics.Camera actual) {
+    return new com.squareup.fest.graphics.CameraAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.CanvasAssert assertThat(
+      android.graphics.Canvas actual) {
+    return new com.squareup.fest.graphics.CanvasAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.InterpolatorAssert assertThat(
+      android.graphics.Interpolator actual) {
+    return new com.squareup.fest.graphics.InterpolatorAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.MatrixAssert assertThat(
+      android.graphics.Matrix actual) {
+    return new com.squareup.fest.graphics.MatrixAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.MovieAssert assertThat(
+      android.graphics.Movie actual) {
+    return new com.squareup.fest.graphics.MovieAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.NinePatchAssert assertThat(
+      android.graphics.NinePatch actual) {
+    return new com.squareup.fest.graphics.NinePatchAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.PaintAssert assertThat(
+      android.graphics.Paint actual) {
+    return new com.squareup.fest.graphics.PaintAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.PathAssert assertThat(
+      android.graphics.Path actual) {
+    return new com.squareup.fest.graphics.PathAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.PathMeasureAssert assertThat(
+      android.graphics.PathMeasure actual) {
+    return new com.squareup.fest.graphics.PathMeasureAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.PictureAssert assertThat(
+      android.graphics.Picture actual) {
+    return new com.squareup.fest.graphics.PictureAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.PointAssert assertThat(
+      android.graphics.Point actual) {
+    return new com.squareup.fest.graphics.PointAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.PointFAssert assertThat(
+      android.graphics.PointF actual) {
+    return new com.squareup.fest.graphics.PointFAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.RectAssert assertThat(
+      android.graphics.Rect actual) {
+    return new com.squareup.fest.graphics.RectAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.RectFAssert assertThat(
+      android.graphics.RectF actual) {
+    return new com.squareup.fest.graphics.RectFAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.RegionAssert assertThat(
+      android.graphics.Region actual) {
+    return new com.squareup.fest.graphics.RegionAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.TypefaceAssert assertThat(
+      android.graphics.Typeface actual) {
+    return new com.squareup.fest.graphics.TypefaceAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.YuvImageAssert assertThat(
+      android.graphics.YuvImage actual) {
+    return new com.squareup.fest.graphics.YuvImageAssert(actual);
+  }
+
   public static com.squareup.fest.inputmethodservice.ExtractEditTextAssert assertThat(
       android.inputmethodservice.ExtractEditText actual) {
     return new com.squareup.fest.inputmethodservice.ExtractEditTextAssert(actual);
