@@ -127,6 +127,61 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.inputmethodservice.ExtractEditTextAssert(actual);
   }
 
+  public static com.squareup.fest.support.v4.app.DialogFragmentAssert assertThat(
+      android.support.v4.app.DialogFragment actual) {
+    return new com.squareup.fest.support.v4.app.DialogFragmentAssert(actual);
+  }
+
+  public static com.squareup.fest.support.v4.app.FragmentAssert assertThat(
+      android.support.v4.app.Fragment actual) {
+    return new com.squareup.fest.support.v4.app.FragmentAssert(actual);
+  }
+
+  public static com.squareup.fest.support.v4.app.FragmentManagerAssert assertThat(
+      android.support.v4.app.FragmentManager actual) {
+    return new com.squareup.fest.support.v4.app.FragmentManagerAssert(actual);
+  }
+
+  public static com.squareup.fest.support.v4.app.FragmentTransactionAssert assertThat(
+      android.support.v4.app.FragmentTransaction actual) {
+    return new com.squareup.fest.support.v4.app.FragmentTransactionAssert(actual);
+  }
+
+  public static com.squareup.fest.support.v4.app.ListFragmentAssert assertThat(
+      android.support.v4.app.ListFragment actual) {
+    return new com.squareup.fest.support.v4.app.ListFragmentAssert(actual);
+  }
+
+  public static com.squareup.fest.support.v4.app.LoaderManagerAssert assertThat(
+      android.support.v4.app.LoaderManager actual) {
+    return new com.squareup.fest.support.v4.app.LoaderManagerAssert(actual);
+  }
+
+  public static com.squareup.fest.support.v4.content.CursorLoaderAssert assertThat(
+      android.support.v4.content.CursorLoader actual) {
+    return new com.squareup.fest.support.v4.content.CursorLoaderAssert(actual);
+  }
+
+  public static com.squareup.fest.support.v4.content.LoaderAssert assertThat(
+      android.support.v4.content.Loader actual) {
+    return new com.squareup.fest.support.v4.content.LoaderAssert(actual);
+  }
+
+  public static com.squareup.fest.support.v4.util.LruCacheAssert assertThat(
+      android.support.v4.util.LruCache actual) {
+    return new com.squareup.fest.support.v4.util.LruCacheAssert(actual);
+  }
+
+  public static com.squareup.fest.support.v4.view.PagerAdapterAssert assertThat(
+      android.support.v4.view.PagerAdapter actual) {
+    return new com.squareup.fest.support.v4.view.PagerAdapterAssert(actual);
+  }
+
+  public static com.squareup.fest.support.v4.view.ViewPagerAssert assertThat(
+      android.support.v4.view.ViewPager actual) {
+    return new com.squareup.fest.support.v4.view.ViewPagerAssert(actual);
+  }
+
   public static com.squareup.fest.util.DisplayMetricsAssert assertThat(
       android.util.DisplayMetrics actual) {
     return new com.squareup.fest.util.DisplayMetricsAssert(actual);
