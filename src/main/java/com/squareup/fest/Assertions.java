@@ -262,6 +262,36 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.hardware.SensorEventAssert(actual);
   }
 
+  public static com.squareup.fest.hardware.usb.UsbAccessoryAssert assertThat(
+      android.hardware.usb.UsbAccessory actual) {
+    return new com.squareup.fest.hardware.usb.UsbAccessoryAssert(actual);
+  }
+
+  public static com.squareup.fest.hardware.usb.UsbDeviceAssert assertThat(
+      android.hardware.usb.UsbDevice actual) {
+    return new com.squareup.fest.hardware.usb.UsbDeviceAssert(actual);
+  }
+
+  public static com.squareup.fest.hardware.usb.UsbDeviceConnectionAssert assertThat(
+      android.hardware.usb.UsbDeviceConnection actual) {
+    return new com.squareup.fest.hardware.usb.UsbDeviceConnectionAssert(actual);
+  }
+
+  public static com.squareup.fest.hardware.usb.UsbEndpointAssert assertThat(
+      android.hardware.usb.UsbEndpoint actual) {
+    return new com.squareup.fest.hardware.usb.UsbEndpointAssert(actual);
+  }
+
+  public static com.squareup.fest.hardware.usb.UsbInterfaceAssert assertThat(
+      android.hardware.usb.UsbInterface actual) {
+    return new com.squareup.fest.hardware.usb.UsbInterfaceAssert(actual);
+  }
+
+  public static com.squareup.fest.hardware.usb.UsbRequestAssert assertThat(
+      android.hardware.usb.UsbRequest actual) {
+    return new com.squareup.fest.hardware.usb.UsbRequestAssert(actual);
+  }
+
   public static com.squareup.fest.inputmethodservice.ExtractEditTextAssert assertThat(
       android.inputmethodservice.ExtractEditText actual) {
     return new com.squareup.fest.inputmethodservice.ExtractEditTextAssert(actual);
