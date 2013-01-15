@@ -212,6 +212,46 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.graphics.YuvImageAssert(actual);
   }
 
+  public static com.squareup.fest.graphics.drawable.AnimationDrawableAssert assertThat(
+      android.graphics.drawable.AnimationDrawable actual) {
+    return new com.squareup.fest.graphics.drawable.AnimationDrawableAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.drawable.BitmapDrawableAssert assertThat(
+      android.graphics.drawable.BitmapDrawable actual) {
+    return new com.squareup.fest.graphics.drawable.BitmapDrawableAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.drawable.ColorDrawableAssert assertThat(
+      android.graphics.drawable.ColorDrawable actual) {
+    return new com.squareup.fest.graphics.drawable.ColorDrawableAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.drawable.DrawableAssert assertThat(
+      android.graphics.drawable.Drawable actual) {
+    return new com.squareup.fest.graphics.drawable.DrawableAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.drawable.GradientDrawableAssert assertThat(
+      android.graphics.drawable.GradientDrawable actual) {
+    return new com.squareup.fest.graphics.drawable.GradientDrawableAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.drawable.LayerDrawableAssert assertThat(
+      android.graphics.drawable.LayerDrawable actual) {
+    return new com.squareup.fest.graphics.drawable.LayerDrawableAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.drawable.TransitionDrawableAssert assertThat(
+      android.graphics.drawable.TransitionDrawable actual) {
+    return new com.squareup.fest.graphics.drawable.TransitionDrawableAssert(actual);
+  }
+
+  public static com.squareup.fest.graphics.drawable.shapes.ShapeAssert assertThat(
+      android.graphics.drawable.shapes.Shape actual) {
+    return new com.squareup.fest.graphics.drawable.shapes.ShapeAssert(actual);
+  }
+
   public static com.squareup.fest.inputmethodservice.ExtractEditTextAssert assertThat(
       android.inputmethodservice.ExtractEditText actual) {
     return new com.squareup.fest.inputmethodservice.ExtractEditTextAssert(actual);
