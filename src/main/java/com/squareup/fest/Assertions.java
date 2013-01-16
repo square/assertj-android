@@ -622,6 +622,26 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.view.WindowAssert(actual);
   }
 
+  public static com.squareup.fest.view.accessibility.AccessibilityEventAssert assertThat(
+      android.view.accessibility.AccessibilityEvent actual) {
+    return new com.squareup.fest.view.accessibility.AccessibilityEventAssert(actual);
+  }
+
+  public static com.squareup.fest.view.accessibility.AccessibilityManagerAssert assertThat(
+      android.view.accessibility.AccessibilityManager actual) {
+    return new com.squareup.fest.view.accessibility.AccessibilityManagerAssert(actual);
+  }
+
+  public static com.squareup.fest.view.accessibility.AccessibilityNodeInfoAssert assertThat(
+      android.view.accessibility.AccessibilityNodeInfo actual) {
+    return new com.squareup.fest.view.accessibility.AccessibilityNodeInfoAssert(actual);
+  }
+
+  public static com.squareup.fest.view.accessibility.AccessibilityRecordAssert assertThat(
+      android.view.accessibility.AccessibilityRecord actual) {
+    return new com.squareup.fest.view.accessibility.AccessibilityRecordAssert(actual);
+  }
+
   public static com.squareup.fest.widget.AbsListViewAssert assertThat(
       android.widget.AbsListView actual) {
     return new com.squareup.fest.widget.AbsListViewAssert(actual);
