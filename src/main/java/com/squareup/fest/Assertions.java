@@ -1,4 +1,6 @@
 // Copyright 2012 Square, Inc.
+//
+// This class is generated. Do not modify directly!
 package com.squareup.fest;
 
 /** Assertions for testing Android classes. */

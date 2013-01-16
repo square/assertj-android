@@ -51,6 +51,8 @@ print '-'*80
 
 with open(OUTPUT, 'w') as out:
   out.write('// Copyright 2012 Square, Inc.\n')
+  out.write('//\n')
+  out.write('// This class is generated. Do not modify directly!\n')
   out.write('package com.squareup.fest;\n\n')
   out.write('/** Assertions for testing Android classes. */\n')
   out.write('public class Assertions extends org.fest.assertions.api.Assertions {')
