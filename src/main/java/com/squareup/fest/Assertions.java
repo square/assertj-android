@@ -422,6 +422,26 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.location.LocationProviderAssert(actual);
   }
 
+  public static com.squareup.fest.os.AsyncTaskAssert assertThat(
+      android.os.AsyncTask actual) {
+    return new com.squareup.fest.os.AsyncTaskAssert(actual);
+  }
+
+  public static com.squareup.fest.os.BundleAssert assertThat(
+      android.os.Bundle actual) {
+    return new com.squareup.fest.os.BundleAssert(actual);
+  }
+
+  public static com.squareup.fest.os.PowerManagerAssert assertThat(
+      android.os.PowerManager actual) {
+    return new com.squareup.fest.os.PowerManagerAssert(actual);
+  }
+
+  public static com.squareup.fest.os.VibratorAssert assertThat(
+      android.os.Vibrator actual) {
+    return new com.squareup.fest.os.VibratorAssert(actual);
+  }
+
   public static com.squareup.fest.support.v4.app.DialogFragmentAssert assertThat(
       android.support.v4.app.DialogFragment actual) {
     return new com.squareup.fest.support.v4.app.DialogFragmentAssert(actual);
