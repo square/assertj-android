@@ -1,10 +1,9 @@
 // Copyright 2013 Square, Inc.
 package com.squareup.fest.animation;
 
-import android.animation.Animator;
 import android.animation.AnimatorSet;
-import com.squareup.fest.Assertions;
-import java.util.ArrayList;
+
+import static org.fest.assertions.api.Assertions.assertThat;
 
 public class AnimatorSetAssert extends AbstractAnimatorAssert<AnimatorSetAssert, AnimatorSet> {
   public AnimatorSetAssert(AnimatorSet actual) {
@@ -13,11 +12,10 @@ public class AnimatorSetAssert extends AbstractAnimatorAssert<AnimatorSetAssert,
 
   public AnimatorSetAssert hasAnimatorCount(int count) {
     isNotNull();
-    ArrayList<Animator> childAnimations = actual.getChildAnimations();
-    int actualCount = childAnimations != null ? childAnimations.size() : -1;
-    Assertions.assertThat(childAnimations) //
+    int actualCount = actual.getChildAnimations().size();
+    assertThat(actualCount) //
         .overridingErrorMessage("Expected animator count <%s> but was <%s>.", count, actualCount) //
-        .hasSize(count);
+        .isEqualTo(count);
     return myself;
   }
 }
