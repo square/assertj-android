@@ -1,0 +1,8 @@
+language: java
+
+branches:
+  except:
+    - gh-pages
+
+notifications:
+  email: false
