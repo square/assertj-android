@@ -1,6 +1,7 @@
 // Copyright 2012 Square, Inc.
 package com.squareup.fest;
 
+/** Assertions for testing Android classes. */
 public class Assertions extends org.fest.assertions.api.Assertions {
   public static com.squareup.fest.accounts.AccountAssert assertThat(
       android.accounts.Account actual) {

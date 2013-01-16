@@ -52,6 +52,7 @@ print '-'*80
 with open(OUTPUT, 'w') as out:
   out.write('// Copyright 2012 Square, Inc.\n')
   out.write('package com.squareup.fest;\n\n')
+  out.write('/** Assertions for testing Android classes. */\n')
   out.write('public class Assertions extends org.fest.assertions.api.Assertions {')
   for package, target_package in sorted(assertions, lambda x,y: cmp(x[0], y[0])):
     out.write('\n')
