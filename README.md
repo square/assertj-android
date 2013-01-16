@@ -33,12 +33,17 @@ Examples
     assertThat(view.getVisibility()).isEqualTo(View.GONE);
     ```
 
-When failing, the _FEST Android_ assertion produces an output which allows you to immediately recognize the problem: `Expected visibility <gone> but was <invisible>`.
+When failing, the _FEST Android_ assertion produces an output which allows you
+to immediately recognize the problem:
+`Expected visibility <gone> but was <invisible>`.
 
-Compare that to the output of regular _FEST_ `Expected:<[8]> but was:<[4]>` and regular _JUnit_ `Expected: <8> but was: <4>` and you should immediately see the advantage.
+Compare that to the output of regular _FEST_ `Expected:<[8]> but was:<[4]>` and
+regular _JUnit_ `Expected: <8> but was: <4>` and you should immediately see the\
+advantage.
 
 
-Because _FEST Android_ offers assertions directly on objects rather than properties you can chain multiple assertions.
+Because _FEST Android_ offers assertions directly on objects rather than
+properties you can chain multiple assertions.
 
  *  FEST Android:
 
@@ -67,7 +72,9 @@ Because _FEST Android_ offers assertions directly on objects rather than propert
     assertThat(layout.getShowDividers()).isEqualTo(SHOW_DIVIDERS_MIDDLE);
     ```
 
-Assertions exist for nearly every object that you would ever want to test, from `LinearLayout` to `ActionBar` to `Fragment` to `MenuItem`. Everything in the support library is included too.
+Assertions exist for nearly every object that you would ever want to test, from
+`LinearLayout` to `ActionBar` to `Fragment` to `MenuItem`. Everything in the
+support library is included too.
 
 To get started writing tests just add the following import:
 
@@ -80,7 +87,8 @@ import static com.squareup.fest.Assertions.assertThat;
 Extending
 ---------
 
-The provided assertions have also been designed to be extended for any custom controls you have developed.
+The provided assertions have also been designed to be extended for any custom
+controls you have developed.
 
 ```java
 public class CustomLayout extends LinearLayout {
