@@ -172,6 +172,46 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.database.sqlite.SqliteDatabaseAssert(actual);
   }
 
+  public static com.squareup.fest.gesture.GestureAssert assertThat(
+      android.gesture.Gesture actual) {
+    return new com.squareup.fest.gesture.GestureAssert(actual);
+  }
+
+  public static com.squareup.fest.gesture.GestureLibraryAssert assertThat(
+      android.gesture.GestureLibrary actual) {
+    return new com.squareup.fest.gesture.GestureLibraryAssert(actual);
+  }
+
+  public static com.squareup.fest.gesture.GestureOverlayViewAssert assertThat(
+      android.gesture.GestureOverlayView actual) {
+    return new com.squareup.fest.gesture.GestureOverlayViewAssert(actual);
+  }
+
+  public static com.squareup.fest.gesture.GesturePointAssert assertThat(
+      android.gesture.GesturePoint actual) {
+    return new com.squareup.fest.gesture.GesturePointAssert(actual);
+  }
+
+  public static com.squareup.fest.gesture.GestureStoreAssert assertThat(
+      android.gesture.GestureStore actual) {
+    return new com.squareup.fest.gesture.GestureStoreAssert(actual);
+  }
+
+  public static com.squareup.fest.gesture.GestureStrokeAssert assertThat(
+      android.gesture.GestureStroke actual) {
+    return new com.squareup.fest.gesture.GestureStrokeAssert(actual);
+  }
+
+  public static com.squareup.fest.gesture.OrientedBoundingBoxAssert assertThat(
+      android.gesture.OrientedBoundingBox actual) {
+    return new com.squareup.fest.gesture.OrientedBoundingBoxAssert(actual);
+  }
+
+  public static com.squareup.fest.gesture.PredictionAssert assertThat(
+      android.gesture.Prediction actual) {
+    return new com.squareup.fest.gesture.PredictionAssert(actual);
+  }
+
   public static com.squareup.fest.graphics.BitmapAssert assertThat(
       android.graphics.Bitmap actual) {
     return new com.squareup.fest.graphics.BitmapAssert(actual);
