@@ -33,12 +33,12 @@ Examples
     assertThat(view.getVisibility()).isEqualTo(View.GONE);
     ```
 
-When failing, the FEST Android assertion produces an output which allows you to immediately recognize the problem: `Expected visibility <gone> but was <invisible>`.
+When failing, the _FEST Android_ assertion produces an output which allows you to immediately recognize the problem: `Expected visibility <gone> but was <invisible>`.
 
-Compare that to the output of regular FEST `Expected:<[8]> but was:<[4]>` and regular JUnit `Expected: <8> but was: <4>` and you should immediately see the advantage.
+Compare that to the output of regular _FEST_ `Expected:<[8]> but was:<[4]>` and regular _JUnit_ `Expected: <8> but was: <4>` and you should immediately see the advantage.
 
 
-Because FEST Android offers assertions directly on objects rather than properties you can chain multiple assertions.
+Because _FEST Android_ offers assertions directly on objects rather than properties you can chain multiple assertions.
 
  *  FEST Android:
 
