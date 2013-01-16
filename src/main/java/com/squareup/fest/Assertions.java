@@ -2,6 +2,11 @@
 package com.squareup.fest;
 
 public class Assertions extends org.fest.assertions.api.Assertions {
+  public static com.squareup.fest.accounts.AccountAssert assertThat(
+      android.accounts.Account actual) {
+    return new com.squareup.fest.accounts.AccountAssert(actual);
+  }
+
   public static com.squareup.fest.app.ActionBarAssert assertThat(
       android.app.ActionBar actual) {
     return new com.squareup.fest.app.ActionBarAssert(actual);
