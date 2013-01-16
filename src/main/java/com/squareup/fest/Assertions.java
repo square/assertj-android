@@ -152,6 +152,26 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.content.res.ConfigurationAssert(actual);
   }
 
+  public static com.squareup.fest.database.AbstractCursor_Assert assertThat(
+      android.database.AbstractCursor actual) {
+    return new com.squareup.fest.database.AbstractCursor_Assert(actual);
+  }
+
+  public static com.squareup.fest.database.CursorAssert assertThat(
+      android.database.Cursor actual) {
+    return new com.squareup.fest.database.CursorAssert(actual);
+  }
+
+  public static com.squareup.fest.database.CursorWindowAssert assertThat(
+      android.database.CursorWindow actual) {
+    return new com.squareup.fest.database.CursorWindowAssert(actual);
+  }
+
+  public static com.squareup.fest.database.sqlite.SqliteDatabaseAssert assertThat(
+      android.database.sqlite.SQLiteDatabase actual) {
+    return new com.squareup.fest.database.sqlite.SqliteDatabaseAssert(actual);
+  }
+
   public static com.squareup.fest.graphics.BitmapAssert assertThat(
       android.graphics.Bitmap actual) {
     return new com.squareup.fest.graphics.BitmapAssert(actual);
