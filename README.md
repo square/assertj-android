@@ -69,6 +69,12 @@ Because _FEST Android_ offers assertions directly on objects rather than propert
 
 Assertions exist for nearly every object that you would ever want to test, from `LinearLayout` to `ActionBar` to `Fragment` to `MenuItem`. Everything in the support library is included too.
 
+To get started writing tests just add the following import:
+
+```java
+import static com.squareup.fest.Assertions.assertThat;
+```
+
 
 
 Extending
