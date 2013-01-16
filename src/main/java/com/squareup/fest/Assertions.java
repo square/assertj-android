@@ -7,6 +7,36 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.accounts.AccountAssert(actual);
   }
 
+  public static com.squareup.fest.animation.AnimatorAssert assertThat(
+      android.animation.Animator actual) {
+    return new com.squareup.fest.animation.AnimatorAssert(actual);
+  }
+
+  public static com.squareup.fest.animation.AnimatorSetAssert assertThat(
+      android.animation.AnimatorSet actual) {
+    return new com.squareup.fest.animation.AnimatorSetAssert(actual);
+  }
+
+  public static com.squareup.fest.animation.KeyframeAssert assertThat(
+      android.animation.Keyframe actual) {
+    return new com.squareup.fest.animation.KeyframeAssert(actual);
+  }
+
+  public static com.squareup.fest.animation.ObjectAnimatorAssert assertThat(
+      android.animation.ObjectAnimator actual) {
+    return new com.squareup.fest.animation.ObjectAnimatorAssert(actual);
+  }
+
+  public static com.squareup.fest.animation.PropertyValuesHolderAssert assertThat(
+      android.animation.PropertyValuesHolder actual) {
+    return new com.squareup.fest.animation.PropertyValuesHolderAssert(actual);
+  }
+
+  public static com.squareup.fest.animation.ValueAnimatorAssert assertThat(
+      android.animation.ValueAnimator actual) {
+    return new com.squareup.fest.animation.ValueAnimatorAssert(actual);
+  }
+
   public static com.squareup.fest.app.ActionBarAssert assertThat(
       android.app.ActionBar actual) {
     return new com.squareup.fest.app.ActionBarAssert(actual);
