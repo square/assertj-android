@@ -43,7 +43,7 @@ advantage.
 
 
 Because _FEST Android_ offers assertions directly on objects rather than
-properties you can chain multiple assertions.
+properties they can be chained together.
 
  *  FEST Android:
 
