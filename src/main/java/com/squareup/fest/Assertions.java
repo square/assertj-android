@@ -688,6 +688,11 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.view.animation.TransformationAssert(actual);
   }
 
+  public static com.squareup.fest.webkit.WebViewAssert assertThat(
+      android.webkit.WebView actual) {
+    return new com.squareup.fest.webkit.WebViewAssert(actual);
+  }
+
   public static com.squareup.fest.widget.AbsListViewAssert assertThat(
       android.widget.AbsListView actual) {
     return new com.squareup.fest.widget.AbsListViewAssert(actual);
