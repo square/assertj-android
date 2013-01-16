@@ -392,6 +392,36 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.inputmethodservice.ExtractEditTextAssert(actual);
   }
 
+  public static com.squareup.fest.location.AddressAssert assertThat(
+      android.location.Address actual) {
+    return new com.squareup.fest.location.AddressAssert(actual);
+  }
+
+  public static com.squareup.fest.location.CriteriaAssert assertThat(
+      android.location.Criteria actual) {
+    return new com.squareup.fest.location.CriteriaAssert(actual);
+  }
+
+  public static com.squareup.fest.location.GpsSatelliteAssert assertThat(
+      android.location.GpsSatellite actual) {
+    return new com.squareup.fest.location.GpsSatelliteAssert(actual);
+  }
+
+  public static com.squareup.fest.location.GpsStatusAssert assertThat(
+      android.location.GpsStatus actual) {
+    return new com.squareup.fest.location.GpsStatusAssert(actual);
+  }
+
+  public static com.squareup.fest.location.LocationAssert assertThat(
+      android.location.Location actual) {
+    return new com.squareup.fest.location.LocationAssert(actual);
+  }
+
+  public static com.squareup.fest.location.LocationProviderAssert assertThat(
+      android.location.LocationProvider actual) {
+    return new com.squareup.fest.location.LocationProviderAssert(actual);
+  }
+
   public static com.squareup.fest.support.v4.app.DialogFragmentAssert assertThat(
       android.support.v4.app.DialogFragment actual) {
     return new com.squareup.fest.support.v4.app.DialogFragmentAssert(actual);
