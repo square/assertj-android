@@ -116,6 +116,18 @@ public class CustomLayoutAssert extends AbstractLinearLayoutAssert<CustomLayoutA
 }
 ```
 
+To include this new assertion, create your own class which extends from `ANDROID`:
+
+```java
+public class MyAssertions extends ANDROID {
+  public static CustomLayoutAssert assertThat(CustomLayout actual) {
+    return new CustomLayoutAssert(actual);
+  }
+}
+```
+
+For more information about writing custom assertions see the [official documentation][2].
+
 
 
 Download
@@ -149,3 +161,9 @@ License
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+
+
+
+ [1]: TODO!
+ [2]: https://github.com/alexruiz/fest-assert-2.x/wiki/Creating-specific-assertions
