@@ -137,9 +137,9 @@ Download [the latest JAR][1] or grab via Maven:
 
 ```xml
 <dependency>
-  <groupId>com.squareup.fest</groupId>
+  <groupId>com.squareup</groupId>
   <artifactId>fest-android</artifactId>
-  <version>(insert latest version)</version>
+  <version>1.0.0</version>
 </version>
 ```
 
@@ -165,5 +165,5 @@ License
 
 
 
- [1]: TODO!
+ [1]: https://oss.sonatype.org/content/repositories/releases/com/squareup/fest-android/1.0.0/fest-android-1.0.0.jar
  [2]: https://github.com/alexruiz/fest-assert-2.x/wiki/Creating-specific-assertions
