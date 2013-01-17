@@ -1,6 +1,7 @@
 package com.squareup.fest.widget;
 
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import org.fest.assertions.api.AbstractAssert;
 
@@ -10,6 +11,15 @@ public abstract class AbstractAdapterViewAssert<S extends AbstractAdapterViewAss
     extends AbstractAssert<S, A> {
   protected AbstractAdapterViewAssert(A actual, Class<S> selfType) {
     super(actual, selfType);
+  }
+
+  public S hasAdapter(Adapter adapter) {
+    isNotNull();
+    Adapter actualAdapter = actual.getAdapter();
+    assertThat(actualAdapter) //
+        .overridingErrorMessage("Expected adapter <%s> but was <%s>.", adapter, actualAdapter) //
+        .isSameAs(adapter);
+    return myself;
   }
 
   public S hasCount(int count) {

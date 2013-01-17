@@ -500,6 +500,16 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.support.v4.view.ViewPagerAssert(actual);
   }
 
+  public static com.squareup.fest.support.v4.widget.CursorAdapterAssert assertThat(
+      android.support.v4.widget.CursorAdapter actual) {
+    return new com.squareup.fest.support.v4.widget.CursorAdapterAssert(actual);
+  }
+
+  public static com.squareup.fest.support.v4.widget.SimpleCursorAdapterAssert assertThat(
+      android.support.v4.widget.SimpleCursorAdapter actual) {
+    return new com.squareup.fest.support.v4.widget.SimpleCursorAdapterAssert(actual);
+  }
+
   public static com.squareup.fest.util.DisplayMetricsAssert assertThat(
       android.util.DisplayMetrics actual) {
     return new com.squareup.fest.util.DisplayMetricsAssert(actual);
@@ -700,6 +710,11 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.widget.AbsListViewAssert(actual);
   }
 
+  public static com.squareup.fest.widget.AbsSeekBarAssert assertThat(
+      android.widget.AbsSeekBar actual) {
+    return new com.squareup.fest.widget.AbsSeekBarAssert(actual);
+  }
+
   public static com.squareup.fest.widget.AbsSpinnerAssert assertThat(
       android.widget.AbsSpinner actual) {
     return new com.squareup.fest.widget.AbsSpinnerAssert(actual);
@@ -718,6 +733,11 @@ public class Assertions extends org.fest.assertions.api.Assertions {
   public static com.squareup.fest.widget.AdapterViewAssert assertThat(
       android.widget.AdapterView actual) {
     return new com.squareup.fest.widget.AdapterViewAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.ArrayAdapterAssert assertThat(
+      android.widget.ArrayAdapter actual) {
+    return new com.squareup.fest.widget.ArrayAdapterAssert(actual);
   }
 
   public static com.squareup.fest.widget.AutoCompleteTextViewAssert assertThat(
@@ -745,9 +765,19 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.widget.CompoundButtonAssert(actual);
   }
 
+  public static com.squareup.fest.widget.CursorAdapterAssert assertThat(
+      android.widget.CursorAdapter actual) {
+    return new com.squareup.fest.widget.CursorAdapterAssert(actual);
+  }
+
   public static com.squareup.fest.widget.DatePickerAssert assertThat(
       android.widget.DatePicker actual) {
     return new com.squareup.fest.widget.DatePickerAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.ExpandableListViewAssert assertThat(
+      android.widget.ExpandableListView actual) {
+    return new com.squareup.fest.widget.ExpandableListViewAssert(actual);
   }
 
   public static com.squareup.fest.widget.FrameLayoutAssert assertThat(
@@ -760,6 +790,21 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.widget.GridLayoutAssert(actual);
   }
 
+  public static com.squareup.fest.widget.GridViewAssert assertThat(
+      android.widget.GridView actual) {
+    return new com.squareup.fest.widget.GridViewAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.HeaderViewListAdapterAssert assertThat(
+      android.widget.HeaderViewListAdapter actual) {
+    return new com.squareup.fest.widget.HeaderViewListAdapterAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.HorizontalScrollViewAssert assertThat(
+      android.widget.HorizontalScrollView actual) {
+    return new com.squareup.fest.widget.HorizontalScrollViewAssert(actual);
+  }
+
   public static com.squareup.fest.widget.ImageViewAssert assertThat(
       android.widget.ImageView actual) {
     return new com.squareup.fest.widget.ImageViewAssert(actual);
@@ -770,9 +815,49 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.widget.LinearLayoutAssert(actual);
   }
 
+  public static com.squareup.fest.widget.ListAdapterAssert assertThat(
+      android.widget.ListAdapter actual) {
+    return new com.squareup.fest.widget.ListAdapterAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.ListPopupWindowAssert assertThat(
+      android.widget.ListPopupWindow actual) {
+    return new com.squareup.fest.widget.ListPopupWindowAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.ListViewAssert assertThat(
+      android.widget.ListView actual) {
+    return new com.squareup.fest.widget.ListViewAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.MediaControllerAssert assertThat(
+      android.widget.MediaController actual) {
+    return new com.squareup.fest.widget.MediaControllerAssert(actual);
+  }
+
   public static com.squareup.fest.widget.NumberPickerAssert assertThat(
       android.widget.NumberPicker actual) {
     return new com.squareup.fest.widget.NumberPickerAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.PopupWindowAssert assertThat(
+      android.widget.PopupWindow actual) {
+    return new com.squareup.fest.widget.PopupWindowAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.ProgressBarAssert assertThat(
+      android.widget.ProgressBar actual) {
+    return new com.squareup.fest.widget.ProgressBarAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.RadioGroupAssert assertThat(
+      android.widget.RadioGroup actual) {
+    return new com.squareup.fest.widget.RadioGroupAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.RatingBarAssert assertThat(
+      android.widget.RatingBar actual) {
+    return new com.squareup.fest.widget.RatingBarAssert(actual);
   }
 
   public static com.squareup.fest.widget.RelativeLayoutAssert assertThat(
@@ -785,6 +870,26 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.widget.ScrollViewAssert(actual);
   }
 
+  public static com.squareup.fest.widget.SearchViewAssert assertThat(
+      android.widget.SearchView actual) {
+    return new com.squareup.fest.widget.SearchViewAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.SimpleAdapterAssert assertThat(
+      android.widget.SimpleAdapter actual) {
+    return new com.squareup.fest.widget.SimpleAdapterAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.SimpleCursorAdapterAssert assertThat(
+      android.widget.SimpleCursorAdapter actual) {
+    return new com.squareup.fest.widget.SimpleCursorAdapterAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.SlidingDrawerAssert assertThat(
+      android.widget.SlidingDrawer actual) {
+    return new com.squareup.fest.widget.SlidingDrawerAssert(actual);
+  }
+
   public static com.squareup.fest.widget.SpinnerAssert assertThat(
       android.widget.Spinner actual) {
     return new com.squareup.fest.widget.SpinnerAssert(actual);
@@ -795,9 +900,24 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.widget.SwitchAssert(actual);
   }
 
+  public static com.squareup.fest.widget.TabHostAssert assertThat(
+      android.widget.TabHost actual) {
+    return new com.squareup.fest.widget.TabHostAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.TabWidgetAssert assertThat(
+      android.widget.TabWidget actual) {
+    return new com.squareup.fest.widget.TabWidgetAssert(actual);
+  }
+
   public static com.squareup.fest.widget.TableLayoutAssert assertThat(
       android.widget.TableLayout actual) {
     return new com.squareup.fest.widget.TableLayoutAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.TableRowAssert assertThat(
+      android.widget.TableRow actual) {
+    return new com.squareup.fest.widget.TableRowAssert(actual);
   }
 
   public static com.squareup.fest.widget.TextViewAssert assertThat(
@@ -820,6 +940,11 @@ public class Assertions extends org.fest.assertions.api.Assertions {
     return new com.squareup.fest.widget.ToggleButtonAssert(actual);
   }
 
+  public static com.squareup.fest.widget.VideoViewAssert assertThat(
+      android.widget.VideoView actual) {
+    return new com.squareup.fest.widget.VideoViewAssert(actual);
+  }
+
   public static com.squareup.fest.widget.ViewAnimatorAssert assertThat(
       android.widget.ViewAnimator actual) {
     return new com.squareup.fest.widget.ViewAnimatorAssert(actual);
@@ -833,5 +958,10 @@ public class Assertions extends org.fest.assertions.api.Assertions {
   public static com.squareup.fest.widget.ViewSwitcherAssert assertThat(
       android.widget.ViewSwitcher actual) {
     return new com.squareup.fest.widget.ViewSwitcherAssert(actual);
+  }
+
+  public static com.squareup.fest.widget.WrapperListAdapterAssert assertThat(
+      android.widget.WrapperListAdapter actual) {
+    return new com.squareup.fest.widget.WrapperListAdapterAssert(actual);
   }
 }
