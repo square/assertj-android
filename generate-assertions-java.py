@@ -62,6 +62,9 @@ with open(OUTPUT, 'w') as out:
     out.write('      %s actual) {\n' % target_package)
     out.write('    return new %s(actual);\n' % package)
     out.write('  }\n')
+  out.write('\n')
+  out.write('  protected ANDROID() {\n')
+  out.write('  }\n')
   out.write('}')
 
 print '\nNew ANDROID.java written!\n'

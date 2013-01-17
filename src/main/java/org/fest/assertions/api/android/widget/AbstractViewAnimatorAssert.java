@@ -3,6 +3,7 @@ package org.fest.assertions.api.android.widget;
 
 import android.view.View;
 import android.widget.ViewAnimator;
+import org.fest.assertions.api.ANDROID;
 import org.fest.assertions.api.android.view.AbstractViewGroupAssert;
 
 import static org.fest.assertions.api.Assertions.assertThat;
@@ -28,7 +29,7 @@ public abstract class AbstractViewAnimatorAssert<S extends AbstractViewAnimatorA
 
   public S hasDisplayedChildId(int id) {
     isNotNull();
-    assertThat(getDisplayedView()).hasId(id);
+    ANDROID.assertThat(getDisplayedView()).hasId(id);
     return myself;
   }
 

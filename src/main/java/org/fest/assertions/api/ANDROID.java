@@ -964,4 +964,7 @@ public class ANDROID {
       android.widget.WrapperListAdapter actual) {
     return new org.fest.assertions.api.android.widget.WrapperListAdapterAssert(actual);
   }
+
+  protected ANDROID() {
+  }
 }
