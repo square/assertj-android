@@ -7,7 +7,7 @@ SRC_DIR = 'src/main/java/'
 ABSTRACT = re.compile(r'public abstract class Abstract')
 TARGET = re.compile(r', (([^.]+).*?)> {')
 IMPORT = re.compile(r'import (android\..*?);')
-OUTPUT = 'src/main/java/com/squareup/fest/Assertions.java'
+OUTPUT = 'src/main/java/org/fest/assertions/api/ANDROID.java'
 
 assertions = []
 for root, dirs, files in os.walk(SRC_DIR):
@@ -53,9 +53,9 @@ with open(OUTPUT, 'w') as out:
   out.write('// Copyright 2012 Square, Inc.\n')
   out.write('//\n')
   out.write('// This class is generated. Do not modify directly!\n')
-  out.write('package com.squareup.fest;\n\n')
+  out.write('package org.fest.assertions.api;\n\n')
   out.write('/** Assertions for testing Android classes. */\n')
-  out.write('public class Assertions extends org.fest.assertions.api.Assertions {')
+  out.write('public class ANDROID {')
   for package, target_package in sorted(assertions, lambda x,y: cmp(x[0], y[0])):
     out.write('\n')
     out.write('  public static %s assertThat(\n' % package)
@@ -64,4 +64,4 @@ with open(OUTPUT, 'w') as out:
     out.write('  }\n')
   out.write('}')
 
-print '\nNew Assertions.java written!\n'
+print '\nNew ANDROID.java written!\n'

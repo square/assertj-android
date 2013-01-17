@@ -1,0 +1,546 @@
+package org.fest.assertions.api.android.widget;
+
+import android.widget.TextView;
+import org.fest.assertions.api.android.view.AbstractViewAssert;
+
+import static org.fest.assertions.api.Assertions.assertThat;
+
+public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S, A>, A extends TextView>
+    extends AbstractViewAssert<S, A> {
+  protected AbstractTextViewAssert(A actual, Class<S> selfType) {
+    super(actual, selfType);
+  }
+
+  public S hasAutoLinkMask(int mask) {
+    isNotNull();
+    int actualMask = actual.getAutoLinkMask();
+    assertThat(actualMask) //
+        .overridingErrorMessage("Expected auto-link mask <%s> but was <%s>.", mask, actualMask) //
+        .isEqualTo(mask);
+    return myself;
+  }
+
+  public S hasCompoundDrawablePadding(int padding) {
+    isNotNull();
+    int actualPadding = actual.getCompoundDrawablePadding();
+    assertThat(actualPadding) //
+        .overridingErrorMessage("Expected compound drawable padding <%s> but was <%s>.", padding,
+            actualPadding) //
+        .isEqualTo(padding);
+    return myself;
+  }
+
+  public S hasCompoundPaddingBottom(int padding) {
+    isNotNull();
+    int actualPadding = actual.getCompoundPaddingBottom();
+    assertThat(actualPadding) //
+        .overridingErrorMessage("Expected compound drawable bottom padding <%s> but was <%s>.",
+            padding, actualPadding) //
+        .isEqualTo(padding);
+    return myself;
+  }
+
+  // TODO API 17
+  //public S hasCompoundPaddingEnd(int padding) {
+  //  isNotNull();
+  //  int actualPadding = actual.getCompoundPaddingEnd();
+  //  assertThat(actualPadding) //
+  //      .overridingErrorMessage("Expected compound drawable end padding <%s> but was <%s>.",
+  //          padding, actualPadding) //
+  //      .isEqualTo(padding);
+  //  return myself;
+  //}
+
+  public S hasCompoundPaddingLeft(int padding) {
+    isNotNull();
+    int actualPadding = actual.getCompoundPaddingLeft();
+    assertThat(actualPadding) //
+        .overridingErrorMessage("Expected compound drawable left padding <%s> but was <%s>.",
+            padding, actualPadding) //
+        .isEqualTo(padding);
+    return myself;
+  }
+
+  public S hasCompoundPaddingRight(int padding) {
+    isNotNull();
+    int actualPadding = actual.getCompoundPaddingRight();
+    assertThat(actualPadding) //
+        .overridingErrorMessage("Expected compound drawable right padding <%s> but was <%s>.",
+            padding, actualPadding) //
+        .isEqualTo(padding);
+    return myself;
+  }
+
+  // TODO API 17
+  //public S hasCompoundPaddingStart(int padding) {
+  //  isNotNull();
+  //  int actualPadding = actual.getCompoundPaddingStart();
+  //  assertThat(actualPadding) //
+  //      .overridingErrorMessage("Expected compound drawable start padding <%s> but was <%s>.",
+  //          padding, actualPadding) //
+  //      .isEqualTo(padding);
+  //  return myself;
+  //}
+
+  public S hasCompoundPaddingTop(int padding) {
+    isNotNull();
+    int actualPadding = actual.getCompoundPaddingTop();
+    assertThat(actualPadding) //
+        .overridingErrorMessage("Expected compound drawable top padding <%s> but was <%s>.",
+            padding, actualPadding) //
+        .isEqualTo(padding);
+    return myself;
+  }
+
+  public S hasCurrentHintTextColor(int color) {
+    isNotNull();
+    int actualColor = actual.getCurrentHintTextColor();
+    assertThat(actualColor) //
+        .overridingErrorMessage("Expected current hint text color <%s> but was <%s>.",
+            Integer.toHexString(color), Integer.toHexString(actualColor)) //
+        .isEqualTo(color);
+    return myself;
+  }
+
+  public S hasCurrentTextColor(int color) {
+    isNotNull();
+    int actualColor = actual.getCurrentTextColor();
+    assertThat(actualColor) //
+        .overridingErrorMessage("Expected current text color <%s> but was <%s>.",
+            Integer.toHexString(color), Integer.toHexString(actualColor)) //
+        .isEqualTo(color);
+    return myself;
+  }
+
+  public S hasExtendedPaddingBottom(int padding) {
+    isNotNull();
+    int actualPadding = actual.getExtendedPaddingBottom();
+    assertThat(actualPadding) //
+        .overridingErrorMessage("Expected extended bottom padding <%s> but was <%s>.", padding,
+            actualPadding) //
+        .isEqualTo(padding);
+    return myself;
+  }
+
+  public S hasExtendedPaddingTop(int padding) {
+    isNotNull();
+    int actualPadding = actual.getExtendedPaddingTop();
+    assertThat(actualPadding) //
+        .overridingErrorMessage("Expected extended top padding <%s> but was <%s>.", padding,
+            actualPadding) //
+        .isEqualTo(padding);
+    return myself;
+  }
+
+  public S hasFreezesText(boolean freezes) {
+    isNotNull();
+    boolean actualFreezes = actual.getFreezesText();
+    assertThat(actualFreezes) //
+        .overridingErrorMessage("Expected freezes text <%s> but was <%s>.", freezes,
+            actualFreezes) //
+        .isEqualTo(freezes);
+    return myself;
+  }
+
+  public S hasGravity(int gravity) {
+    isNotNull();
+    int actualGravity = actual.getGravity();
+    // TODO tostring the flags for output
+    assertThat(actualGravity) //
+        .overridingErrorMessage("Expected gravity <%s> but was <%s>.", gravity, actualGravity) //
+        .isEqualTo(gravity);
+    return myself;
+  }
+
+  public S hasHighlightColor(int color) {
+    isNotNull();
+    int actualColor = actual.getHighlightColor();
+    assertThat(actualColor) //
+        .overridingErrorMessage("Expected highlight color <%s> but was <%s>.",
+            Integer.toHexString(color), Integer.toHexString(actualColor)) //
+        .isEqualTo(color);
+    return myself;
+  }
+
+  public S hasHint(CharSequence hint) {
+    isNotNull();
+    CharSequence actualHint = actual.getHint();
+    assertThat(actualHint) //
+        .overridingErrorMessage("Expected hint <%s> but was <%s>.", hint, actualHint) //
+        .isEqualTo(hint);
+    return myself;
+  }
+
+  public S hasImeActionId(int id) {
+    isNotNull();
+    int actualId = actual.getImeActionId();
+    assertThat(actualId) //
+        .overridingErrorMessage("Expected IME action ID <%s> but was <%s>.", id, actualId) //
+        .isEqualTo(id);
+    return myself;
+  }
+
+  public S hasImeActionLabel(CharSequence label) {
+    isNotNull();
+    CharSequence actualLabel = actual.getImeActionLabel();
+    assertThat(actualLabel) //
+        .overridingErrorMessage("Expected IME action label <%s> but was <%s>.", label,
+            actualLabel) //
+        .isEqualTo(label);
+    return myself;
+  }
+
+  public S hasImeOptions(int options) {
+    isNotNull();
+    int actualOptions = actual.getImeOptions();
+    assertThat(actualOptions) //
+        // TODO tostring flags values
+        .overridingErrorMessage("Expected IME options <%s> but was <%s>.", options, actualOptions) //
+        .isEqualTo(options);
+    return myself;
+  }
+
+  public S isIncludingFontPadding() {
+    isNotNull();
+    assertThat(actual.getIncludeFontPadding()) //
+        .overridingErrorMessage("Expected to be including font padding but was not.") //
+        .isTrue();
+    return myself;
+  }
+
+  public S isNotIncludingFontPadding() {
+    isNotNull();
+    assertThat(actual.getIncludeFontPadding()) //
+        .overridingErrorMessage("Expected to not be including font padding but was.") //
+        .isFalse();
+    return myself;
+  }
+
+  public S hasInputType(int type) {
+    isNotNull();
+    int actualType = actual.getInputType();
+    assertThat(actualType) //
+        .overridingErrorMessage("Expected input type <%s> but was <%s>.", type, actualType) //
+        .isEqualTo(type);
+    return myself;
+  }
+
+  public S hasLineCount(int count) {
+    isNotNull();
+    int actualCount = actual.getLineCount();
+    assertThat(actualCount) //
+        .overridingErrorMessage("Expected line count <%s> but was <%s>.", count, actualCount) //
+        .isEqualTo(count);
+    return myself;
+  }
+
+  public S hasLineHeight(int height) {
+    isNotNull();
+    int actualHeight = actual.getLineHeight();
+    assertThat(actualHeight) //
+        .overridingErrorMessage("Expected line height <%s> but was <%s>.", height, actualHeight) //
+        .isEqualTo(height);
+    return myself;
+  }
+
+  public S hasLineSpacingExtra(float extra) {
+    isNotNull();
+    float actualExtra = actual.getLineSpacingExtra();
+    assertThat(actualExtra) //
+        .overridingErrorMessage("Expected line spacing extra <%s> but was <%s>.", extra,
+            actualExtra) //
+        .isEqualTo(extra);
+    return myself;
+  }
+
+  public S hasLineSpacingMultiplier(float multiplier) {
+    isNotNull();
+    float actualMultiplier = actual.getLineSpacingMultiplier();
+    assertThat(actualMultiplier) //
+        .overridingErrorMessage("Expected line spacing multiplier <%s> but was <%s>.", multiplier,
+            actualMultiplier) //
+        .isEqualTo(multiplier);
+    return myself;
+  }
+
+  public S hasMarqueeRepeatLimit(int limit) {
+    isNotNull();
+    int actualLimit = actual.getMarqueeRepeatLimit();
+    assertThat(actualLimit) //
+        .overridingErrorMessage("Expected marquee repeat limit <%s> but was <%s>.", limit,
+            actualLimit) //
+        .isEqualTo(limit);
+    return myself;
+  }
+
+  public S hasMaxEms(int ems) {
+    isNotNull();
+    int actualEms = actual.getMaxEms();
+    assertThat(actualEms) //
+        .overridingErrorMessage("Expected maximum EMs <%s> but was <%s>.", ems, actualEms) //
+        .isEqualTo(ems);
+    return myself;
+  }
+
+  public S hasMaxHeight(int height) {
+    isNotNull();
+    int actualHeight = actual.getMaxHeight();
+    assertThat(actualHeight) //
+        .overridingErrorMessage("Expected maximum height <%s> but was <%s>.", height,
+            actualHeight) //
+        .isEqualTo(height);
+    return myself;
+  }
+
+  public S hasMaxLines(int lines) {
+    isNotNull();
+    int actualLines = actual.getMaxLines();
+    assertThat(actualLines) //
+        .overridingErrorMessage("Expected maximum lines <%s> but was <%s>.", lines, actualLines) //
+        .isEqualTo(lines);
+    return myself;
+  }
+
+  public S hasMaxWidth(int ems) {
+    isNotNull();
+    int actualWidth = actual.getMaxWidth();
+    assertThat(actualWidth) //
+        .overridingErrorMessage("Expected maximum width <%s> but was <%s>.", ems, actualWidth) //
+        .isEqualTo(ems);
+    return myself;
+  }
+
+  public S hasMinEms(int ems) {
+    isNotNull();
+    int actualEms = actual.getMinEms();
+    assertThat(actualEms) //
+        .overridingErrorMessage("Expected minimum EMs <%s> but was <%s>.", ems, actualEms) //
+        .isEqualTo(ems);
+    return myself;
+  }
+
+  public S hasMinHeight(int height) {
+    isNotNull();
+    int actualHeight = actual.getMinHeight();
+    assertThat(actualHeight) //
+        .overridingErrorMessage("Expected minimum height <%s> but was <%s>.", height,
+            actualHeight) //
+        .isEqualTo(height);
+    return myself;
+  }
+
+  public S hasMinLines(int lines) {
+    isNotNull();
+    int actualLines = actual.getMinLines();
+    assertThat(actualLines) //
+        .overridingErrorMessage("Expected minimum lines <%s> but was <%s>.", lines, actualLines) //
+        .isEqualTo(lines);
+    return myself;
+  }
+
+  public S hasMinWidth(int ems) {
+    isNotNull();
+    int actualWidth = actual.getMinWidth();
+    assertThat(actualWidth) //
+        .overridingErrorMessage("Expected minimum width <%s> but was <%s>.", ems, actualWidth) //
+        .isEqualTo(ems);
+    return myself;
+  }
+
+  public S hasPaintFlags(int flags) {
+    isNotNull();
+    int actualFlags = actual.getPaintFlags();
+    assertThat(actualFlags) //
+        .overridingErrorMessage("Expected paint flags <%s> but was <%s>.", flags, actualFlags) //
+        .isEqualTo(flags);
+    return myself;
+  }
+
+  public S hasSelectionEnd(int position) {
+    isNotNull();
+    int actualPosition = actual.getSelectionEnd();
+    assertThat(actualPosition) //
+        .overridingErrorMessage("Expected selection end <%s> but was <%s>.", position,
+            actualPosition) //
+        .isEqualTo(position);
+    return myself;
+  }
+
+  public S hasSelectionStart(int position) {
+    isNotNull();
+    int actualPosition = actual.getSelectionStart();
+    assertThat(actualPosition) //
+        .overridingErrorMessage("Expected selection start <%s> but was <%s>.", position,
+            actualPosition) //
+        .isEqualTo(position);
+    return myself;
+  }
+
+  public S hasShadowColor(int color) {
+    isNotNull();
+    int actualColor = actual.getShadowColor();
+    assertThat(actualColor) //
+        .overridingErrorMessage("Expected shadow color <%s> but was <%s>.",
+            Integer.toHexString(color), Integer.toHexString(actualColor)) //
+        .isEqualTo(color);
+    return myself;
+  }
+
+  public S hasShadowDx(float dx) {
+    isNotNull();
+    float actualDx = actual.getShadowDx();
+    assertThat(actualDx) //
+        .overridingErrorMessage("Expected shadow DX <%s> but was <%s>.", dx, actualDx) //
+        .isEqualTo(dx);
+    return myself;
+  }
+
+  public S hasShadowDy(float dy) {
+    isNotNull();
+    float actualDy = actual.getShadowDy();
+    assertThat(actualDy) //
+        .overridingErrorMessage("Expected shadow DY <%s> but was <%s>.", dy, actualDy) //
+        .isEqualTo(dy);
+    return myself;
+  }
+
+  public S hasShadowRadius(float radius) {
+    isNotNull();
+    float actualRadius = actual.getShadowRadius();
+    assertThat(actualRadius) //
+        .overridingErrorMessage("Expected shadow radius <%s> but was <%s>.", radius,
+            actualRadius) //
+        .isEqualTo(radius);
+    return myself;
+  }
+
+  public S hasText(CharSequence text) {
+    isNotNull();
+    CharSequence actualText = actual.getText();
+    assertThat(actualText) //
+        .overridingErrorMessage("Expected text <%s> but was <%s>", text, actualText) //
+        .isEqualTo(text);
+    return myself;
+  }
+
+  public S hasTextScaleX(float scale) {
+    isNotNull();
+    float actualScale = actual.getTextScaleX();
+    assertThat(actualScale) //
+        .overridingErrorMessage("Expected text X scale <%s> but was <%s>.", scale, actualScale) //
+        .isEqualTo(scale);
+    return myself;
+  }
+
+  public S hasTextSize(float size) {
+    isNotNull();
+    float actualSize = actual.getTextSize();
+    assertThat(actualSize) //
+        .overridingErrorMessage("Expected text size <%s> but was <%s>.", size, actualSize) //
+        .isEqualTo(size);
+    return myself;
+  }
+
+  public S hasTotalPaddingBottom(int padding) {
+    isNotNull();
+    int actualPadding = actual.getTotalPaddingBottom();
+    assertThat(actualPadding) //
+        .overridingErrorMessage("Expected total bottom padding <%s> but was <%s>.", padding,
+            actualPadding) //
+        .isEqualTo(padding);
+    return myself;
+  }
+
+  // TODO API 17
+  //public S hasTotalPaddingEnd(int padding) {
+  //  isNotNull();
+  //  int actualPadding = actual.getTotalPaddingEnd();
+  //  assertThat(actualPadding) //
+  //      .overridingErrorMessage("Expected total end padding <%s> but was <%s>.", padding,
+  //          actualPadding) //
+  //      .isEqualTo(padding);
+  //  return myself;
+  //}
+
+  public S hasTotalPaddingLeft(int padding) {
+    isNotNull();
+    int actualPadding = actual.getTotalPaddingLeft();
+    assertThat(actualPadding) //
+        .overridingErrorMessage("Expected total left padding <%s> but was <%s>.", padding,
+            actualPadding) //
+        .isEqualTo(padding);
+    return myself;
+  }
+
+  public S hasTotalPaddingRight(int padding) {
+    isNotNull();
+    int actualPadding = actual.getTotalPaddingRight();
+    assertThat(actualPadding) //
+        .overridingErrorMessage("Expected total right padding <%s> but was <%s>.", padding,
+            actualPadding) //
+        .isEqualTo(padding);
+    return myself;
+  }
+
+  // TODO API 17
+  //public S hasTotalPaddingStart(int padding) {
+  //  isNotNull();
+  //  int actualPadding = actual.getTotalPaddingStart();
+  //  assertThat(actualPadding) //
+  //      .overridingErrorMessage("Expected total start padding <%s> but was <%s>.", padding,
+  //          actualPadding) //
+  //      .isEqualTo(padding);
+  //  return myself;
+  //}
+
+  public S hasTotalPaddingTop(int padding) {
+    isNotNull();
+    int actualPadding = actual.getTotalPaddingTop();
+    assertThat(actualPadding) //
+        .overridingErrorMessage("Expected total top padding <%s> but was <%s>.", padding,
+            actualPadding) //
+        .isEqualTo(padding);
+    return myself;
+  }
+
+  public S isCursorVisible() {
+    isNotNull();
+    assertThat(actual.isCursorVisible()) //
+        .overridingErrorMessage("Expected cursor to be visible but was not visible.") //
+        .isTrue();
+    return myself;
+  }
+
+  public S isCursorNotVisible() {
+    isNotNull();
+    assertThat(actual.isCursorVisible()) //
+        .overridingErrorMessage("Expected cursor to not be visible but was visible.") //
+        .isFalse();
+    return myself;
+  }
+
+  public S hasSelectableText() {
+    isNotNull();
+    assertThat(actual.isTextSelectable()) //
+        .overridingErrorMessage("Expected text to be selectable but was not.") //
+        .isTrue();
+    return myself;
+  }
+
+  public S hasUnselectableText() {
+    isNotNull();
+    assertThat(actual.isTextSelectable()) //
+        .overridingErrorMessage("Expected text to not be selectable but was.") //
+        .isFalse();
+    return myself;
+  }
+
+  public S hasLength(int length) {
+    isNotNull();
+    int actualLength = actual.length();
+    assertThat(actualLength) //
+        .overridingErrorMessage("Expected length <%s> but was <%s>.", length, actualLength) //
+        .isEqualTo(length);
+    return myself;
+  }
+}
