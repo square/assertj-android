@@ -1,0 +1,80 @@
+body {
+  /* http://www.dinpattern.com/2011/03/21/waves// */
+  background: #fff4f1 url('waves.png') repeat;
+  color: #222;
+  font: 14px/19px Roboto, sans-serif;
+  font-weight: 400;
+  letter-spacing: .1
+}
+
+a, a:hover {
+  color: #666;
+  text-decoration: underline;
+}
+a.btn {
+  text-decoration: none;
+}
+
+pre, code {
+  background: rgba(255, 255, 255, 0.5);
+}
+pre {
+  overflow: auto;
+  word-wrap: normal;
+  white-space: pre;
+}
+code {
+  white-space: nowrap;
+  color: #555;
+}
+
+.lead {
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 60px;
+}
+.lead h1 {
+  font-size: 90px;
+  line-height: 90px;
+  margin-bottom: 15px;
+  font-weight: 300;
+}
+.lead h3 {
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+h5 {
+  font-size: 13px;
+  margin-bottom: 4px;
+  color: #555;
+  text-transform: uppercase;
+}
+.bad h5 {
+  color: #888;
+}
+.bad {
+  opacity: 0.99;
+}
+
+.examples .span6 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.section {
+  margin-top: 40px;
+}
+
+.foot {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+#ribbon img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+}
