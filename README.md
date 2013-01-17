@@ -7,7 +7,7 @@ Writing tests is not the most glamorous part of developing an Android
 application but it is an invaluable one. Using libaries like JUnit and FEST
 provide a great starting point for writing tests.
 
-This library is an extension of FEST which aims to make it even easier to test
+This library is an extension of [**FEST**](http://fest.easytesting.org) which aims to make it even easier to test
 Android.
 
 
