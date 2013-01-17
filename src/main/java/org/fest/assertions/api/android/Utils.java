@@ -7,7 +7,7 @@ public final class Utils {
     StringBuilder builder = new StringBuilder();
     for (String part : parts) {
       if (builder.length() > 0) {
-        builder.append(",");
+        builder.append(", ");
       }
       builder.append(part);
     }
