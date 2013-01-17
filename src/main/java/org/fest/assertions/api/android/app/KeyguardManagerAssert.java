@@ -46,15 +46,15 @@ public class KeyguardManagerAssert extends AbstractAssert<KeyguardManagerAssert,
   public KeyguardManagerAssert hasSecureKeyguard() {
     isNotNull();
     assertThat(actual.isKeyguardSecure()) //
-        .overridingErrorMessage("Expected secure keyguard but was unsecure.") //
+        .overridingErrorMessage("Expected secure keyguard but was insecure.") //
         .isTrue();
     return this;
   }
 
-  public KeyguardManagerAssert hasUnsecureKeyguard() {
+  public KeyguardManagerAssert hasInsecureKeyguard() {
     isNotNull();
     assertThat(actual.isKeyguardSecure()) //
-        .overridingErrorMessage("Expected unsecure keygaurd but was secure.") //
+        .overridingErrorMessage("Expected insecure keyguard but was secure.") //
         .isFalse();
     return this;
   }
