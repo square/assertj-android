@@ -12,7 +12,7 @@ public class CursorLoaderAssert extends AbstractLoaderAssert<CursorLoaderAssert,
     super(actual, CursorLoaderAssert.class);
   }
 
-  public CursorLoaderAssert hasProjection(String[] projection) {
+  public CursorLoaderAssert hasProjection(String... projection) {
     isNotNull();
     assertThat(actual.getProjection()).isEqualTo(projection);
     return this;
@@ -34,7 +34,7 @@ public class CursorLoaderAssert extends AbstractLoaderAssert<CursorLoaderAssert,
     return this;
   }
 
-  public CursorLoaderAssert hasSelectionArgs(String[] selectionArgs) {
+  public CursorLoaderAssert hasSelectionArgs(String... selectionArgs) {
     isNotNull();
     assertThat(actual.getSelectionArgs()).isEqualTo(selectionArgs);
     return this;
