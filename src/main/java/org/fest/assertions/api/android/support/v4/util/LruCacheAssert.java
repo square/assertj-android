@@ -3,6 +3,7 @@ package org.fest.assertions.api.android.support.v4.util;
 
 import android.support.v4.util.LruCache;
 import org.fest.assertions.api.AbstractAssert;
+import org.fest.assertions.api.MapAssert;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
@@ -10,6 +11,14 @@ import static org.fest.assertions.api.Assertions.assertThat;
 public class LruCacheAssert extends AbstractAssert<LruCacheAssert, LruCache> {
   public LruCacheAssert(LruCache actual) {
     super(actual, LruCacheAssert.class);
+  }
+
+  public LruCacheAssert hasEntry(Object entry) {
+    isNotNull();
+    MapAssert a = assertThat(actual.snapshot());
+    a.overridingErrorMessage("Expected to contain entry with key <%s> but did not.");
+    a.containsKey(entry);
+    return this;
   }
 
   public LruCacheAssert hasCreateCount(int count) {
