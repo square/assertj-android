@@ -19,7 +19,7 @@
             <h1>FEST Android</h1>
             <h3>A set of FEST assertions geared toward testing Android.</h3>
             <ul class="unstyled">
-                <li><a href="http://github.com/square/fest-android" class="btn btn-large btn-inverse" id="download">Download</a></li>
+                <li><a href="https://oss.sonatype.org/content/repositories/releases/com/squareup/fest-android/1.0.0/fest-android-1.0.0.jar" class="btn btn-large btn-inverse" id="download">Download v1.0.0</a></li>
             </ul>
       </div>
     </div>
@@ -123,11 +123,11 @@ assertThat(layout.getShowDividers()).isEqualTo(SHOW_DIVIDERS_MIDDLE);</pre>
     <div class="row section">
       <div class="span10 offset1">
         <h5>Download</h5>
-        <p>Download <a href="#">the latest jar</a> or grab via Maven:</p>
+        <p>Download <a href="https://oss.sonatype.org/content/repositories/releases/com/squareup/fest-android/1.0.0/fest-android-1.0.0.jar">the latest jar</a> or grab via Maven:</p>
         <pre class="prettyprint">&lt;dependency>
-  &lt;groupId>com.squareup.fest&lt;/groupId>
+  &lt;groupId>com.squareup&lt;/groupId>
   &lt;artifactId>fest-android&lt;/artifactId>
-  &lt;version><span class="version">(insert latest version)</span>&lt;/version>
+  &lt;version>1.0.0&lt;/version>
 &lt;/version></pre>
       </div>
     </div>
@@ -139,22 +139,5 @@ assertThat(layout.getShowDividers()).isEqualTo(SHOW_DIVIDERS_MIDDLE);</pre>
 <script src="static/prettify.js"></script>
 <script> prettyPrint(); </script>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
-<script>
-    $.getJSON('https://api.github.com/repos/square/fest-android/tags?callback=?', function(response) {
-        var meta = response.meta
-          , data = response.data
-          ;
-
-        data.sort(function(o1, o2) {
-            return (o1.name > o2.name) ? -1 : 1;
-        });
-
-        // Ensure we only get the version information.
-        var last = data[0].name.match(/\d+\.\d+\.\d+/);
-
-        $('#download').text('Download v' + last);
-        $('.version').text(last);
-    });
-</script>
 </body>
 </html>
