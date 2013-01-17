@@ -116,7 +116,7 @@ public class CustomLayoutAssert extends AbstractLinearLayoutAssert<CustomLayoutA
 }
 ```
 
-To include this new assertion, create your own class which extends from `ANDROID`:
+To include this new assertion, create your own class which extends from `ANDROID`.
 
 ```java
 public class MyAssertions extends ANDROID {

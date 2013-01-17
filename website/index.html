@@ -111,7 +111,7 @@ assertThat(layout.getShowDividers()).isEqualTo(SHOW_DIVIDERS_MIDDLE);</pre>
     return this;
   }
 }</pre>
-        <p>To include this new assertion, create your own class which extends from <code>ANDROID</code>:</p>
+        <p>To include this new assertion, create your own class which extends from <code>ANDROID</code>.</p>
         <pre class="prettyprint">public class MyAssertions extends ANDROID {
   public static CustomLayoutAssert assertThat(CustomLayout actual) {
     return new CustomLayoutAssert(actual);
