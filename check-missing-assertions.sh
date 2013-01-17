@@ -4,7 +4,7 @@ ASSERTIONS=`\find src/main/java -type f | \grep "Assert.java" | \sed 's|src/main
 MISSING=0
 
 for assertion in $ASSERTIONS; do
-	\grep "$assertion" src/main/java/com/squareup/fest/Assertions.java > /dev/null
+	\grep "$assertion" src/main/java/org/fest/assertions/api/ANDROID.java > /dev/null
 	if [ $? -ne 0 ]; then
 		echo "MISSING: $assertion"
 		MISSING=1

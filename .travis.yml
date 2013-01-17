@@ -6,3 +6,6 @@ branches:
 
 notifications:
   email: false
+
+before_install:
+ - ./check-missing-assertions.sh
