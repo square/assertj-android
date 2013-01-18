@@ -2,25 +2,24 @@ package org.fest.assertions.api.android.util;
 
 import android.util.LruCache;
 import org.fest.assertions.api.AbstractAssert;
-import org.fest.assertions.api.MapAssert;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
 /** Assertions for {@link LruCache} instances. */
-public class LruCacheAssert extends AbstractAssert<LruCacheAssert, LruCache> {
-  public LruCacheAssert(LruCache actual) {
+public class LruCacheAssert<K, V> extends AbstractAssert<LruCacheAssert<K, V>, LruCache<K, V>> {
+  public LruCacheAssert(LruCache<K, V> actual) {
     super(actual, LruCacheAssert.class);
   }
 
-  public LruCacheAssert hasEntry(Object entry) {
+  public LruCacheAssert<K, V> hasEntry(K key) {
     isNotNull();
-    MapAssert a = assertThat(actual.snapshot());
-    a.overridingErrorMessage("Expected to contain entry with key <%s> but did not.");
-    a.containsKey(entry);
+    assertThat(actual.snapshot()) //
+        .overridingErrorMessage("Expected to contain entry with key <%s> but did not.") //
+        .containsKey(key);
     return this;
   }
 
-  public LruCacheAssert hasCreateCount(int count) {
+  public LruCacheAssert<K, V> hasCreateCount(int count) {
     isNotNull();
     int actualCount = actual.createCount();
     assertThat(actualCount) //
@@ -29,7 +28,7 @@ public class LruCacheAssert extends AbstractAssert<LruCacheAssert, LruCache> {
     return this;
   }
 
-  public LruCacheAssert hasEvictionCount(int count) {
+  public LruCacheAssert<K, V> hasEvictionCount(int count) {
     isNotNull();
     int actualCount = actual.evictionCount();
     assertThat(actualCount) //
@@ -38,7 +37,7 @@ public class LruCacheAssert extends AbstractAssert<LruCacheAssert, LruCache> {
     return this;
   }
 
-  public LruCacheAssert hasHitCount(int count) {
+  public LruCacheAssert<K, V> hasHitCount(int count) {
     isNotNull();
     int actualCount = actual.hitCount();
     assertThat(actualCount) //
@@ -47,7 +46,7 @@ public class LruCacheAssert extends AbstractAssert<LruCacheAssert, LruCache> {
     return this;
   }
 
-  public LruCacheAssert hasMaxSize(int size) {
+  public LruCacheAssert<K, V> hasMaxSize(int size) {
     isNotNull();
     int actualSize = actual.maxSize();
     assertThat(actualSize) //
@@ -56,7 +55,7 @@ public class LruCacheAssert extends AbstractAssert<LruCacheAssert, LruCache> {
     return this;
   }
 
-  public LruCacheAssert hasMissCount(int count) {
+  public LruCacheAssert<K, V> hasMissCount(int count) {
     isNotNull();
     int actualCount = actual.missCount();
     assertThat(actualCount) //
@@ -65,7 +64,7 @@ public class LruCacheAssert extends AbstractAssert<LruCacheAssert, LruCache> {
     return this;
   }
 
-  public LruCacheAssert hasPutCount(int count) {
+  public LruCacheAssert<K, V> hasPutCount(int count) {
     isNotNull();
     int actualCount = actual.putCount();
     assertThat(actualCount) //
@@ -74,7 +73,7 @@ public class LruCacheAssert extends AbstractAssert<LruCacheAssert, LruCache> {
     return this;
   }
 
-  public LruCacheAssert hasSize(int size) {
+  public LruCacheAssert<K, V> hasSize(int size) {
     isNotNull();
     int actualSize = actual.size();
     assertThat(actualSize) //

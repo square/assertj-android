@@ -5,7 +5,7 @@ import re
 
 SRC_DIR = 'src/main/java/'
 ABSTRACT = re.compile(r'public abstract class Abstract')
-TARGET = re.compile(r', (([^.]+).*?)> {')
+TARGET = re.compile(r'\s[A-Z][A-Za-z0-9_]+<[A-Z][A-Za-z0-9_]+(<.+?>)?, (([A-Z][A-Za-z0-9_]+).*?)(<.+?>)?> {')
 IMPORT = re.compile(r'import (android\..*?);')
 OUTPUT = 'src/main/java/org/fest/assertions/api/ANDROID.java'
 
@@ -26,10 +26,12 @@ for root, dirs, files in os.walk(SRC_DIR):
       continue # Abstract class.
 
     type_match = TARGET.search(java)
-    import_type = type_match.group(2)
-    target_type = type_match.group(1)
+    import_type = type_match.group(3)
+    target_type = type_match.group(2)
+    generics    = type_match.group(4)
     print 'import type:', import_type
     print 'target type:', target_type
+    print 'generics   :', generics
 
     import_package = None
     for match in IMPORT.finditer(java):
@@ -43,8 +45,14 @@ for root, dirs, files in os.walk(SRC_DIR):
     print 'import package:', import_package
     print 'target package:', target_package
 
+    generic_keys = ''
+    if generics:
+      package += generics
+      target_package += generics
+      generic_keys = generics + ' '
+
     assertions.append(
-      (package, target_package)
+      (package, target_package, generic_keys)
     )
 
 print '-'*80
@@ -56,9 +64,9 @@ with open(OUTPUT, 'w') as out:
   out.write('package org.fest.assertions.api;\n\n')
   out.write('/** Assertions for testing Android classes. */\n')
   out.write('public class ANDROID {')
-  for package, target_package in sorted(assertions, lambda x,y: cmp(x[0], y[0])):
+  for package, target_package, generic_keys in sorted(assertions, lambda x,y: cmp(x[0], y[0])):
     out.write('\n')
-    out.write('  public static %s assertThat(\n' % package)
+    out.write('  public static %s%s assertThat(\n' % (generic_keys, package))
     out.write('      %s actual) {\n' % target_package)
     out.write('    return new %s(actual);\n' % package)
     out.write('  }\n')
