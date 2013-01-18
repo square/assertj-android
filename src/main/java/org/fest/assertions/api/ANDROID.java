@@ -485,9 +485,9 @@ public class ANDROID {
     return new org.fest.assertions.api.android.support.v4.content.LoaderAssert(actual);
   }
 
-  public static org.fest.assertions.api.android.support.v4.util.LruCacheAssert assertThat(
-      android.support.v4.util.LruCache actual) {
-    return new org.fest.assertions.api.android.support.v4.util.LruCacheAssert(actual);
+  public static <K, V> org.fest.assertions.api.android.support.v4.util.LruCacheAssert<K, V> assertThat(
+      android.support.v4.util.LruCache<K, V> actual) {
+    return new org.fest.assertions.api.android.support.v4.util.LruCacheAssert<K, V>(actual);
   }
 
   public static org.fest.assertions.api.android.support.v4.view.PagerAdapterAssert assertThat(
@@ -520,9 +520,9 @@ public class ANDROID {
     return new org.fest.assertions.api.android.util.LongSparseArrayAssert(actual);
   }
 
-  public static org.fest.assertions.api.android.util.LruCacheAssert assertThat(
-      android.util.LruCache actual) {
-    return new org.fest.assertions.api.android.util.LruCacheAssert(actual);
+  public static <K, V> org.fest.assertions.api.android.util.LruCacheAssert<K, V> assertThat(
+      android.util.LruCache<K, V> actual) {
+    return new org.fest.assertions.api.android.util.LruCacheAssert<K, V>(actual);
   }
 
   public static org.fest.assertions.api.android.util.PropertyAssert assertThat(
