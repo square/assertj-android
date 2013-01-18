@@ -80,6 +80,16 @@ public class ANDROID {
     return new org.fest.assertions.api.android.app.FragmentTransactionAssert(actual);
   }
 
+  public static org.fest.assertions.api.android.app.InstrumentationActivityMonitorAssert assertThat(
+      android.app.Instrumentation.ActivityMonitor actual) {
+    return new org.fest.assertions.api.android.app.InstrumentationActivityMonitorAssert(actual);
+  }
+
+  public static org.fest.assertions.api.android.app.InstrumentationActivityResultAssert assertThat(
+      android.app.Instrumentation.ActivityResult actual) {
+    return new org.fest.assertions.api.android.app.InstrumentationActivityResultAssert(actual);
+  }
+
   public static org.fest.assertions.api.android.app.KeyguardManagerAssert assertThat(
       android.app.KeyguardManager actual) {
     return new org.fest.assertions.api.android.app.KeyguardManagerAssert(actual);
