@@ -38,7 +38,7 @@ to immediately recognize the problem:
 `Expected visibility <gone> but was <invisible>`.
 
 Compare that to the output of regular _FEST_ `Expected:<[8]> but was:<[4]>` and
-regular _JUnit_ `Expected: <8> but was: <4>` and you should immediately see the\
+regular _JUnit_ `Expected: <8> but was: <4>` and you should immediately see the
 advantage.
 
 
