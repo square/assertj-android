@@ -1,5 +1,7 @@
 package org.fest.assertions.api.android.widget;
 
+import android.graphics.Typeface;
+import android.text.TextUtils;
 import android.widget.TextView;
 import org.fest.assertions.api.android.view.AbstractViewAssert;
 
@@ -112,6 +114,41 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
     return myself;
   }
 
+  public S hasEllipsize(TextUtils.TruncateAt truncation) {
+    isNotNull();
+    TextUtils.TruncateAt actualTruncation = actual.getEllipsize();
+    assertThat(actualTruncation) //
+        .overridingErrorMessage("Expected ellipsize <%s> but was <%s>.",
+            truncateAtToString(truncation), truncateAtToString(actualTruncation)) //
+        .isEqualTo(truncation);
+    return myself;
+  }
+
+  public S hasError() {
+    isNotNull();
+    assertThat(actual.getError()) //
+        .overridingErrorMessage("Expected error but had none.") //
+        .isNotNull();
+    return myself;
+  }
+
+  public S hasNoError() {
+    isNotNull();
+    assertThat(actual.getError()) //
+        .overridingErrorMessage("Expected no error but had one.") //
+        .isNull();
+    return myself;
+  }
+
+  public S hasError(CharSequence error) {
+    isNotNull();
+    CharSequence actualError = actual.getError();
+    assertThat(actualError) //
+        .overridingErrorMessage("Expected error <%s> but was <%s>.", error, actualError) //
+        .isEqualTo(error);
+    return myself;
+  }
+
   public S hasExtendedPaddingBottom(int padding) {
     isNotNull();
     int actualPadding = actual.getExtendedPaddingBottom();
@@ -195,7 +232,8 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
     int actualOptions = actual.getImeOptions();
     assertThat(actualOptions) //
         // TODO tostring flags values
-        .overridingErrorMessage("Expected IME options <%s> but was <%s>.", options, actualOptions) //
+        .overridingErrorMessage("Expected IME options <%s> but was <%s>.", options,
+            actualOptions) //
         .isEqualTo(options);
     return myself;
   }
@@ -423,6 +461,16 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
     return myself;
   }
 
+  // TODO API 17
+  //public S hasTextLocale(Locale locale) {
+  //  isNotNull();
+  //  Locale actualLocale = actual.getTextLocale();
+  //  assertThat(actualLocale) //
+  //      .overridingErrorMessage("Expected text locale <%s> but was <%s>.", locale, actualLocale) //
+  //      .isEqualTo(locale);
+  //  return myself;
+  //}
+
   public S hasTextScaleX(float scale) {
     isNotNull();
     float actualScale = actual.getTextScaleX();
@@ -503,6 +551,15 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
     return myself;
   }
 
+  public S hasTypeface(Typeface typeface) {
+    isNotNull();
+    Typeface actualTypeface = actual.getTypeface();
+    assertThat(actualTypeface) //
+        .overridingErrorMessage("Expected typeface <%s> but was <%s>.", typeface, actualTypeface) //
+        .isSameAs(typeface);
+    return myself;
+  }
+
   public S isCursorVisible() {
     isNotNull();
     assertThat(actual.isCursorVisible()) //
@@ -542,5 +599,20 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
         .overridingErrorMessage("Expected length <%s> but was <%s>.", length, actualLength) //
         .isEqualTo(length);
     return myself;
+  }
+
+  private static String truncateAtToString(TextUtils.TruncateAt truncation) {
+    switch (truncation) {
+      case END:
+        return "end";
+      case MARQUEE:
+        return "marquee";
+      case MIDDLE:
+        return "middle";
+      case START:
+        return "start";
+      default:
+        throw new IllegalArgumentException("Unknown truncation: " + truncation);
+    }
   }
 }
