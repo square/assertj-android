@@ -140,7 +140,7 @@ Download [the latest JAR][1] or grab via Maven:
   <groupId>com.squareup</groupId>
   <artifactId>fest-android</artifactId>
   <version>1.0.0</version>
-</version>
+</dependency>
 ```
 
 
