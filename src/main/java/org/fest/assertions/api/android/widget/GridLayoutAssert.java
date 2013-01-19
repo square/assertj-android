@@ -44,6 +44,14 @@ public class GridLayoutAssert extends AbstractViewGroupAssert<GridLayoutAssert, 
     return this;
   }
 
+  public GridLayoutAssert isVertical() {
+    return hasOrientation(VERTICAL);
+  }
+
+  public GridLayoutAssert isHorizontal() {
+    return hasOrientation(HORIZONTAL);
+  }
+
   public GridLayoutAssert hasRowCount(int count) {
     isNotNull();
     int actualCount = actual.getRowCount();

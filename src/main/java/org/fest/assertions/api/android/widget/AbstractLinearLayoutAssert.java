@@ -48,6 +48,14 @@ public abstract class AbstractLinearLayoutAssert<S extends AbstractLinearLayoutA
     return myself;
   }
 
+  public S isVertical() {
+    return hasOrientation(VERTICAL);
+  }
+
+  public S isHorizontal() {
+    return hasOrientation(HORIZONTAL);
+  }
+
   public S hasShowDividers(int dividers) {
     isNotNull();
     int actualDividers = actual.getShowDividers();
