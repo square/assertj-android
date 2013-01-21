@@ -5,6 +5,10 @@ import android.view.Display;
 import org.fest.assertions.api.AbstractAssert;
 
 import static org.fest.assertions.api.Assertions.assertThat;
+import static android.view.Surface.ROTATION_0;
+import static android.view.Surface.ROTATION_90;
+import static android.view.Surface.ROTATION_270;
+import static android.view.Surface.ROTATION_180;
 
 /** Assertions for {@link Display} instances. */
 public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
@@ -61,11 +65,32 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
   public DisplayAssert hasOrientation(int orientation) {
     isNotNull();
     int actualOrientation = actual.getOrientation();
-    // TODO convert to string names
     assertThat(actualOrientation) //
-        .overridingErrorMessage("Expected orientation <%s> but was <%s>", orientation,
-            actualOrientation) //
+        .overridingErrorMessage("Expected orientation <%s> but was <%s>", orientationToString(orientation),
+            orientationToString(actualOrientation)) //
         .isEqualTo(orientation);
+    return this;
+  }
+
+  public DisplayAssert isPortrait() {
+    isNotNull();
+    int actualOrientation = actual.getOrientation();
+    assertThat(actualOrientation)
+      .overridingErrorMessage("Expected orientation <%s> or <%s>, but was <%s>",
+          orientationToString(ROTATION_0), orientationToString(ROTATION_180),
+          orientationToString(actualOrientation))
+      .isIn(ROTATION_0, ROTATION_180);
+    return this;
+  }
+
+  public DisplayAssert isLandscape() {
+    isNotNull();
+    int actualOrientation = actual.getOrientation();
+    assertThat(actualOrientation)
+      .overridingErrorMessage("Expected orientation <%s> or <%s>, but was <%s>",
+        orientationToString(ROTATION_270), orientationToString(ROTATION_90),
+        orientationToString(actualOrientation))
+      .isIn(ROTATION_270, ROTATION_90);
     return this;
   }
 
@@ -153,4 +178,19 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
   //      .isFalse();
   //  return this;
   //}
+
+  private static String orientationToString(int orientation) {
+    switch (orientation)  {
+      case ROTATION_0:
+        return "portrait";
+      case ROTATION_90:
+        return "landscape";
+      case ROTATION_180:
+        return "inverted portrait";
+      case ROTATION_270:
+        return "inverted landscape";
+      default:
+        throw new IllegalArgumentException("Unknown orientation: " + orientation);
+    }
+  }
 }
