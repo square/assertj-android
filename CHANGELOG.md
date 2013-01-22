@@ -7,8 +7,8 @@ Version 1.X.X *(In Development)*
  * New assertions:
    * `Instrumentation.ActivityMonitor`
    * `Instrumentation.ActivityResult`
- * Added convenience methods for `Display`, `LinearLayout`, and `GridLayout`
-   for orientations.
+ * Added convenience methods for orientations to `Display`, `LinearLayout`, and
+   `GridLayout`.
  * Added error and ellipsis checks for `TextView`.
  * Support for generics by assertions classes (e.g., `LruCacheAssert<K, V>`.
 
