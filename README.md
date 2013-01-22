@@ -7,7 +7,7 @@ Writing tests is not the most glamorous part of developing an Android
 application but it is an invaluable one. Using libaries like JUnit and FEST
 provide a great starting point for writing tests.
 
-This library is an extension of [**FEST**](http://fest.easytesting.org) which aims to make it even easier to test
+This library is an extension of [FEST][1] which aims to make it even easier to test
 Android.
 
 
@@ -133,7 +133,7 @@ For more information about writing custom assertions see the [official documenta
 Download
 --------
 
-Download [the latest JAR][1] or grab via Maven:
+Download [the latest JAR][3] or grab via Maven:
 
 ```xml
 <dependency>
@@ -165,5 +165,6 @@ License
 
 
 
- [1]: https://oss.sonatype.org/content/repositories/releases/com/squareup/fest-android/1.0.0/fest-android-1.0.0.jar
+ [1]: http://fest.easytesting.org
  [2]: https://github.com/alexruiz/fest-assert-2.x/wiki/Creating-specific-assertions
+ [3]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup&a=fest-android&v=LATEST
