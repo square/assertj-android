@@ -6,12 +6,12 @@ import org.fest.assertions.api.AbstractAssert;
 import static org.fest.assertions.api.Assertions.assertThat;
 
 /** Assertions for {@link Property} instances. */
-public class PropertyAssert extends AbstractAssert<PropertyAssert, Property> {
-  public PropertyAssert(Property actual) {
+public class PropertyAssert<T, V> extends AbstractAssert<PropertyAssert<T, V>, Property<T, V>> {
+  public PropertyAssert(Property<T, V> actual) {
     super(actual, PropertyAssert.class);
   }
 
-  public PropertyAssert isName(String name) {
+  public PropertyAssert<T, V> hasName(String name) {
     isNotNull();
     String actualName = actual.getName();
     assertThat(actualName) //
@@ -20,7 +20,7 @@ public class PropertyAssert extends AbstractAssert<PropertyAssert, Property> {
     return this;
   }
 
-  public PropertyAssert isType(Class<?> type) {
+  public PropertyAssert<T, V> hasType(Class<?> type) {
     isNotNull();
     Class actualType = actual.getType();
     assertThat(actualType) //
@@ -29,7 +29,7 @@ public class PropertyAssert extends AbstractAssert<PropertyAssert, Property> {
     return this;
   }
 
-  public PropertyAssert isReadOnly() {
+  public PropertyAssert<T, V> isReadOnly() {
     isNotNull();
     assertThat(actual.isReadOnly()) //
         .overridingErrorMessage("Expected read only but was not read only.") //
@@ -37,7 +37,7 @@ public class PropertyAssert extends AbstractAssert<PropertyAssert, Property> {
     return this;
   }
 
-  public PropertyAssert isNotReadOnly() {
+  public PropertyAssert<T, V> isNotReadOnly() {
     isNotNull();
     assertThat(actual.isReadOnly()) //
         .overridingErrorMessage("Expected not read only but was read only.") //

@@ -535,14 +535,19 @@ public class ANDROID {
     return new org.fest.assertions.api.android.util.LruCacheAssert<K, V>(actual);
   }
 
-  public static org.fest.assertions.api.android.util.PropertyAssert assertThat(
-      android.util.Property actual) {
-    return new org.fest.assertions.api.android.util.PropertyAssert(actual);
+  public static <F, S> org.fest.assertions.api.android.util.PairAssert<F, S> assertThat(
+      android.util.Pair<F, S> actual) {
+    return new org.fest.assertions.api.android.util.PairAssert<F, S>(actual);
   }
 
-  public static org.fest.assertions.api.android.util.SparseArrayAssert assertThat(
-      android.util.SparseArray actual) {
-    return new org.fest.assertions.api.android.util.SparseArrayAssert(actual);
+  public static <T, V> org.fest.assertions.api.android.util.PropertyAssert<T, V> assertThat(
+      android.util.Property<T, V> actual) {
+    return new org.fest.assertions.api.android.util.PropertyAssert<T, V>(actual);
+  }
+
+  public static <E> org.fest.assertions.api.android.util.SparseArrayAssert<E> assertThat(
+      android.util.SparseArray<E> actual) {
+    return new org.fest.assertions.api.android.util.SparseArrayAssert<E>(actual);
   }
 
   public static org.fest.assertions.api.android.util.SparseBooleanArrayAssert assertThat(

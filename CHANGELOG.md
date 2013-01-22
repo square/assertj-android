@@ -5,8 +5,9 @@ Version 1.X.X *(In Development)*
 --------------------------------
 
  * New assertions:
-   * `Instrumentation.ActivityMonitor`
-   * `Instrumentation.ActivityResult`
+   * `android.app.Instrumentation.ActivityMonitor`
+   * `android.app.Instrumentation.ActivityResult`
+   * `android.util.Pair`
  * Added convenience methods for orientations to `Display`, `LinearLayout`, and
    `GridLayout`.
  * Added error and ellipsis checks for `TextView`.
