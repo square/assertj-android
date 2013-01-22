@@ -49,7 +49,7 @@ properties they can be chained together.
 
     ```java
     assertThat(layout).isVisible()
-        .hasOrientation(VERTICAL)
+        .isVertical()
         .hasChildCount(4)
         .hasShowDividers(SHOW_DIVIDERS_MIDDLE);
     ```
