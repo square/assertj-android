@@ -7,6 +7,7 @@ Version 1.X.X *(In Development)*
  * New assertions:
    * `android.app.Instrumentation.ActivityMonitor`
    * `android.app.Instrumentation.ActivityResult`
+   * `android.util.AttributeSet`
    * `android.util.Pair`
  * Added convenience methods for orientations to `Display`, `LinearLayout`, and
    `GridLayout`.

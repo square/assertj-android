@@ -520,6 +520,11 @@ public class ANDROID {
     return new org.fest.assertions.api.android.support.v4.widget.SimpleCursorAdapterAssert(actual);
   }
 
+  public static org.fest.assertions.api.android.util.AttributeSetAssert assertThat(
+      android.util.AttributeSet actual) {
+    return new org.fest.assertions.api.android.util.AttributeSetAssert(actual);
+  }
+
   public static org.fest.assertions.api.android.util.DisplayMetricsAssert assertThat(
       android.util.DisplayMetrics actual) {
     return new org.fest.assertions.api.android.util.DisplayMetricsAssert(actual);
