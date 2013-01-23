@@ -95,6 +95,11 @@ public class ANDROID {
     return new org.fest.assertions.api.android.app.KeyguardManagerAssert(actual);
   }
 
+  public static org.fest.assertions.api.android.app.ListActivityAssert assertThat(
+      android.app.ListActivity actual) {
+    return new org.fest.assertions.api.android.app.ListActivityAssert(actual);
+  }
+
   public static org.fest.assertions.api.android.app.ListFragmentAssert assertThat(
       android.app.ListFragment actual) {
     return new org.fest.assertions.api.android.app.ListFragmentAssert(actual);
@@ -453,6 +458,66 @@ public class ANDROID {
   public static org.fest.assertions.api.android.os.VibratorAssert assertThat(
       android.os.Vibrator actual) {
     return new org.fest.assertions.api.android.os.VibratorAssert(actual);
+  }
+
+  public static org.fest.assertions.api.android.preference.CheckBoxPreferenceAssert assertThat(
+      android.preference.CheckBoxPreference actual) {
+    return new org.fest.assertions.api.android.preference.CheckBoxPreferenceAssert(actual);
+  }
+
+  public static org.fest.assertions.api.android.preference.DialogPreferenceAssert assertThat(
+      android.preference.DialogPreference actual) {
+    return new org.fest.assertions.api.android.preference.DialogPreferenceAssert(actual);
+  }
+
+  public static org.fest.assertions.api.android.preference.EditTextPreferenceAssert assertThat(
+      android.preference.EditTextPreference actual) {
+    return new org.fest.assertions.api.android.preference.EditTextPreferenceAssert(actual);
+  }
+
+  public static org.fest.assertions.api.android.preference.ListPreferenceAssert assertThat(
+      android.preference.ListPreference actual) {
+    return new org.fest.assertions.api.android.preference.ListPreferenceAssert(actual);
+  }
+
+  public static org.fest.assertions.api.android.preference.MultiSelectListPreferenceAssert assertThat(
+      android.preference.MultiSelectListPreference actual) {
+    return new org.fest.assertions.api.android.preference.MultiSelectListPreferenceAssert(actual);
+  }
+
+  public static org.fest.assertions.api.android.preference.PreferenceActivityAssert assertThat(
+      android.preference.PreferenceActivity actual) {
+    return new org.fest.assertions.api.android.preference.PreferenceActivityAssert(actual);
+  }
+
+  public static org.fest.assertions.api.android.preference.PreferenceAssert assertThat(
+      android.preference.Preference actual) {
+    return new org.fest.assertions.api.android.preference.PreferenceAssert(actual);
+  }
+
+  public static org.fest.assertions.api.android.preference.PreferenceGroupAssert assertThat(
+      android.preference.PreferenceGroup actual) {
+    return new org.fest.assertions.api.android.preference.PreferenceGroupAssert(actual);
+  }
+
+  public static org.fest.assertions.api.android.preference.PreferenceScreenAssert assertThat(
+      android.preference.PreferenceScreen actual) {
+    return new org.fest.assertions.api.android.preference.PreferenceScreenAssert(actual);
+  }
+
+  public static org.fest.assertions.api.android.preference.RingtonePreferenceAssert assertThat(
+      android.preference.RingtonePreference actual) {
+    return new org.fest.assertions.api.android.preference.RingtonePreferenceAssert(actual);
+  }
+
+  public static org.fest.assertions.api.android.preference.SwitchPreferenceAssert assertThat(
+      android.preference.SwitchPreference actual) {
+    return new org.fest.assertions.api.android.preference.SwitchPreferenceAssert(actual);
+  }
+
+  public static org.fest.assertions.api.android.preference.TwoStatePreferenceAssert assertThat(
+      android.preference.TwoStatePreference actual) {
+    return new org.fest.assertions.api.android.preference.TwoStatePreferenceAssert(actual);
   }
 
   public static org.fest.assertions.api.android.support.v4.app.DialogFragmentAssert assertThat(
