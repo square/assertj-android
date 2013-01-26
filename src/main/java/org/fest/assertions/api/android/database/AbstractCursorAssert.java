@@ -21,6 +21,18 @@ public abstract class AbstractCursorAssert<S extends AbstractCursorAssert<S, A>,
     return myself;
   }
 
+  public S hasColumn(String columnName) {
+    isNotNull();
+    if (actual.isBeforeFirst() || actual.isAfterLast()) {
+      actual.moveToFirst();
+    }
+    int actualColumnIndex = actual.getColumnIndex(columnName);
+    assertThat(actualColumnIndex) //
+        .overridingErrorMessage("Expected to have column <%s> but has not.", columnName) //
+        .isNotNegative();
+    return myself;
+  }
+
   public S hasCount(int count) {
     isNotNull();
     int actualCount = actual.getCount();
