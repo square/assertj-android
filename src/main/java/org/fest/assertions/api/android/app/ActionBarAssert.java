@@ -1,7 +1,7 @@
 package org.fest.assertions.api.android.app;
 
 import android.app.ActionBar;
-import org.fest.assertions.api.android.Utils;
+import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.List;
 import org.fest.assertions.api.AbstractAssert;
@@ -153,6 +153,6 @@ public class ActionBarAssert extends AbstractAssert<ActionBarAssert, ActionBar> 
     if ((options & DISPLAY_USE_LOGO) != 0) {
       parts.add("useLogo");
     }
-    return Utils.join(parts);
+    return TextUtils.join(", ", parts);
   }
 }

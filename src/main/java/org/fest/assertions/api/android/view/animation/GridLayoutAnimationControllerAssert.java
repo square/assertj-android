@@ -1,8 +1,8 @@
 // Copyright 2013 Square, Inc.
 package org.fest.assertions.api.android.view.animation;
 
+import android.text.TextUtils;
 import android.view.animation.GridLayoutAnimationController;
-import org.fest.assertions.api.android.Utils;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,7 +74,7 @@ public class GridLayoutAnimationControllerAssert extends
     } else {
       parts.add("topToBottom");
     }
-    return Utils.join(parts);
+    return TextUtils.join(", ", parts);
   }
 
   private static String directionPriorityToString(int priority) {

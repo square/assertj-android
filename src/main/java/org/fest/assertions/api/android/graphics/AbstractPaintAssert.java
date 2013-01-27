@@ -7,7 +7,7 @@ import android.graphics.PathEffect;
 import android.graphics.Rasterizer;
 import android.graphics.Shader;
 import android.graphics.Typeface;
-import org.fest.assertions.api.android.Utils;
+import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.List;
 import org.fest.assertions.api.AbstractAssert;
@@ -357,6 +357,6 @@ public abstract class AbstractPaintAssert<S extends AbstractPaintAssert<S, A>, A
     if ((flags & UNDERLINE_TEXT_FLAG) != 0) {
       parts.add("underline");
     }
-    return Utils.join(parts);
+    return TextUtils.join(", ", parts);
   }
 }
