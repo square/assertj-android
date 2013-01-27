@@ -1,7 +1,7 @@
 package org.fest.assertions.api.android.widget;
 
+import android.text.TextUtils;
 import android.widget.LinearLayout;
-import org.fest.assertions.api.android.Utils;
 import java.util.ArrayList;
 import java.util.List;
 import org.fest.assertions.api.AbstractAssert;
@@ -121,7 +121,7 @@ public abstract class AbstractLinearLayoutAssert<S extends AbstractLinearLayoutA
     if ((dividers & SHOW_DIVIDER_END) != 0) {
       parts.add("end");
     }
-    return Utils.join(parts);
+    return TextUtils.join(", ", parts);
   }
 
   private static String orientationToString(int orientation) {
