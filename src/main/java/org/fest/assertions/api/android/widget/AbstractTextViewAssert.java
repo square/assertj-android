@@ -481,6 +481,88 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
     return hasText(actual.getContext().getString(resId));
   }
 
+  public S containsText(String sequence) {
+    isNotNull();
+    assertThat(actual.getText().toString()).contains(sequence);
+    return myself;
+  }
+
+  public S containsText(int resId) {
+    isNotNull();
+    return containsText(actual.getContext().getString(resId));
+  }
+
+  public S doesNotContainText(String sequence) {
+    isNotNull();
+    assertThat(actual.getText().toString()).doesNotContain(sequence);
+    return myself;
+  }
+
+  public S doesNotContainText(int resId) {
+    isNotNull();
+    return doesNotContainText(actual.getContext().getString(resId));
+  }
+
+  public S startsWithText(String sequence) {
+    isNotNull();
+    String text = actual.getText().toString();
+    assertThat(text.startsWith(sequence)) //
+        .overridingErrorMessage("Expected text <%s> to start with <%s> but did not.", text,
+            sequence) //
+        .isTrue();
+    return myself;
+  }
+
+  public S startsWithText(int resId) {
+    isNotNull();
+    return startsWithText(actual.getContext().getString(resId));
+  }
+
+  public S doesNotStartWithText(String sequence) {
+    isNotNull();
+    String text = actual.getText().toString();
+    assertThat(text.startsWith(sequence)) //
+        .overridingErrorMessage("Expected text <%s> to not start with <%s> but did.", text,
+            sequence) //
+        .isFalse();
+    return myself;
+  }
+
+  public S doesNotStartWithText(int resId) {
+    isNotNull();
+    return doesNotStartWithText(actual.getContext().getString(resId));
+  }
+
+  public S endsWithText(String sequence) {
+    isNotNull();
+    String text = actual.getText().toString();
+    assertThat(text.startsWith(sequence)) //
+        .overridingErrorMessage("Expected text <%s> to end with <%s> but did not.", text,
+            sequence) //
+        .isTrue();
+    return myself;
+  }
+
+  public S endsWithText(int resId) {
+    isNotNull();
+    return endsWithText(actual.getContext().getString(resId));
+  }
+
+  public S doesNotEndWithText(String sequence) {
+    isNotNull();
+    String text = actual.getText().toString();
+    assertThat(text.startsWith(sequence)) //
+        .overridingErrorMessage("Expected text <%s> to not end with <%s> but did.", text,
+            sequence) //
+        .isFalse();
+    return myself;
+  }
+
+  public S doesNotEndWithText(int resId) {
+    isNotNull();
+    return doesNotEndWithText(actual.getContext().getString(resId));
+  }
+
   // TODO API 17
   //public S hasTextLocale(Locale locale) {
   //  isNotNull();
