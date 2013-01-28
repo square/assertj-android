@@ -28,6 +28,7 @@ Version 1.X.X *(In Development)*
  * Added column name checks for `Cursor`.
  * `LinearLayout` and `AdapterView` assertions now correctly extend from `ViewGroup` assertions.
  * Support for generics by assertions classes (e.g., `LruCacheAssert<K, V>`).
+ * Support using string resource ID for most text assertions.
 
 
 Version 1.0.0 *(2013-01-17)*

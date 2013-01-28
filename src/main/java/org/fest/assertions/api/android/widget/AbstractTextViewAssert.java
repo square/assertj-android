@@ -149,6 +149,11 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
     return myself;
   }
 
+  public S hasError(int resId) {
+    isNotNull();
+    return hasError(actual.getContext().getString(resId));
+  }
+
   public S hasExtendedPaddingBottom(int padding) {
     isNotNull();
     int actualPadding = actual.getExtendedPaddingBottom();
@@ -208,6 +213,11 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
     return myself;
   }
 
+  public S hasHint(int resId) {
+    isNotNull();
+    return hasHint(actual.getContext().getString(resId));
+  }
+
   public S hasImeActionId(int id) {
     isNotNull();
     int actualId = actual.getImeActionId();
@@ -225,6 +235,11 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
             actualLabel) //
         .isEqualTo(label);
     return myself;
+  }
+
+  public S hasImeActionLabel(int resId) {
+    isNotNull();
+    return hasImeActionLabel(actual.getContext().getString(resId));
   }
 
   public S hasImeOptions(int options) {
@@ -459,6 +474,11 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
         .overridingErrorMessage("Expected text <%s> but was <%s>", text, actualText) //
         .isEqualTo(text);
     return myself;
+  }
+
+  public S hasText(int resId) {
+    isNotNull();
+    return hasText(actual.getContext().getString(resId));
   }
 
   // TODO API 17

@@ -84,6 +84,11 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     return myself;
   }
 
+  public S hasContentDescription(int resId) {
+    isNotNull();
+    return hasContentDescription(actual.getContext().getString(resId));
+  }
+
   public S hasDrawingCacheBackgroundColor(int color) {
     isNotNull();
     int actualColor = actual.getDrawingCacheBackgroundColor();

@@ -39,6 +39,11 @@ public class AutoCompleteTextViewAssert
     return this;
   }
 
+  public AutoCompleteTextViewAssert hasCompletionHint(int resId) {
+    isNotNull();
+    return hasCompletionHint(actual.getContext().getString(resId));
+  }
+
   public AutoCompleteTextViewAssert hasDropDownAnchor(int id) {
     isNotNull();
     int actualId = actual.getDropDownAnchor();

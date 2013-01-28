@@ -21,6 +21,11 @@ public abstract class AbstractTwoStatePreference<S extends AbstractTwoStatePrefe
     return myself;
   }
 
+  public S hasSummaryOff(int resId) {
+    isNotNull();
+    return hasSummaryOff(actual.getContext().getString(resId));
+  }
+
   public S hasSummaryOn(CharSequence summary) {
     isNotNull();
     CharSequence actualSummary = actual.getSummaryOn();
@@ -29,6 +34,11 @@ public abstract class AbstractTwoStatePreference<S extends AbstractTwoStatePrefe
             actualSummary) //
         .isEqualTo(summary);
     return myself;
+  }
+
+  public S hasSummaryOn(int resId) {
+    isNotNull();
+    return hasSummaryOn(actual.getContext().getString(resId));
   }
 
   public S isChecked() {
