@@ -3,12 +3,12 @@ package org.fest.assertions.api.android.widget;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
-import org.fest.assertions.api.AbstractAssert;
+import org.fest.assertions.api.android.view.AbstractViewGroupAssert;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
 public abstract class AbstractAdapterViewAssert<S extends AbstractAdapterViewAssert<S, A>, A extends AdapterView>
-    extends AbstractAssert<S, A> {
+    extends AbstractViewGroupAssert<S, A> {
   protected AbstractAdapterViewAssert(A actual, Class<S> selfType) {
     super(actual, selfType);
   }
