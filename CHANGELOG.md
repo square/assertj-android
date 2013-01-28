@@ -27,6 +27,7 @@ Version 1.X.X *(In Development)*
  * Added error and ellipsis checks for `TextView`.
  * Added column name checks for `Cursor`.
  * `LinearLayout` and `AdapterView` assertions now correctly extend from `ViewGroup` assertions.
+ * Assertions for contains, starts with, and ends with for `TextView` text.
  * Support for generics by assertions classes (e.g., `LruCacheAssert<K, V>`).
  * Support using string resource ID for most text assertions.
 
