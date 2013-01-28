@@ -51,6 +51,11 @@ public abstract class AbstractDialogPreferenceAssert<S extends AbstractDialogPre
     return myself;
   }
 
+  public S hasDialogMessage(int resId) {
+    isNotNull();
+    return hasDialogMessage(actual.getContext().getString(resId));
+  }
+
   public S hasDialogTitle(CharSequence title) {
     isNotNull();
     CharSequence actualTitle = actual.getDialogTitle();
@@ -58,6 +63,11 @@ public abstract class AbstractDialogPreferenceAssert<S extends AbstractDialogPre
         .overridingErrorMessage("Expected dialog title <%s> but was <%s>.", title, actualTitle) //
         .isEqualTo(title);
     return myself;
+  }
+
+  public S hasDialogTitle(int resId) {
+    isNotNull();
+    return hasDialogTitle(actual.getContext().getString(resId));
   }
 
   public S hasNegativeButtonText(CharSequence text) {
@@ -70,6 +80,11 @@ public abstract class AbstractDialogPreferenceAssert<S extends AbstractDialogPre
     return myself;
   }
 
+  public S hasNegativeButtonText(int resId) {
+    isNotNull();
+    return hasNegativeButtonText(actual.getContext().getString(resId));
+  }
+
   public S hasPositiveButtonText(CharSequence text) {
     isNotNull();
     CharSequence actualText = actual.getPositiveButtonText();
@@ -78,5 +93,10 @@ public abstract class AbstractDialogPreferenceAssert<S extends AbstractDialogPre
             actualText) //
         .isEqualTo(text);
     return myself;
+  }
+
+  public S hasPositiveButtonText(int resId) {
+    isNotNull();
+    return hasPositiveButtonText(actual.getContext().getString(resId));
   }
 }

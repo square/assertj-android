@@ -140,6 +140,11 @@ public abstract class AbstractPreferenceAssert<S extends AbstractPreferenceAsser
     return myself;
   }
 
+  public S hasSummary(int resId) {
+    isNotNull();
+    return hasSummary(actual.getContext().getString(resId));
+  }
+
   public S hasTitle(CharSequence title) {
     isNotNull();
     CharSequence actualTitle = actual.getTitle();
@@ -147,6 +152,11 @@ public abstract class AbstractPreferenceAssert<S extends AbstractPreferenceAsser
         .overridingErrorMessage("Expected title <%s> but was <%s>.", title, actualTitle) //
         .isEqualTo(title);
     return myself;
+  }
+
+  public S hasTitle(int resId) {
+    isNotNull();
+    return hasTitle(actual.getContext().getString(resId));
   }
 
   public S hasTitleResource(int resource) {

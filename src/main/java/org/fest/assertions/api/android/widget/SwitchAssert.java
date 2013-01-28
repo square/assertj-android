@@ -40,6 +40,11 @@ public class SwitchAssert extends AbstractCompoundButtonAssert<SwitchAssert, Swi
     return this;
   }
 
+  public SwitchAssert hasOnText(int resId) {
+    isNotNull();
+    return hasOnText(actual.getContext().getString(resId));
+  }
+
   public SwitchAssert hasOffText(CharSequence text) {
     isNotNull();
     CharSequence actualText = actual.getTextOff();
@@ -47,6 +52,11 @@ public class SwitchAssert extends AbstractCompoundButtonAssert<SwitchAssert, Swi
         .overridingErrorMessage("Expected 'off' text <%s> but was <%s>.", text, actualText) //
         .isEqualTo(text);
     return this;
+  }
+
+  public SwitchAssert hasOffText(int resId) {
+    isNotNull();
+    return hasOffText(actual.getContext().getString(resId));
   }
 
   public SwitchAssert hasThumbDrawable(Drawable drawable) {

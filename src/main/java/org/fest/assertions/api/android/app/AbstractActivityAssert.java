@@ -32,6 +32,11 @@ public abstract class AbstractActivityAssert<S extends AbstractActivityAssert<S,
     return myself;
   }
 
+  public S hasTitle(int resId) {
+    isNotNull();
+    return hasTitle(actual.getString(resId));
+  }
+
   public S hasTitleColot(int color) {
     isNotNull();
     int actualColor = actual.getTitleColor();

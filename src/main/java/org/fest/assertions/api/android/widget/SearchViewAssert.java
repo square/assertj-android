@@ -58,6 +58,11 @@ public class SearchViewAssert extends AbstractLinearLayoutAssert<SearchViewAsser
     return this;
   }
 
+  public SearchViewAssert hasQueryHint(int resId) {
+    isNotNull();
+    return hasQueryHint(actual.getContext().getString(resId));
+  }
+
   public SearchViewAssert hasSuggestionsAdapter(CursorAdapter adapter) {
     isNotNull();
     CursorAdapter actualAdapter = actual.getSuggestionsAdapter();

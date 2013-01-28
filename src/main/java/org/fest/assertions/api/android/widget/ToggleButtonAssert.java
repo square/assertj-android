@@ -20,6 +20,11 @@ public class ToggleButtonAssert
     return this;
   }
 
+  public ToggleButtonAssert hasOnText(int resId) {
+    isNotNull();
+    return hasOnText(actual.getContext().getString(resId));
+  }
+
   public ToggleButtonAssert hasOffText(CharSequence text) {
     isNotNull();
     CharSequence actualText = actual.getTextOff();
@@ -27,5 +32,10 @@ public class ToggleButtonAssert
         .overridingErrorMessage("Expected 'off' text <%s> but was <%s>.", text, actualText) //
         .isEqualTo(text);
     return this;
+  }
+
+  public ToggleButtonAssert hasOffText(int resId) {
+    isNotNull();
+    return hasOffText(actual.getContext().getString(resId));
   }
 }

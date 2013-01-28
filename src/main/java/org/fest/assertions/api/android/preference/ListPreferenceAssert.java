@@ -30,6 +30,11 @@ public class ListPreferenceAssert
     return this;
   }
 
+  public ListPreferenceAssert hasEntry(int resId) {
+    isNotNull();
+    return hasEntry(actual.getContext().getString(resId));
+  }
+
   public ListPreferenceAssert hasEntryValues(CharSequence... values) {
     isNotNull();
     CharSequence[] actualValues = actual.getEntryValues();

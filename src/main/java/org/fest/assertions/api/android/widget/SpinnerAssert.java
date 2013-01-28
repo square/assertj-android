@@ -69,4 +69,9 @@ public class SpinnerAssert extends AbstractAbsSpinnerAssert<SpinnerAssert, Spinn
         .isEqualTo(text);
     return this;
   }
+
+  public SpinnerAssert hasPrompt(int resId) {
+    isNotNull();
+    return hasPrompt(actual.getContext().getString(resId));
+  }
 }

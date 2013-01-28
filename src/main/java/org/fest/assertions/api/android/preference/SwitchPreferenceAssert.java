@@ -21,6 +21,11 @@ public class SwitchPreferenceAssert
     return this;
   }
 
+  public SwitchPreferenceAssert hasSwitchTextOff(int resId) {
+    isNotNull();
+    return hasSwitchTextOff(actual.getContext().getString(resId));
+  }
+
   public SwitchPreferenceAssert hasSwitchTextOn(CharSequence text) {
     isNotNull();
     CharSequence actualText = actual.getSwitchTextOn();
@@ -28,5 +33,10 @@ public class SwitchPreferenceAssert
         .overridingErrorMessage("Expected switch on text <%s> but was <%s>.", text, actualText) //
         .isEqualTo(text);
     return this;
+  }
+
+  public SwitchPreferenceAssert hasSwitchTextOn(int resId) {
+    isNotNull();
+    return hasSwitchTextOn(actual.getContext().getString(resId));
   }
 }
