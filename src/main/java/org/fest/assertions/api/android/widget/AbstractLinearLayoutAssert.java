@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
 import java.util.List;
-import org.fest.assertions.api.AbstractAssert;
+import org.fest.assertions.api.android.view.AbstractViewGroupAssert;
 
 import static android.widget.LinearLayout.HORIZONTAL;
 import static android.widget.LinearLayout.SHOW_DIVIDER_BEGINNING;
@@ -14,18 +14,9 @@ import static android.widget.LinearLayout.VERTICAL;
 import static org.fest.assertions.api.Assertions.assertThat;
 
 public abstract class AbstractLinearLayoutAssert<S extends AbstractLinearLayoutAssert<S, A>, A extends LinearLayout>
-    extends AbstractAssert<S, A> {
+    extends AbstractViewGroupAssert<S, A> {
   protected AbstractLinearLayoutAssert(A actual, Class<S> selfType) {
     super(actual, selfType);
-  }
-
-  public S hasBaseline(int baseline) {
-    isNotNull();
-    int actualBaseline = actual.getBaseline();
-    assertThat(actualBaseline) //
-        .overridingErrorMessage("Expected baseline <%s> but was <%s>.", baseline, actualBaseline) //
-        .isEqualTo(baseline);
-    return myself;
   }
 
   public S hasDividerPadding(int padding) {

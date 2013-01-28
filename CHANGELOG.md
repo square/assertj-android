@@ -26,6 +26,7 @@ Version 1.X.X *(In Development)*
    `GridLayout`.
  * Added error and ellipsis checks for `TextView`.
  * Added column name checks for `Cursor`.
+ * `LinearLayout` assertions now correctly extend from `ViewGroup` assertions.
  * Support for generics by assertions classes (e.g., `LruCacheAssert<K, V>`).
 
 
