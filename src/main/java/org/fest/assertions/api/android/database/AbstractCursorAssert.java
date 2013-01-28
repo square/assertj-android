@@ -21,11 +21,17 @@ public abstract class AbstractCursorAssert<S extends AbstractCursorAssert<S, A>,
     return myself;
   }
 
-  public S hasColumn(String columnName) {
+  public S hasColumn(String name) {
     isNotNull();
     assertThat(actual.getColumnNames()) //
-        .overridingErrorMessage("Expected to have column <%s> but did not.", columnName) //
-        .contains(columnName);
+        .overridingErrorMessage("Expected to have column <%s> but did not.", name) //
+        .contains(name);
+    return myself;
+  }
+
+  public S hasColumns(String... names) {
+    isNotNull();
+    assertThat(actual.getColumnNames()).contains(names);
     return myself;
   }
 

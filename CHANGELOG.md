@@ -25,6 +25,7 @@ Version 1.X.X *(In Development)*
  * Added convenience methods for orientations to `Display`, `LinearLayout`, and
    `GridLayout`.
  * Added error and ellipsis checks for `TextView`.
+ * Added column name checks for `Cursor`.
  * Support for generics by assertions classes (e.g., `LruCacheAssert<K, V>`).
 
 
