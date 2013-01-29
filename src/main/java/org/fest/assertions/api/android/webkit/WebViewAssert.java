@@ -45,7 +45,7 @@ public class WebViewAssert extends AbstractAbsoluteLayoutAssert<WebViewAssert, W
     return this;
   }
 
-  public WebViewAssert hasCertifiate(SslCertificate certificate) {
+  public WebViewAssert hasCertificate(SslCertificate certificate) {
     isNotNull();
     SslCertificate actualCertificate = actual.getCertificate();
     assertThat(actualCertificate) //

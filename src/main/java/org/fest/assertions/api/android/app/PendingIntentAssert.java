@@ -16,7 +16,7 @@ public class PendingIntentAssert extends AbstractAssert<PendingIntentAssert, Pen
   //  isNotNull();
   //  String actualPackage = actual.getCreatorPackage();
   //  assertThat(actualPackage) //
-  //      .overridingErrorMesssage("Expected creator package <%s> but was <%s>.", package,
+  //      .overridingErrorMessage("Expected creator package <%s> but was <%s>.", package,
   //          actualPackage) //
   //      .isEqualTo(package);
   //  return this;
@@ -26,7 +26,7 @@ public class PendingIntentAssert extends AbstractAssert<PendingIntentAssert, Pen
   //  isNotNull();
   //  int actualUid = actual.getCreatorUid();
   //  assertThat(actualUid) //
-  //      .overridingErroMessage("Expected creator UID <%s> but was <%s>.", uid, actualUid) //
+  //      .overridingErrorMessage("Expected creator UID <%s> but was <%s>.", uid, actualUid) //
   //      .isEqualTo(uid);
   //  return this;
   //}

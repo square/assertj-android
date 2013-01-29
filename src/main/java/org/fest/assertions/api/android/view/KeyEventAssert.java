@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
-/** Assetions for {@link KeyEvent} instances. */
+/** Assertions for {@link KeyEvent} instances. */
 public class KeyEventAssert extends AbstractInputEventAssert<KeyEventAssert, KeyEvent> {
   public KeyEventAssert(KeyEvent actual) {
     super(actual, KeyEventAssert.class);

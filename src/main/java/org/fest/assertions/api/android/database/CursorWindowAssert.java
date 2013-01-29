@@ -23,10 +23,10 @@ public class CursorWindowAssert extends AbstractAssert<CursorWindowAssert, Curso
 
   public CursorWindowAssert hasStartPosition(int position) {
     isNotNull();
-    int actualPositon = actual.getStartPosition();
-    assertThat(actualPositon) //
+    int actualPosition = actual.getStartPosition();
+    assertThat(actualPosition) //
         .overridingErrorMessage("Expected start position <%s> but was <%s>.", position,
-            actualPositon) //
+            actualPosition) //
         .isEqualTo(position);
     return this;
   }

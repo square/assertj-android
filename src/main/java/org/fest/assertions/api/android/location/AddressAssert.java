@@ -126,10 +126,10 @@ public class AddressAssert extends AbstractAssert<AddressAssert, Address> {
 
   public AddressAssert hasPremises(String premises) {
     isNotNull();
-    String actualPremimses = actual.getPremises();
-    assertThat(actualPremimses) //
+    String actualPremises = actual.getPremises();
+    assertThat(actualPremises) //
         .overridingErrorMessage("Expected premises <%s> but was <%s>.", premises,
-            actualPremimses) //
+            actualPremises) //
         .isEqualTo(premises);
     return this;
   }

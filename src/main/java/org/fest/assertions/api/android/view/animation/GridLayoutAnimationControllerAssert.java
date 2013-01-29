@@ -43,10 +43,10 @@ public class GridLayoutAnimationControllerAssert extends
 
   public GridLayoutAnimationControllerAssert hasDirectionPriority(int priority) {
     isNotNull();
-    int actualPriotiy = actual.getDirectionPriority();
-    assertThat(actualPriotiy) //
+    int actualPriority = actual.getDirectionPriority();
+    assertThat(actualPriority) //
         .overridingErrorMessage("Expected direction priority <%s> but was <%s>.",
-            directionPriorityToString(priority), directionPriorityToString(actualPriotiy)) //
+            directionPriorityToString(priority), directionPriorityToString(actualPriority)) //
         .isEqualTo(priority);
     return this;
   }

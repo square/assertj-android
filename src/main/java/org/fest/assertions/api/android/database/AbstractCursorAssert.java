@@ -77,7 +77,7 @@ public abstract class AbstractCursorAssert<S extends AbstractCursorAssert<S, A>,
     return myself;
   }
 
-  public S isNotBeforeFrist() {
+  public S isNotBeforeFirst() {
     isNotNull();
     assertThat(actual.isBeforeFirst()) //
         .overridingErrorMessage("Expected to not be before first but was.") //
