@@ -471,7 +471,7 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
     isNotNull();
     CharSequence actualText = actual.getText();
     assertThat(actualText) //
-        .overridingErrorMessage("Expected text <%s> but was <%s>", text, actualText) //
+        .overridingErrorMessage("Expected text <%s> but was <%s>.", text, actualText) //
         .isEqualTo(text);
     return myself;
   }
