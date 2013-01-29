@@ -414,7 +414,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     return myself;
   }
 
-  public S hasPivoxX(float pivotX) {
+  public S hasPivotX(float pivotX) {
     isNotNull();
     float actualPivotX = actual.getPivotX();
     assertThat(actualPivotX) //
@@ -751,7 +751,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     return myself;
   }
 
-  public S hasWindowVisiblity(int visibility) {
+  public S hasWindowVisibility(int visibility) {
     isNotNull();
     int actualVisibility = actual.getWindowVisibility();
     assertThat(actualVisibility) //
@@ -923,7 +923,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     return myself;
   }
 
-  public S isNotFocuseable() {
+  public S isNotFocusable() {
     isNotNull();
     assertThat(actual.isFocusable()) //
         .overridingErrorMessage("Expected to not be focusable but was") //

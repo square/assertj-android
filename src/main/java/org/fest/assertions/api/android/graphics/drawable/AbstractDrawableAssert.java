@@ -60,7 +60,7 @@ public abstract class AbstractDrawableAssert<S extends AbstractDrawableAssert<S,
     return myself;
   }
 
-  public S hasIntrinsicWeidth(int width) {
+  public S hasIntrinsicWidth(int width) {
     isNotNull();
     int actualWidth = actual.getIntrinsicWidth();
     assertThat(actualWidth) //
