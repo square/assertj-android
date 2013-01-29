@@ -675,6 +675,16 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     return myself;
   }
 
+  public S hasVisibility(int visibility) {
+    isNotNull();
+    int actualVisibility = actual.getVisibility();
+    assertThat(actualVisibility) //
+        .overridingErrorMessage("Expected visibility <%s> but was <%s>.",
+            visibilityToString(visibility), visibilityToString(actualVisibility)) //
+        .isEqualTo(visibility);
+    return myself;
+  }
+
   public S isVisible() {
     isNotNull();
     int actualVisibility = actual.getVisibility();
@@ -704,7 +714,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     return myself;
   }
 
-  public S isNotInisible() {
+  public S isNotInvisible() {
     isNotNull();
     int actualVisibility = actual.getVisibility();
     assertThat(actualVisibility) //

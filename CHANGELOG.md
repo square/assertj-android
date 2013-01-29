@@ -28,6 +28,8 @@ Version 1.X.X *(In Development)*
  * Added column name checks for `Cursor`.
  * `LinearLayout` and `AdapterView` assertions now correctly extend from `ViewGroup` assertions.
  * Added `TextView` text assertions for empty, contains, starts with, and ends with.
+ * Added general `hasVisibility(int)` assertion for `View`.
+ * Correct spelling of `isNotInvisible` assertions for `View`.
  * Support for generics by assertions classes (e.g., `LruCacheAssert<K, V>`).
  * Support using string resource ID for most text assertions.
 
