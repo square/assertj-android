@@ -143,6 +143,8 @@ Download [the latest JAR][3] or grab via Maven:
 </dependency>
 ```
 
+Compilation requires Android 4.1 or newer.
+
 
 
 License
