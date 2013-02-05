@@ -8,7 +8,7 @@ import static org.fest.assertions.api.Assertions.assertThat;
 
 /** Assertions for {@link Pair} instances. */
 public class PairAssert<F, S> extends AbstractAssert<PairAssert<F, S>, Pair<F, S>> {
-  public PairAssert(Pair actual) {
+  public PairAssert(Pair<F, S> actual) {
     super(actual, PairAssert.class);
   }
 
