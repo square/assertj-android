@@ -1,8 +1,8 @@
 Change Log
 ==========
 
-Version 1.X.X *(In Development)*
---------------------------------
+Version 1.0.1 *(2013-02-05)*
+----------------------------
 
  * New assertions:
    * `android.app.Instrumentation.ActivityMonitor`
