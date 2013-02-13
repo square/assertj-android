@@ -481,6 +481,20 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
     return hasText(actual.getContext().getString(resId));
   }
 
+  public S hasTextString(String text) {
+    isNotNull();
+    String actualText = actual.getText().toString();
+    assertThat(actualText) //
+        .overridingErrorMessage("Expected text string <%s> but was <%s>.", text, actualText) //
+        .isEqualTo(text);
+    return myself;
+  }
+
+  public S hasTextString(int resId) {
+    isNotNull();
+    return hasTextString(actual.getContext().getString(resId));
+  }
+
   public S isEmpty() {
     isNotNull();
     return hasText("");
