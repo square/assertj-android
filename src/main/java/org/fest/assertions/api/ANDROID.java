@@ -161,7 +161,7 @@ public class ANDROID {
   }
 
   public static org.fest.assertions.api.android.content.ContentValuesAssert assertThat(
-          android.content.ContentValues actual) {
+      android.content.ContentValues actual) {
     return new org.fest.assertions.api.android.content.ContentValuesAssert(actual);
   }
 

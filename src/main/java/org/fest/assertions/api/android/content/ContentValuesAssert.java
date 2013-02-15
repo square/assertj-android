@@ -14,24 +14,24 @@ public class ContentValuesAssert extends AbstractAssert<ContentValuesAssert, Con
   public ContentValuesAssert isEmpty() {
     isNotNull();
     assertThat(actual.size())
-            .overridingErrorMessage("Expected to be empty but was not.")
-            .isEqualTo(0);
+        .overridingErrorMessage("Expected to be empty but was not.")
+        .isEqualTo(0);
     return this;
   }
 
   public ContentValuesAssert isNotEmpty() {
     isNotNull();
     assertThat(actual.size())
-            .overridingErrorMessage("Expected to not be empty but was.")
-            .isNotEqualTo(0);
+        .overridingErrorMessage("Expected to not be empty but was.")
+        .isNotEqualTo(0);
     return this;
   }
 
   public ContentValuesAssert containsKey(String key) {
     isNotNull();
     assertThat(actual.containsKey(key))
-            .overridingErrorMessage("Expected key <%s> but was not found.", key)
-            .isTrue();
+        .overridingErrorMessage("Expected key <%s> but was not found.", key)
+        .isTrue();
     return this;
   }
 }
