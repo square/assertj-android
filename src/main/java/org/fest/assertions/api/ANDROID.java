@@ -160,6 +160,11 @@ public class ANDROID {
     return new org.fest.assertions.api.android.content.IntentAssert(actual);
   }
 
+  public static org.fest.assertions.api.android.content.ContentValuesAssert assertThat(
+      android.content.ContentValues actual) {
+    return new org.fest.assertions.api.android.content.ContentValuesAssert(actual);
+  }
+
   public static org.fest.assertions.api.android.content.LoaderAssert assertThat(
       android.content.Loader actual) {
     return new org.fest.assertions.api.android.content.LoaderAssert(actual);
