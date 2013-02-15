@@ -150,6 +150,11 @@ public class ANDROID {
     return new org.fest.assertions.api.android.content.AsyncTaskLoaderAssert(actual);
   }
 
+  public static org.fest.assertions.api.android.content.ContentValuesAssert assertThat(
+      android.content.ContentValues actual) {
+    return new org.fest.assertions.api.android.content.ContentValuesAssert(actual);
+  }
+
   public static org.fest.assertions.api.android.content.CursorLoaderAssert assertThat(
       android.content.CursorLoader actual) {
     return new org.fest.assertions.api.android.content.CursorLoaderAssert(actual);
@@ -158,11 +163,6 @@ public class ANDROID {
   public static org.fest.assertions.api.android.content.IntentAssert assertThat(
       android.content.Intent actual) {
     return new org.fest.assertions.api.android.content.IntentAssert(actual);
-  }
-
-  public static org.fest.assertions.api.android.content.ContentValuesAssert assertThat(
-      android.content.ContentValues actual) {
-    return new org.fest.assertions.api.android.content.ContentValuesAssert(actual);
   }
 
   public static org.fest.assertions.api.android.content.LoaderAssert assertThat(
