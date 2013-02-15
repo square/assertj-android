@@ -15,7 +15,7 @@ public class ContentValuesAssert extends AbstractAssert<ContentValuesAssert, Con
     isNotNull();
     assertThat(actual.size())
         .overridingErrorMessage("Expected to be empty but was not.")
-        .isEqualTo(0);
+        .isZero();
     return this;
   }
 
@@ -23,7 +23,7 @@ public class ContentValuesAssert extends AbstractAssert<ContentValuesAssert, Con
     isNotNull();
     assertThat(actual.size())
         .overridingErrorMessage("Expected to not be empty but was.")
-        .isNotEqualTo(0);
+        .isNotZero();
     return this;
   }
 
