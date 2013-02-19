@@ -16,7 +16,7 @@ for root, dirs, files in os.walk(SRC_DIR):
       continue
     print('-'*80)
 
-    package = '%s.%s' % (root[len(SRC_DIR):].replace('/', '.'), f[:-5])
+    package = '%s.%s' % (root[len(SRC_DIR):].replace(os.sep, '.'), f[:-5])
     print('package: %s' % package)
 
     with open(os.path.join(root, f)) as j:
