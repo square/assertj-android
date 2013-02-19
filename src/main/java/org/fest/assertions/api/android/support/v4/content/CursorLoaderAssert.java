@@ -24,7 +24,7 @@ public class CursorLoaderAssert extends AbstractLoaderAssert<CursorLoaderAssert,
     isNotNull();
     String[] projection = actual.getProjection();
     assertThat(projection)
-        .overridingErrorMessage("Expected no projection but was <%s>", Arrays.toString(projection))
+        .overridingErrorMessage("Expected no projection but was <%s>.", Arrays.toString(projection))
         .isNullOrEmpty();
     return this;
   }
@@ -49,7 +49,7 @@ public class CursorLoaderAssert extends AbstractLoaderAssert<CursorLoaderAssert,
     isNotNull();
     String selection = actual.getSelection();
     assertThat(selection)
-        .overridingErrorMessage("Expected no selection but was <%s>", selection)
+        .overridingErrorMessage("Expected no selection but was <%s>.", selection)
         .isNullOrEmpty();
     return this;
   }
@@ -64,7 +64,7 @@ public class CursorLoaderAssert extends AbstractLoaderAssert<CursorLoaderAssert,
     isNotNull();
     String[] selectionArgs = actual.getSelectionArgs();
     assertThat(selectionArgs)
-        .overridingErrorMessage("Excpected no selection arguments but was <%s>", Arrays.toString(selectionArgs))
+        .overridingErrorMessage("Excpected no selection arguments but was <%s>.", Arrays.toString(selectionArgs))
         .isNullOrEmpty();
     return this;
   }
@@ -89,7 +89,7 @@ public class CursorLoaderAssert extends AbstractLoaderAssert<CursorLoaderAssert,
     isNotNull();
     String sortOrder = actual.getSortOrder();
     assertThat(sortOrder)
-        .overridingErrorMessage("Expected no sort order but was <%s>", sortOrder)
+        .overridingErrorMessage("Expected no sort order but was <%s>.", sortOrder)
         .isNullOrEmpty();
     return this;
   }
