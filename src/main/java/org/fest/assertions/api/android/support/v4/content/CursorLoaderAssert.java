@@ -40,7 +40,7 @@ public class CursorLoaderAssert extends AbstractLoaderAssert<CursorLoaderAssert,
     String actualSelection = actual.getSelection();
     assertThat(actualSelection) //
         .overridingErrorMessage("Expected cursor selection <%s> but was <%s>.", selection,
-                actualSelection) //
+            actualSelection) //
         .isEqualTo(selection);
     return this;
   }
@@ -80,7 +80,7 @@ public class CursorLoaderAssert extends AbstractLoaderAssert<CursorLoaderAssert,
     String actualSortOrder = actual.getSortOrder();
     assertThat(actualSortOrder) //
         .overridingErrorMessage("Expected cursor sort order <%s> but was <%s>.", sortOrder,
-                actualSortOrder) //
+            actualSortOrder) //
         .isEqualTo(sortOrder);
     return this;
   }
