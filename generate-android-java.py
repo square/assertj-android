@@ -14,24 +14,24 @@ for root, dirs, files in os.walk(SRC_DIR):
   for f in files:
     if not f.endswith('Assert.java'):
       continue
-    print '-'*80
+    print('-'*80)
 
     package = '%s.%s' % (root[len(SRC_DIR):].replace('/', '.'), f[:-5])
-    print 'package:', package
+    print('package: %s' % package)
 
     with open(os.path.join(root, f)) as j:
       java = j.read()
     if ABSTRACT.search(java) is not None:
-      print 'SKIP (abstract)'
+      print('SKIP (abstract)')
       continue # Abstract class.
 
     type_match = TARGET.search(java)
     import_type = type_match.group(3)
     target_type = type_match.group(2)
     generics    = type_match.group(4)
-    print 'import type:', import_type
-    print 'target type:', target_type
-    print 'generics   :', generics
+    print('import type: %s' % import_type)
+    print('target type: %s' % target_type)
+    print('generics   : %s'% generics)
 
     import_package = None
     for match in IMPORT.finditer(java):
@@ -42,8 +42,8 @@ for root, dirs, files in os.walk(SRC_DIR):
       raise Exception('Could not find target package for %s' % package)
 
     target_package = import_package.replace(import_type, target_type)
-    print 'import package:', import_package
-    print 'target package:', target_package
+    print('import package: %s' % import_package)
+    print('target package: %s' % target_package)
 
     generic_keys = ''
     if generics:
@@ -55,7 +55,7 @@ for root, dirs, files in os.walk(SRC_DIR):
       (package, target_package, generic_keys)
     )
 
-print '-'*80
+print('-'*80)
 
 with open(OUTPUT, 'w') as out:
   out.write('// Copyright 2012 Square, Inc.\n')
@@ -64,7 +64,7 @@ with open(OUTPUT, 'w') as out:
   out.write('package org.fest.assertions.api;\n\n')
   out.write('/** Assertions for testing Android classes. */\n')
   out.write('public class ANDROID {')
-  for package, target_package, generic_keys in sorted(assertions, lambda x,y: cmp(x[0], y[0])):
+  for package, target_package, generic_keys in sorted(assertions, key=lambda x: x[0]):
     out.write('\n')
     out.write('  public static %s%s assertThat(\n' % (generic_keys, package))
     out.write('      %s actual) {\n' % target_package)
@@ -75,4 +75,4 @@ with open(OUTPUT, 'w') as out:
   out.write('  }\n')
   out.write('}')
 
-print '\nNew ANDROID.java written!\n'
+print('\nNew ANDROID.java written!\n')
