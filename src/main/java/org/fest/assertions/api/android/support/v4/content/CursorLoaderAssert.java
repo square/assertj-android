@@ -4,6 +4,8 @@ package org.fest.assertions.api.android.support.v4.content;
 import android.net.Uri;
 import android.support.v4.content.CursorLoader;
 
+import java.util.Arrays;
+
 import static org.fest.assertions.api.Assertions.assertThat;
 
 /** Assertions for {@link CursorLoader} instances. */
@@ -18,6 +20,15 @@ public class CursorLoaderAssert extends AbstractLoaderAssert<CursorLoaderAssert,
     return this;
   }
 
+  public CursorLoaderAssert doesNotHaveProjection() {
+    isNotNull();
+    String[] projection = actual.getProjection();
+    assertThat(projection)
+        .overridingErrorMessage("Expected no projection but was <%s>", Arrays.toString(projection))
+        .isNullOrEmpty();
+    return this;
+  }
+
   public CursorLoaderAssert projectionContains(String... projection) {
     isNotNull();
     assertThat(actual.getProjection()).contains(projection);
@@ -29,14 +40,32 @@ public class CursorLoaderAssert extends AbstractLoaderAssert<CursorLoaderAssert,
     String actualSelection = actual.getSelection();
     assertThat(actualSelection) //
         .overridingErrorMessage("Expected cursor selection <%s> but was <%s>.", selection,
-            actualSelection) //
+                actualSelection) //
         .isEqualTo(selection);
+    return this;
+  }
+
+  public CursorLoaderAssert doesNotHaveSelection() {
+    isNotNull();
+    String selection = actual.getSelection();
+    assertThat(selection)
+        .overridingErrorMessage("Expected no selection but was <%s>", selection)
+        .isNullOrEmpty();
     return this;
   }
 
   public CursorLoaderAssert hasSelectionArgs(String... selectionArgs) {
     isNotNull();
     assertThat(actual.getSelectionArgs()).isEqualTo(selectionArgs);
+    return this;
+  }
+
+  public CursorLoaderAssert doesNotHaveSelectionArgs() {
+    isNotNull();
+    String[] selectionArgs = actual.getSelectionArgs();
+    assertThat(selectionArgs)
+        .overridingErrorMessage("Excpected no selection arguments but was <%s>", Arrays.toString(selectionArgs))
+        .isNullOrEmpty();
     return this;
   }
 
@@ -51,8 +80,17 @@ public class CursorLoaderAssert extends AbstractLoaderAssert<CursorLoaderAssert,
     String actualSortOrder = actual.getSortOrder();
     assertThat(actualSortOrder) //
         .overridingErrorMessage("Expected cursor sort order <%s> but was <%s>.", sortOrder,
-            actualSortOrder) //
+                actualSortOrder) //
         .isEqualTo(sortOrder);
+    return this;
+  }
+
+  public CursorLoaderAssert doesNotHaveSortOrder() {
+    isNotNull();
+    String sortOrder = actual.getSortOrder();
+    assertThat(sortOrder)
+        .overridingErrorMessage("Expected no sort order but was <%s>", sortOrder)
+        .isNullOrEmpty();
     return this;
   }
 
