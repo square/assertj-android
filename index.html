@@ -19,7 +19,7 @@
             <h1>FEST Android</h1>
             <h3>A set of FEST assertions geared toward testing Android.</h3>
             <ul class="unstyled">
-                <li><a href="https://oss.sonatype.org/content/repositories/releases/com/squareup/fest-android/1.0.1/fest-android-1.0.1.jar" class="btn btn-large btn-inverse" id="download">Download v1.0.1</a></li>
+                <li><a href="http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup&a=fest-android&v=LATEST" class="btn btn-large btn-inverse" id="download">Download</a></li>
             </ul>
       </div>
     </div>
@@ -127,7 +127,7 @@ assertThat(layout.getShowDividers()).isEqualTo(SHOW_DIVIDERS_MIDDLE);</pre>
         <pre class="prettyprint">&lt;dependency>
   &lt;groupId>com.squareup&lt;/groupId>
   &lt;artifactId>fest-android&lt;/artifactId>
-  &lt;version>1.0.1&lt;/version>
+  &lt;version><span id="maven-version"><em>(insert latest version)</em></span>&lt;/version>
 &lt;/dependency></pre>
         <p><em>Compilation requires Android 4.1 or newer.</em></p>
       </div>
@@ -138,7 +138,15 @@ assertThat(layout.getShowDividers()).isEqualTo(SHOW_DIVIDERS_MIDDLE);</pre>
     </div>
 </div>
 <script src="static/prettify.js"></script>
-<script> prettyPrint(); </script>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="static/jquery-maven-artifact.min.js"></script>
+<script>
+  prettyPrint();
+
+  $.fn.artifactVersion('com.squareup', 'fest-android', function(version, url) {
+    $('#maven-version').text(version);
+    $('#download').attr('href', url).text('Download v' + version);
+  });
+</script>
 </body>
 </html>
