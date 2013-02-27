@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+Version 1.0.3 *(2013-02-27)*
+----------------------------
+
+ * Update to FEST 2.0M10 which resolves a potential Android incompatibility.
+
+
 Version 1.0.2 *(2013-02-26)*
 ----------------------------
 
