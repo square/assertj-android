@@ -1,6 +1,16 @@
 Change Log
 ==========
 
+Version 1.0.2 *(2013-02-26)*
+----------------------------
+
+ * New assertions:
+   * `android.content.ContentValues`
+ * Added negative assertions to `CursorLoader`.
+ * Added `String` text assertion to `TextView`.
+ * Generation script now supports Python 3.
+
+
 Version 1.0.1 *(2013-02-05)*
 ----------------------------
 
