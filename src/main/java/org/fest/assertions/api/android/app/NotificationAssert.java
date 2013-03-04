@@ -3,7 +3,7 @@ package org.fest.assertions.api.android.app;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import org.fest.assertions.api.android.Utils;
 import java.util.ArrayList;
 import java.util.List;
 import org.fest.assertions.api.AbstractAssert;
@@ -188,7 +188,7 @@ public class NotificationAssert extends AbstractAssert<NotificationAssert, Notif
     if ((flags & FLAG_HIGH_PRIORITY) != 0) {
       parts.add("highPriority");
     }
-    return TextUtils.join(", ", parts);
+    return Utils.join(parts);
   }
 
   private static String priorityToString(int priority) {

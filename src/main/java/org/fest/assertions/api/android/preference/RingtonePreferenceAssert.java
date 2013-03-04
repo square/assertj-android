@@ -2,9 +2,9 @@
 package org.fest.assertions.api.android.preference;
 
 import android.preference.RingtonePreference;
-import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.List;
+import org.fest.assertions.api.android.Utils;
 
 import static android.media.RingtoneManager.TYPE_ALARM;
 import static android.media.RingtoneManager.TYPE_NOTIFICATION;
@@ -71,6 +71,6 @@ public class RingtonePreferenceAssert
     if ((type & TYPE_RINGTONE) != 0) {
       parts.add("ringtone");
     }
-    return TextUtils.join(", ", parts);
+    return Utils.join(parts);
   }
 }
