@@ -1,10 +1,10 @@
 package org.fest.assertions.api.android.app;
 
 import android.app.ActionBar;
-import org.fest.assertions.api.android.Utils;
 import java.util.ArrayList;
 import java.util.List;
 import org.fest.assertions.api.AbstractAssert;
+import org.fest.assertions.api.android.Utils;
 
 import static android.app.ActionBar.DISPLAY_HOME_AS_UP;
 import static android.app.ActionBar.DISPLAY_SHOW_CUSTOM;
@@ -20,6 +20,14 @@ import static org.fest.assertions.api.Assertions.assertThat;
 public class ActionBarAssert extends AbstractAssert<ActionBarAssert, ActionBar> {
   public ActionBarAssert(ActionBar actual) {
     super(actual, ActionBarAssert.class);
+  }
+
+  public ActionBarAssert hasCustomView() {
+    isNotNull();
+    assertThat(actual.getCustomView()) //
+        .overridingErrorMessage("Expected custom view but was not present.") //
+        .isNotNull();
+    return this;
   }
 
   public ActionBarAssert hasDisplayOptions(int options) {

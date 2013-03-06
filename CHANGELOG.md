@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+Version 1.0.4 *(In Development)*
+--------------------------------
+
+ * Added custom view check for `ActionBar`.
+
+
 Version 1.0.3 *(2013-02-27)*
 ----------------------------
 
