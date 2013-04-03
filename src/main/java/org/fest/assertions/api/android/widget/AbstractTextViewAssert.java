@@ -4,6 +4,7 @@ import android.graphics.Typeface;
 import android.text.TextUtils;
 import android.widget.TextView;
 import org.fest.assertions.api.android.view.AbstractViewAssert;
+import java.util.regex.Pattern;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
@@ -506,6 +507,26 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
     assertThat(text) //
         .overridingErrorMessage("Expected empty text but was <%s>.", text) //
         .isNotEqualTo("");
+    return myself;
+  }
+
+  public S matches(Pattern pattern) {
+    isNotNull();
+    String text = actual.getText().toString();
+    assertThat(pattern.matcher(text).matches())
+        .overridingErrorMessage("Expected text <%s> to match <%s>, but did not.", text,
+            pattern.pattern())
+        .isTrue();
+    return myself;
+  }
+
+  public S doesNotMatch(Pattern pattern) {
+    isNotNull();
+    String text = actual.getText().toString();
+    assertThat(pattern.matcher(text).matches())
+        .overridingErrorMessage("Expected text <%s> to not match <%s>, but did.", text,
+            pattern.pattern())
+        .isFalse();
     return myself;
   }
 
