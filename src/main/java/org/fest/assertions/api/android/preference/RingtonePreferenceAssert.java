@@ -2,9 +2,7 @@
 package org.fest.assertions.api.android.preference;
 
 import android.preference.RingtonePreference;
-import java.util.ArrayList;
-import java.util.List;
-import org.fest.assertions.api.android.Utils;
+import org.fest.assertions.api.android.util.BitMaskStringBuilder;
 
 import static android.media.RingtoneManager.TYPE_ALARM;
 import static android.media.RingtoneManager.TYPE_NOTIFICATION;
@@ -61,16 +59,10 @@ public class RingtonePreferenceAssert
   }
 
   private static String ringtoneTypeToString(int type) {
-    List<String> parts = new ArrayList<String>();
-    if ((type & TYPE_ALARM) != 0) {
-      parts.add("alarm");
-    }
-    if ((type & TYPE_NOTIFICATION) != 0) {
-      parts.add("notification");
-    }
-    if ((type & TYPE_RINGTONE) != 0) {
-      parts.add("ringtone");
-    }
-    return Utils.join(parts);
+    return new BitMaskStringBuilder(type) //
+        .flag(TYPE_ALARM, "alarm")
+        .flag(TYPE_NOTIFICATION, "notification")
+        .flag(TYPE_RINGTONE, "ringtone")
+        .get();
   }
 }

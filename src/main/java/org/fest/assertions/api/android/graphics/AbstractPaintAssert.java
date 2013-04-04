@@ -7,10 +7,8 @@ import android.graphics.PathEffect;
 import android.graphics.Rasterizer;
 import android.graphics.Shader;
 import android.graphics.Typeface;
-import org.fest.assertions.api.android.Utils;
-import java.util.ArrayList;
-import java.util.List;
 import org.fest.assertions.api.AbstractAssert;
+import org.fest.assertions.api.android.util.BitMaskStringBuilder;
 
 import static android.graphics.Paint.ANTI_ALIAS_FLAG;
 import static android.graphics.Paint.DEV_KERN_TEXT_FLAG;
@@ -329,34 +327,16 @@ public abstract class AbstractPaintAssert<S extends AbstractPaintAssert<S, A>, A
   }
 
   private static String flagsToString(int flags) {
-    List<String> parts = new ArrayList<String>();
-    if ((flags & ANTI_ALIAS_FLAG) != 0) {
-      parts.add("antiAlias");
-    }
-    if ((flags & DEV_KERN_TEXT_FLAG) != 0) {
-      parts.add("devKern");
-    }
-    if ((flags & DITHER_FLAG) != 0) {
-      parts.add("dither");
-    }
-    if ((flags & FAKE_BOLD_TEXT_FLAG) != 0) {
-      parts.add("fakeBold");
-    }
-    if ((flags & FILTER_BITMAP_FLAG) != 0) {
-      parts.add("filterBitmap");
-    }
-    if ((flags & LINEAR_TEXT_FLAG) != 0) {
-      parts.add("linearText");
-    }
-    if ((flags & STRIKE_THRU_TEXT_FLAG) != 0) {
-      parts.add("strikeThrough");
-    }
-    if ((flags & SUBPIXEL_TEXT_FLAG) != 0) {
-      parts.add("subpixelText");
-    }
-    if ((flags & UNDERLINE_TEXT_FLAG) != 0) {
-      parts.add("underline");
-    }
-    return Utils.join(parts);
+    return new BitMaskStringBuilder(flags) //
+        .flag(ANTI_ALIAS_FLAG, "antiAlias")
+        .flag(DEV_KERN_TEXT_FLAG, "devKern")
+        .flag(DITHER_FLAG, "dither")
+        .flag(FAKE_BOLD_TEXT_FLAG, "fakeBold")
+        .flag(FILTER_BITMAP_FLAG, "filterBitmap")
+        .flag(LINEAR_TEXT_FLAG, "linearText")
+        .flag(STRIKE_THRU_TEXT_FLAG, "strikeThrough")
+        .flag(SUBPIXEL_TEXT_FLAG, "subpixelText")
+        .flag(UNDERLINE_TEXT_FLAG, "underline")
+        .get();
   }
 }
