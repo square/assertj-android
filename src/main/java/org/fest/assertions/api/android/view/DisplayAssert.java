@@ -37,8 +37,10 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
   //public DisplayAssert hasFlags(int flags) {
   //  isNotNull();
   //  int actualFlags = actual.getFlags();
+  //  // TODO use BitMaskStringBuilder for flagsToStr method
   //  assertThat(actualFlags) //
-  //      .overridingErrorMessage("Expected flags <%s> but was <%s>", flag, actualFlags) //
+  //      .overridingErrorMessage("Expected flags <%s> but was <%s>", flagsToStr(flag),
+  //        flagsToStr(actualFlags)) //
   //      .isEqualTo(flags);
   //  return this;
   //}

@@ -1,10 +1,8 @@
 package org.fest.assertions.api.android.app;
 
 import android.app.ActionBar;
-import java.util.ArrayList;
-import java.util.List;
 import org.fest.assertions.api.AbstractAssert;
-import org.fest.assertions.api.android.Utils;
+import org.fest.assertions.api.android.util.BitMaskStringBuilder;
 
 import static android.app.ActionBar.DISPLAY_HOME_AS_UP;
 import static android.app.ActionBar.DISPLAY_SHOW_CUSTOM;
@@ -142,25 +140,12 @@ public class ActionBarAssert extends AbstractAssert<ActionBarAssert, ActionBar> 
   }
 
   private static String displayOptionsToString(int options) {
-    if (options == 0) {
-      return "none";
-    }
-    List<String> parts = new ArrayList<String>();
-    if ((options & DISPLAY_HOME_AS_UP) != 0) {
-      parts.add("homeAsUp");
-    }
-    if ((options & DISPLAY_SHOW_CUSTOM) != 0) {
-      parts.add("showCustom");
-    }
-    if ((options & DISPLAY_SHOW_HOME) != 0) {
-      parts.add("showHome");
-    }
-    if ((options & DISPLAY_SHOW_TITLE) != 0) {
-      parts.add("showTitle");
-    }
-    if ((options & DISPLAY_USE_LOGO) != 0) {
-      parts.add("useLogo");
-    }
-    return Utils.join(parts);
+    return new BitMaskStringBuilder(options) //
+        .flag(DISPLAY_HOME_AS_UP, "homeAsUp")
+        .flag(DISPLAY_SHOW_CUSTOM, "showCustom")
+        .flag(DISPLAY_SHOW_HOME, "showHome")
+        .flag(DISPLAY_SHOW_TITLE, "showTitle")
+        .flag(DISPLAY_USE_LOGO, "useLogo")
+        .get();
   }
 }

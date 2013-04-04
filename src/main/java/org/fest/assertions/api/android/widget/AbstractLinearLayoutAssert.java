@@ -1,9 +1,7 @@
 package org.fest.assertions.api.android.widget;
 
 import android.widget.LinearLayout;
-import org.fest.assertions.api.android.Utils;
-import java.util.ArrayList;
-import java.util.List;
+import org.fest.assertions.api.android.util.BitMaskStringBuilder;
 import org.fest.assertions.api.android.view.AbstractViewGroupAssert;
 
 import static android.widget.LinearLayout.HORIZONTAL;
@@ -99,20 +97,11 @@ public abstract class AbstractLinearLayoutAssert<S extends AbstractLinearLayoutA
   }
 
   static String showDividerToString(int dividers) {
-    if (dividers == 0) {
-      return "none";
-    }
-    List<String> parts = new ArrayList<String>();
-    if ((dividers & SHOW_DIVIDER_BEGINNING) != 0) {
-      parts.add("beginning");
-    }
-    if ((dividers & SHOW_DIVIDER_MIDDLE) != 0) {
-      parts.add("middle");
-    }
-    if ((dividers & SHOW_DIVIDER_END) != 0) {
-      parts.add("end");
-    }
-    return Utils.join(parts);
+    return new BitMaskStringBuilder(dividers) //
+        .flag(SHOW_DIVIDER_BEGINNING, "beginning")
+        .flag(SHOW_DIVIDER_MIDDLE, "middle")
+        .flag(SHOW_DIVIDER_END, "end")
+        .get();
   }
 
   private static String orientationToString(int orientation) {

@@ -3,10 +3,8 @@ package org.fest.assertions.api.android.app;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.graphics.Bitmap;
-import org.fest.assertions.api.android.Utils;
-import java.util.ArrayList;
-import java.util.List;
 import org.fest.assertions.api.AbstractAssert;
+import org.fest.assertions.api.android.util.BitMaskStringBuilder;
 
 import static android.app.Notification.FLAG_AUTO_CANCEL;
 import static android.app.Notification.FLAG_FOREGROUND_SERVICE;
@@ -160,35 +158,16 @@ public class NotificationAssert extends AbstractAssert<NotificationAssert, Notif
   }
 
   private static String flagsToString(int flags) {
-    if (flags == 0) {
-      return "none";
-    }
-    List<String> parts = new ArrayList<String>();
-    if ((flags & FLAG_AUTO_CANCEL) != 0) {
-      parts.add("autoCancel");
-    }
-    if ((flags & FLAG_FOREGROUND_SERVICE) != 0) {
-      parts.add("foregroundService");
-    }
-    if ((flags & FLAG_INSISTENT) != 0) {
-      parts.add("insistent");
-    }
-    if ((flags & FLAG_NO_CLEAR) != 0) {
-      parts.add("noClear");
-    }
-    if ((flags & FLAG_ONGOING_EVENT) != 0) {
-      parts.add("ongoingEvent");
-    }
-    if ((flags & FLAG_ONLY_ALERT_ONCE) != 0) {
-      parts.add("onlyAlertOnce");
-    }
-    if ((flags & FLAG_SHOW_LIGHTS) != 0) {
-      parts.add("showLights");
-    }
-    if ((flags & FLAG_HIGH_PRIORITY) != 0) {
-      parts.add("highPriority");
-    }
-    return Utils.join(parts);
+    return new BitMaskStringBuilder(flags) //
+        .flag(FLAG_AUTO_CANCEL, "autoCancel")
+        .flag(FLAG_FOREGROUND_SERVICE, "foregroundService")
+        .flag(FLAG_INSISTENT, "insistent")
+        .flag(FLAG_NO_CLEAR, "noClear")
+        .flag(FLAG_ONGOING_EVENT, "ongoingEvent")
+        .flag(FLAG_ONLY_ALERT_ONCE, "onlyAlertOnce")
+        .flag(FLAG_SHOW_LIGHTS, "showLights")
+        .flag(FLAG_HIGH_PRIORITY, "highPriority")
+        .get();
   }
 
   private static String priorityToString(int priority) {
