@@ -1,10 +1,12 @@
 Change Log
 ==========
 
-Version 1.0.4 *(In Development)*
---------------------------------
+Version 1.0.4 *(2013-04-04)*
+----------------------------
 
  * Added custom view check for `ActionBar`.
+ * Added flag assert for `Intent`.
+ * Added regex 'matches' and 'does not match' for `TextView`.
 
 
 Version 1.0.3 *(2013-02-27)*
