@@ -26,8 +26,7 @@ public class ContentValuesEntry {
     return value;
   }
 
-  @Override
-  public boolean equals(Object obj) {
+  @Override public boolean equals(Object obj) {
     if (this == obj) {
       return true;
     }
@@ -41,16 +40,14 @@ public class ContentValuesEntry {
     return areEqual(key, other.key) && areEqual(value, other.value);
   }
 
-  @Override
-  public int hashCode() {
+  @Override public int hashCode() {
     int result = 1;
     result = HASH_CODE_PRIME * result + hashCodeFor(key);
     result = HASH_CODE_PRIME * result + hashCodeFor(value);
     return result;
   }
 
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return String.format("%s[key=%s, value=%s]", getClass().getSimpleName(), quote(key), quote(value));
   }
 }

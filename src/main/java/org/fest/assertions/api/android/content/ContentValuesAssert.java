@@ -53,8 +53,8 @@ public class ContentValuesAssert extends AbstractAssert<ContentValuesAssert, Con
       values.add(entry.getValue());
     }
     assertThat(values)
-         .overridingErrorMessage("Expected <%s> but was not found", expectedValue.toString())
-         .contains(expectedValue);
+        .overridingErrorMessage("Expected <%s> but was not found.", expectedValue)
+        .contains(expectedValue);
     return this;
   }
 
@@ -66,18 +66,18 @@ public class ContentValuesAssert extends AbstractAssert<ContentValuesAssert, Con
         notFound.add(entry);
       }
     }
-    if (notFound.isEmpty()) {
-      return this;
+    if (!notFound.isEmpty()) {
+      throw Failures.instance().failure(new WritableAssertionInfo(), shouldContain(actual, entries, notFound));
     }
-    throw Failures.instance().failure(new WritableAssertionInfo(), shouldContain(actual, entries, notFound));
+    return this;
   }
 
   public ContentValuesAssert hasSize(int expected) {
     isNotNull();
     int size = actual.size();
     assertThat(size)
-            .overridingErrorMessage("Expected size <%d> but was <%d>.", expected, size)
-            .isEqualTo(expected);
+        .overridingErrorMessage("Expected size <%d> but was <%d>.", expected, size)
+        .isEqualTo(expected);
     return this;
   }
 
