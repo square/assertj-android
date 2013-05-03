@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+Version 1.0.5 *(In Development)*
+--------------------------------
+
+ * Added bitmap and paint check to `BitmapDrawble`.
+
+
 Version 1.0.4 *(2013-04-04)*
 ----------------------------
 
