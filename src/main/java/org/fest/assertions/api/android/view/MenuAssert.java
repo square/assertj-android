@@ -16,7 +16,7 @@ public final class MenuAssert extends AbstractAssert<MenuAssert, Menu> {
   public MenuAssert hasItem(int id) {
     isNotNull();
     assertThat(actual.findItem(id)) //
-        .overridingErrorMessage("Expected menu item with ID <%s> but was not found.") //
+        .overridingErrorMessage("Expected menu item with ID <%s> but was not found.", id) //
         .isNotNull();
     return this;
   }
@@ -24,7 +24,7 @@ public final class MenuAssert extends AbstractAssert<MenuAssert, Menu> {
   public MenuAssert hasItemAt(int index) {
     isNotNull();
     assertThat(actual.getItem(index)) //
-        .overridingErrorMessage("Expected menu item at index <%s> but was not found.") //
+        .overridingErrorMessage("Expected menu item at index <%s> but was not found.", index) //
         .isNotNull();
     return this;
   }
