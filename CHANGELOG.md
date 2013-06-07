@@ -1,10 +1,11 @@
 Change Log
 ==========
 
-Version 1.0.5 *(In Development)*
---------------------------------
+Version 1.0.5 *(2013-06-06)*
+----------------------------
 
  * Added bitmap and paint check to `BitmapDrawble`.
+ * Added map-liked assertions for `ContentValues`.
 
 
 Version 1.0.4 *(2013-04-04)*
