@@ -143,6 +143,9 @@ Download [the latest JAR][3] or grab via Maven:
 </dependency>
 ```
 
+If you are not using Maven or Gradle you will also need to include the latest
+[FEST][4] jar in your build.
+
 Compilation requires Android 4.1 or newer.
 
 
@@ -170,3 +173,4 @@ License
  [1]: http://fest.easytesting.org
  [2]: https://github.com/alexruiz/fest-assert-2.x/wiki/Creating-specific-assertions
  [3]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup&a=fest-android&v=LATEST
+ [4]: http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.easytesting%22%20a%3A%22fest-assert-core%22
