@@ -1,6 +1,7 @@
 package org.fest.assertions.api.android.content;
 
 import android.content.Intent;
+import android.net.Uri;
 import org.fest.assertions.api.AbstractAssert;
 import org.fest.assertions.api.android.util.BitMaskStringBuilder;
 
@@ -64,6 +65,18 @@ public class IntentAssert extends AbstractAssert<IntentAssert, Intent> {
     int expected = actual.getFlags();
     assertThat(expected).overridingErrorMessage("Expected <%s> but was <%s>.",
         flagsToString(expected), flagsToString(flags)).isEqualTo(flags);
+    return this;
+  }
+
+  public IntentAssert hasData(String uri) {
+    return hasData(Uri.parse(uri));
+  }
+
+  public IntentAssert hasData(Uri uri) {
+    Uri actualUri = actual.getData();
+    assertThat(actualUri.compareTo(uri)) //
+        .overridingErrorMessage("Expected data Uri <%s> but was <%s>.", uri, actualUri)
+        .isEqualTo(0);
     return this;
   }
 
