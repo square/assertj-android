@@ -123,7 +123,7 @@ assertThat(layout.getShowDividers()).isEqualTo(SHOW_DIVIDERS_MIDDLE);</pre>
     <div class="row section">
       <div class="span10 offset1">
         <h5>Download</h5>
-        <p>Download <a href="https://oss.sonatype.org/content/repositories/releases/com/squareup/fest-android/1.0.0/fest-android-1.0.0.jar">the latest jar</a> or grab via Maven:</p>
+        <p>Download <a id="download-section-link" href="http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup&a=fest-android&v=LATEST">the latest jar</a> or grab via Maven:</p>
         <pre class="prettyprint">&lt;dependency>
   &lt;groupId>com.squareup&lt;/groupId>
   &lt;artifactId>fest-android&lt;/artifactId>
@@ -147,6 +147,7 @@ assertThat(layout.getShowDividers()).isEqualTo(SHOW_DIVIDERS_MIDDLE);</pre>
   $.fn.artifactVersion('com.squareup', 'fest-android', function(version, url) {
     $('#maven-version').text(version);
     $('#download').attr('href', url).text('Download v' + version);
+    $('#download-section-link').attr('href', url);
   });
 </script>
 </body>
