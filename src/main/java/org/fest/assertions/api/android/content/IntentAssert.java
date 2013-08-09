@@ -1,5 +1,7 @@
 package org.fest.assertions.api.android.content;
 
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import org.fest.assertions.api.AbstractAssert;
@@ -78,6 +80,23 @@ public class IntentAssert extends AbstractAssert<IntentAssert, Intent> {
         .overridingErrorMessage("Expected data Uri <%s> but was <%s>.", uri, actualUri)
         .isEqualTo(0);
     return this;
+  }
+
+  public IntentAssert hasComponent(ComponentName expected) {
+    ComponentName componentName = actual.getComponent();
+    assertThat(componentName)
+        .overridingErrorMessage("Expected component name <%s> but was <%s>.",
+            expected.flattenToString(), componentName.flattenToString())
+        .isEqualTo(expected);
+    return this;
+  }
+
+  public IntentAssert hasComponent(Context context, Class<?> cls) {
+    return hasComponent(new ComponentName(context, cls.getName()));
+  }
+
+  public IntentAssert hasComponent(String appPkg, Class<?> cls) {
+    return hasComponent(new ComponentName(appPkg, cls.getName()));
   }
 
   public static String flagsToString(int flags) {
