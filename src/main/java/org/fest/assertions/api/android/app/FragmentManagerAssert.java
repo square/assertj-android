@@ -36,4 +36,20 @@ public class FragmentManagerAssert extends AbstractAssert<FragmentManagerAssert,
         .isEqualTo(count);
     return this;
   }
+
+  public FragmentManagerAssert doesNotHaveFragmentWithId(int id) {
+    isNotNull();
+    assertThat(actual.findFragmentById(id))
+        .overridingErrorMessage("Expected fragment with ID <%s> not to be present but was.", id)
+        .isNull();
+    return this;
+  }
+
+  public FragmentManagerAssert doesNotHaveFragmentWithTag(String tag) {
+    isNotNull();
+    assertThat(actual.findFragmentByTag(tag))
+        .overridingErrorMessage("Expected fragment with tag <%s> not to be present but was.", tag)
+        .isNull();
+    return this;
+  }
 }
