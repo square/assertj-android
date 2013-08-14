@@ -15,7 +15,7 @@ public class BundleAssert extends AbstractAssert<BundleAssert, Bundle> {
   public BundleAssert hasKey(String key) {
     isNotNull();
     assertThat(actual.containsKey(key)) //
-        .overridingErrorMessage("Expected to contain key <%s> but did not.") //
+        .overridingErrorMessage("Expected to contain key <%s> but did not.", key) //
         .isTrue();
     return this;
   }
