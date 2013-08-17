@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+Version 1.0.6 *(2013-08-17)*
+----------------------------
+
+ * Added checks for the absence of fragments by ID or tag on `FragmentManager`.
+ * Added component name and data check for `Intent`.
+ * Fix: Correct missing format arguments on some error strings.
+
+
 Version 1.0.5 *(2013-06-06)*
 ----------------------------
 
