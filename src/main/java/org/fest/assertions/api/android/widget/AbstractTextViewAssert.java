@@ -498,7 +498,7 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
 
   public S isEmpty() {
     isNotNull();
-    return hasText("");
+    return hasTextString("");
   }
 
   public S isNotEmpty() {
