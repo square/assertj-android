@@ -170,6 +170,11 @@ public class ANDROID {
     return new org.fest.assertions.api.android.content.LoaderAssert(actual);
   }
 
+  public static org.fest.assertions.api.android.content.SharedPreferencesAssert assertThat(
+      android.content.SharedPreferences actual) {
+    return new org.fest.assertions.api.android.content.SharedPreferencesAssert(actual);
+  }
+
   public static org.fest.assertions.api.android.content.res.ConfigurationAssert assertThat(
       android.content.res.Configuration actual) {
     return new org.fest.assertions.api.android.content.res.ConfigurationAssert(actual);
