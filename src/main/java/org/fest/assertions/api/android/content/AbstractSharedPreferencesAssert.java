@@ -35,7 +35,7 @@ public abstract class AbstractSharedPreferencesAssert
   public S contains(String key, String value) {
     isNotNull();
     assertThat(actual.getAll())
-        .overridingErrorMessage("Expected <%s> to contain <%s> but it does not.", actual.getAll(),
+        .overridingErrorMessage("Expected preferences to contain <%s> but it does not.",
             stringOf(key, value))
         .contains(MapEntry.entry(key, value));
 
@@ -45,7 +45,7 @@ public abstract class AbstractSharedPreferencesAssert
   public S doesNotContain(String key, String value) {
     isNotNull();
     assertThat(actual.getAll())
-        .overridingErrorMessage("Expected <%s> not to contain <%s> but it does.", actual.getAll(),
+        .overridingErrorMessage("Expected preferences not to contain <%s> but it does.",
             stringOf(key, value))
         .doesNotContain(MapEntry.entry(key, value));
     return myself;
@@ -54,7 +54,7 @@ public abstract class AbstractSharedPreferencesAssert
   public S contains(String key, int value) {
     isNotNull();
     assertThat(actual.getAll())
-        .overridingErrorMessage("Expected <%s> to contain <%s> but it does not.", actual.getAll(),
+        .overridingErrorMessage("Expected preferences to contain <%s> but it does not.",
             stringOf(key, value))
         .contains(MapEntry.entry(key, value));
     return myself;
@@ -63,7 +63,7 @@ public abstract class AbstractSharedPreferencesAssert
   public S doesNotContain(String key, int value) {
     isNotNull();
     assertThat(actual.getAll())
-        .overridingErrorMessage("Expected <%s> not to contain <%s> but it does.", actual.getAll(),
+        .overridingErrorMessage("Expected preferences not to contain <%s> but it does.",
             stringOf(key, value))
         .doesNotContain(MapEntry.entry(key, value));
     return myself;
@@ -72,7 +72,7 @@ public abstract class AbstractSharedPreferencesAssert
   public S contains(String key, boolean value) {
     isNotNull();
     assertThat(actual.getAll())
-        .overridingErrorMessage("Expected <%s> to contain <%s> but it does not.", actual.getAll(),
+        .overridingErrorMessage("Expected preferences to contain <%s> but it does not.",
             stringOf(key, value))
         .contains(MapEntry.entry(key, value));
     return myself;
@@ -81,7 +81,7 @@ public abstract class AbstractSharedPreferencesAssert
   public S doesNotContain(String key, boolean value) {
     isNotNull();
     assertThat(actual.getAll())
-        .overridingErrorMessage("Expected <%s> not to contain <%s> but it does.", actual.getAll(),
+        .overridingErrorMessage("Expected preferences not to contain <%s> but it does.",
             stringOf(key, value))
         .doesNotContain(MapEntry.entry(key, value));
     return myself;
@@ -90,7 +90,7 @@ public abstract class AbstractSharedPreferencesAssert
   public S contains(String key, float value) {
     isNotNull();
     assertThat(actual.getAll())
-        .overridingErrorMessage("Expected <%s> to contain <%s> but it does not.", actual.getAll(),
+        .overridingErrorMessage("Expected preferences to contain <%s> but it does not.",
             stringOf(key, value))
         .contains(MapEntry.entry(key, value));
     return myself;
@@ -99,7 +99,7 @@ public abstract class AbstractSharedPreferencesAssert
   public S doesNotContain(String key, float value) {
     isNotNull();
     assertThat(actual.getAll())
-        .overridingErrorMessage("Expected <%s> not to contain <%s> but it does.", actual.getAll(),
+        .overridingErrorMessage("Expected preferences not to contain <%s> but it does.",
             stringOf(key, value))
         .doesNotContain(MapEntry.entry(key, value));
     return myself;
@@ -108,7 +108,7 @@ public abstract class AbstractSharedPreferencesAssert
   public S contains(String key, long value) {
     isNotNull();
     assertThat(actual.getAll())
-        .overridingErrorMessage("Expected <%s> to contain <%s> but it does not.", actual.getAll(),
+        .overridingErrorMessage("Expected preferences to contain <%s> but it does not.",
             stringOf(key, value))
         .contains(MapEntry.entry(key, value));
     return myself;
@@ -117,7 +117,7 @@ public abstract class AbstractSharedPreferencesAssert
   public S doesNotContain(String key, long value) {
     isNotNull();
     assertThat(actual.getAll())
-        .overridingErrorMessage("Expected <%s> not to contain <%s> but it does.", actual.getAll(),
+        .overridingErrorMessage("Expected preferences not to contain <%s> but it does.",
             stringOf(key, value))
         .doesNotContain(MapEntry.entry(key, value));
     return myself;
@@ -126,7 +126,7 @@ public abstract class AbstractSharedPreferencesAssert
   public S contains(String key, Set<String> value) {
     isNotNull();
     assertThat(actual.getAll())
-        .overridingErrorMessage("Expected <%s> to contain <%s> but it does not.", actual.getAll(),
+        .overridingErrorMessage("Expected preferences to contain <%s> but it does not.",
             stringOf(key, value))
         .contains(MapEntry.entry(key, value));
     return myself;
@@ -135,7 +135,7 @@ public abstract class AbstractSharedPreferencesAssert
   public S doesNotContain(String key, Set<String> value) {
     isNotNull();
     assertThat(actual.getAll())
-        .overridingErrorMessage("Expected <%s> not to contain <%s> but it does.", actual.getAll(),
+        .overridingErrorMessage("Expected preferences not to contain <%s> but it does.",
             stringOf(key, value))
         .doesNotContain(MapEntry.entry(key, value));
     return myself;
