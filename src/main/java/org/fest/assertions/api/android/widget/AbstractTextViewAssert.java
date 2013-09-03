@@ -752,6 +752,14 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
     return myself;
   }
 
+  public S isInputMethodTarget() {
+    isNotNull();
+    assertThat(actual.isInputMethodTarget()) //
+        .overridingErrorMessage("Expected text to be the input method target but was not.") //
+        .isTrue();
+    return myself;
+  }
+
   private static String truncateAtToString(TextUtils.TruncateAt truncation) {
     switch (truncation) {
       case END:
