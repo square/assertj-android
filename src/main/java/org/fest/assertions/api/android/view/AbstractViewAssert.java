@@ -746,7 +746,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     isNotNull();
     int actualWidth = actual.getWidth();
     assertThat(actualWidth) //
-        .overridingErrorMessage("Expected width <%s> but was <%s>") //
+        .overridingErrorMessage("Expected width <%s> but was <%s>", width, actualWidth) //
         .isEqualTo(width);
     return myself;
   }
