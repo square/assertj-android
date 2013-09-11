@@ -755,8 +755,16 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
   public S isInputMethodTarget() {
     isNotNull();
     assertThat(actual.isInputMethodTarget()) //
-        .overridingErrorMessage("Expected text to be the input method target but was not.") //
+        .overridingErrorMessage("Expected to be the input method target but was not.") //
         .isTrue();
+    return myself;
+  }
+
+  public S isNotInputMethodTarget() {
+    isNotNull();
+    assertThat(actual.isInputMethodTarget()) //
+        .overridingErrorMessage("Expected to not be the input method target but was.") //
+        .isFalse();
     return myself;
   }
 
