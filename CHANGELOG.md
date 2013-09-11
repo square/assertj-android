@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+Version 1.0.7 *(2013-09-11)*
+----------------------------
+
+ * Added check for input method target for `TextView`.
+ * Fix: `TextView` empty check uses empty `String` instead of empty `CharSequence`.
+ * Fix: Correct missing format arguments on some error strings.
+
+
 Version 1.0.6 *(2013-08-17)*
 ----------------------------
 
