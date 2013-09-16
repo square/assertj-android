@@ -20,3 +20,7 @@ classes
 obj
 
 .DS_Store
+
+build
+.gradle
+local.properties
