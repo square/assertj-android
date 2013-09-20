@@ -12,7 +12,7 @@ public abstract class AbstractActivityAssert<S extends AbstractActivityAssert<S,
     super(actual, selfType);
   }
 
-  protected S hasRequestedOrientation(int orientation) {
+  public S hasRequestedOrientation(int orientation) {
     isNotNull();
     int actualOrientation = actual.getRequestedOrientation();
     assertThat(actualOrientation) //
