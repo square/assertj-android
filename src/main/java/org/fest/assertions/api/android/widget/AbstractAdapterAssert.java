@@ -62,4 +62,38 @@ public abstract class AbstractAdapterAssert<S extends AbstractAdapterAssert<S, A
         .isFalse();
     return myself;
   }
+
+  public S hasItem(Object expected, int index) {
+    isNotNull();
+
+    assertThat(actual.getCount())
+        .overridingErrorMessage("Index %s is out of bounds. The adapter holds %s items.",
+            index, actual.getCount())
+        .isGreaterThan(index);
+
+    final Object actualItem = actual.getItem(index);
+    assertThat(actualItem)
+        .overridingErrorMessage("Expected item at index %s to be <%s> but was <%s>.", index,
+            expected, actualItem)
+        .isEqualTo(expected);
+
+    return myself;
+  }
+
+  public S doesNotHaveItem(Object notExpected, int index) {
+    isNotNull();
+
+    assertThat(actual.getCount())
+        .overridingErrorMessage("Index %s is out of bounds. The adapter holds %s items.",
+            index, actual.getCount())
+        .isGreaterThan(index);
+
+    final Object actualItem = actual.getItem(index);
+    assertThat(actualItem)
+        .overridingErrorMessage("Expected item at index %s not to be <%s> but it was.", index,
+            notExpected, actualItem)
+        .isNotEqualTo(notExpected);
+
+    return myself;
+  }
 }
