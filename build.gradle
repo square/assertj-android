@@ -3,11 +3,12 @@ buildscript {
     mavenCentral()
   }
   dependencies {
-    classpath 'com.android.tools.build:gradle:0.5.+'
+    classpath 'com.android.tools.build:gradle:0.6.+'
   }
 }
 
 apply plugin: 'android-library'
+apply plugin: 'checkstyle'
 
 dependencies {
   repositories {
@@ -22,10 +23,38 @@ version = '1.0.7-SNAPSHOT'
 
 android {
   compileSdkVersion 18
-  buildToolsVersion '18.0.1'
+  buildToolsVersion '18.1'
 
   defaultConfig {
     minSdkVersion 7
     targetSdkVersion 18
   }
+}
+
+checkstyle {
+  configFile project.file('checkstyle.xml')
+  showViolations true
+}
+
+android.libraryVariants.all { variant ->
+  def name = variant.buildType.name
+
+  def checkstyle = project.tasks.create "checkstyle${name.capitalize()}", Checkstyle
+  checkstyle.dependsOn variant.javaCompile
+  checkstyle.source variant.javaCompile.source
+  checkstyle.classpath = project.fileTree(variant.javaCompile.destinationDir)
+  checkstyle.exclude('**/BuildConfig.java')
+  project.tasks.getByName("check").dependsOn checkstyle
+
+  // Only attach a jar for non-debug build types.
+  if (!name.equals(com.android.builder.BuilderConstants.DEBUG)) {
+    def task = project.tasks.create "jar${name.capitalize()}", Jar
+    task.dependsOn variant.javaCompile
+    task.from variant.javaCompile.destinationDir
+    artifacts.add('archives', task);
+  }
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '1.8'
 }
