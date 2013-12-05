@@ -64,6 +64,7 @@ public class IntentAssert extends AbstractAssert<IntentAssert, Intent> {
   }
 
   public IntentAssert hasFlags(int flags) {
+    isNotNull();
     int expected = actual.getFlags();
     assertThat(expected).overridingErrorMessage("Expected <%s> but was <%s>.",
         flagsToString(expected), flagsToString(flags)).isEqualTo(flags);
@@ -75,6 +76,7 @@ public class IntentAssert extends AbstractAssert<IntentAssert, Intent> {
   }
 
   public IntentAssert hasData(Uri uri) {
+    isNotNull();
     Uri actualUri = actual.getData();
     assertThat(actualUri.compareTo(uri)) //
         .overridingErrorMessage("Expected data Uri <%s> but was <%s>.", uri, actualUri)
@@ -83,6 +85,7 @@ public class IntentAssert extends AbstractAssert<IntentAssert, Intent> {
   }
 
   public IntentAssert hasComponent(ComponentName expected) {
+    isNotNull();
     ComponentName componentName = actual.getComponent();
     assertThat(componentName)
         .isNotNull()
