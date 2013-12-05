@@ -85,6 +85,7 @@ public class IntentAssert extends AbstractAssert<IntentAssert, Intent> {
   public IntentAssert hasComponent(ComponentName expected) {
     ComponentName componentName = actual.getComponent();
     assertThat(componentName)
+        .isNotNull()
         .overridingErrorMessage("Expected component name <%s> but was <%s>.",
             expected.flattenToString(), componentName.flattenToString())
         .isEqualTo(expected);
