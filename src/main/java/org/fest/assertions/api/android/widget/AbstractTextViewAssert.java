@@ -585,7 +585,7 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
   public S endsWithText(String sequence) {
     isNotNull();
     String text = actual.getText().toString();
-    assertThat(text.startsWith(sequence)) //
+    assertThat(text.endsWith(sequence)) //
         .overridingErrorMessage("Expected text <%s> to end with <%s> but did not.", text,
             sequence) //
         .isTrue();
@@ -600,7 +600,7 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
   public S doesNotEndWithText(String sequence) {
     isNotNull();
     String text = actual.getText().toString();
-    assertThat(text.startsWith(sequence)) //
+    assertThat(text.endsWith(sequence)) //
         .overridingErrorMessage("Expected text <%s> to not end with <%s> but did.", text,
             sequence) //
         .isFalse();
