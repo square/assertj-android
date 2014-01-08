@@ -3,7 +3,7 @@ buildscript {
     mavenCentral()
   }
   dependencies {
-    classpath 'com.android.tools.build:gradle:0.6.+'
+    classpath 'com.android.tools.build:gradle:0.7.+'
   }
 }
 
@@ -14,7 +14,7 @@ dependencies {
   repositories {
     mavenCentral()
   }
-  compile 'com.android.support:support-v4:18.0.+'
+  compile 'com.android.support:support-v4:19.0.+'
   compile 'org.easytesting:fest-assert-core:2.0M10'
 }
 
@@ -22,12 +22,11 @@ group = 'com.squareup'
 version = '1.0.7-SNAPSHOT'
 
 android {
-  compileSdkVersion 18
-  buildToolsVersion '18.1'
+  compileSdkVersion 19
+  buildToolsVersion '19.0.0'
 
   defaultConfig {
     minSdkVersion 7
-    targetSdkVersion 18
   }
 }
 
