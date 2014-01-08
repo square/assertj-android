@@ -19,7 +19,7 @@ dependencies {
 }
 
 group = 'com.squareup'
-version = '1.0.7-SNAPSHOT'
+version = '1.0.8-SNAPSHOT'
 
 android {
   compileSdkVersion 19
@@ -54,6 +54,4 @@ android.libraryVariants.all { variant ->
   }
 }
 
-task wrapper(type: Wrapper) {
-  gradleVersion = '1.8'
-}
+apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
