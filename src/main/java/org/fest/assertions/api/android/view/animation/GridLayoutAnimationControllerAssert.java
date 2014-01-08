@@ -61,7 +61,7 @@ public class GridLayoutAnimationControllerAssert extends
   }
 
   private static String directionToString(int direction) {
-    List<String> parts = new ArrayList<String>();
+    List<String> parts = new ArrayList<>();
     int horizontal = direction & DIRECTION_HORIZONTAL_MASK;
     int vertical = direction & DIRECTION_VERTICAL_MASK;
     if ((horizontal & DIRECTION_RIGHT_TO_LEFT) != 0) {

@@ -60,7 +60,7 @@ public class ContentValuesAssert extends AbstractAssert<ContentValuesAssert, Con
 
   public ContentValuesAssert contains(ContentValuesEntry... entries) {
     isNotEmptyOrNull(entries);
-    Set<ContentValuesEntry> notFound = new LinkedHashSet<ContentValuesEntry>();
+    Set<ContentValuesEntry> notFound = new LinkedHashSet<>();
     for (ContentValuesEntry entry : entries) {
       if (!containsEntry(actual, entry)) {
         notFound.add(entry);

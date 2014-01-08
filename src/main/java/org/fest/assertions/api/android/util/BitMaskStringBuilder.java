@@ -9,7 +9,7 @@ import java.util.Set;
  */
 public class BitMaskStringBuilder {
   private final int flags;
-  private final Set<String> parts = new LinkedHashSet<String>();
+  private final Set<String> parts = new LinkedHashSet<>();
 
   public BitMaskStringBuilder(int flags) {
     this.flags = flags;
