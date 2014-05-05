@@ -1,6 +1,16 @@
 Change Log
 ==========
 
+Version 1.0.8 *(2014-04-05)*
+----------------------------
+
+ * New assertions:
+   * `android.content.SharedPreferences`
+ * Added `hasItem` and `doesNotHaveItem` check to `Adapter`.
+ * Added `hasRequestedOrientation` check to `Activity`.
+ * Fix: `TextView`'s `endsWith` now properly matches the end of text instead of start.
+
+
 Version 1.0.7 *(2013-09-11)*
 ----------------------------
 

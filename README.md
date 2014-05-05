@@ -139,14 +139,14 @@ Download [the latest JAR][3] or grab via Maven:
 <dependency>
   <groupId>com.squareup</groupId>
   <artifactId>fest-android</artifactId>
-  <version>1.0.7</version>
+  <version>1.0.8</version>
 </dependency>
 ```
 
 or via Gradle:
 
 ```groovy
-androidTestCompile 'com.squareup:fest-android:1.0.7'
+androidTestCompile 'com.squareup:fest-android:1.0.8'
 ```
 
 If you are not using Maven or Gradle you will also need to include the latest
