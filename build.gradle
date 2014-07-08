@@ -1,26 +1,28 @@
+import com.android.builder.core.BuilderConstants
+
 buildscript {
   repositories {
     mavenCentral()
   }
   dependencies {
-    classpath 'com.android.tools.build:gradle:0.9.+'
+    classpath 'com.android.tools.build:gradle:0.12.+'
   }
 }
 
-apply plugin: 'android-library'
+apply plugin: 'com.android.library'
 apply plugin: 'checkstyle'
 
-dependencies {
-  repositories {
+repositories {
     mavenCentral()
-  }
-  compile 'com.android.support:support-v4:19.1.+'
+}
+dependencies {
   compile 'org.easytesting:fest-assert-core:2.0M10'
+  provided 'com.android.support:support-v4:19.1.+'
 }
 
 android {
   compileSdkVersion 19
-  buildToolsVersion '19.0.3'
+  buildToolsVersion '20.0'
 
   defaultConfig {
     minSdkVersion 7
@@ -52,7 +54,7 @@ android.libraryVariants.all { variant ->
   project.tasks.getByName("check").dependsOn checkstyle
 
   // Only attach a jar for non-debug build types.
-  if (!name.equals(com.android.builder.BuilderConstants.DEBUG)) {
+  if (!name.equals(BuilderConstants.DEBUG)) {
     def task = project.tasks.create "jar${name.capitalize()}", Jar
     task.dependsOn variant.javaCompile
     task.from variant.javaCompile.destinationDir
@@ -60,4 +62,6 @@ android.libraryVariants.all { variant ->
   }
 }
 
-apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
+apply from: 'https://raw.github.com/robbypond/gradle-mvn-push/master/gradle-mvn-push.gradle'
+// using above because that one has a necessary fix to comply with 0.12.+ android gradle plugin.
+//apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
