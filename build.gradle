@@ -17,7 +17,7 @@ repositories {
 }
 dependencies {
   compile 'org.easytesting:fest-assert-core:2.0M10'
-  provided 'com.android.support:support-v4:19.1.+'
+  provided 'com.android.support:support-v4:20.0.+'
 }
 
 android {
@@ -62,6 +62,4 @@ android.libraryVariants.all { variant ->
   }
 }
 
-apply from: 'https://raw.github.com/robbypond/gradle-mvn-push/master/gradle-mvn-push.gradle'
-// using above because that one has a necessary fix to comply with 0.12.+ android gradle plugin.
-//apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
+apply from: 'gradle/gradle-mvn-push.gradle'
