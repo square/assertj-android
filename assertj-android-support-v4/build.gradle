@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'checkstyle'
 
 dependencies {
-  compile project(':android')
+  compile project(':assertj-android')
   compile 'com.android.support:support-v4:20.0.0'
 }
 

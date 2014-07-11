@@ -1,2 +1,2 @@
-include ':android'
-include ':android-support-v4'
+include ':assertj-android'
+include ':assertj-android-support-v4'
