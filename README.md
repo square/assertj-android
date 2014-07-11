@@ -84,6 +84,18 @@ import static org.assertj.android.api.Assertions.assertThat;
 
 
 
+Add-On Modules
+--------------
+
+Modules are also provided for the add-on Android libraries. Add the dependency
+(listed below) and use the following imports:
+
+ * support-v4: `import static org.assertj.android.support.v4.api.Assertions.assertThat;`
+ * appcompat-v7: `import static org.assertj.android.appcompat.v7.api.Assertions.assertThat;`
+ * gridlayout-v4: `import static org.assertj.android.gridlayout.v7.api.Assertions.assertThat;`
+
+
+
 Extending
 ---------
 
@@ -129,26 +141,25 @@ For more information about writing custom assertions see the [official documenta
 Download
 --------
 
-Download [the latest JAR][3] or grab via Maven:
-
-```xml
-<dependency>
-  <groupId>com.squareup.assertj</groupId>
-  <artifactId>assertj-android</artifactId>
-  <version>1.0.8</version>
-</dependency>
-```
-
-or via Gradle:
-
+Android module:
 ```groovy
-androidTestCompile 'com.squareup.assertj:assertj-android:1.0.8'
+androidTestCompile 'com.squareup.assertj:assertj-android:1.0.0'
 ```
 
-If you are not using Maven or Gradle you will also need to include the latest
-[AssertJ][4] jar in your build.
+Support-v4 module:
+```groovy
+androidTestCompile 'com.squareup.assertj:assertj-android-support-v4:1.0.0'
+```
 
-Compilation requires Android 4.1 or newer.
+AppCompat-v7 module:
+```groovy
+androidTestCompile 'com.squareup.assertj:assertj-android-appcompat-v7:1.0.0'
+```
+
+GridLayout-v7 module:
+```groovy
+androidTestCompile 'com.squareup.assertj:assertj-android-gridlayout-v7:1.0.0'
+```
 
 
 
@@ -174,5 +185,3 @@ License
 
  [1]: http://joel-costigliola.github.io/assertj/
  [2]: http://joel-costigliola.github.io/assertj/assertj-core-custom-assertions.html
- [3]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.assertf&a=assertj-android&v=LATEST
- [4]: http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.assertj%22%20a%3A%22assertj-core%22
