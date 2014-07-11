@@ -2,9 +2,9 @@
 
 set -ex
 
-REPO="git@github.com:square/fest-android.git"
-GROUP_ID="com.squareup"
-ARTIFACT_ID="fest-android"
+REPO="git@github.com:square/assertj-android.git"
+GROUP_ID="com.squareup.assertj"
+ARTIFACT_ID="assertj-android"
 
 DIR=temp-clone
 
