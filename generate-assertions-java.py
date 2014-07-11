@@ -97,7 +97,7 @@ for project in projects:
     out.write('  private Assertions() {\n')
     out.write('    throw new AssertionError("No instances.");\n')
     out.write('  }\n')
-    out.write('}')
+    out.write('}\n')
 
 
 print('\nNew Assertions.java files written!\n')

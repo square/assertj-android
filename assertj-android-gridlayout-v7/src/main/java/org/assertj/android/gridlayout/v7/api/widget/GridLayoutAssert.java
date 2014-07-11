@@ -1,4 +1,4 @@
-package org.assertj.android.gridlayout.v7.api;
+package org.assertj.android.gridlayout.v7.api.widget;
 
 import android.support.v7.widget.GridLayout;
 import org.assertj.android.api.view.AbstractViewGroupAssert;
