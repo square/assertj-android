@@ -1,65 +1,14 @@
-import com.android.builder.core.BuilderConstants
+subprojects {
+  buildscript {
+    repositories {
+      mavenCentral()
+    }
+    dependencies {
+      classpath 'com.android.tools.build:gradle:0.12.+'
+    }
+  }
 
-buildscript {
   repositories {
     mavenCentral()
   }
-  dependencies {
-    classpath 'com.android.tools.build:gradle:0.12.+'
-  }
 }
-
-apply plugin: 'com.android.library'
-apply plugin: 'checkstyle'
-
-repositories {
-    mavenCentral()
-}
-dependencies {
-  compile 'org.easytesting:fest-assert-core:2.0M10'
-  provided 'com.android.support:support-v4:20.0.+'
-}
-
-android {
-  compileSdkVersion 19
-  buildToolsVersion '20.0'
-
-  defaultConfig {
-    minSdkVersion 7
-  }
-
-  compileOptions {
-    sourceCompatibility JavaVersion.VERSION_1_7
-    targetCompatibility JavaVersion.VERSION_1_7
-  }
-
-  lintOptions {
-    abortOnError false
-  }
-}
-
-checkstyle {
-  configFile project.file('checkstyle.xml')
-  showViolations true
-}
-
-android.libraryVariants.all { variant ->
-  def name = variant.buildType.name
-
-  def checkstyle = project.tasks.create "checkstyle${name.capitalize()}", Checkstyle
-  checkstyle.dependsOn variant.javaCompile
-  checkstyle.source variant.javaCompile.source
-  checkstyle.classpath = project.fileTree(variant.javaCompile.destinationDir)
-  checkstyle.exclude('**/BuildConfig.java')
-  project.tasks.getByName("check").dependsOn checkstyle
-
-  // Only attach a jar for non-debug build types.
-  if (!name.equals(BuilderConstants.DEBUG)) {
-    def task = project.tasks.create "jar${name.capitalize()}", Jar
-    task.dependsOn variant.javaCompile
-    task.from variant.javaCompile.destinationDir
-    artifacts.add('archives', task);
-  }
-}
-
-apply from: 'gradle/gradle-mvn-push.gradle'

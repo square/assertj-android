@@ -1,4 +1,11 @@
-language: java
+language: android
+
+android:
+  components:
+    - build-tools-20.0.0
+    - extra-android-m2repository
+  licenses:
+    - android-sdk-license-5be876d5
 
 branches:
   except:
@@ -9,3 +16,6 @@ notifications:
 
 before_install:
  - ./check-missing-assertions.sh
+
+script:
+ - ./gradlew clean check

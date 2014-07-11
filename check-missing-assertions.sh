@@ -1,16 +1,19 @@
 #!/bin/bash
 
-ASSERTIONS=`\find src/main/java -type f | \grep "Assert.java" | \sed 's|src/main/java/||' | \sed 's|\.java||' | \grep -v "/Abstract" | \sed 's|/|\.|g' | \sort`
 MISSING=0
 
-for assertion in $ASSERTIONS; do
-	\grep "$assertion" src/main/java/org/fest/assertions/api/ANDROID.java > /dev/null
-	if [ $? -ne 0 ]; then
-		echo "MISSING: $assertion"
-		MISSING=1
-	fi
+for project in $(\find . -type d -name 'android*' -maxdepth 1 | \sed 's|./||g'); do
+  ASSERTIONS=$(\find ${project} -name 'Assertions.java')
+  CLASSES=$(\find ${project} -type f -name '*Assert.java' | \cut -d'/' -f 5- | \grep -v '/Abstract' | \sed 's|.java||' | \sed 's|/|.|g')
+  for class in ${CLASSES}; do
+    \grep "$class" ${ASSERTIONS} > /dev/null
+    if [ $? -ne 0 ]; then
+      echo "MISSING: $class"
+      MISSING=1
+    fi
+  done
 done
 
-if [ $MISSING -ne 0 ]; then
+if [ ${MISSING} -ne 0 ]; then
 	exit 1
 fi

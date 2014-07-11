@@ -1,0 +1,44 @@
+package org.assertj.android.api.widget;
+
+import android.annotation.TargetApi;
+import android.widget.AbsListView;
+
+import static android.os.Build.VERSION_CODES.HONEYCOMB;
+import static org.assertj.core.api.Assertions.assertThat;
+
+public abstract class AbstractAbsListViewAssert<S extends AbstractAbsListViewAssert<S, A>, A extends AbsListView>
+    extends AbstractAdapterViewAssert<S, A> {
+  public AbstractAbsListViewAssert(A actual, Class<S> selfType) {
+    super(actual, selfType);
+  }
+
+  @TargetApi(HONEYCOMB)
+  public S hasCheckedItemsCount(int count) {
+    isNotNull();
+    int actualCount = actual.getCheckedItemCount();
+    assertThat(actualCount) //
+        .overridingErrorMessage("Expected <%s> checked items but was <%s>.", count, actualCount) //
+        .isEqualTo(count);
+    return myself;
+  }
+
+  @TargetApi(HONEYCOMB)
+  public S containsItemIds(long... itemIds) {
+    isNotNull();
+    assertThat(actual.getCheckedItemIds()).contains(itemIds);
+    return myself;
+  }
+
+  @TargetApi(HONEYCOMB)
+  public S hasCheckedItemPosition(int position) {
+    isNotNull();
+    assertThat(actual.getCheckedItemPosition()).isEqualTo(position);
+    return myself;
+  }
+
+  public S containsCheckedItemPositions(int... positions) {
+    isNotNull();
+    // TODO? assertThat(actual.getCheckedItemPositions()).contains(positions);
+    return myself;
+  }
+}
