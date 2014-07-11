@@ -9,10 +9,6 @@ build
 out
 lib
 
-target
-pom.xml.*
-release.properties
-
 .idea
 *.iml
 classes
@@ -24,3 +20,4 @@ obj
 build
 .gradle
 local.properties
+reports
