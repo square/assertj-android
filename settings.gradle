@@ -1,3 +1,4 @@
 include ':assertj-android'
+include ':assertj-android-appcompat-v7'
 include ':assertj-android-gridlayout-v7'
 include ':assertj-android-support-v4'
