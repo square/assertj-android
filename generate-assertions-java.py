@@ -13,7 +13,7 @@ ASSERTIONS = 'Assertions.java'
 
 projects = []
 for candidate in filter(os.path.isdir, os.listdir('.')):
-  if candidate.startswith('android'):
+  if candidate.startswith('assertj-android'):
     projects.append(candidate)
 print('Projects: %s\n' % projects)
 
