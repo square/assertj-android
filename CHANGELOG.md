@@ -9,9 +9,9 @@ Convert project from 'fest-android' to 'assertj-android'.
  * New: Add-on modules for the support library, AppCompat, and GridLayout.
 
 
+----
 
-
-NOTE: The following change log is from the 'fest-android` releases which remain
+NOTE: The following change log is from the 'fest-android' releases which remain
 a part of this repository history.
 
 Version 1.0.8 *(2014-04-05)*
