@@ -9,10 +9,15 @@ import org.assertj.core.api.AbstractAssert;
 import static android.os.Build.VERSION_CODES.FROYO;
 import static android.os.Build.VERSION_CODES.HONEYCOMB_MR2;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR1;
+import static android.os.Build.VERSION_CODES.KITKAT_WATCH;
 import static android.view.Display.FLAG_PRESENTATION;
 import static android.view.Display.FLAG_PRIVATE;
 import static android.view.Display.FLAG_SECURE;
 import static android.view.Display.FLAG_SUPPORTS_PROTECTED_BUFFERS;
+import static android.view.Display.STATE_DOZING;
+import static android.view.Display.STATE_OFF;
+import static android.view.Display.STATE_ON;
+import static android.view.Display.STATE_UNKNOWN;
 import static android.view.Surface.ROTATION_0;
 import static android.view.Surface.ROTATION_180;
 import static android.view.Surface.ROTATION_270;
@@ -49,7 +54,7 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
     int actualFlags = actual.getFlags();
     assertThat(actualFlags) //
         .overridingErrorMessage("Expected flags <%s> but was <%s>", flagsToStr(flags),
-          flagsToStr(actualFlags)) //
+            flagsToStr(actualFlags)) //
         .isEqualTo(flags);
     return this;
   }
@@ -77,8 +82,8 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
     isNotNull();
     int actualOrientation = actual.getOrientation();
     assertThat(actualOrientation) //
-        .overridingErrorMessage("Expected orientation <%s> but was <%s>", orientationToString(orientation),
-            orientationToString(actualOrientation)) //
+        .overridingErrorMessage("Expected orientation <%s> but was <%s>",
+            orientationToString(orientation), orientationToString(actualOrientation)) //
         .isEqualTo(orientation);
     return this;
   }
@@ -86,22 +91,22 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
   public DisplayAssert isPortrait() {
     isNotNull();
     int actualOrientation = actual.getOrientation();
-    assertThat(actualOrientation)
-      .overridingErrorMessage("Expected orientation <%s> or <%s>, but was <%s>",
-          orientationToString(ROTATION_0), orientationToString(ROTATION_180),
-          orientationToString(actualOrientation))
-      .isIn(ROTATION_0, ROTATION_180);
+    assertThat(actualOrientation) //
+        .overridingErrorMessage("Expected orientation <%s> or <%s>, but was <%s>",
+            orientationToString(ROTATION_0), orientationToString(ROTATION_180),
+            orientationToString(actualOrientation)) //
+        .isIn(ROTATION_0, ROTATION_180);
     return this;
   }
 
   public DisplayAssert isLandscape() {
     isNotNull();
     int actualOrientation = actual.getOrientation();
-    assertThat(actualOrientation)
-      .overridingErrorMessage("Expected orientation <%s> or <%s>, but was <%s>",
-        orientationToString(ROTATION_270), orientationToString(ROTATION_90),
-        orientationToString(actualOrientation))
-      .isIn(ROTATION_270, ROTATION_90);
+    assertThat(actualOrientation) //
+        .overridingErrorMessage("Expected orientation <%s> or <%s>, but was <%s>",
+            orientationToString(ROTATION_270), orientationToString(ROTATION_90),
+            orientationToString(actualOrientation)) //
+        .isIn(ROTATION_270, ROTATION_90);
     return this;
   }
 
@@ -121,12 +126,12 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
     Point actualSize = new Point();
     actual.getRealSize(actualSize);
     assertThat(actualSize.x) //
-        .overridingErrorMessage("Expected real size of <%s, %s> but was <%s, %s>", width,
-            height, actualSize.x, actualSize.y) //
+        .overridingErrorMessage("Expected real size of <%s, %s> but was <%s, %s>", width, height,
+            actualSize.x, actualSize.y) //
         .isEqualTo(width);
     assertThat(actualSize.y) //
-        .overridingErrorMessage("Expected real size of <%s, %s> but was <%s, %s>", width,
-            height, actualSize.x, actualSize.y) //
+        .overridingErrorMessage("Expected real size of <%s, %s> but was <%s, %s>", width, height,
+            actualSize.x, actualSize.y) //
         .isEqualTo(height);
     return this;
   }
@@ -166,6 +171,16 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
     return this;
   }
 
+  @TargetApi(KITKAT_WATCH)
+  public DisplayAssert hasState(int state) {
+    isNotNull();
+    assertThat(actual.getState()) //
+        .overridingErrorMessage("Expected state <%s> but was <%s>", stateToString(state),
+            stateToString(actual.getState())) //
+        .isEqualTo(state);
+    return this;
+  }
+
   public DisplayAssert hasWidth(int width) {
     isNotNull();
     int actualWidth = actual.getWidth();
@@ -194,7 +209,7 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
   }
 
   private static String orientationToString(int orientation) {
-    switch (orientation)  {
+    switch (orientation) {
       case ROTATION_0:
         return "portrait";
       case ROTATION_90:
@@ -205,6 +220,22 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
         return "inverted landscape";
       default:
         throw new IllegalArgumentException("Unknown orientation: " + orientation);
+    }
+  }
+
+  @TargetApi(KITKAT_WATCH)
+  private static String stateToString(int state) {
+    switch (state) {
+      case STATE_DOZING:
+        return "dozing";
+      case STATE_OFF:
+        return "off";
+      case STATE_ON:
+        return "on";
+      case STATE_UNKNOWN:
+        return "unknown";
+      default:
+        throw new IllegalArgumentException("Unknown state: " + state);
     }
   }
 

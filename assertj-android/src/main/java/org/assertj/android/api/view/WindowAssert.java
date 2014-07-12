@@ -17,6 +17,7 @@ import static android.view.Window.FEATURE_NO_TITLE;
 import static android.view.Window.FEATURE_OPTIONS_PANEL;
 import static android.view.Window.FEATURE_PROGRESS;
 import static android.view.Window.FEATURE_RIGHT_ICON;
+import static android.view.Window.FEATURE_SWIPE_TO_DISMISS;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link Window} instances. */
@@ -117,6 +118,8 @@ public class WindowAssert extends AbstractAssert<WindowAssert, Window> {
         return "progress";
       case FEATURE_RIGHT_ICON:
         return "rightIcon";
+      case FEATURE_SWIPE_TO_DISMISS:
+        return "swipeToDismiss";
       default:
         throw new IllegalArgumentException("Unknown window feature: " + feature);
     }
