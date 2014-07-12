@@ -1,0 +1,45 @@
+apply plugin: 'com.android.library'
+apply plugin: 'checkstyle'
+
+dependencies {
+  compile project(':assertj-android')
+  compile 'com.google.android.gms:play-services:5.0.77'
+}
+
+android {
+  compileSdkVersion 19
+  buildToolsVersion '20.0.0'
+
+  defaultConfig {
+    minSdkVersion 7
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_7
+    targetCompatibility JavaVersion.VERSION_1_7
+  }
+
+  lintOptions {
+    abortOnError false
+    disable 'InlinedApi', 'AllowBackup'
+  }
+}
+
+checkstyle {
+  configFile rootProject.file('checkstyle.xml')
+  showViolations true
+}
+
+android.libraryVariants.all { variant ->
+  def name = variant.buildType.name
+
+  def checkstyle = project.tasks.create "checkstyle${name.capitalize()}", Checkstyle
+  checkstyle.dependsOn variant.javaCompile
+  checkstyle.source variant.javaCompile.source
+  checkstyle.classpath = project.fileTree(variant.javaCompile.destinationDir)
+  checkstyle.exclude('**/BuildConfig.java')
+  checkstyle.exclude('**/R.java')
+  project.tasks.getByName("check").dependsOn checkstyle
+}
+
+apply from: '../gradle/gradle-mvn-push.gradle'

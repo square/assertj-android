@@ -7,7 +7,7 @@ import re
 SRC_DIR = 'src/main/java/'
 ABSTRACT = re.compile(r'public abstract class Abstract')
 TARGET = re.compile(r'\s[A-Z][A-Za-z0-9_]+<[A-Z][A-Za-z0-9_]+(<.+?>)?, (([A-Z][A-Za-z0-9_]+).*?)(<.+?>)?> {')
-IMPORT = re.compile(r'import (android\..*?);')
+IMPORT = re.compile(r'import ((?:com\.google\.)?android\..*?);')
 ASSERTIONS = 'Assertions.java'
 
 
