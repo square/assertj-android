@@ -91,6 +91,7 @@ Modules are also provided for the add-on Android libraries. Add the dependency
 (listed below) and use the following imports:
 
  * support-v4: `import static org.assertj.android.support.v4.api.Assertions.assertThat;`
+ * play-services: `import static org.assertj.android.playservices.api.Assertions.assertThat;`
  * appcompat-v7: `import static org.assertj.android.appcompat.v7.api.Assertions.assertThat;`
  * mediarouter-v7: `import static org.assertj.android.mediarouter.v7.api.Assertions.assertThat;`
  * gridlayout-v7: `import static org.assertj.android.gridlayout.v7.api.Assertions.assertThat;`
@@ -152,6 +153,11 @@ androidTestCompile 'com.squareup.assertj:assertj-android:1.0.0'
 Support-v4 module:
 ```groovy
 androidTestCompile 'com.squareup.assertj:assertj-android-support-v4:1.0.0'
+```
+
+Google Play Services module:
+```groovy
+androidTestCompile 'com.squareup.assertj:assertj-android-play-services:1.0.0'
 ```
 
 AppCompat-v7 module:
