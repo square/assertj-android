@@ -93,7 +93,7 @@ Modules are also provided for the add-on Android libraries. Add the dependency
  * support-v4: `import static org.assertj.android.support.v4.api.Assertions.assertThat;`
  * appcompat-v7: `import static org.assertj.android.appcompat.v7.api.Assertions.assertThat;`
  * mediarouter-v7: `import static org.assertj.android.mediarouter.v7.api.Assertions.assertThat;`
- * gridlayout-v4: `import static org.assertj.android.gridlayout.v7.api.Assertions.assertThat;`
+ * gridlayout-v7: `import static org.assertj.android.gridlayout.v7.api.Assertions.assertThat;`
 
 
 
