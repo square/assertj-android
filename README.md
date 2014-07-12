@@ -142,6 +142,8 @@ For more information about writing custom assertions see the [official documenta
 Download
 --------
 
+*NOTE:* Version 1.0.0 has not yet been released!
+
 Android module:
 ```groovy
 androidTestCompile 'com.squareup.assertj:assertj-android:1.0.0'
