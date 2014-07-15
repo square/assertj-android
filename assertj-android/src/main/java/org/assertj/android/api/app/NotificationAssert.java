@@ -23,6 +23,7 @@ import static android.app.Notification.PRIORITY_MIN;
 import static android.os.Build.VERSION_CODES.GINGERBREAD;
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN;
+import static android.os.Build.VERSION_CODES.KITKAT_WATCH;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class NotificationAssert extends AbstractAssert<NotificationAssert, Notification> {
@@ -65,6 +66,16 @@ public class NotificationAssert extends AbstractAssert<NotificationAssert, Notif
   public NotificationAssert hasFullScreenIntent(PendingIntent intent) {
     isNotNull();
     assertThat(actual.fullScreenIntent).isEqualTo(intent);
+    return this;
+  }
+
+  @TargetApi(KITKAT_WATCH)
+  public NotificationAssert hasGroup(String group) {
+    isNotNull();
+    String actualGroup = actual.getGroup();
+    assertThat(actual.getGroup()) //
+        .overridingErrorMessage("Expected group <%s> but was <%s>.", group, actualGroup)
+        .isEqualTo(group);
     return this;
   }
 
@@ -140,6 +151,15 @@ public class NotificationAssert extends AbstractAssert<NotificationAssert, Notif
         .overridingErrorMessage("Expected priority <%s> but was <%s>.", priorityToString(priority),
             priorityToString(actualPriority)) //
         .isEqualTo(priority);
+    return this;
+  }
+
+  @TargetApi(KITKAT_WATCH)
+  public NotificationAssert hasSortKey(String sortKey) {
+    isNotNull();
+    assertThat(actual.getSortKey()) //
+        .overridingErrorMessage("Expected sortKey <%s> but was <%s>.", sortKey, actual.getSortKey())
+        .isEqualTo(sortKey);
     return this;
   }
 
