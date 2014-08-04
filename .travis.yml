@@ -4,8 +4,10 @@ android:
   components:
     - build-tools-20.0.0
     - extra-android-m2repository
+    - android-20
   licenses:
     - android-sdk-license-5be876d5
+    - android-sdk-preview-license-52d11cd2
 
 branches:
   except:
