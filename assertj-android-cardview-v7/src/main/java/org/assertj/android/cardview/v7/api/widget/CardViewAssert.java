@@ -7,7 +7,7 @@ import org.assertj.android.api.view.AbstractViewGroupAssert;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Assertions for {@link android.support.v7.widget.CardView} instances.
+ * Assertions for {@link CardView} instances.
  */
 public class CardViewAssert extends AbstractViewGroupAssert<CardViewAssert, CardView> {
   public CardViewAssert(CardView actual) {
