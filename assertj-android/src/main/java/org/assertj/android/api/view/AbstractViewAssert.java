@@ -14,6 +14,8 @@ import static android.os.Build.VERSION_CODES.JELLY_BEAN;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR1;
 import static android.view.View.GONE;
 import static android.view.View.INVISIBLE;
+import static android.view.View.LAYOUT_DIRECTION_INHERIT;
+import static android.view.View.LAYOUT_DIRECTION_LOCALE;
 import static android.view.View.LAYOUT_DIRECTION_LTR;
 import static android.view.View.LAYOUT_DIRECTION_RTL;
 import static android.view.View.OVER_SCROLL_ALWAYS;
@@ -1332,7 +1334,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     return myself;
   }
 
-  private static String visibilityToString(int visibility) {
+  public static String visibilityToString(int visibility) {
     switch (visibility) {
       case VISIBLE:
         return "visible";
@@ -1345,7 +1347,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     }
   }
 
-  private static String layerTypeToString(int type) {
+  public static String layerTypeToString(int type) {
     switch (type) {
       case View.LAYER_TYPE_NONE:
         return "none";
@@ -1358,18 +1360,22 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     }
   }
 
-  private static String layoutDirectionToString(int direction) {
+  public static String layoutDirectionToString(int direction) {
     switch (direction) {
       case LAYOUT_DIRECTION_RTL:
         return "rtl";
       case LAYOUT_DIRECTION_LTR:
         return "ltr";
+      case LAYOUT_DIRECTION_INHERIT:
+        return "inherit";
+      case LAYOUT_DIRECTION_LOCALE:
+        return "locale";
       default:
         throw new IllegalArgumentException("Unknown layout direction: " + direction);
     }
   }
 
-  private static String overScrollModeToString(int mode) {
+  public static String overScrollModeToString(int mode) {
     switch (mode) {
       case OVER_SCROLL_ALWAYS:
         return "always";
@@ -1382,7 +1388,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     }
   }
 
-  private static String scrollBarStyleToString(int style) {
+  public static String scrollBarStyleToString(int style) {
     switch (style) {
       case SCROLLBARS_INSIDE_INSET:
         return "insideInset";
@@ -1397,7 +1403,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     }
   }
 
-  private static String verticalScrollBarPositionToString(int position) {
+  public static String verticalScrollBarPositionToString(int position) {
     switch (position) {
       case SCROLLBAR_POSITION_DEFAULT:
         return "default";
