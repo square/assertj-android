@@ -1,9 +1,9 @@
 package org.assertj.android.support.v4.api.media;
 
 import android.support.v4.media.TransportMediator;
-import org.assertj.android.api.util.BitMaskStringBuilder;
 import org.assertj.core.api.AbstractAssert;
 
+import static org.assertj.android.internal.IntegerUtils.buildBitMaskString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class TransportMediatorAssert extends AbstractAssert<TransportMediatorAssert, TransportMediator> {
@@ -67,7 +67,7 @@ public class TransportMediatorAssert extends AbstractAssert<TransportMediatorAss
   }
 
   public static String controlFlagsToString(int flags) {
-    return new BitMaskStringBuilder(flags) //
+    return buildBitMaskString(flags) //
         .flag(TransportMediator.FLAG_KEY_MEDIA_FAST_FORWARD, "fast_forward")
         .flag(TransportMediator.FLAG_KEY_MEDIA_NEXT, "next")
         .flag(TransportMediator.FLAG_KEY_MEDIA_PAUSE, "pause")

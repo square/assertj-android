@@ -8,9 +8,7 @@ import android.widget.PopupWindow;
 import org.assertj.core.api.AbstractAssert;
 
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
-import static android.widget.PopupWindow.INPUT_METHOD_FROM_FOCUSABLE;
-import static android.widget.PopupWindow.INPUT_METHOD_NEEDED;
-import static android.widget.PopupWindow.INPUT_METHOD_NOT_NEEDED;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link PopupWindow} instances. */
@@ -199,16 +197,11 @@ public class PopupWindowAssert extends AbstractAssert<PopupWindowAssert, PopupWi
     return this;
   }
 
-  private static String inputMethodModeToString(int mode) {
-    switch (mode) {
-      case INPUT_METHOD_FROM_FOCUSABLE:
-        return "fromFocusable";
-      case INPUT_METHOD_NEEDED:
-        return "needed";
-      case INPUT_METHOD_NOT_NEEDED:
-        return "notNeeded";
-      default:
-        throw new IllegalArgumentException("Unknown input method mode: " + mode);
-    }
+  public static String inputMethodModeToString(int mode) {
+    return buildNamedValueString(mode)
+        .value(PopupWindow.INPUT_METHOD_FROM_FOCUSABLE, "fromFocusable")
+        .value(PopupWindow.INPUT_METHOD_NEEDED, "needed")
+        .value(PopupWindow.INPUT_METHOD_NOT_NEEDED, "notNeeded")
+        .get();
   }
 }

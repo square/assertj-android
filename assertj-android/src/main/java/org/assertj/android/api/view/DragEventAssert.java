@@ -11,6 +11,7 @@ import static android.view.DragEvent.ACTION_DRAG_EXITED;
 import static android.view.DragEvent.ACTION_DRAG_LOCATION;
 import static android.view.DragEvent.ACTION_DRAG_STARTED;
 import static android.view.DragEvent.ACTION_DROP;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link DragEvent} instances. */
@@ -74,22 +75,14 @@ public class DragEventAssert extends AbstractAssert<DragEventAssert, DragEvent> 
     return this;
   }
 
-  private static String dragEventActionToString(int action) {
-    switch (action) {
-      case ACTION_DRAG_ENDED:
-        return "drag ended";
-      case ACTION_DRAG_ENTERED:
-        return "drag entered";
-      case ACTION_DRAG_EXITED:
-        return "drag exited";
-      case ACTION_DRAG_LOCATION:
-        return "drag location";
-      case ACTION_DRAG_STARTED:
-        return "drag started";
-      case ACTION_DROP:
-        return "drop";
-      default:
-        throw new IllegalArgumentException("Unknown drag event action: " + action);
-    }
+  public static String dragEventActionToString(int action) {
+    return buildNamedValueString(action)
+        .value(ACTION_DRAG_ENDED, "drag ended")
+        .value(ACTION_DRAG_ENTERED, "drag entered")
+        .value(ACTION_DRAG_EXITED, "drag exited")
+        .value(ACTION_DRAG_LOCATION, "drag location")
+        .value(ACTION_DRAG_STARTED, "drag started")
+        .value(ACTION_DROP, "drop")
+        .get();
   }
 }

@@ -5,7 +5,30 @@ import android.annotation.TargetApi;
 import android.hardware.Sensor;
 import org.assertj.core.api.AbstractAssert;
 
+import static android.hardware.Sensor.TYPE_ACCELEROMETER;
+import static android.hardware.Sensor.TYPE_ALL;
+import static android.hardware.Sensor.TYPE_AMBIENT_TEMPERATURE;
+import static android.hardware.Sensor.TYPE_GAME_ROTATION_VECTOR;
+import static android.hardware.Sensor.TYPE_GEOMAGNETIC_ROTATION_VECTOR;
+import static android.hardware.Sensor.TYPE_GRAVITY;
+import static android.hardware.Sensor.TYPE_GYROSCOPE;
+import static android.hardware.Sensor.TYPE_GYROSCOPE_UNCALIBRATED;
+import static android.hardware.Sensor.TYPE_HEART_RATE;
+import static android.hardware.Sensor.TYPE_LIGHT;
+import static android.hardware.Sensor.TYPE_LINEAR_ACCELERATION;
+import static android.hardware.Sensor.TYPE_MAGNETIC_FIELD;
+import static android.hardware.Sensor.TYPE_MAGNETIC_FIELD_UNCALIBRATED;
+import static android.hardware.Sensor.TYPE_ORIENTATION;
+import static android.hardware.Sensor.TYPE_PRESSURE;
+import static android.hardware.Sensor.TYPE_PROXIMITY;
+import static android.hardware.Sensor.TYPE_RELATIVE_HUMIDITY;
+import static android.hardware.Sensor.TYPE_ROTATION_VECTOR;
+import static android.hardware.Sensor.TYPE_SIGNIFICANT_MOTION;
+import static android.hardware.Sensor.TYPE_STEP_COUNTER;
+import static android.hardware.Sensor.TYPE_STEP_DETECTOR;
+import static android.hardware.Sensor.TYPE_TEMPERATURE;
 import static android.os.Build.VERSION_CODES.GINGERBREAD;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link Sensor} instances. */
@@ -89,54 +112,30 @@ public class SensorAssert extends AbstractAssert<SensorAssert, Sensor> {
     return this;
   }
 
-  private static String typeToString(int type) {
-    switch (type) {
-      case Sensor.TYPE_ACCELEROMETER:
-        return "accelerometer";
-      case Sensor.TYPE_ALL:
-        return "all";
-      case Sensor.TYPE_AMBIENT_TEMPERATURE:
-        return "ambient_temperature";
-      case Sensor.TYPE_GAME_ROTATION_VECTOR:
-        return "game_rotation_vector";
-      case Sensor.TYPE_GEOMAGNETIC_ROTATION_VECTOR:
-        return "geomagnetic_rotation_vector";
-      case Sensor.TYPE_GRAVITY:
-        return "gravity";
-      case Sensor.TYPE_GYROSCOPE:
-        return "gyroscope";
-      case Sensor.TYPE_GYROSCOPE_UNCALIBRATED:
-        return "uncalibrated";
-      case Sensor.TYPE_HEART_RATE:
-        return "heart_rate";
-      case Sensor.TYPE_LIGHT:
-        return "light";
-      case Sensor.TYPE_LINEAR_ACCELERATION:
-        return "linear_acceleration";
-      case Sensor.TYPE_MAGNETIC_FIELD:
-        return "magnetic_field";
-      case Sensor.TYPE_MAGNETIC_FIELD_UNCALIBRATED:
-        return "magnetic_field_uncalibrated";
-      case Sensor.TYPE_ORIENTATION:
-        return "orientation";
-      case Sensor.TYPE_PRESSURE:
-        return "pressure";
-      case Sensor.TYPE_PROXIMITY:
-        return "proximity";
-      case Sensor.TYPE_RELATIVE_HUMIDITY:
-        return "relative_humidity";
-      case Sensor.TYPE_ROTATION_VECTOR:
-        return "rotation_vector";
-      case Sensor.TYPE_SIGNIFICANT_MOTION:
-        return "significant_motion";
-      case Sensor.TYPE_STEP_COUNTER:
-        return "step_counter";
-      case Sensor.TYPE_STEP_DETECTOR:
-        return "step_detector";
-      case Sensor.TYPE_TEMPERATURE:
-        return "temperature";
-      default:
-        throw new IllegalArgumentException("Unknown sensor type: " + type);
-    }
+  public static String typeToString(int type) {
+    return buildNamedValueString(type)
+        .value(TYPE_ACCELEROMETER, "accelerometer")
+        .value(TYPE_ALL, "all")
+        .value(TYPE_AMBIENT_TEMPERATURE, "ambient_temperature")
+        .value(TYPE_GAME_ROTATION_VECTOR, "game_rotation_vector")
+        .value(TYPE_GEOMAGNETIC_ROTATION_VECTOR, "geomagnetic_rotation_vector")
+        .value(TYPE_GRAVITY, "gravity")
+        .value(TYPE_GYROSCOPE, "gyroscope")
+        .value(TYPE_GYROSCOPE_UNCALIBRATED, "gyroscope_uncalibrated")
+        .value(TYPE_HEART_RATE, "heart_rate")
+        .value(TYPE_LIGHT, "light")
+        .value(TYPE_LINEAR_ACCELERATION, "linear_acceleration")
+        .value(TYPE_MAGNETIC_FIELD, "magnetic_field")
+        .value(TYPE_MAGNETIC_FIELD_UNCALIBRATED, "magnetic_field_uncalibrated")
+        .value(TYPE_ORIENTATION, "orientation")
+        .value(TYPE_PRESSURE, "pressure")
+        .value(TYPE_PROXIMITY, "proximity")
+        .value(TYPE_RELATIVE_HUMIDITY, "relative_humidity")
+        .value(TYPE_ROTATION_VECTOR, "rotation_vector")
+        .value(TYPE_SIGNIFICANT_MOTION, "significant_motion")
+        .value(TYPE_STEP_COUNTER, "step_counter")
+        .value(TYPE_STEP_DETECTOR, "step_detector")
+        .value(TYPE_TEMPERATURE, "temperature")
+        .get();
   }
 }

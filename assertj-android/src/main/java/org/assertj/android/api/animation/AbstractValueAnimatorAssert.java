@@ -9,6 +9,7 @@ import static android.animation.ValueAnimator.RESTART;
 import static android.animation.ValueAnimator.REVERSE;
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
 import static android.os.Build.VERSION_CODES.HONEYCOMB_MR1;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @TargetApi(HONEYCOMB)
@@ -68,21 +69,16 @@ public abstract class AbstractValueAnimatorAssert<S extends AbstractValueAnimato
     return myself;
   }
 
-  private static String repeatCountToString(int count) {
-    if (count == INFINITE) {
-      return "infinite";
-    }
-    return Integer.toString(count);
+  public static String repeatCountToString(int count) {
+    return buildNamedValueString(count)
+        .value(INFINITE, "infinite")
+        .getOrValue();
   }
 
-  private static String repeatModeToString(int mode) {
-    switch (mode) {
-      case RESTART:
-        return "restart";
-      case REVERSE:
-        return "reverse";
-      default:
-        throw new IllegalArgumentException("Unknown repeat mode: " + mode);
-    }
+  public static String repeatModeToString(int mode) {
+    return buildNamedValueString(mode)
+        .value(RESTART, "restart")
+        .value(REVERSE, "reverse")
+        .get();
   }
 }

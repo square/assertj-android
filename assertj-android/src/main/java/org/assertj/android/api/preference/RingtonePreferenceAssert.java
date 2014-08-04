@@ -2,11 +2,11 @@
 package org.assertj.android.api.preference;
 
 import android.preference.RingtonePreference;
-import org.assertj.android.api.util.BitMaskStringBuilder;
 
 import static android.media.RingtoneManager.TYPE_ALARM;
 import static android.media.RingtoneManager.TYPE_NOTIFICATION;
 import static android.media.RingtoneManager.TYPE_RINGTONE;
+import static org.assertj.android.internal.IntegerUtils.buildBitMaskString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link RingtonePreference} instances. */
@@ -59,7 +59,7 @@ public class RingtonePreferenceAssert
   }
 
   private static String ringtoneTypeToString(int type) {
-    return new BitMaskStringBuilder(type) //
+    return buildBitMaskString(type) //
         .flag(TYPE_ALARM, "alarm")
         .flag(TYPE_NOTIFICATION, "notification")
         .flag(TYPE_RINGTONE, "ringtone")

@@ -4,7 +4,6 @@ import android.annotation.TargetApi;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.graphics.Bitmap;
-import org.assertj.android.api.util.BitMaskStringBuilder;
 import org.assertj.core.api.AbstractAssert;
 
 import static android.app.Notification.FLAG_AUTO_CANCEL;
@@ -24,6 +23,8 @@ import static android.os.Build.VERSION_CODES.GINGERBREAD;
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN;
 import static android.os.Build.VERSION_CODES.KITKAT_WATCH;
+import static org.assertj.android.internal.IntegerUtils.buildBitMaskString;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class NotificationAssert extends AbstractAssert<NotificationAssert, Notification> {
@@ -184,8 +185,8 @@ public class NotificationAssert extends AbstractAssert<NotificationAssert, Notif
     return this;
   }
 
-  private static String flagsToString(int flags) {
-    return new BitMaskStringBuilder(flags) //
+  public static String flagsToString(int flags) {
+    return buildBitMaskString(flags) //
         .flag(FLAG_AUTO_CANCEL, "autoCancel")
         .flag(FLAG_FOREGROUND_SERVICE, "foregroundService")
         .flag(FLAG_INSISTENT, "insistent")
@@ -197,20 +198,13 @@ public class NotificationAssert extends AbstractAssert<NotificationAssert, Notif
         .get();
   }
 
-  private static String priorityToString(int priority) {
-    switch (priority) {
-      case PRIORITY_MIN:
-        return "min";
-      case PRIORITY_LOW:
-        return "low";
-      case PRIORITY_DEFAULT:
-        return "default";
-      case PRIORITY_HIGH:
-        return "high";
-      case PRIORITY_MAX:
-        return "max";
-      default:
-        throw new IllegalArgumentException("Unknown priority: " + priority);
-    }
+  public static String priorityToString(int priority) {
+    return buildNamedValueString(priority)
+        .value(PRIORITY_MIN, "min")
+        .value(PRIORITY_LOW, "low")
+        .value(PRIORITY_DEFAULT, "default")
+        .value(PRIORITY_HIGH, "high")
+        .value(PRIORITY_MAX, "max")
+        .get();
   }
 }

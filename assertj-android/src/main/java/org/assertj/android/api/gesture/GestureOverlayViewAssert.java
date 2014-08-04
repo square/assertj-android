@@ -8,6 +8,7 @@ import static android.gesture.GestureOverlayView.GESTURE_STROKE_TYPE_MULTIPLE;
 import static android.gesture.GestureOverlayView.GESTURE_STROKE_TYPE_SINGLE;
 import static android.gesture.GestureOverlayView.ORIENTATION_HORIZONTAL;
 import static android.gesture.GestureOverlayView.ORIENTATION_VERTICAL;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link GestureOverlayView} instances. */
@@ -170,25 +171,17 @@ public class GestureOverlayViewAssert
     return this;
   }
 
-  private static String gestureStrokeTypeToString(int type) {
-    switch (type) {
-      case GESTURE_STROKE_TYPE_SINGLE:
-        return "single";
-      case GESTURE_STROKE_TYPE_MULTIPLE:
-        return "multiple";
-      default:
-        throw new IllegalArgumentException("Unknown gesture stroke type: " + type);
-    }
+  public static String gestureStrokeTypeToString(int type) {
+    return buildNamedValueString(type)
+        .value(GESTURE_STROKE_TYPE_SINGLE, "single")
+        .value(GESTURE_STROKE_TYPE_MULTIPLE, "multiple")
+        .get();
   }
 
-  private static String orientationToString(int orientation) {
-    switch (orientation) {
-      case ORIENTATION_HORIZONTAL:
-        return "horizontal";
-      case ORIENTATION_VERTICAL:
-        return "vertical";
-      default:
-        throw new IllegalArgumentException("Unknown orientation: " + orientation);
-    }
+  public static String orientationToString(int orientation) {
+    return buildNamedValueString(orientation)
+        .value(ORIENTATION_HORIZONTAL, "horizontal")
+        .value(ORIENTATION_VERTICAL, "vertical")
+        .get();
   }
 }

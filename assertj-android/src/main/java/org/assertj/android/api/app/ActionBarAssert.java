@@ -3,7 +3,6 @@ package org.assertj.android.api.app;
 import android.annotation.TargetApi;
 import android.app.ActionBar;
 import org.assertj.core.api.AbstractAssert;
-import org.assertj.android.api.util.BitMaskStringBuilder;
 
 import static android.app.ActionBar.DISPLAY_HOME_AS_UP;
 import static android.app.ActionBar.DISPLAY_SHOW_CUSTOM;
@@ -15,6 +14,8 @@ import static android.app.ActionBar.NAVIGATION_MODE_STANDARD;
 import static android.app.ActionBar.NAVIGATION_MODE_TABS;
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
 import static android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH;
+import static org.assertj.android.internal.IntegerUtils.buildBitMaskString;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link ActionBar} instances. */
@@ -133,21 +134,15 @@ public class ActionBarAssert extends AbstractAssert<ActionBarAssert, ActionBar> 
     return this;
   }
 
-  private static String navigationModeToString(int mode) {
-    switch (mode) {
-      case NAVIGATION_MODE_LIST:
-        return "list";
-      case NAVIGATION_MODE_STANDARD:
-        return "standard";
-      case NAVIGATION_MODE_TABS:
-        return "tabs";
-      default:
-        throw new IllegalArgumentException("Unknown navigation mode: " + mode);
-    }
-  }
+  public static String navigationModeToString(int mode) {
+    return buildNamedValueString(mode)
+        .value(NAVIGATION_MODE_LIST, "list")
+        .value(NAVIGATION_MODE_STANDARD, "standard")
+        .value(NAVIGATION_MODE_TABS, "tabs")
+        .get();  }
 
-  private static String displayOptionsToString(int options) {
-    return new BitMaskStringBuilder(options) //
+  public static String displayOptionsToString(int options) {
+    return buildBitMaskString(options) //
         .flag(DISPLAY_HOME_AS_UP, "homeAsUp")
         .flag(DISPLAY_SHOW_CUSTOM, "showCustom")
         .flag(DISPLAY_SHOW_HOME, "showHome")

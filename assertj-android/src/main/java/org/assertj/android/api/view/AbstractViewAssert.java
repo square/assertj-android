@@ -14,6 +14,9 @@ import static android.os.Build.VERSION_CODES.JELLY_BEAN;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR1;
 import static android.view.View.GONE;
 import static android.view.View.INVISIBLE;
+import static android.view.View.LAYER_TYPE_HARDWARE;
+import static android.view.View.LAYER_TYPE_NONE;
+import static android.view.View.LAYER_TYPE_SOFTWARE;
 import static android.view.View.LAYOUT_DIRECTION_INHERIT;
 import static android.view.View.LAYOUT_DIRECTION_LOCALE;
 import static android.view.View.LAYOUT_DIRECTION_LTR;
@@ -29,6 +32,7 @@ import static android.view.View.SCROLLBAR_POSITION_DEFAULT;
 import static android.view.View.SCROLLBAR_POSITION_LEFT;
 import static android.view.View.SCROLLBAR_POSITION_RIGHT;
 import static android.view.View.VISIBLE;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A extends View>
@@ -1335,84 +1339,56 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
   }
 
   public static String visibilityToString(int visibility) {
-    switch (visibility) {
-      case VISIBLE:
-        return "visible";
-      case INVISIBLE:
-        return "invisible";
-      case GONE:
-        return "gone";
-      default:
-        throw new IllegalArgumentException("Unknown view visibility: " + visibility);
-    }
+    return buildNamedValueString(visibility)
+        .value(VISIBLE, "visible")
+        .value(INVISIBLE, "invisible")
+        .value(GONE, "gone")
+        .get();
   }
 
+  @TargetApi(HONEYCOMB)
   public static String layerTypeToString(int type) {
-    switch (type) {
-      case View.LAYER_TYPE_NONE:
-        return "none";
-      case View.LAYER_TYPE_SOFTWARE:
-        return "software";
-      case View.LAYER_TYPE_HARDWARE:
-        return "hardware";
-      default:
-        throw new IllegalArgumentException("Unknown layer type: " + type);
-    }
+    return buildNamedValueString(type)
+        .value(LAYER_TYPE_NONE, "none")
+        .value(LAYER_TYPE_SOFTWARE, "software")
+        .value(LAYER_TYPE_HARDWARE, "hardware")
+        .get();
   }
 
+  @TargetApi(JELLY_BEAN_MR1)
   public static String layoutDirectionToString(int direction) {
-    switch (direction) {
-      case LAYOUT_DIRECTION_RTL:
-        return "rtl";
-      case LAYOUT_DIRECTION_LTR:
-        return "ltr";
-      case LAYOUT_DIRECTION_INHERIT:
-        return "inherit";
-      case LAYOUT_DIRECTION_LOCALE:
-        return "locale";
-      default:
-        throw new IllegalArgumentException("Unknown layout direction: " + direction);
-    }
+    return buildNamedValueString(direction)
+        .value(LAYOUT_DIRECTION_RTL, "right_to_left")
+        .value(LAYOUT_DIRECTION_LTR, "left_to_right")
+        .value(LAYOUT_DIRECTION_INHERIT, "inherit")
+        .value(LAYOUT_DIRECTION_LOCALE, "locale")
+        .get();
   }
 
+  @TargetApi(GINGERBREAD)
   public static String overScrollModeToString(int mode) {
-    switch (mode) {
-      case OVER_SCROLL_ALWAYS:
-        return "always";
-      case OVER_SCROLL_IF_CONTENT_SCROLLS:
-        return "ifContentScrolls";
-      case OVER_SCROLL_NEVER:
-        return "never";
-      default:
-        throw new IllegalArgumentException("Unknown over scroll mode: " + mode);
-    }
+    return buildNamedValueString(mode)
+        .value(OVER_SCROLL_ALWAYS, "always")
+        .value(OVER_SCROLL_IF_CONTENT_SCROLLS, "ifContentScrolls")
+        .value(OVER_SCROLL_NEVER, "never")
+        .get();
   }
 
   public static String scrollBarStyleToString(int style) {
-    switch (style) {
-      case SCROLLBARS_INSIDE_INSET:
-        return "insideInset";
-      case SCROLLBARS_INSIDE_OVERLAY:
-        return "insideOverlay";
-      case SCROLLBARS_OUTSIDE_INSET:
-        return "outsideInset";
-      case SCROLLBARS_OUTSIDE_OVERLAY:
-        return "outsideOverlay";
-      default:
-        throw new IllegalArgumentException("Unknown scroll bar style: " + style);
-    }
+    return buildNamedValueString(style)
+        .value(SCROLLBARS_INSIDE_INSET, "insideInset")
+        .value(SCROLLBARS_INSIDE_OVERLAY, "insideOverlay")
+        .value(SCROLLBARS_OUTSIDE_INSET, "outsideInset")
+        .value(SCROLLBARS_OUTSIDE_OVERLAY, "outsideOverlay")
+        .get();
   }
 
+  @TargetApi(HONEYCOMB)
   public static String verticalScrollBarPositionToString(int position) {
-    switch (position) {
-      case SCROLLBAR_POSITION_DEFAULT:
-        return "default";
-      case SCROLLBAR_POSITION_LEFT:
-        return "left";
-      case SCROLLBAR_POSITION_RIGHT:
-        return "right";
-      default:
-        throw new IllegalArgumentException("Unknown vertical scroll bar position: " + position);
-    }
+    return buildNamedValueString(position)
+        .value(SCROLLBAR_POSITION_DEFAULT, "default")
+        .value(SCROLLBAR_POSITION_LEFT, "left")
+        .value(SCROLLBAR_POSITION_RIGHT, "right")
+        .get();
   }
 }

@@ -123,8 +123,8 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
     isNotNull();
     TextUtils.TruncateAt actualTruncation = actual.getEllipsize();
     assertThat(actualTruncation) //
-        .overridingErrorMessage("Expected ellipsize <%s> but was <%s>.",
-            truncateAtToString(truncation), truncateAtToString(actualTruncation)) //
+        .overridingErrorMessage("Expected ellipsize <%s> but was <%s>.", truncation,
+            actualTruncation) //
         .isEqualTo(truncation);
     return myself;
   }
@@ -792,20 +792,5 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
         .overridingErrorMessage("Expected to not be the input method target but was.") //
         .isFalse();
     return myself;
-  }
-
-  private static String truncateAtToString(TextUtils.TruncateAt truncation) {
-    switch (truncation) {
-      case END:
-        return "end";
-      case MARQUEE:
-        return "marquee";
-      case MIDDLE:
-        return "middle";
-      case START:
-        return "start";
-      default:
-        throw new IllegalArgumentException("Unknown truncation: " + truncation);
-    }
   }
 }

@@ -2,9 +2,9 @@
 package org.assertj.android.api.view.animation;
 
 import android.view.animation.GridLayoutAnimationController;
-import org.assertj.android.internal.Utils;
 import java.util.ArrayList;
 import java.util.List;
+import org.assertj.core.util.Strings;
 
 import static android.view.animation.GridLayoutAnimationController.DIRECTION_BOTTOM_TO_TOP;
 import static android.view.animation.GridLayoutAnimationController.DIRECTION_HORIZONTAL_MASK;
@@ -13,6 +13,7 @@ import static android.view.animation.GridLayoutAnimationController.DIRECTION_VER
 import static android.view.animation.GridLayoutAnimationController.PRIORITY_COLUMN;
 import static android.view.animation.GridLayoutAnimationController.PRIORITY_NONE;
 import static android.view.animation.GridLayoutAnimationController.PRIORITY_ROW;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link GridLayoutAnimationController} instances. */
@@ -60,7 +61,7 @@ public class GridLayoutAnimationControllerAssert extends
     return this;
   }
 
-  private static String directionToString(int direction) {
+  public static String directionToString(int direction) {
     List<String> parts = new ArrayList<>();
     int horizontal = direction & DIRECTION_HORIZONTAL_MASK;
     int vertical = direction & DIRECTION_VERTICAL_MASK;
@@ -74,19 +75,14 @@ public class GridLayoutAnimationControllerAssert extends
     } else {
       parts.add("topToBottom");
     }
-    return Utils.join(parts);
+    return Strings.join(parts).with(", ");
   }
 
-  private static String directionPriorityToString(int priority) {
-    switch (priority) {
-      case PRIORITY_NONE:
-        return "none";
-      case PRIORITY_COLUMN:
-        return "column";
-      case PRIORITY_ROW:
-        return "row";
-      default:
-        throw new IllegalArgumentException("Unknown priority: " + priority);
-    }
+  public static String directionPriorityToString(int priority) {
+    return buildNamedValueString(priority)
+        .value(PRIORITY_NONE, "none")
+        .value(PRIORITY_COLUMN, "column")
+        .value(PRIORITY_ROW, "row")
+        .get();
   }
 }

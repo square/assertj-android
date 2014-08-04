@@ -15,6 +15,7 @@ import static android.location.Criteria.POWER_HIGH;
 import static android.location.Criteria.POWER_LOW;
 import static android.location.Criteria.POWER_MEDIUM;
 import static android.os.Build.VERSION_CODES.GINGERBREAD;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link Criteria} instances. */
@@ -151,42 +152,27 @@ public class CriteriaAssert extends AbstractAssert<CriteriaAssert, Criteria> {
     return this;
   }
 
-  static String accuracyRequirementToString(int accuracy) {
-    switch (accuracy) {
-      case ACCURACY_COARSE:
-        return "coarse";
-      case ACCURACY_FINE:
-        return "fine";
-      default:
-        throw new IllegalArgumentException("Unknown accuracy requirement: " + accuracy);
-    }
+  public static String accuracyRequirementToString(int accuracy) {
+    return buildNamedValueString(accuracy)
+        .value(ACCURACY_COARSE, "coarse")
+        .value(ACCURACY_FINE, "fine")
+        .get();
   }
 
-  private static String accuracyToString(int accuracy) {
-    switch (accuracy) {
-      case ACCURACY_HIGH:
-        return "high";
-      case ACCURACY_MEDIUM:
-        return "medium";
-      case ACCURACY_LOW:
-        return "low";
-      default:
-        throw new IllegalArgumentException("Unknown accuracy: " + accuracy);
-    }
+  public static String accuracyToString(int accuracy) {
+    return buildNamedValueString(accuracy)
+        .value(ACCURACY_HIGH, "high")
+        .value(ACCURACY_MEDIUM, "medium")
+        .value(ACCURACY_LOW, "low")
+        .get();
   }
 
-  static String powerRequirementToString(int requirement) {
-    switch (requirement) {
-      case NO_REQUIREMENT:
-        return "none";
-      case POWER_LOW:
-        return "low";
-      case POWER_MEDIUM:
-        return "medium";
-      case POWER_HIGH:
-        return "high";
-      default:
-        throw new IllegalArgumentException("Unknown power requirement: " + requirement);
-    }
+  public static String powerRequirementToString(int requirement) {
+    return buildNamedValueString(requirement)
+        .value(NO_REQUIREMENT, "none")
+        .value(POWER_LOW, "low")
+        .value(POWER_MEDIUM, "medium")
+        .value(POWER_HIGH, "high")
+        .get();
   }
 }

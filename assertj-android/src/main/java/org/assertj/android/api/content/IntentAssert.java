@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import org.assertj.core.api.AbstractAssert;
-import org.assertj.android.api.util.BitMaskStringBuilder;
 
 import static android.content.Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT;
 import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK;
@@ -29,6 +28,7 @@ import static android.content.Intent.FLAG_FROM_BACKGROUND;
 import static android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION;
 import static android.content.Intent.FLAG_GRANT_WRITE_URI_PERMISSION;
 import static android.content.Intent.FLAG_RECEIVER_REGISTERED_ONLY;
+import static org.assertj.android.internal.IntegerUtils.buildBitMaskString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link Intent} instances. */
@@ -104,7 +104,7 @@ public class IntentAssert extends AbstractAssert<IntentAssert, Intent> {
   }
 
   public static String flagsToString(int flags) {
-    return new BitMaskStringBuilder(flags) //
+    return buildBitMaskString(flags) //
         .flag(FLAG_GRANT_READ_URI_PERMISSION, "grant_read_uri_permission")
         .flag(FLAG_GRANT_WRITE_URI_PERMISSION, "grant_write_uri_permission")
         .flag(FLAG_DEBUG_LOG_RESOLUTION, "debug_log_resolution")
