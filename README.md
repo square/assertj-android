@@ -95,6 +95,7 @@ Modules are also provided for the add-on Android libraries. Add the dependency
  * appcompat-v7: `import static org.assertj.android.appcompat.v7.api.Assertions.assertThat;`
  * mediarouter-v7: `import static org.assertj.android.mediarouter.v7.api.Assertions.assertThat;`
  * gridlayout-v7: `import static org.assertj.android.gridlayout.v7.api.Assertions.assertThat;`
+ * cardview-v7: `import static org.assertj.android.cardview.v7.api.Assertions.assertThat;`
 
 
 
@@ -173,6 +174,11 @@ androidTestCompile 'com.squareup.assertj:assertj-android-mediarouter-v7:1.0.0'
 GridLayout-v7 module:
 ```groovy
 androidTestCompile 'com.squareup.assertj:assertj-android-gridlayout-v7:1.0.0'
+```
+
+CardView-v7 module:
+```groovy
+androidTestCompile 'com.squareup.assertj:assertj-android-cardview-v7:1.0.0'
 ```
 
 
