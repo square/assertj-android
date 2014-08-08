@@ -18,6 +18,7 @@ import static android.view.Window.FEATURE_OPTIONS_PANEL;
 import static android.view.Window.FEATURE_PROGRESS;
 import static android.view.Window.FEATURE_RIGHT_ICON;
 import static android.view.Window.FEATURE_SWIPE_TO_DISMISS;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link Window} instances. */
@@ -95,33 +96,19 @@ public class WindowAssert extends AbstractAssert<WindowAssert, Window> {
   }
 
   public static String featureToString(int feature) {
-    switch (feature) {
-      case FEATURE_ACTION_BAR:
-        return "actionBar";
-      case FEATURE_ACTION_BAR_OVERLAY:
-        return "actionBarOverlay";
-      case FEATURE_ACTION_MODE_OVERLAY:
-        return "actionModeOverlay";
-      case FEATURE_CONTEXT_MENU:
-        return "contextMenu";
-      case FEATURE_CUSTOM_TITLE:
-        return "customTitle";
-      case FEATURE_INDETERMINATE_PROGRESS:
-        return "indeterminateProgress";
-      case FEATURE_LEFT_ICON:
-        return "leftIcon";
-      case FEATURE_NO_TITLE:
-        return "noIcon";
-      case FEATURE_OPTIONS_PANEL:
-        return "optionsPanel";
-      case FEATURE_PROGRESS:
-        return "progress";
-      case FEATURE_RIGHT_ICON:
-        return "rightIcon";
-      case FEATURE_SWIPE_TO_DISMISS:
-        return "swipeToDismiss";
-      default:
-        throw new IllegalArgumentException("Unknown window feature: " + feature);
-    }
+    return buildNamedValueString(feature)
+        .value(FEATURE_ACTION_BAR, "actionBar")
+        .value(FEATURE_ACTION_BAR_OVERLAY, "actionBarOverlay")
+        .value(FEATURE_ACTION_MODE_OVERLAY, "actionModeOverlay")
+        .value(FEATURE_CONTEXT_MENU, "contextMenu")
+        .value(FEATURE_CUSTOM_TITLE, "customTitle")
+        .value(FEATURE_INDETERMINATE_PROGRESS, "indeterminateProgress")
+        .value(FEATURE_LEFT_ICON, "leftIcon")
+        .value(FEATURE_NO_TITLE, "noTitle")
+        .value(FEATURE_OPTIONS_PANEL, "optionalPanel")
+        .value(FEATURE_PROGRESS, "progress")
+        .value(FEATURE_RIGHT_ICON, "rightIcon")
+        .value(FEATURE_SWIPE_TO_DISMISS, "swipeToDismiss")
+        .get();
   }
 }

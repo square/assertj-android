@@ -6,6 +6,7 @@ import org.assertj.core.api.AbstractAssert;
 import static android.support.v7.media.MediaSessionStatus.SESSION_STATE_ACTIVE;
 import static android.support.v7.media.MediaSessionStatus.SESSION_STATE_ENDED;
 import static android.support.v7.media.MediaSessionStatus.SESSION_STATE_INVALIDATED;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class MediaSessionStatusAssert
@@ -50,16 +51,11 @@ public class MediaSessionStatusAssert
     return this;
   }
 
-  private static String sessionStateToString(int state) {
-    switch (state) {
-      case SESSION_STATE_ACTIVE:
-        return "active";
-      case SESSION_STATE_ENDED:
-        return "ended";
-      case SESSION_STATE_INVALIDATED:
-        return "invalidated";
-      default:
-        throw new IllegalArgumentException("Unknown state: " + state);
-    }
+  public static String sessionStateToString(int state) {
+    return buildNamedValueString(state)
+        .value(SESSION_STATE_ACTIVE, "active")
+        .value(SESSION_STATE_ENDED, "ended")
+        .value(SESSION_STATE_INVALIDATED, "invalidated")
+        .get();
   }
 }

@@ -9,6 +9,7 @@ import static android.view.animation.Transformation.TYPE_ALPHA;
 import static android.view.animation.Transformation.TYPE_BOTH;
 import static android.view.animation.Transformation.TYPE_IDENTITY;
 import static android.view.animation.Transformation.TYPE_MATRIX;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link Transformation} instances. */
@@ -45,30 +46,12 @@ public class TransformationAssert extends AbstractAssert<TransformationAssert, T
     return this;
   }
 
-  private static String transformationTypeToString(int type) {
-    // TODO http://android-review.googlesource.com/49980
-    //switch (type) {
-    //  case TYPE_ALPHA:
-    //    return "alpha";
-    //  case TYPE_BOTH:
-    //    return "both";
-    //  case TYPE_IDENTITY:
-    //    return "identity";
-    //  case TYPE_MATRIX:
-    //    return "matrix";
-    //  default:
-    //    throw new IllegalArgumentException("Unknown transformation type: " + type);
-    //}
-    if (type == TYPE_ALPHA) {
-      return "alpha";
-    } else if (type == TYPE_BOTH) {
-      return "both";
-    } else if (type == TYPE_IDENTITY) {
-      return "identity";
-    } else if (type == TYPE_MATRIX) {
-      return "matrix";
-    } else {
-      throw new IllegalArgumentException("Unknown transformation type: " + type);
-    }
+  public static String transformationTypeToString(int type) {
+    return buildNamedValueString(type)
+        .value(TYPE_ALPHA, "alpha")
+        .value(TYPE_BOTH, "both")
+        .value(TYPE_IDENTITY, "identity")
+        .value(TYPE_MATRIX, "matrix")
+        .get();
   }
 }

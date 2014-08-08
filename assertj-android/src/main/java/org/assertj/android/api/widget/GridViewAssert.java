@@ -10,6 +10,7 @@ import static android.widget.GridView.NO_STRETCH;
 import static android.widget.GridView.STRETCH_COLUMN_WIDTH;
 import static android.widget.GridView.STRETCH_SPACING;
 import static android.widget.GridView.STRETCH_SPACING_UNIFORM;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link GridView} instances. */
@@ -102,18 +103,12 @@ public class GridViewAssert extends AbstractAbsListViewAssert<GridViewAssert, Gr
     return this;
   }
 
-  private static String stretchModeToString(int mode) {
-    switch (mode) {
-      case NO_STRETCH:
-        return "noStretch";
-      case STRETCH_SPACING:
-        return "stretchSpacing";
-      case STRETCH_SPACING_UNIFORM:
-        return "stretchSpacingUniform";
-      case STRETCH_COLUMN_WIDTH:
-        return "stretchColumnWidth";
-      default:
-        throw new IllegalArgumentException("Unknown stretch mode: " + mode);
-    }
+  public static String stretchModeToString(int mode) {
+    return buildNamedValueString(mode)
+        .value(NO_STRETCH, "noStretch")
+        .value(STRETCH_SPACING, "stretchSpacing")
+        .value(STRETCH_SPACING_UNIFORM, "stretchSpacingUniform")
+        .value(STRETCH_COLUMN_WIDTH, "stretchColumnWidth")
+        .get();
   }
 }

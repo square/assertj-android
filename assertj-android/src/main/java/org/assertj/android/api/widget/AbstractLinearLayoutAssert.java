@@ -2,7 +2,6 @@ package org.assertj.android.api.widget;
 
 import android.annotation.TargetApi;
 import android.widget.LinearLayout;
-import org.assertj.android.api.util.BitMaskStringBuilder;
 import org.assertj.android.api.view.AbstractViewGroupAssert;
 
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
@@ -12,6 +11,8 @@ import static android.widget.LinearLayout.SHOW_DIVIDER_BEGINNING;
 import static android.widget.LinearLayout.SHOW_DIVIDER_END;
 import static android.widget.LinearLayout.SHOW_DIVIDER_MIDDLE;
 import static android.widget.LinearLayout.VERTICAL;
+import static org.assertj.android.internal.IntegerUtils.buildBitMaskString;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public abstract class AbstractLinearLayoutAssert<S extends AbstractLinearLayoutAssert<S, A>, A extends LinearLayout>
@@ -103,22 +104,19 @@ public abstract class AbstractLinearLayoutAssert<S extends AbstractLinearLayoutA
     return myself;
   }
 
-  static String showDividerToString(int dividers) {
-    return new BitMaskStringBuilder(dividers) //
+  @TargetApi(HONEYCOMB)
+  public static String showDividerToString(int dividers) {
+    return buildBitMaskString(dividers) //
         .flag(SHOW_DIVIDER_BEGINNING, "beginning")
         .flag(SHOW_DIVIDER_MIDDLE, "middle")
         .flag(SHOW_DIVIDER_END, "end")
         .get();
   }
 
-  private static String orientationToString(int orientation) {
-    switch (orientation) {
-      case HORIZONTAL:
-        return "horizontal";
-      case VERTICAL:
-        return "vertical";
-      default:
-        throw new IllegalArgumentException("Unknown orientation: " + orientation);
-    }
+  public static String orientationToString(int orientation) {
+    return buildNamedValueString(orientation)
+        .value(HORIZONTAL, "horizontal")
+        .value(VERTICAL, "vertical")
+        .get();
   }
 }

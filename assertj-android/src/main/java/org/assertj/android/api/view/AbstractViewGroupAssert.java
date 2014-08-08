@@ -12,6 +12,7 @@ import static android.view.ViewGroup.PERSISTENT_ALL_CACHES;
 import static android.view.ViewGroup.PERSISTENT_ANIMATION_CACHE;
 import static android.view.ViewGroup.PERSISTENT_NO_CACHE;
 import static android.view.ViewGroup.PERSISTENT_SCROLLING_CACHE;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public abstract class AbstractViewGroupAssert<S extends AbstractViewGroupAssert<S, A>, A extends ViewGroup>
@@ -125,31 +126,20 @@ public abstract class AbstractViewGroupAssert<S extends AbstractViewGroupAssert<
     return myself;
   }
 
-  private static String descendantFocusabilityToString(int focusability) {
-    switch (focusability) {
-      case FOCUS_AFTER_DESCENDANTS:
-        return "afterDescendants";
-      case FOCUS_BEFORE_DESCENDANTS:
-        return "beforeDescendants";
-      case FOCUS_BLOCK_DESCENDANTS:
-        return "blockDescendants";
-      default:
-        throw new IllegalArgumentException("Unknown descendant focusability: " + focusability);
-    }
+  public static String descendantFocusabilityToString(int focusability) {
+    return buildNamedValueString(focusability)
+        .value(FOCUS_AFTER_DESCENDANTS, "afterDescendants")
+        .value(FOCUS_BEFORE_DESCENDANTS, "beforeDescendants")
+        .value(FOCUS_BLOCK_DESCENDANTS, "blockDescendants")
+        .get();
   }
 
-  private static String persistentDrawingCacheToString(int cache) {
-    switch (cache) {
-      case PERSISTENT_ALL_CACHES:
-        return "all";
-      case PERSISTENT_ANIMATION_CACHE:
-        return "animation";
-      case PERSISTENT_NO_CACHE:
-        return "none";
-      case PERSISTENT_SCROLLING_CACHE:
-        return "scrolling";
-      default:
-        throw new IllegalArgumentException("Unknown persistent drawing cache: " + cache);
-    }
+  public static String persistentDrawingCacheToString(int cache) {
+    return buildNamedValueString(cache)
+        .value(PERSISTENT_ALL_CACHES, "all")
+        .value(PERSISTENT_ANIMATION_CACHE, "animation")
+        .value(PERSISTENT_NO_CACHE, "none")
+        .value(PERSISTENT_SCROLLING_CACHE, "scrolling")
+        .get();
   }
 }

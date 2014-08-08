@@ -10,6 +10,7 @@ import static android.os.Build.VERSION_CODES.HONEYCOMB_MR1;
 import static android.view.animation.Animation.INFINITE;
 import static android.view.animation.Animation.RESTART;
 import static android.view.animation.Animation.REVERSE;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public abstract class AbstractAnimationAssert<S extends AbstractAnimationAssert<S, A>, A extends Animation>
@@ -224,21 +225,16 @@ public abstract class AbstractAnimationAssert<S extends AbstractAnimationAssert<
     return myself;
   }
 
-  private static String repeatCountToString(int count) {
-    if (count == INFINITE) {
-      return "infinite";
-    }
-    return Integer.toString(count);
+  public static String repeatCountToString(int count) {
+    return buildNamedValueString(count)
+        .value(INFINITE, "infinite")
+        .getOrValue();
   }
 
-  private static String repeatModeToString(int mode) {
-    switch (mode) {
-      case RESTART:
-        return "restart";
-      case REVERSE:
-        return "reverse";
-      default:
-        throw new IllegalArgumentException("Unknown repeat mode: " + mode);
-    }
+  public static String repeatModeToString(int mode) {
+    return buildNamedValueString(mode)
+        .value(RESTART, "restart")
+        .value(REVERSE, "reverse")
+        .get();
   }
 }

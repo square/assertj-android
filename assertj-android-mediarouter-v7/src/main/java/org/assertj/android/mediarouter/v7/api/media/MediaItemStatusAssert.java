@@ -3,6 +3,15 @@ package org.assertj.android.mediarouter.v7.api.media;
 import android.support.v7.media.MediaItemStatus;
 import org.assertj.core.api.AbstractAssert;
 
+import static android.support.v7.media.MediaItemStatus.PLAYBACK_STATE_BUFFERING;
+import static android.support.v7.media.MediaItemStatus.PLAYBACK_STATE_CANCELED;
+import static android.support.v7.media.MediaItemStatus.PLAYBACK_STATE_ERROR;
+import static android.support.v7.media.MediaItemStatus.PLAYBACK_STATE_FINISHED;
+import static android.support.v7.media.MediaItemStatus.PLAYBACK_STATE_INVALIDATED;
+import static android.support.v7.media.MediaItemStatus.PLAYBACK_STATE_PAUSED;
+import static android.support.v7.media.MediaItemStatus.PLAYBACK_STATE_PENDING;
+import static android.support.v7.media.MediaItemStatus.PLAYBACK_STATE_PLAYING;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class MediaItemStatusAssert extends AbstractAssert<MediaItemStatusAssert, MediaItemStatus> {
@@ -49,26 +58,16 @@ public class MediaItemStatusAssert extends AbstractAssert<MediaItemStatusAssert,
     return this;
   }
 
-  private static String playbackStateToString(int playbackState) {
-    switch (playbackState) {
-      case MediaItemStatus.PLAYBACK_STATE_BUFFERING:
-        return "buffering";
-      case MediaItemStatus.PLAYBACK_STATE_CANCELED:
-        return "canceled";
-      case MediaItemStatus.PLAYBACK_STATE_ERROR:
-        return "error";
-      case MediaItemStatus.PLAYBACK_STATE_FINISHED:
-        return "finished";
-      case MediaItemStatus.PLAYBACK_STATE_INVALIDATED:
-        return "invalidated";
-      case MediaItemStatus.PLAYBACK_STATE_PAUSED:
-        return "paused";
-      case MediaItemStatus.PLAYBACK_STATE_PENDING:
-        return "pending";
-      case MediaItemStatus.PLAYBACK_STATE_PLAYING:
-        return "playing";
-      default:
-        throw new IllegalArgumentException("Unknown playback state: " + playbackState);
-    }
+  public static String playbackStateToString(int playbackState) {
+    return buildNamedValueString(playbackState)
+        .value(PLAYBACK_STATE_BUFFERING, "buffering")
+        .value(PLAYBACK_STATE_CANCELED, "canceled")
+        .value(PLAYBACK_STATE_ERROR, "error")
+        .value(PLAYBACK_STATE_FINISHED, "finished")
+        .value(PLAYBACK_STATE_INVALIDATED, "invalidated")
+        .value(PLAYBACK_STATE_PAUSED, "paused")
+        .value(PLAYBACK_STATE_PENDING, "pending")
+        .value(PLAYBACK_STATE_PLAYING, "playing")
+        .get();
   }
 }

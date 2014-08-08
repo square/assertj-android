@@ -3,6 +3,15 @@ package org.assertj.android.playservices.api.location;
 import com.google.android.gms.location.DetectedActivity;
 import org.assertj.core.api.AbstractAssert;
 
+import static com.google.android.gms.location.DetectedActivity.IN_VEHICLE;
+import static com.google.android.gms.location.DetectedActivity.ON_BICYCLE;
+import static com.google.android.gms.location.DetectedActivity.ON_FOOT;
+import static com.google.android.gms.location.DetectedActivity.RUNNING;
+import static com.google.android.gms.location.DetectedActivity.STILL;
+import static com.google.android.gms.location.DetectedActivity.TILTING;
+import static com.google.android.gms.location.DetectedActivity.UNKNOWN;
+import static com.google.android.gms.location.DetectedActivity.WALKING;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class DetectedActivityAssert
@@ -32,25 +41,15 @@ public class DetectedActivityAssert
   }
 
   public static String typeToString(int type) {
-    switch (type) {
-      case DetectedActivity.IN_VEHICLE:
-        return "in_vehicle";
-      case DetectedActivity.ON_BICYCLE:
-        return "on_bicycle";
-      case DetectedActivity.ON_FOOT:
-        return "on_foot";
-      case DetectedActivity.RUNNING:
-        return "running";
-      case DetectedActivity.STILL:
-        return "still";
-      case DetectedActivity.TILTING:
-        return "tilting";
-      case DetectedActivity.UNKNOWN:
-        return "unknown";
-      case DetectedActivity.WALKING:
-        return "walking";
-      default:
-        throw new IllegalArgumentException("Unknown type: " + type);
-    }
+    return buildNamedValueString(type)
+        .value(IN_VEHICLE, "in vehicle")
+        .value(ON_BICYCLE, "on bicycle")
+        .value(ON_FOOT, "on foot")
+        .value(RUNNING, "running")
+        .value(STILL, "still")
+        .value(TILTING, "tilting")
+        .value(UNKNOWN, "unknown")
+        .value(WALKING, "walking")
+        .get();
   }
 }

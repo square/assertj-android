@@ -3,7 +3,6 @@ package org.assertj.android.api.view;
 import android.annotation.TargetApi;
 import android.graphics.Point;
 import android.view.Display;
-import org.assertj.android.api.util.BitMaskStringBuilder;
 import org.assertj.core.api.AbstractAssert;
 
 import static android.os.Build.VERSION_CODES.FROYO;
@@ -22,6 +21,8 @@ import static android.view.Surface.ROTATION_0;
 import static android.view.Surface.ROTATION_180;
 import static android.view.Surface.ROTATION_270;
 import static android.view.Surface.ROTATION_90;
+import static org.assertj.android.internal.IntegerUtils.buildBitMaskString;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link Display} instances. */
@@ -208,39 +209,27 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
     return this;
   }
 
-  private static String orientationToString(int orientation) {
-    switch (orientation) {
-      case ROTATION_0:
-        return "portrait";
-      case ROTATION_90:
-        return "landscape";
-      case ROTATION_180:
-        return "inverted portrait";
-      case ROTATION_270:
-        return "inverted landscape";
-      default:
-        throw new IllegalArgumentException("Unknown orientation: " + orientation);
-    }
+  public static String orientationToString(int orientation) {
+    return buildNamedValueString(orientation)
+        .value(ROTATION_0, "portrait (0)")
+        .value(ROTATION_90, "landscape (90)")
+        .value(ROTATION_180, "inverted portrait (180)")
+        .value(ROTATION_270, "inverted landscape (270)")
+        .get();
   }
 
   @TargetApi(KITKAT_WATCH)
-  private static String stateToString(int state) {
-    switch (state) {
-      case STATE_DOZING:
-        return "dozing";
-      case STATE_OFF:
-        return "off";
-      case STATE_ON:
-        return "on";
-      case STATE_UNKNOWN:
-        return "unknown";
-      default:
-        throw new IllegalArgumentException("Unknown state: " + state);
-    }
+  public static String stateToString(int state) {
+    return buildNamedValueString(state)
+        .value(STATE_DOZING, "dozing")
+        .value(STATE_OFF, "off")
+        .value(STATE_ON, "on")
+        .value(STATE_UNKNOWN, "unknown")
+        .get();
   }
 
-  private static String flagsToStr(int flags) {
-    return new BitMaskStringBuilder(flags) //
+  public static String flagsToStr(int flags) {
+    return buildBitMaskString(flags) //
         .flag(FLAG_PRESENTATION, "presentation")
         .flag(FLAG_PRIVATE, "private")
         .flag(FLAG_SECURE, "secure")

@@ -10,6 +10,7 @@ import static android.view.KeyCharacterMap.FULL;
 import static android.view.KeyCharacterMap.NUMERIC;
 import static android.view.KeyCharacterMap.PREDICTIVE;
 import static android.view.KeyCharacterMap.SPECIAL_FUNCTION;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class KeyCharacterMapAssert extends AbstractAssert<KeyCharacterMapAssert, KeyCharacterMap> {
@@ -38,20 +39,13 @@ public class KeyCharacterMapAssert extends AbstractAssert<KeyCharacterMapAssert,
     return this;
   }
 
-  private static String keyboardTypeToString(int type) {
-    switch (type) {
-      case NUMERIC:
-        return "numeric";
-      case PREDICTIVE:
-        return "predictive";
-      case ALPHA:
-        return "alpha";
-      case FULL:
-        return "full";
-      case SPECIAL_FUNCTION:
-        return "specialFunction";
-      default:
-        throw new IllegalArgumentException("Unknown keyboard type: " + type);
-    }
+  public static String keyboardTypeToString(int type) {
+    return buildNamedValueString(type)
+        .value(NUMERIC, "numeric")
+        .value(PREDICTIVE, "predicive")
+        .value(ALPHA, "alpha")
+        .value(FULL, "full")
+        .value(SPECIAL_FUNCTION, "specialFunction")
+        .get();
   }
 }

@@ -11,6 +11,7 @@ import static android.support.v7.widget.RecyclerView.SCROLL_STATE_DRAGGING;
 import static android.support.v7.widget.RecyclerView.SCROLL_STATE_IDLE;
 import static android.support.v7.widget.RecyclerView.SCROLL_STATE_SETTLING;
 import static android.support.v7.widget.RecyclerView.ViewHolder;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link RecyclerView} instances. */
@@ -86,15 +87,10 @@ public class RecyclerViewAssert extends AbstractViewGroupAssert<RecyclerViewAsse
   }
 
   public static String scrollStateToString(@RecyclerViewScrollState int scrollState) {
-    switch (scrollState) {
-      case SCROLL_STATE_DRAGGING:
-        return "dragging";
-      case SCROLL_STATE_IDLE:
-        return "idle";
-      case SCROLL_STATE_SETTLING:
-        return "settling";
-      default:
-        throw new IllegalArgumentException("Unknown scroll state: " + scrollState);
-    }
+    return buildNamedValueString(scrollState)
+        .value(SCROLL_STATE_DRAGGING, "dragging")
+        .value(SCROLL_STATE_IDLE, "idle")
+        .value(SCROLL_STATE_SETTLING, "settling")
+        .get();
   }
 }
