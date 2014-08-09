@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 
 dependencies {
   compile project(':assertj-android')
-  compile 'com.google.android.gms:play-services:5.0.77'
+  compile 'com.google.android.gms:play-services:5.2.08'
 }
 
 android {
