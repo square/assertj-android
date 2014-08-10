@@ -2,11 +2,13 @@
 package org.assertj.android.api.animation;
 
 import android.animation.Animator;
+import android.animation.TimeInterpolator;
 import android.annotation.TargetApi;
 import org.assertj.core.api.AbstractAssert;
 
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
 import static android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH;
+import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR2;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @TargetApi(HONEYCOMB)
@@ -22,6 +24,17 @@ public abstract class AbstractAnimatorAssert<S extends AbstractAnimatorAssert<S,
     assertThat(actualDuration) //
         .overridingErrorMessage("Expected duration <%s> but was <%s>.", duration, actualDuration) //
         .isEqualTo(duration);
+    return myself;
+  }
+
+  @TargetApi(JELLY_BEAN_MR2)
+  public S hasInterpolator(TimeInterpolator interpolator) {
+    isNotNull();
+    TimeInterpolator actualInterpolator = actual.getInterpolator();
+    assertThat(actualInterpolator) //
+        .overridingErrorMessage("Expected interpolator <%s> but was <%s>.", interpolator,
+            actualInterpolator) //
+        .isEqualTo(interpolator);
     return myself;
   }
 

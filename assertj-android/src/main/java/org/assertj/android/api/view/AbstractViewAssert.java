@@ -12,6 +12,7 @@ import static android.os.Build.VERSION_CODES.HONEYCOMB;
 import static android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR1;
+import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR2;
 import static android.view.View.GONE;
 import static android.view.View.INVISIBLE;
 import static android.view.View.LAYER_TYPE_HARDWARE;
@@ -1106,6 +1107,24 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     isNotNull();
     assertThat(actual.isInEditMode()) //
         .overridingErrorMessage("Expected to not be in edit mode but was") //
+        .isFalse();
+    return myself;
+  }
+
+  @TargetApi(JELLY_BEAN_MR2)
+  public S isInLayout() {
+    isNotNull();
+    assertThat(actual.isInLayout()) //
+        .overridingErrorMessage("Expected to be in layout but was not.") //
+        .isTrue();
+    return myself;
+  }
+
+  @TargetApi(JELLY_BEAN_MR2)
+  public S isNotInLayout() {
+    isNotNull();
+    assertThat(actual.isInLayout()) //
+        .overridingErrorMessage("Expect to not be in layout but was.") //
         .isFalse();
     return myself;
   }

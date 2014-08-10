@@ -7,6 +7,7 @@ import org.assertj.core.api.AbstractAssert;
 
 import static android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN;
+import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR2;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link AccessibilityNodeInfo} instances. */
@@ -83,6 +84,39 @@ public class AccessibilityNodeInfoAssert
     return this;
   }
 
+  @TargetApi(JELLY_BEAN_MR2)
+  public AccessibilityNodeInfoAssert hasTextSelectionStart(int position) {
+    isNotNull();
+    int actualPosition = actual.getTextSelectionStart();
+    assertThat(actualPosition) //
+        .overridingErrorMessage("Expected text selection start <%s> but was <%s>.", position,
+            actualPosition) //
+        .isEqualTo(position);
+    return this;
+  }
+
+  @TargetApi(JELLY_BEAN_MR2)
+  public AccessibilityNodeInfoAssert hasTextSelectionEnd(int position) {
+    isNotNull();
+    int actualPosition = actual.getTextSelectionEnd();
+    assertThat(actualPosition) //
+        .overridingErrorMessage("Expected text selection end <%s> but was <%s>.", position,
+            actualPosition) //
+        .isEqualTo(position);
+    return this;
+  }
+
+  @TargetApi(JELLY_BEAN_MR2)
+  public AccessibilityNodeInfoAssert hasViewIdResourceName(String name) {
+    isNotNull();
+    String actualName = actual.getViewIdResourceName();
+    assertThat(actualName) //
+        .overridingErrorMessage("Expected view ID resource name <%s> but was <%s>.", name,
+            actualName) //
+        .isEqualTo(name);
+    return this;
+  }
+
   public AccessibilityNodeInfoAssert hasWindowId(int id) {
     isNotNull();
     int actualId = actual.getWindowId();
@@ -154,6 +188,24 @@ public class AccessibilityNodeInfoAssert
     isNotNull();
     assertThat(actual.isClickable()) //
         .overridingErrorMessage("Expected to not be clickable but was.") //
+        .isFalse();
+    return this;
+  }
+
+  @TargetApi(JELLY_BEAN_MR2)
+  public AccessibilityNodeInfoAssert isEditable() {
+    isNotNull();
+    assertThat(actual.isEditable()) //
+        .overridingErrorMessage("Expected to be editable but was not.") //
+        .isTrue();
+    return this;
+  }
+
+  @TargetApi(JELLY_BEAN_MR2)
+  public AccessibilityNodeInfoAssert isNotEditable() {
+    isNotNull();
+    assertThat(actual.isEditable()) //
+        .overridingErrorMessage("Expected to not be editable but was.") //
         .isFalse();
     return this;
   }
