@@ -1,17 +1,20 @@
 package org.assertj.android.api.util;
 
-import android.util.SparseIntArray;
+import android.annotation.TargetApi;
+import android.util.SparseLongArray;
 import org.assertj.core.api.AbstractAssert;
 
+import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR2;
 import static org.assertj.core.api.Assertions.assertThat;
 
-/** Assertions for {@link SparseIntArray} instances. */
-public class SparseIntArrayAssert extends AbstractAssert<SparseIntArrayAssert, SparseIntArray> {
-  public SparseIntArrayAssert(SparseIntArray actual) {
-    super(actual, SparseIntArrayAssert.class);
+/** Assertions for {@link SparseLongArray} instances. */
+@TargetApi(JELLY_BEAN_MR2)
+public class SparseLongArrayAssert extends AbstractAssert<SparseLongArrayAssert, SparseLongArray> {
+  public SparseLongArrayAssert(SparseLongArray actual) {
+    super(actual, SparseLongArrayAssert.class);
   }
 
-  public SparseIntArrayAssert hasKey(int key) {
+  public SparseLongArrayAssert hasKey(int key) {
     isNotNull();
     assertThat(actual.indexOfKey(key)) //
         .overridingErrorMessage("Expected key <%s> to be present but was not.", key) //
@@ -19,7 +22,7 @@ public class SparseIntArrayAssert extends AbstractAssert<SparseIntArrayAssert, S
     return this;
   }
 
-  public SparseIntArrayAssert doesNotHaveKey(int key) {
+  public SparseLongArrayAssert doesNotHaveKey(int key) {
     isNotNull();
     assertThat(actual.indexOfKey(key)) //
         .overridingErrorMessage("Expected key <%s> to not be present but was.") //
@@ -27,7 +30,7 @@ public class SparseIntArrayAssert extends AbstractAssert<SparseIntArrayAssert, S
     return this;
   }
 
-  public SparseIntArrayAssert hasSize(int size) {
+  public SparseLongArrayAssert hasSize(int size) {
     isNotNull();
     int actualSize = actual.size();
     assertThat(actualSize) //

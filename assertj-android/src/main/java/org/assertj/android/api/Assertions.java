@@ -561,6 +561,11 @@ public final class Assertions {
     return new org.assertj.android.api.text.BidiFormatterAssert(actual);
   }
 
+  public static org.assertj.android.api.util.AtomicFileAssert assertThat(
+      android.util.AtomicFile actual) {
+    return new org.assertj.android.api.util.AtomicFileAssert(actual);
+  }
+
   public static org.assertj.android.api.util.AttributeSetAssert assertThat(
       android.util.AttributeSet actual) {
     return new org.assertj.android.api.util.AttributeSetAssert(actual);
@@ -604,6 +609,11 @@ public final class Assertions {
   public static org.assertj.android.api.util.SparseIntArrayAssert assertThat(
       android.util.SparseIntArray actual) {
     return new org.assertj.android.api.util.SparseIntArrayAssert(actual);
+  }
+
+  public static org.assertj.android.api.util.SparseLongArrayAssert assertThat(
+      android.util.SparseLongArray actual) {
+    return new org.assertj.android.api.util.SparseLongArrayAssert(actual);
   }
 
   public static org.assertj.android.api.view.ActionModeAssert assertThat(

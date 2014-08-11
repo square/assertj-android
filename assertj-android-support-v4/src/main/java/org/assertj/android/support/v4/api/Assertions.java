@@ -66,9 +66,29 @@ public final class Assertions {
     return new org.assertj.android.support.v4.api.print.PrintHelperAssert(actual);
   }
 
+  public static org.assertj.android.support.v4.api.util.AtomicFileAssert assertThat(
+      android.support.v4.util.AtomicFile actual) {
+    return new org.assertj.android.support.v4.api.util.AtomicFileAssert(actual);
+  }
+
+  public static <E> org.assertj.android.support.v4.api.util.CircularArrayAssert<E> assertThat(
+      android.support.v4.util.CircularArray<E> actual) {
+    return new org.assertj.android.support.v4.api.util.CircularArrayAssert<>(actual);
+  }
+
+  public static org.assertj.android.support.v4.api.util.LongSparseArrayAssert assertThat(
+      android.support.v4.util.LongSparseArray actual) {
+    return new org.assertj.android.support.v4.api.util.LongSparseArrayAssert(actual);
+  }
+
   public static <K, V> org.assertj.android.support.v4.api.util.LruCacheAssert<K, V> assertThat(
       android.support.v4.util.LruCache<K, V> actual) {
     return new org.assertj.android.support.v4.api.util.LruCacheAssert<>(actual);
+  }
+
+  public static <E> org.assertj.android.support.v4.api.util.SparseArrayCompatAssert<E> assertThat(
+      android.support.v4.util.SparseArrayCompat<E> actual) {
+    return new org.assertj.android.support.v4.api.util.SparseArrayCompatAssert<>(actual);
   }
 
   public static org.assertj.android.support.v4.api.view.PagerAdapterAssert assertThat(

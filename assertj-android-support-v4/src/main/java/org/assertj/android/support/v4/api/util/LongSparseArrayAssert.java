@@ -1,14 +1,11 @@
-package org.assertj.android.api.util;
+package org.assertj.android.support.v4.api.util;
 
-import android.annotation.TargetApi;
-import android.util.LongSparseArray;
+import android.support.v4.util.LongSparseArray;
 import org.assertj.core.api.AbstractAssert;
 
-import static android.os.Build.VERSION_CODES.JELLY_BEAN;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link LongSparseArray} instances. */
-@TargetApi(JELLY_BEAN)
 public class LongSparseArrayAssert extends AbstractAssert<LongSparseArrayAssert, LongSparseArray> {
   public LongSparseArrayAssert(LongSparseArray actual) {
     super(actual, LongSparseArrayAssert.class);
@@ -16,17 +13,9 @@ public class LongSparseArrayAssert extends AbstractAssert<LongSparseArrayAssert,
 
   public LongSparseArrayAssert hasKey(int key) {
     isNotNull();
-    assertThat(actual.indexOfKey(key)) //
-        .overridingErrorMessage("Expected key <%s> to be present but was not.", key) //
-        .isGreaterThanOrEqualTo(0);
-    return this;
-  }
-
-  public LongSparseArrayAssert doesNotHaveKey(int key) {
-    isNotNull();
-    assertThat(actual.indexOfKey(key)) //
-        .overridingErrorMessage("Expected key <%s> to not be present but was.") //
-        .isLessThan(0);
+    assertThat(actual.get(key)) //
+        .overridingErrorMessage("Expected key <%s> to be present but was not present.", key) //
+        .isNotNull();
     return this;
   }
 
