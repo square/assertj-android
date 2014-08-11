@@ -6,6 +6,11 @@ package org.assertj.android.api;
 /** Assertions for testing Android classes. */
 @SuppressWarnings("deprecation")
 public final class Assertions {
+  public static org.assertj.android.api.accessibilityservice.AccessibilityServiceInfoAssert assertThat(
+      android.accessibilityservice.AccessibilityServiceInfo actual) {
+    return new org.assertj.android.api.accessibilityservice.AccessibilityServiceInfoAssert(actual);
+  }
+
   public static org.assertj.android.api.accounts.AccountAssert assertThat(
       android.accounts.Account actual) {
     return new org.assertj.android.api.accounts.AccountAssert(actual);
@@ -144,6 +149,26 @@ public final class Assertions {
   public static org.assertj.android.api.app.UiModeManagerAssert assertThat(
       android.app.UiModeManager actual) {
     return new org.assertj.android.api.app.UiModeManagerAssert(actual);
+  }
+
+  public static org.assertj.android.api.bluetooth.BluetoothDeviceAssert assertThat(
+      android.bluetooth.BluetoothDevice actual) {
+    return new org.assertj.android.api.bluetooth.BluetoothDeviceAssert(actual);
+  }
+
+  public static org.assertj.android.api.bluetooth.BluetoothGattCharacteristicAssert assertThat(
+      android.bluetooth.BluetoothGattCharacteristic actual) {
+    return new org.assertj.android.api.bluetooth.BluetoothGattCharacteristicAssert(actual);
+  }
+
+  public static org.assertj.android.api.bluetooth.BluetoothGattDescriptorAssert assertThat(
+      android.bluetooth.BluetoothGattDescriptor actual) {
+    return new org.assertj.android.api.bluetooth.BluetoothGattDescriptorAssert(actual);
+  }
+
+  public static org.assertj.android.api.bluetooth.BluetoothGattServiceAssert assertThat(
+      android.bluetooth.BluetoothGattService actual) {
+    return new org.assertj.android.api.bluetooth.BluetoothGattServiceAssert(actual);
   }
 
   public static org.assertj.android.api.content.AsyncTaskLoaderAssert assertThat(
@@ -529,6 +554,11 @@ public final class Assertions {
   public static org.assertj.android.api.preference.TwoStatePreferenceAssert assertThat(
       android.preference.TwoStatePreference actual) {
     return new org.assertj.android.api.preference.TwoStatePreferenceAssert(actual);
+  }
+
+  public static org.assertj.android.api.text.BidiFormatterAssert assertThat(
+      android.text.BidiFormatter actual) {
+    return new org.assertj.android.api.text.BidiFormatterAssert(actual);
   }
 
   public static org.assertj.android.api.util.AttributeSetAssert assertThat(

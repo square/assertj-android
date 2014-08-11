@@ -1,9 +1,11 @@
 // Copyright 2013 Square, Inc.
 package org.assertj.android.api.widget;
 
+import android.annotation.TargetApi;
 import android.widget.VideoView;
 import org.assertj.android.api.view.AbstractViewAssert;
 
+import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR2;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link VideoView} instances. */
@@ -57,6 +59,16 @@ public class VideoViewAssert extends AbstractViewAssert<VideoViewAssert, VideoVi
     assertThat(actual.canSeekForward()) //
         .overridingErrorMessage("Expected to not be seekable forward but was.") //
         .isFalse();
+    return this;
+  }
+
+  @TargetApi(JELLY_BEAN_MR2)
+  public VideoViewAssert hasAudioSessionId(int id) {
+    isNotNull();
+    int actualId = actual.getAudioSessionId();
+    assertThat(actualId) //
+        .overridingErrorMessage("Expected audio session ID <%s> but was <%s>.", id, actualId) //
+        .isEqualTo(id);
     return this;
   }
 

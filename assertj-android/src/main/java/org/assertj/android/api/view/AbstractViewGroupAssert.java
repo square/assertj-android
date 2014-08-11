@@ -5,9 +5,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
+import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR2;
 import static android.view.ViewGroup.FOCUS_AFTER_DESCENDANTS;
 import static android.view.ViewGroup.FOCUS_BEFORE_DESCENDANTS;
 import static android.view.ViewGroup.FOCUS_BLOCK_DESCENDANTS;
+import static android.view.ViewGroup.LAYOUT_MODE_CLIP_BOUNDS;
+import static android.view.ViewGroup.LAYOUT_MODE_OPTICAL_BOUNDS;
 import static android.view.ViewGroup.PERSISTENT_ALL_CACHES;
 import static android.view.ViewGroup.PERSISTENT_ANIMATION_CACHE;
 import static android.view.ViewGroup.PERSISTENT_NO_CACHE;
@@ -66,6 +69,16 @@ public abstract class AbstractViewGroupAssert<S extends AbstractViewGroupAssert<
     return myself;
   }
 
+  public S hasLayoutMode(int layoutMode) {
+    isNotNull();
+    int actualLayoutMode = actual.getLayoutMode();
+    assertThat(actualLayoutMode) //
+        .overridingErrorMessage("Expected layout mode <%s> but was <%s>.",
+            layoutModeToString(layoutMode), layoutModeToString(actualLayoutMode)) //
+        .isEqualTo(layoutMode);
+    return myself;
+  }
+
   public S hasPersistentDrawingCache(int cache) {
     isNotNull();
     int actualCache = actual.getPersistentDrawingCache();
@@ -88,6 +101,24 @@ public abstract class AbstractViewGroupAssert<S extends AbstractViewGroupAssert<
     isNotNull();
     assertThat(actual.isAlwaysDrawnWithCacheEnabled()) //
         .overridingErrorMessage("Expected to not always draw with cache but was") //
+        .isFalse();
+    return myself;
+  }
+
+  @TargetApi(JELLY_BEAN_MR2)
+  public S isClippingChildren() {
+    isNotNull();
+    assertThat(actual.getClipChildren()) //
+        .overridingErrorMessage("Expected to be clipping children but was not.") //
+        .isTrue();
+    return myself;
+  }
+
+  @TargetApi(JELLY_BEAN_MR2)
+  public S isNotClippingChildren() {
+    isNotNull();
+    assertThat(actual.getClipChildren()) //
+        .overridingErrorMessage("Expected to not be clipping children but was.") //
         .isFalse();
     return myself;
   }
@@ -140,6 +171,13 @@ public abstract class AbstractViewGroupAssert<S extends AbstractViewGroupAssert<
         .value(PERSISTENT_ANIMATION_CACHE, "animation")
         .value(PERSISTENT_NO_CACHE, "none")
         .value(PERSISTENT_SCROLLING_CACHE, "scrolling")
+        .get();
+  }
+
+  public static String layoutModeToString(int layoutMode) {
+    return buildNamedValueString(layoutMode)
+        .value(LAYOUT_MODE_CLIP_BOUNDS, "clip_bounds")
+        .value(LAYOUT_MODE_OPTICAL_BOUNDS, "optical_bounds")
         .get();
   }
 }

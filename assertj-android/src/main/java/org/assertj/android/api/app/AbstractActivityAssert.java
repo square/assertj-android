@@ -7,6 +7,7 @@ import org.assertj.android.api.content.AbstractContextAssert;
 
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR1;
+import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR2;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public abstract class AbstractActivityAssert<S extends AbstractActivityAssert<S, A>, A extends Activity>
@@ -122,6 +123,24 @@ public abstract class AbstractActivityAssert<S extends AbstractActivityAssert<S,
     isNotNull();
     assertThat(actual.isFinishing()) //
         .overridingErrorMessage("Expected to not be finishing but was finishing.") //
+        .isFalse();
+    return myself;
+  }
+
+  @TargetApi(JELLY_BEAN_MR2)
+  public S isImmersive() {
+    isNotNull();
+    assertThat(actual.isImmersive()) //
+        .overridingErrorMessage("Expected to be immersive but was not.") //
+        .isTrue();
+    return myself;
+  }
+
+  @TargetApi(JELLY_BEAN_MR2)
+  public S isNotImmersive() {
+    isNotNull();
+    assertThat(actual.isImmersive()) //
+        .overridingErrorMessage("Expected to not be immersive but was.") //
         .isFalse();
     return myself;
   }

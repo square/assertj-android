@@ -6,6 +6,7 @@ import android.location.Location;
 import org.assertj.core.api.AbstractAssert;
 
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR1;
+import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR2;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link Location} instances. */
@@ -158,6 +159,24 @@ public class LocationAssert extends AbstractAssert<LocationAssert, Location> {
     isNotNull();
     assertThat(actual.hasSpeed()) //
         .overridingErrorMessage("Expected to not have speed but did.") //
+        .isFalse();
+    return this;
+  }
+
+  @TargetApi(JELLY_BEAN_MR2)
+  public LocationAssert isFromMockProvider() {
+    isNotNull();
+    assertThat(actual.isFromMockProvider()) //
+        .overridingErrorMessage("Expected to be from mock provider but was not.") //
+        .isTrue();
+    return this;
+  }
+
+  @TargetApi(JELLY_BEAN_MR2)
+  public LocationAssert isNotFromMockProvider() {
+    isNotNull();
+    assertThat(actual.isFromMockProvider()) //
+        .overridingErrorMessage("Expected to not be from mock provider but was.") //
         .isFalse();
     return this;
   }
