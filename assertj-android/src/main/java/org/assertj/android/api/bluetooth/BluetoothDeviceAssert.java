@@ -1,5 +1,6 @@
 package org.assertj.android.api.bluetooth;
 
+import android.annotation.TargetApi;
 import android.bluetooth.BluetoothDevice;
 import org.assertj.core.api.AbstractAssert;
 
@@ -10,6 +11,7 @@ import static android.bluetooth.BluetoothDevice.DEVICE_TYPE_CLASSIC;
 import static android.bluetooth.BluetoothDevice.DEVICE_TYPE_DUAL;
 import static android.bluetooth.BluetoothDevice.DEVICE_TYPE_LE;
 import static android.bluetooth.BluetoothDevice.DEVICE_TYPE_UNKNOWN;
+import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR2;
 import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -46,6 +48,7 @@ public class BluetoothDeviceAssert extends AbstractAssert<BluetoothDeviceAssert,
     return this;
   }
 
+  @TargetApi(JELLY_BEAN_MR2)
   public BluetoothDeviceAssert hasType(int type) {
     isNotNull();
     int actualType = actual.getType();
@@ -57,15 +60,16 @@ public class BluetoothDeviceAssert extends AbstractAssert<BluetoothDeviceAssert,
   }
 
   public static String bondStateToString(int state) {
-    return buildNamedValueString(state)
+    return buildNamedValueString(state) //
         .value(BOND_NONE, "none")
         .value(BOND_BONDED, "bonded")
         .value(BOND_BONDING, "bonding")
         .get();
   }
 
+  @TargetApi(JELLY_BEAN_MR2)
   public static String typeToString(int type) {
-    return buildNamedValueString(type)
+    return buildNamedValueString(type) //
         .value(DEVICE_TYPE_CLASSIC, "classic")
         .value(DEVICE_TYPE_DUAL, "dual")
         .value(DEVICE_TYPE_LE, "le")

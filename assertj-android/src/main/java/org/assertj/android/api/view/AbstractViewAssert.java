@@ -13,6 +13,7 @@ import static android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR1;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR2;
+import static android.os.Build.VERSION_CODES.KITKAT;
 import static android.view.View.GONE;
 import static android.view.View.INVISIBLE;
 import static android.view.View.LAYER_TYPE_HARDWARE;
@@ -192,8 +193,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     isNotNull();
     int actualId = actual.getLabelFor();
     assertThat(actualId) //
-        .overridingErrorMessage("Expected to have label for ID <%s> but was <%s>", id,
-            actualId) //
+        .overridingErrorMessage("Expected to have label for ID <%s> but was <%s>", id, actualId) //
         .isEqualTo(id);
     return myself;
   }
@@ -373,8 +373,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     isNotNull();
     int actualPadding = actual.getPaddingEnd();
     assertThat(actualPadding) //
-        .overridingErrorMessage("Expected padding end <%s> but was <%s>", padding,
-            actualPadding) //
+        .overridingErrorMessage("Expected padding end <%s> but was <%s>", padding, actualPadding) //
         .isEqualTo(padding);
     return myself;
   }
@@ -1353,6 +1352,150 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     isNotNull();
     assertThat(actual.isVerticalScrollBarEnabled()) //
         .overridingErrorMessage("Expected to have vertical scroll bar disabled but was enabled") //
+        .isFalse();
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S canResolveLayoutDirection() {
+    isNotNull();
+    assertThat(actual.canResolveLayoutDirection()) //
+        .overridingErrorMessage("Expected to be able to resolve layout direction but cannot.") //
+        .isTrue();
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S canNotResolveLayoutDirection() {
+    isNotNull();
+    assertThat(actual.canResolveLayoutDirection()) //
+        .overridingErrorMessage("Expected to not be able to resolve layout direction but can.") //
+        .isFalse();
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S canResolveTextAlignment() {
+    isNotNull();
+    assertThat(actual.canResolveLayoutDirection()) //
+        .overridingErrorMessage("Expected to  be able to resolve text alignment but cannot.") //
+        .isTrue();
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S canNotResolveTextAlignment() {
+    isNotNull();
+    assertThat(actual.canResolveLayoutDirection()) //
+        .overridingErrorMessage("Expected to not be able to resolve text alignment but can.") //
+        .isFalse();
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S canResolveTextDirection() {
+    isNotNull();
+    assertThat(actual.canResolveTextDirection()) //
+        .overridingErrorMessage("Expected to be able to resolve text direction but cannot.") //
+        .isTrue();
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S canNotResolveTextDirection() {
+    isNotNull();
+    assertThat(actual.canResolveTextDirection()) //
+        .overridingErrorMessage("Expected to not be able to resolve text direction but can.") //
+        .isFalse();
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S isAttachedToWindow() {
+    isNotNull();
+    assertThat(actual.isAttachedToWindow()) //
+        .overridingErrorMessage("Expected to be attached to window but was not.") //
+        .isTrue();
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S isNotAttachedToWindow() {
+    isNotNull();
+    assertThat(actual.isAttachedToWindow()) //
+        .overridingErrorMessage("Expected to be not attached to window but was.") //
+        .isFalse();
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S isLaidOut() {
+    isNotNull();
+    assertThat(actual.isLaidOut()) //
+        .overridingErrorMessage("Expected to be laid out but was not.") //
+        .isTrue();
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S isNotLaidOut() {
+    isNotNull();
+    assertThat(actual.isLaidOut()) //
+        .overridingErrorMessage("Expected to be not laid out but was.") //
+        .isFalse();
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S hasResolvedLayoutDirection() {
+    isNotNull();
+    assertThat(actual.isLayoutDirectionResolved()) //
+        .overridingErrorMessage("Expected layout direction to be resolved but was not.") //
+        .isTrue();
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S hasNotResolvedLayoutDirection() {
+    isNotNull();
+    assertThat(actual.isLayoutDirectionResolved()) //
+        .overridingErrorMessage("Expected layout direction to not be resolved but was.") //
+        .isFalse();
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S hasResolvedTextAlignment() {
+    isNotNull();
+    assertThat(actual.isTextAlignmentResolved()) //
+        .overridingErrorMessage("Expected text alignment to be resolved but was not.") //
+        .isTrue();
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S hasNotResolvedTextAlignment() {
+    isNotNull();
+    assertThat(actual.isTextAlignmentResolved()) //
+        .overridingErrorMessage("Expected text alignment to not be resolved but was.") //
+        .isFalse();
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S hasResolvedTextDirection() {
+    isNotNull();
+    assertThat(actual.isTextDirectionResolved()) //
+        .overridingErrorMessage("Expected text direction to be resolved but was not.") //
+        .isTrue();
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S hasNotResolvedTextDirection() {
+    isNotNull();
+    assertThat(actual.isTextDirectionResolved()) //
+        .overridingErrorMessage("Expected text direction to not be resolved but was.") //
         .isFalse();
     return myself;
   }

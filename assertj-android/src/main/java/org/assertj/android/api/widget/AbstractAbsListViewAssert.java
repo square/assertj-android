@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.widget.AbsListView;
 
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
+import static android.os.Build.VERSION_CODES.KITKAT;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public abstract class AbstractAbsListViewAssert<S extends AbstractAbsListViewAssert<S, A>, A extends AbsListView>
@@ -40,5 +41,25 @@ public abstract class AbstractAbsListViewAssert<S extends AbstractAbsListViewAss
     isNotNull();
     // TODO? assertThat(actual.getCheckedItemPositions()).contains(positions);
     return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S canScrollList(int direction) {
+    isNotNull();
+    assertThat(actual.canScrollList(direction)) //
+        .overridingErrorMessage("Expected to be able to scroll <%s> but cannot.",
+            scrollDirectionToString(direction)) //
+        .isTrue();
+    return myself;
+  }
+
+  static String scrollDirectionToString(int direction) {
+    if (direction == 0) {
+      throw new IllegalArgumentException("direction must be positive or negative");
+    } else if (direction < 0) {
+      return "up";
+    } else {
+      return "down";
+    }
   }
 }

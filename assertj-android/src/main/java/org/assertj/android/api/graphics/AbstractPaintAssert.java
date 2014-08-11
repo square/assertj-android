@@ -14,6 +14,7 @@ import org.assertj.core.api.AbstractAssert;
 import static android.graphics.Paint.ANTI_ALIAS_FLAG;
 import static android.graphics.Paint.DEV_KERN_TEXT_FLAG;
 import static android.graphics.Paint.DITHER_FLAG;
+import static android.graphics.Paint.EMBEDDED_BITMAP_TEXT_FLAG;
 import static android.graphics.Paint.FAKE_BOLD_TEXT_FLAG;
 import static android.graphics.Paint.FILTER_BITMAP_FLAG;
 import static android.graphics.Paint.LINEAR_TEXT_FLAG;
@@ -342,6 +343,7 @@ public abstract class AbstractPaintAssert<S extends AbstractPaintAssert<S, A>, A
         .flag(STRIKE_THRU_TEXT_FLAG, "strikeThrough")
         .flag(SUBPIXEL_TEXT_FLAG, "subpixelText")
         .flag(UNDERLINE_TEXT_FLAG, "underline")
+        .flag(EMBEDDED_BITMAP_TEXT_FLAG, "embedded_bitmap")
         .get();
   }
 }

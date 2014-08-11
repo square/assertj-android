@@ -14,15 +14,6 @@ public class ColorDrawableAssert
     super(actual, ColorDrawableAssert.class);
   }
 
-  public ColorDrawableAssert hasAlpha(int alpha) {
-    isNotNull();
-    int actualAlpha = actual.getAlpha();
-    assertThat(actualAlpha) //
-        .overridingErrorMessage("Expected alpha <%s> but was <%s>.", alpha, actualAlpha) //
-        .isEqualTo(alpha);
-    return this;
-  }
-
   @TargetApi(HONEYCOMB)
   public ColorDrawableAssert hasColor(int color) {
     isNotNull();
@@ -33,4 +24,5 @@ public class ColorDrawableAssert
         .isEqualTo(color);
     return this;
   }
+
 }

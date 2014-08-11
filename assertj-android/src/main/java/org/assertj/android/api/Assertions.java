@@ -151,6 +151,11 @@ public final class Assertions {
     return new org.assertj.android.api.app.UiModeManagerAssert(actual);
   }
 
+  public static org.assertj.android.api.bluetooth.BluetoothClassAssert assertThat(
+      android.bluetooth.BluetoothClass actual) {
+    return new org.assertj.android.api.bluetooth.BluetoothClassAssert(actual);
+  }
+
   public static org.assertj.android.api.bluetooth.BluetoothDeviceAssert assertThat(
       android.bluetooth.BluetoothDevice actual) {
     return new org.assertj.android.api.bluetooth.BluetoothDeviceAssert(actual);
@@ -559,6 +564,11 @@ public final class Assertions {
   public static org.assertj.android.api.text.BidiFormatterAssert assertThat(
       android.text.BidiFormatter actual) {
     return new org.assertj.android.api.text.BidiFormatterAssert(actual);
+  }
+
+  public static <K, V> org.assertj.android.api.util.ArrayMapAssert assertThat(
+      android.util.ArrayMap<K, V>, K, V actual) {
+    return new org.assertj.android.api.util.ArrayMapAssert(actual);
   }
 
   public static org.assertj.android.api.util.AtomicFileAssert assertThat(

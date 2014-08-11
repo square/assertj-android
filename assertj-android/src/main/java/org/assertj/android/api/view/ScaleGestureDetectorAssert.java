@@ -6,6 +6,7 @@ import org.assertj.core.api.AbstractAssert;
 
 import static android.os.Build.VERSION_CODES.FROYO;
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
+import static android.os.Build.VERSION_CODES.KITKAT;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link ScaleGestureDetector} instances. */
@@ -131,6 +132,24 @@ public class ScaleGestureDetectorAssert
     isNotNull();
     assertThat(actual.isInProgress()) //
         .overridingErrorMessage("Expected to not be in progress but was in progress.") //
+        .isFalse();
+    return this;
+  }
+
+  @TargetApi(KITKAT)
+  public ScaleGestureDetectorAssert isQuickScaleEnabled() {
+    isNotNull();
+    assertThat(actual.isQuickScaleEnabled()) //
+        .overridingErrorMessage("Expected to have quick scale enabled but was not.") //
+        .isTrue();
+    return this;
+  }
+
+  @TargetApi(KITKAT)
+  public ScaleGestureDetectorAssert isQuickScaleDisabled() {
+    isNotNull();
+    assertThat(actual.isQuickScaleEnabled()) //
+        .overridingErrorMessage("Expected to have quick scale disabled but was not.") //
         .isFalse();
     return this;
   }

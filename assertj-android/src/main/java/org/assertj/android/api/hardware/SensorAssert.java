@@ -28,6 +28,7 @@ import static android.hardware.Sensor.TYPE_STEP_COUNTER;
 import static android.hardware.Sensor.TYPE_STEP_DETECTOR;
 import static android.hardware.Sensor.TYPE_TEMPERATURE;
 import static android.os.Build.VERSION_CODES.GINGERBREAD;
+import static android.os.Build.VERSION_CODES.KITKAT;
 import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -112,8 +113,30 @@ public class SensorAssert extends AbstractAssert<SensorAssert, Sensor> {
     return this;
   }
 
+  @TargetApi(KITKAT)
+  public SensorAssert hasFifoMaxEventCount(float count) {
+    isNotNull();
+    float actualCount = actual.getFifoMaxEventCount();
+    assertThat(actualCount) //
+        .overridingErrorMessage("Expected max event count to be <%s> but was <%s>.", count,
+            actualCount) //
+        .isEqualTo(count);
+    return this;
+  }
+
+  @TargetApi(KITKAT)
+  public SensorAssert hasFifoReservedEventCount(float count) {
+    isNotNull();
+    float actualCount = actual.getFifoReservedEventCount();
+    assertThat(actualCount) //
+        .overridingErrorMessage("Expected reserved event count to be <%s> but was <%s>.", count,
+            actualCount) //
+        .isEqualTo(count);
+    return this;
+  }
+
   public static String typeToString(int type) {
-    return buildNamedValueString(type)
+    return buildNamedValueString(type) //
         .value(TYPE_ACCELEROMETER, "accelerometer")
         .value(TYPE_ALL, "all")
         .value(TYPE_AMBIENT_TEMPERATURE, "ambient_temperature")
