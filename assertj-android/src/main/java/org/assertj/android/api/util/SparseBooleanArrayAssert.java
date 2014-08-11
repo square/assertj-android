@@ -28,6 +28,22 @@ public class SparseBooleanArrayAssert
     return this;
   }
 
+  public SparseBooleanArrayAssert hasKey(int key) {
+    isNotNull();
+    assertThat(actual.indexOfKey(key)) //
+        .overridingErrorMessage("Expected key <%s> to be present but was not.") //
+        .isGreaterThanOrEqualTo(0);
+    return this;
+  }
+
+  public SparseBooleanArrayAssert doesNotHaveKey(int key) {
+    isNotNull();
+    assertThat(actual.indexOfKey(key)) //
+        .overridingErrorMessage("Expected key <%s> to not be present but was.") //
+        .isLessThan(0);
+    return this;
+  }
+
   public SparseBooleanArrayAssert hasSize(int size) {
     isNotNull();
     int actualSize = actual.size();

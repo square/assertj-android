@@ -13,9 +13,17 @@ public class SparseArrayAssert<E> extends AbstractAssert<SparseArrayAssert<E>, S
 
   public SparseArrayAssert<E> hasKey(int key) {
     isNotNull();
-    assertThat(actual.get(key)) //
-        .overridingErrorMessage("Expected key <%s> to be present but was not present.", key) //
-        .isNotNull();
+    assertThat(actual.indexOfKey(key)) //
+        .overridingErrorMessage("Expected key <%s> to be present but was not.", key) //
+        .isGreaterThanOrEqualTo(0);
+    return this;
+  }
+
+  public SparseArrayAssert<E> doesNotHaveKey(int key) {
+    isNotNull();
+    assertThat(actual.indexOfKey(key)) //
+        .overridingErrorMessage("Expected key <%s> to not be present but was.") //
+        .isLessThan(0);
     return this;
   }
 
