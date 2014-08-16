@@ -566,9 +566,9 @@ public final class Assertions {
     return new org.assertj.android.api.text.BidiFormatterAssert(actual);
   }
 
-  public static <K, V> org.assertj.android.api.util.ArrayMapAssert assertThat(
-      android.util.ArrayMap<K, V>, K, V actual) {
-    return new org.assertj.android.api.util.ArrayMapAssert(actual);
+  public static <K, V> org.assertj.android.api.util.ArrayMapAssert<K, V> assertThat(
+      android.util.ArrayMap<K, V> actual) {
+    return new org.assertj.android.api.util.ArrayMapAssert<>(actual);
   }
 
   public static org.assertj.android.api.util.AtomicFileAssert assertThat(
