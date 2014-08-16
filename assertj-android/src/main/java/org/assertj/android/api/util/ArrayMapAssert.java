@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @TargetApi(KITKAT)
 public class ArrayMapAssert<K, V>
     extends AbstractMapAssert<ArrayMapAssert<K, V>, ArrayMap<K, V>, K, V> {
-  protected ArrayMapAssert(ArrayMap actual) {
+  public ArrayMapAssert(ArrayMap actual) {
     super(actual, ArrayMapAssert.class);
   }
 

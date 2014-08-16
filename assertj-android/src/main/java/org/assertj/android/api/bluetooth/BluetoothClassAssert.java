@@ -7,7 +7,7 @@ import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class BluetoothClassAssert extends AbstractAssert<BluetoothClassAssert, BluetoothClass> {
-  protected BluetoothClassAssert(BluetoothClass actual) {
+  public BluetoothClassAssert(BluetoothClass actual) {
     super(actual, BluetoothClassAssert.class);
   }
 
