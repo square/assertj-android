@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable;
 import org.assertj.core.api.AbstractAssert;
 
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
+import static android.os.Build.VERSION_CODES.KITKAT;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public abstract class AbstractDrawableAssert<S extends AbstractDrawableAssert<S, A>, A extends Drawable>
@@ -96,8 +97,7 @@ public abstract class AbstractDrawableAssert<S extends AbstractDrawableAssert<S,
     isNotNull();
     int actualHeight = actual.getMinimumWidth();
     assertThat(actualHeight) //
-        .overridingErrorMessage("Expected minimum width <%s> but was <%s>.", width,
-            actualHeight) //
+        .overridingErrorMessage("Expected minimum width <%s> but was <%s>.", width, actualHeight) //
         .isEqualTo(width);
     return myself;
   }
@@ -139,6 +139,34 @@ public abstract class AbstractDrawableAssert<S extends AbstractDrawableAssert<S,
     isNotNull();
     assertThat(actual.isVisible()) //
         .overridingErrorMessage("Expected to not be visible but was.") //
+        .isFalse();
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S hasAlpha(int alpha) {
+    isNotNull();
+    int actualAlpha = actual.getAlpha();
+    assertThat(actualAlpha) //
+        .overridingErrorMessage("Expected alpha <%s> but was <%s>.", alpha, actualAlpha) //
+        .isEqualTo(alpha);
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S isAutoMirrored() {
+    isNotNull();
+    assertThat(actual.isAutoMirrored()) //
+        .overridingErrorMessage("Expected to be auto mirrored but was not.") //
+        .isTrue();
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S isNotAutoMirrored() {
+    isNotNull();
+    assertThat(actual.isAutoMirrored()) //
+        .overridingErrorMessage("Expected to not be auto mirrored but was.") //
         .isFalse();
     return myself;
   }

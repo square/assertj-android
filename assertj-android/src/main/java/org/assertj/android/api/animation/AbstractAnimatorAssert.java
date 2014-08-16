@@ -9,6 +9,7 @@ import org.assertj.core.api.AbstractAssert;
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
 import static android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR2;
+import static android.os.Build.VERSION_CODES.KITKAT;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @TargetApi(HONEYCOMB)
@@ -52,6 +53,24 @@ public abstract class AbstractAnimatorAssert<S extends AbstractAnimatorAssert<S,
     assertThat(actualDelay) //
         .overridingErrorMessage("Expected start delay <%s> but was <%s>.", delay, actualDelay) //
         .isEqualTo(delay);
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S isPaused() {
+    isNotNull();
+    assertThat(actual.isPaused()) //
+        .overridingErrorMessage("Expected to be paused but was not.") //
+        .isTrue();
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S isNotPaused() {
+    isNotNull();
+    assertThat(actual.isPaused()) //
+        .overridingErrorMessage("Expected to not be paused but was.") //
+        .isFalse();
     return myself;
   }
 

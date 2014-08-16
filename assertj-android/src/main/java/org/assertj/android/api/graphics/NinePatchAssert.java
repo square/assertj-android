@@ -1,9 +1,12 @@
 // Copyright 2013 Square, Inc.
 package org.assertj.android.api.graphics;
 
+import android.annotation.TargetApi;
+import android.graphics.Bitmap;
 import android.graphics.NinePatch;
 import org.assertj.core.api.AbstractAssert;
 
+import static android.os.Build.VERSION_CODES.KITKAT;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link NinePatch} instances. */
@@ -52,6 +55,26 @@ public class NinePatchAssert extends AbstractAssert<NinePatchAssert, NinePatch> 
     assertThat(actual.hasAlpha()) //
         .overridingErrorMessage("Expected to not have alpha but did.") //
         .isFalse();
+    return this;
+  }
+
+  @TargetApi(KITKAT)
+  public NinePatchAssert hasName(String name) {
+    isNotNull();
+    String actualName = actual.getName();
+    assertThat(actualName) //
+        .overridingErrorMessage("Expected name to be <%s> but was <%s>.", name, actualName) //
+        .isEqualTo(name);
+    return this;
+  }
+
+  @TargetApi(KITKAT)
+  public NinePatchAssert hasBitmap(Bitmap bitmap) {
+    isNotNull();
+    Bitmap actualBitmap = actual.getBitmap();
+    assertThat(actualBitmap) //
+        .overridingErrorMessage("Expected bitmap <%s> but was <%s>.", bitmap, actualBitmap) //
+        .isEqualTo(bitmap);
     return this;
   }
 }

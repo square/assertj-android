@@ -7,6 +7,7 @@ import org.assertj.core.api.AbstractAssert;
 
 import static android.os.Build.VERSION_CODES.HONEYCOMB_MR1;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR1;
+import static android.os.Build.VERSION_CODES.KITKAT;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link Bitmap} instances. */
@@ -50,7 +51,7 @@ public class BitmapAssert extends AbstractAssert<BitmapAssert, Bitmap> {
   @TargetApi(JELLY_BEAN_MR1)
   public BitmapAssert isPremultiplied() {
     isNotNull();
-    assertThat(actual.isPremultiplied())
+    assertThat(actual.isPremultiplied()) //
         .overridingErrorMessage("Expected to be premultiplied but was not premultiplied.") //
         .isTrue();
     return this;
@@ -62,6 +63,17 @@ public class BitmapAssert extends AbstractAssert<BitmapAssert, Bitmap> {
     assertThat(actual.isPremultiplied()) //
         .overridingErrorMessage("Expected to not be premultiplied but was premultiplied.") //
         .isFalse();
+    return this;
+  }
+
+  @TargetApi(KITKAT)
+  public BitmapAssert hasAllocationByteCount(int count) {
+    isNotNull();
+    int actualCount = actual.getAllocationByteCount();
+    assertThat(actualCount) //
+        .overridingErrorMessage("Expected allocation byte count <%s> but was <%s>.", count,
+            actualCount) //
+        .isEqualTo(count);
     return this;
   }
 

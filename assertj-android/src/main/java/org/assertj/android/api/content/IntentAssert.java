@@ -25,8 +25,10 @@ import static android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP;
 import static android.content.Intent.FLAG_ACTIVITY_TASK_ON_HOME;
 import static android.content.Intent.FLAG_DEBUG_LOG_RESOLUTION;
 import static android.content.Intent.FLAG_FROM_BACKGROUND;
+import static android.content.Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION;
 import static android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION;
 import static android.content.Intent.FLAG_GRANT_WRITE_URI_PERMISSION;
+import static android.content.Intent.FLAG_RECEIVER_NO_ABORT;
 import static android.content.Intent.FLAG_RECEIVER_REGISTERED_ONLY;
 import static org.assertj.android.internal.IntegerUtils.buildBitMaskString;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -87,8 +89,7 @@ public class IntentAssert extends AbstractAssert<IntentAssert, Intent> {
   public IntentAssert hasComponent(ComponentName expected) {
     isNotNull();
     ComponentName componentName = actual.getComponent();
-    assertThat(componentName)
-        .isNotNull()
+    assertThat(componentName).isNotNull()
         .overridingErrorMessage("Expected component name <%s> but was <%s>.",
             expected.flattenToString(), componentName.flattenToString())
         .isEqualTo(expected);
@@ -105,6 +106,7 @@ public class IntentAssert extends AbstractAssert<IntentAssert, Intent> {
 
   public static String flagsToString(int flags) {
     return buildBitMaskString(flags) //
+        .flag(FLAG_GRANT_PERSISTABLE_URI_PERMISSION, "grant_persistable_uri_permission")
         .flag(FLAG_GRANT_READ_URI_PERMISSION, "grant_read_uri_permission")
         .flag(FLAG_GRANT_WRITE_URI_PERMISSION, "grant_write_uri_permission")
         .flag(FLAG_DEBUG_LOG_RESOLUTION, "debug_log_resolution")
@@ -120,6 +122,7 @@ public class IntentAssert extends AbstractAssert<IntentAssert, Intent> {
         .flag(FLAG_ACTIVITY_NEW_TASK, "activity_new_task")
         .flag(FLAG_ACTIVITY_NO_ANIMATION, "activity_no_animation")
         .flag(FLAG_ACTIVITY_NO_HISTORY, "activity_no_history")
+        .flag(FLAG_RECEIVER_NO_ABORT, "receiver_no_abort")
         .flag(FLAG_RECEIVER_REGISTERED_ONLY, "receiver_registered_only")
         .flag(FLAG_ACTIVITY_NO_USER_ACTION, "activity_no_user_action")
         .flag(FLAG_ACTIVITY_PREVIOUS_IS_TOP, "activity_previous_is_top")

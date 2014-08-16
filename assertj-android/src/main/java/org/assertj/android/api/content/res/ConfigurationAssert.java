@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.content.res.Configuration;
 import org.assertj.core.api.AbstractAssert;
 
+import static android.content.res.Configuration.MNC_ZERO;
 import static android.content.res.Configuration.UI_MODE_TYPE_APPLIANCE;
 import static android.content.res.Configuration.UI_MODE_TYPE_CAR;
 import static android.content.res.Configuration.UI_MODE_TYPE_DESK;
@@ -12,6 +13,7 @@ import static android.content.res.Configuration.UI_MODE_TYPE_TELEVISION;
 import static android.content.res.Configuration.UI_MODE_TYPE_UNDEFINED;
 import static android.content.res.Configuration.UI_MODE_TYPE_WATCH;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR1;
+import static android.os.Build.VERSION_CODES.KITKAT;
 import static org.assertj.android.api.view.AbstractViewAssert.layoutDirectionToString;
 import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -34,10 +36,30 @@ public class ConfigurationAssert extends AbstractAssert<ConfigurationAssert, Con
     return this;
   }
 
+  @TargetApi(KITKAT)
+  public ConfigurationAssert hasMnc(int mnc) {
+    isNotNull();
+    int actualMnc = actual.mnc;
+    assertThat(actualMnc) //
+        .overridingErrorMessage("Expected mnc to be <%s> but was <%s>.", mnc, actualMnc) //
+        .isEqualTo(mnc);
+    return this;
+  }
+
+  @TargetApi(KITKAT)
+  public ConfigurationAssert hasMncZero() {
+    isNotNull();
+    int actualMnc = actual.mnc;
+    assertThat(actualMnc) //
+        .overridingErrorMessage("Expected mnc to be zero but was <%s>.", actualMnc) //
+        .isEqualTo(MNC_ZERO);
+    return this;
+  }
+
   // TODO a lot!
 
   public static String uiModeTypeToString(int mode) {
-    return buildNamedValueString(mode)
+    return buildNamedValueString(mode) //
         .value(UI_MODE_TYPE_NORMAL, "normal")
         .value(UI_MODE_TYPE_APPLIANCE, "appliance")
         .value(UI_MODE_TYPE_CAR, "car")
