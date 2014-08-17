@@ -27,6 +27,7 @@ import static android.bluetooth.BluetoothGattCharacteristic.WRITE_TYPE_NO_RESPON
 import static android.bluetooth.BluetoothGattCharacteristic.WRITE_TYPE_SIGNED;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR2;
 import static org.assertj.android.internal.IntegerUtils.buildBitMaskString;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @TargetApi(JELLY_BEAN_MR2)
@@ -95,10 +96,10 @@ public class BluetoothGattCharacteristicAssert
   }
 
   public static String writeTypeToString(int writeType) {
-    return buildBitMaskString(writeType) //
-        .flag(WRITE_TYPE_DEFAULT, "default")
-        .flag(WRITE_TYPE_NO_RESPONSE, "no_response")
-        .flag(WRITE_TYPE_SIGNED, "signed")
+    return buildNamedValueString(writeType) //
+        .value(WRITE_TYPE_DEFAULT, "default")
+        .value(WRITE_TYPE_NO_RESPONSE, "no_response")
+        .value(WRITE_TYPE_SIGNED, "signed")
         .get();
   }
 
