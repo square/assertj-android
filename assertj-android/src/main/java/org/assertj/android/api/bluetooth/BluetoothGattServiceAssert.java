@@ -2,13 +2,15 @@ package org.assertj.android.api.bluetooth;
 
 import android.annotation.TargetApi;
 import android.bluetooth.BluetoothGattService;
-import java.util.UUID;
-import org.assertj.android.internal.IntegerUtils;
+
 import org.assertj.core.api.AbstractAssert;
+
+import java.util.UUID;
 
 import static android.bluetooth.BluetoothGattService.SERVICE_TYPE_PRIMARY;
 import static android.bluetooth.BluetoothGattService.SERVICE_TYPE_SECONDARY;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR2;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @TargetApi(JELLY_BEAN_MR2)
@@ -47,7 +49,7 @@ public class BluetoothGattServiceAssert
   }
 
   public static String typeToString(int type) {
-    return IntegerUtils.buildNamedValueString(type) //
+    return buildNamedValueString(type) //
         .value(SERVICE_TYPE_PRIMARY, "primary")
         .value(SERVICE_TYPE_SECONDARY, "secondary")
         .get();

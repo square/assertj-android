@@ -69,6 +69,7 @@ public abstract class AbstractViewGroupAssert<S extends AbstractViewGroupAssert<
     return myself;
   }
 
+  @TargetApi(JELLY_BEAN_MR2)
   public S hasLayoutMode(int layoutMode) {
     isNotNull();
     int actualLayoutMode = actual.getLayoutMode();
