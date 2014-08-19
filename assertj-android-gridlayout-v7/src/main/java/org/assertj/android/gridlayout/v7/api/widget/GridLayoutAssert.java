@@ -16,9 +16,10 @@ public class GridLayoutAssert extends AbstractViewGroupAssert<GridLayoutAssert, 
     super(actual, GridLayoutAssert.class);
   }
 
-  public GridLayoutAssert hasAlignmentMode(int mode) {
+  public GridLayoutAssert hasAlignmentMode(@GridLayoutAlignmentMode int mode) {
     isNotNull();
     int actualMode = actual.getAlignmentMode();
+    //noinspection ResourceType
     assertThat(actualMode) //
         .overridingErrorMessage("Expected alignment mode <%s> but was <%s>.",
             alignmentModeToString(mode), alignmentModeToString(actualMode)) //
@@ -35,9 +36,10 @@ public class GridLayoutAssert extends AbstractViewGroupAssert<GridLayoutAssert, 
     return this;
   }
 
-  public GridLayoutAssert hasOrientation(int orientation) {
+  public GridLayoutAssert hasOrientation(@GridLayoutOrientation int orientation) {
     isNotNull();
     int actualOrientation = actual.getOrientation();
+    //noinspection ResourceType
     assertThat(actualOrientation) //
         .overridingErrorMessage("Expected orientation <%s> but was <%s>.",
             orientationToString(orientation), orientationToString(actualOrientation)) //
@@ -110,14 +112,14 @@ public class GridLayoutAssert extends AbstractViewGroupAssert<GridLayoutAssert, 
     return this;
   }
 
-  public static String alignmentModeToString(int mode) {
+  public static String alignmentModeToString(@GridLayoutAlignmentMode int mode) {
     return buildNamedValueString(mode)
         .value(ALIGN_BOUNDS, "alignBounds")
         .value(ALIGN_MARGINS, "alignMargins")
         .get();
   }
 
-  public static String orientationToString(int orientation) {
+  public static String orientationToString(@GridLayoutOrientation int orientation) {
     return buildNamedValueString(orientation)
         .value(HORIZONTAL, "horizontal")
         .value(VERTICAL, "vertical")

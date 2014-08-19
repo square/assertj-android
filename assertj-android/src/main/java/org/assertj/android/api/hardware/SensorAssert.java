@@ -85,9 +85,10 @@ public class SensorAssert extends AbstractAssert<SensorAssert, Sensor> {
     return this;
   }
 
-  public SensorAssert hasType(int type) {
+  public SensorAssert hasType(@SensorType int type) {
     isNotNull();
     int actualType = actual.getType();
+    //noinspection ResourceType
     assertThat(actualType) //
         .overridingErrorMessage("Expected type <%s> but was <%s>.", typeToString(type),
             typeToString(actualType)) //
@@ -135,7 +136,7 @@ public class SensorAssert extends AbstractAssert<SensorAssert, Sensor> {
     return this;
   }
 
-  public static String typeToString(int type) {
+  public static String typeToString(@SensorType int type) {
     return buildNamedValueString(type) //
         .value(TYPE_ACCELEROMETER, "accelerometer")
         .value(TYPE_ALL, "all")

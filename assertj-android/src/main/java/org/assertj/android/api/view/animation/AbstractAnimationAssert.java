@@ -91,9 +91,10 @@ public abstract class AbstractAnimationAssert<S extends AbstractAnimationAssert<
     return myself;
   }
 
-  public S hasRepeatMode(int mode) {
+  public S hasRepeatMode(@AnimationRepeatMode int mode) {
     isNotNull();
     int actualMode = actual.getRepeatMode();
+    //noinspection ResourceType
     assertThat(actualMode) //
         .overridingErrorMessage("Expected repeat mode <%s> but was <%s>.", repeatModeToString(mode),
             repeatModeToString(actualMode)) //
@@ -231,7 +232,7 @@ public abstract class AbstractAnimationAssert<S extends AbstractAnimationAssert<
         .getOrValue();
   }
 
-  public static String repeatModeToString(int mode) {
+  public static String repeatModeToString(@AnimationRepeatMode int mode) {
     return buildNamedValueString(mode)
         .value(RESTART, "restart")
         .value(REVERSE, "reverse")

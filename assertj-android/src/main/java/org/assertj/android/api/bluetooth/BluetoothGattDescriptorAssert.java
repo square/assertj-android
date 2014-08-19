@@ -25,9 +25,10 @@ public class BluetoothGattDescriptorAssert
     super(actual, BluetoothGattDescriptorAssert.class);
   }
 
-  public BluetoothGattDescriptorAssert hasPermissions(int permissions) {
+  public BluetoothGattDescriptorAssert hasPermissions(@BluetoothGattDescriptorPermissions int permissions) {
     isNotNull();
     int actualPermissions = actual.getPermissions();
+    //noinspection ResourceType
     assertThat(actualPermissions) //
         .overridingErrorMessage("Expected permissions <%s> but was <%s>.",
             permissionsToString(permissions), permissionsToString(actualPermissions)) //
@@ -54,7 +55,7 @@ public class BluetoothGattDescriptorAssert
     return this;
   }
 
-  public static String permissionsToString(int permissions) {
+  public static String permissionsToString(@BluetoothGattDescriptorPermissions int permissions) {
     return buildBitMaskString(permissions) //
         .flag(PERMISSION_READ, "read")
         .flag(PERMISSION_READ_ENCRYPTED, "read_encrypted")

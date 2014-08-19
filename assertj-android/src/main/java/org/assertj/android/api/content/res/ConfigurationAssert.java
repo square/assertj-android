@@ -2,6 +2,8 @@ package org.assertj.android.api.content.res;
 
 import android.annotation.TargetApi;
 import android.content.res.Configuration;
+
+import org.assertj.android.api.view.ViewLayoutDirection;
 import org.assertj.core.api.AbstractAssert;
 
 import static android.content.res.Configuration.MNC_ZERO;
@@ -25,9 +27,10 @@ public class ConfigurationAssert extends AbstractAssert<ConfigurationAssert, Con
   }
 
   @TargetApi(JELLY_BEAN_MR1)
-  public ConfigurationAssert hasLayoutDirection(int layoutDirection) {
+  public ConfigurationAssert hasLayoutDirection(@ViewLayoutDirection int layoutDirection) {
     isNotNull();
     int actualLayoutDirection = actual.getLayoutDirection();
+    //noinspection ResourceType
     assertThat(actualLayoutDirection) //
         .overridingErrorMessage("Expected layout direction to be <%s> but was <%s>.",
             layoutDirectionToString(layoutDirection),
@@ -58,8 +61,8 @@ public class ConfigurationAssert extends AbstractAssert<ConfigurationAssert, Con
 
   // TODO a lot!
 
-  public static String uiModeTypeToString(int mode) {
-    return buildNamedValueString(mode) //
+  public static String uiModeTypeToString(@ConfigurationUiModeType int mode) {
+    return buildNamedValueString(mode)
         .value(UI_MODE_TYPE_NORMAL, "normal")
         .value(UI_MODE_TYPE_APPLIANCE, "appliance")
         .value(UI_MODE_TYPE_CAR, "car")

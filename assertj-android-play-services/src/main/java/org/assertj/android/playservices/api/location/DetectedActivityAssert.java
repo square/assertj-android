@@ -30,9 +30,10 @@ public class DetectedActivityAssert
     return this;
   }
 
-  public DetectedActivityAssert hasType(int type) {
+  public DetectedActivityAssert hasType(@DetectedActivityType int type) {
     isNotNull();
     int actualType = actual.getType();
+    //noinspection ResourceType
     assertThat(actualType) //
         .overridingErrorMessage("Expected type <%s> but was <%s>.", typeToString(type),
             typeToString(actualType)) //
@@ -40,7 +41,7 @@ public class DetectedActivityAssert
     return this;
   }
 
-  public static String typeToString(int type) {
+  public static String typeToString(@DetectedActivityType int type) {
     return buildNamedValueString(type)
         .value(IN_VEHICLE, "in vehicle")
         .value(ON_BICYCLE, "on bicycle")

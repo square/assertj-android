@@ -21,9 +21,10 @@ public class DragEventAssert extends AbstractAssert<DragEventAssert, DragEvent> 
     super(actual, DragEventAssert.class);
   }
 
-  public DragEventAssert hasAction(int action) {
+  public DragEventAssert hasAction(@DragEventAction int action) {
     isNotNull();
     int actualAction = actual.getAction();
+    //noinspection ResourceType
     assertThat(actualAction) //
         .overridingErrorMessage("Expected action <%s> but was <%s>",
             dragEventActionToString(action), dragEventActionToString(actualAction)) //
@@ -75,7 +76,7 @@ public class DragEventAssert extends AbstractAssert<DragEventAssert, DragEvent> 
     return this;
   }
 
-  public static String dragEventActionToString(int action) {
+  public static String dragEventActionToString(@DragEventAction int action) {
     return buildNamedValueString(action)
         .value(ACTION_DRAG_ENDED, "drag ended")
         .value(ACTION_DRAG_ENTERED, "drag entered")

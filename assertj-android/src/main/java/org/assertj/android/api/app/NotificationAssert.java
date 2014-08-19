@@ -53,9 +53,10 @@ public class NotificationAssert extends AbstractAssert<NotificationAssert, Notif
     return this;
   }
 
-  public NotificationAssert hasFlags(int flags) {
+  public NotificationAssert hasFlags(@NotificationFlags int flags) {
     isNotNull();
     int actualFlags = actual.flags;
+    //noinspection ResourceType
     assertThat(actualFlags) //
         .overridingErrorMessage("Expected flags <%s> but was <%s>.", flagsToString(flags),
             flagsToString(actualFlags)) //
@@ -145,9 +146,10 @@ public class NotificationAssert extends AbstractAssert<NotificationAssert, Notif
   }
 
   @TargetApi(JELLY_BEAN)
-  public NotificationAssert hasPriority(int priority) {
+  public NotificationAssert hasPriority(@NotificationPriority int priority) {
     isNotNull();
     int actualPriority = actual.priority;
+    //noinspection ResourceType
     assertThat(actualPriority) //
         .overridingErrorMessage("Expected priority <%s> but was <%s>.", priorityToString(priority),
             priorityToString(actualPriority)) //
@@ -185,7 +187,7 @@ public class NotificationAssert extends AbstractAssert<NotificationAssert, Notif
     return this;
   }
 
-  public static String flagsToString(int flags) {
+  public static String flagsToString(@NotificationFlags int flags) {
     return buildBitMaskString(flags) //
         .flag(FLAG_AUTO_CANCEL, "autoCancel")
         .flag(FLAG_FOREGROUND_SERVICE, "foregroundService")
@@ -198,7 +200,7 @@ public class NotificationAssert extends AbstractAssert<NotificationAssert, Notif
         .get();
   }
 
-  public static String priorityToString(int priority) {
+  public static String priorityToString(@NotificationPriority int priority) {
     return buildNamedValueString(priority)
         .value(PRIORITY_MIN, "min")
         .value(PRIORITY_LOW, "low")

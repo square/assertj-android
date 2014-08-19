@@ -22,9 +22,10 @@ public class AccessibilityServiceInfoAssert
   }
 
   @TargetApi(JELLY_BEAN_MR2)
-  public AccessibilityServiceInfoAssert hasCapabilities(int capabilities) {
+  public AccessibilityServiceInfoAssert hasCapabilities(@AccessibilityServiceInfoCapabilities int capabilities) {
     isNotNull();
     int actualCapabilities = actual.getCapabilities();
+    //noinspection ResourceType
     assertThat(actualCapabilities) //
         .overridingErrorMessage("Expected capabilities <%s> but was <%s>.",
             capabilitiesToString(capabilities), capabilitiesToString(actualCapabilities)) //
@@ -64,7 +65,7 @@ public class AccessibilityServiceInfoAssert
     return this;
   }
 
-  public static String capabilitiesToString(int capabilities) {
+  public static String capabilitiesToString(@AccessibilityServiceInfoCapabilities int capabilities) {
     return buildBitMaskString(capabilities)
         .flag(CAPABILITY_CAN_REQUEST_ENHANCED_WEB_ACCESSIBILITY, "request_enhanced_web_accessibility")
         .flag(CAPABILITY_CAN_REQUEST_FILTER_KEY_EVENTS, "request_filter_key_events")

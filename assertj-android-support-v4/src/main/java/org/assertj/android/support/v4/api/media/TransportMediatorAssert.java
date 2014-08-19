@@ -40,9 +40,10 @@ public class TransportMediatorAssert extends AbstractAssert<TransportMediatorAss
     return this;
   }
 
-  public TransportMediatorAssert hasTransportControlFlags(int flags) {
+  public TransportMediatorAssert hasTransportControlFlags(@TransportMediatorControlFlags int flags) {
     isNotNull();
     int actualFlags = actual.getTransportControlFlags();
+    //noinspection ResourceType
     assertThat(actualFlags) //
         .overridingErrorMessage("Expected control flags <%s> but was <%s>.",
             controlFlagsToString(flags), controlFlagsToString(actualFlags)) //
@@ -66,7 +67,7 @@ public class TransportMediatorAssert extends AbstractAssert<TransportMediatorAss
     return this;
   }
 
-  public static String controlFlagsToString(int flags) {
+  public static String controlFlagsToString(@TransportMediatorControlFlags int flags) {
     return buildBitMaskString(flags) //
         .flag(TransportMediator.FLAG_KEY_MEDIA_FAST_FORWARD, "fast_forward")
         .flag(TransportMediator.FLAG_KEY_MEDIA_NEXT, "next")
