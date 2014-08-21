@@ -70,9 +70,10 @@ public class ListPopupWindowAssert extends AbstractAssert<ListPopupWindowAssert,
     return this;
   }
 
-  public ListPopupWindowAssert hasInputMethodMode(int mode) {
+  public ListPopupWindowAssert hasInputMethodMode(@ListPopupWindowInputMethodMode int mode) {
     isNotNull();
     int actualMode = actual.getInputMethodMode();
+    //noinspection ResourceType
     assertThat(actualMode) //
         .overridingErrorMessage("Expected input method mode <%s> but was <%s>.",
             inputMethodModeToString(mode), inputMethodModeToString(actualMode)) //
@@ -197,7 +198,7 @@ public class ListPopupWindowAssert extends AbstractAssert<ListPopupWindowAssert,
     return this;
   }
 
-  public static String inputMethodModeToString(int mode) {
+  public static String inputMethodModeToString(@ListPopupWindowInputMethodMode int mode) {
     return buildNamedValueString(mode)
         .value(INPUT_METHOD_FROM_FOCUSABLE, "fromFocusable")
         .value(INPUT_METHOD_NEEDED, "needed")

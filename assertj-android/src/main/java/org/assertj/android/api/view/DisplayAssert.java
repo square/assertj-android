@@ -50,9 +50,10 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
   }
 
   @TargetApi(JELLY_BEAN_MR1)
-  public DisplayAssert hasFlags(int flags) {
+  public DisplayAssert hasFlags(@DisplayFlags int flags) {
     isNotNull();
     int actualFlags = actual.getFlags();
+    //noinspection ResourceType
     assertThat(actualFlags) //
         .overridingErrorMessage("Expected flags <%s> but was <%s>", flagsToStr(flags),
             flagsToStr(actualFlags)) //
@@ -79,9 +80,10 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
     return this;
   }
 
-  public DisplayAssert hasOrientation(int orientation) {
+  public DisplayAssert hasOrientation(@SurfaceRotation int orientation) {
     isNotNull();
     int actualOrientation = actual.getOrientation();
+    //noinspection ResourceType
     assertThat(actualOrientation) //
         .overridingErrorMessage("Expected orientation <%s> but was <%s>",
             orientationToString(orientation), orientationToString(actualOrientation)) //
@@ -92,6 +94,7 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
   public DisplayAssert isPortrait() {
     isNotNull();
     int actualOrientation = actual.getOrientation();
+    //noinspection ResourceType
     assertThat(actualOrientation) //
         .overridingErrorMessage("Expected orientation <%s> or <%s>, but was <%s>",
             orientationToString(ROTATION_0), orientationToString(ROTATION_180),
@@ -103,6 +106,7 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
   public DisplayAssert isLandscape() {
     isNotNull();
     int actualOrientation = actual.getOrientation();
+    //noinspection ResourceType
     assertThat(actualOrientation) //
         .overridingErrorMessage("Expected orientation <%s> or <%s>, but was <%s>",
             orientationToString(ROTATION_270), orientationToString(ROTATION_90),
@@ -173,8 +177,9 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
   }
 
   @TargetApi(KITKAT_WATCH)
-  public DisplayAssert hasState(int state) {
+  public DisplayAssert hasState(@DisplayState int state) {
     isNotNull();
+    //noinspection ResourceType
     assertThat(actual.getState()) //
         .overridingErrorMessage("Expected state <%s> but was <%s>", stateToString(state),
             stateToString(actual.getState())) //
@@ -209,7 +214,7 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
     return this;
   }
 
-  public static String orientationToString(int orientation) {
+  public static String orientationToString(@SurfaceRotation int orientation) {
     return buildNamedValueString(orientation)
         .value(ROTATION_0, "portrait (0)")
         .value(ROTATION_90, "landscape (90)")
@@ -219,7 +224,7 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
   }
 
   @TargetApi(KITKAT_WATCH)
-  public static String stateToString(int state) {
+  public static String stateToString(@DisplayState int state) {
     return buildNamedValueString(state)
         .value(STATE_DOZING, "dozing")
         .value(STATE_OFF, "off")
@@ -228,7 +233,7 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
         .get();
   }
 
-  public static String flagsToStr(int flags) {
+  public static String flagsToStr(@DisplayFlags int flags) {
     return buildBitMaskString(flags) //
         .flag(FLAG_PRESENTATION, "presentation")
         .flag(FLAG_PRIVATE, "private")

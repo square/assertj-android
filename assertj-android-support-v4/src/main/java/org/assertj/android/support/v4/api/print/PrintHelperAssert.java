@@ -17,9 +17,10 @@ public class PrintHelperAssert extends AbstractAssert<PrintHelperAssert, PrintHe
     super(actual, PrintHelperAssert.class);
   }
 
-  public PrintHelperAssert hasColorMode(int colorMode) {
+  public PrintHelperAssert hasColorMode(@PrintHelperColorMode int colorMode) {
     isNotNull();
     int actualColorMode = actual.getColorMode();
+    //noinspection ResourceType
     assertThat(actualColorMode) //
         .overridingErrorMessage("Expected color mode <%s> but was <%s>.",
             colorModeToString(colorMode), colorModeToString(actualColorMode)) //
@@ -27,9 +28,10 @@ public class PrintHelperAssert extends AbstractAssert<PrintHelperAssert, PrintHe
     return this;
   }
 
-  public PrintHelperAssert hasOrientation(int orientation) {
+  public PrintHelperAssert hasOrientation(@PrintHelperOrientation int orientation) {
     isNotNull();
     int actualOrientation = actual.getOrientation();
+    //noinspection ResourceType
     assertThat(actualOrientation) //
         .overridingErrorMessage("Expected orientation <%s> but was <%s>.",
             orientationToString(orientation), orientationToString(actualOrientation)) //
@@ -37,9 +39,10 @@ public class PrintHelperAssert extends AbstractAssert<PrintHelperAssert, PrintHe
     return this;
   }
 
-  public PrintHelperAssert hasScaleMode(int scaleMode) {
+  public PrintHelperAssert hasScaleMode(@PrintHelperScaleMode int scaleMode) {
     isNotNull();
     int actualScaleMode = actual.getScaleMode();
+    //noinspection ResourceType
     assertThat(actualScaleMode) //
         .overridingErrorMessage("Expected scale mode <%s> but was <%s>.",
             scaleModeToString(scaleMode), scaleModeToString(actualScaleMode)) //
@@ -47,21 +50,21 @@ public class PrintHelperAssert extends AbstractAssert<PrintHelperAssert, PrintHe
     return this;
   }
 
-  public static String colorModeToString(int colorMode) {
+  public static String colorModeToString(@PrintHelperColorMode int colorMode) {
     return buildNamedValueString(colorMode)
         .value(COLOR_MODE_COLOR, "color")
         .value(COLOR_MODE_MONOCHROME, "monochrome")
         .get();
   }
 
-  public static String orientationToString(int orientation) {
+  public static String orientationToString(@PrintHelperOrientation int orientation) {
     return buildNamedValueString(orientation)
         .value(ORIENTATION_LANDSCAPE, "landscape")
         .value(ORIENTATION_PORTRAIT, "portrait")
         .get();
   }
 
-  public static String scaleModeToString(int scaleMode) {
+  public static String scaleModeToString(@PrintHelperScaleMode int scaleMode) {
     return buildNamedValueString(scaleMode)
         .value(SCALE_MODE_FILL, "fill")
         .value(SCALE_MODE_FIT, "fit")

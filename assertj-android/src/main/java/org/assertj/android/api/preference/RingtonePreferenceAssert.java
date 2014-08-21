@@ -16,9 +16,10 @@ public class RingtonePreferenceAssert
     super(actual, RingtonePreferenceAssert.class);
   }
 
-  public RingtonePreferenceAssert hasRingtoneType(int type) {
+  public RingtonePreferenceAssert hasRingtoneType(@RingtoneType int type) {
     isNotNull();
     int actualType = actual.getRingtoneType();
+    //noinspection ResourceType
     assertThat(actualType) //
         .overridingErrorMessage("Expected ringtone type <%s> but was <%s>.",
             ringtoneTypeToString(type), ringtoneTypeToString(actualType)) //
@@ -58,7 +59,7 @@ public class RingtonePreferenceAssert
     return this;
   }
 
-  private static String ringtoneTypeToString(int type) {
+  private static String ringtoneTypeToString(@RingtoneType int type) {
     return buildBitMaskString(type) //
         .flag(TYPE_ALARM, "alarm")
         .flag(TYPE_NOTIFICATION, "notification")

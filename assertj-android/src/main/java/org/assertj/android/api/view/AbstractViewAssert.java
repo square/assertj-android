@@ -199,9 +199,10 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
   }
 
   @TargetApi(HONEYCOMB)
-  public S hasLayerType(int type) {
+  public S hasLayerType(@ViewLayerType int type) {
     isNotNull();
     int actualType = actual.getLayerType();
+    //noinspection ResourceType
     assertThat(actualType) //
         .overridingErrorMessage("Expected layer type <%s> but was <%s>", layerTypeToString(type),
             layerTypeToString(actualType)) //
@@ -348,9 +349,10 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
   }
 
   @TargetApi(GINGERBREAD)
-  public S hasOverScrollMode(int mode) {
+  public S hasOverScrollMode(@ViewOverscrollMode int mode) {
     isNotNull();
     int actualMode = actual.getOverScrollMode();
+    //noinspection ResourceType
     assertThat(actualMode) //
         .overridingErrorMessage("Expected over scroll mode <%s> but was <%s>",
             overScrollModeToString(mode), overScrollModeToString(actualMode)) //
@@ -560,9 +562,10 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     return myself;
   }
 
-  public S hasScrollBarStyle(int style) {
+  public S hasScrollBarStyle(@ViewScrollBarStyle int style) {
     isNotNull();
     int actualStyle = actual.getScrollBarStyle();
+    //noinspection ResourceType
     assertThat(actualStyle) //
         .overridingErrorMessage("Expected scroll bar style <%s> but was <%s>",
             scrollBarStyleToString(style), scrollBarStyleToString(actualStyle)) //
@@ -696,6 +699,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
   public S hasVerticalScrollbarPosition(int position) {
     isNotNull();
     int actualPosition = actual.getVerticalScrollbarPosition();
+    //noinspection ResourceType
     assertThat(actualPosition) //
         .overridingErrorMessage("Expected vertical scroll bar position <%s> but was <%s>",
             verticalScrollBarPositionToString(position),
@@ -714,7 +718,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     return myself;
   }
 
-  public S hasVisibility(int visibility) {
+  public S hasVisibility(@ViewVisibility int visibility) {
     isNotNull();
     int actualVisibility = actual.getVisibility();
     assertThat(actualVisibility) //
@@ -727,6 +731,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
   public S isVisible() {
     isNotNull();
     int actualVisibility = actual.getVisibility();
+    //noinspection ResourceType
     assertThat(actualVisibility) //
         .overridingErrorMessage("Expected to be visible but was %s",
             visibilityToString(actualVisibility)) //
@@ -1500,7 +1505,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     return myself;
   }
 
-  public static String visibilityToString(int visibility) {
+  public static String visibilityToString(@ViewVisibility int visibility) {
     return buildNamedValueString(visibility)
         .value(VISIBLE, "visible")
         .value(INVISIBLE, "invisible")
@@ -1509,7 +1514,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
   }
 
   @TargetApi(HONEYCOMB)
-  public static String layerTypeToString(int type) {
+  public static String layerTypeToString(@ViewLayerType int type) {
     return buildNamedValueString(type)
         .value(LAYER_TYPE_NONE, "none")
         .value(LAYER_TYPE_SOFTWARE, "software")
@@ -1518,7 +1523,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
   }
 
   @TargetApi(JELLY_BEAN_MR1)
-  public static String layoutDirectionToString(int direction) {
+  public static String layoutDirectionToString(@ViewLayoutDirection int direction) {
     return buildNamedValueString(direction)
         .value(LAYOUT_DIRECTION_RTL, "right_to_left")
         .value(LAYOUT_DIRECTION_LTR, "left_to_right")
@@ -1528,7 +1533,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
   }
 
   @TargetApi(GINGERBREAD)
-  public static String overScrollModeToString(int mode) {
+  public static String overScrollModeToString(@ViewOverscrollMode int mode) {
     return buildNamedValueString(mode)
         .value(OVER_SCROLL_ALWAYS, "always")
         .value(OVER_SCROLL_IF_CONTENT_SCROLLS, "ifContentScrolls")
@@ -1536,7 +1541,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
         .get();
   }
 
-  public static String scrollBarStyleToString(int style) {
+  public static String scrollBarStyleToString(@ViewScrollBarStyle int style) {
     return buildNamedValueString(style)
         .value(SCROLLBARS_INSIDE_INSET, "insideInset")
         .value(SCROLLBARS_INSIDE_OVERLAY, "insideOverlay")
@@ -1546,7 +1551,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
   }
 
   @TargetApi(HONEYCOMB)
-  public static String verticalScrollBarPositionToString(int position) {
+  public static String verticalScrollBarPositionToString(@ViewScrollBarPosition int position) {
     return buildNamedValueString(position)
         .value(SCROLLBAR_POSITION_DEFAULT, "default")
         .value(SCROLLBAR_POSITION_LEFT, "left")

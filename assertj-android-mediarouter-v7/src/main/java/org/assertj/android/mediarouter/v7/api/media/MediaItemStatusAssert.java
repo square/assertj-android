@@ -39,9 +39,10 @@ public class MediaItemStatusAssert extends AbstractAssert<MediaItemStatusAssert,
     return this;
   }
 
-  public MediaItemStatusAssert hasPlaybackState(int state) {
+  public MediaItemStatusAssert hasPlaybackState(@MediaItemStatusPlaybackState int state) {
     isNotNull();
     int actualState = actual.getPlaybackState();
+    //noinspection ResourceType
     assertThat(actualState) //
         .overridingErrorMessage("Expected playback state <%s> but was <%s>.",
             playbackStateToString(state), playbackStateToString(actualState)) //
@@ -58,7 +59,7 @@ public class MediaItemStatusAssert extends AbstractAssert<MediaItemStatusAssert,
     return this;
   }
 
-  public static String playbackStateToString(int playbackState) {
+  public static String playbackStateToString(@MediaItemStatusPlaybackState int playbackState) {
     return buildNamedValueString(playbackState)
         .value(PLAYBACK_STATE_BUFFERING, "buffering")
         .value(PLAYBACK_STATE_CANCELED, "canceled")

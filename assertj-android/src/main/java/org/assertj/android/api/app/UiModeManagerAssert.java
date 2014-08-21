@@ -2,6 +2,8 @@ package org.assertj.android.api.app;
 
 import android.annotation.TargetApi;
 import android.app.UiModeManager;
+
+import org.assertj.android.api.content.res.ConfigurationUiModeType;
 import org.assertj.core.api.AbstractAssert;
 
 import static android.app.UiModeManager.MODE_NIGHT_NO;
@@ -32,9 +34,10 @@ public class UiModeManagerAssert extends AbstractAssert<UiModeManagerAssert, UiM
     return this;
   }
 
-  public UiModeManagerAssert isInUiModeType(int mode) {
+  public UiModeManagerAssert isInUiModeType(@ConfigurationUiModeType int mode) {
     isNotNull();
     int actualMode = actual.getCurrentModeType();
+    //noinspection ResourceType
     assertThat(actualMode) //
         .overridingErrorMessage("Expected mode <%s> but was <%s>.", uiModeTypeToString(mode),
             uiModeTypeToString(actualMode)) //
@@ -42,9 +45,10 @@ public class UiModeManagerAssert extends AbstractAssert<UiModeManagerAssert, UiM
     return this;
   }
 
-  public UiModeManagerAssert isNotInUiModeType(int mode) {
+  public UiModeManagerAssert isNotInUiModeType(@ConfigurationUiModeType int mode) {
     isNotNull();
     int actualMode = actual.getCurrentModeType();
+    //noinspection ResourceType
     assertThat(actualMode) //
         .overridingErrorMessage("Expected not mode <%s> but was <%s>.", uiModeTypeToString(mode),
             uiModeTypeToString(actualMode)) //

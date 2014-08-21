@@ -46,9 +46,10 @@ public class BluetoothGattCharacteristicAssert
     return this;
   }
 
-  public BluetoothGattCharacteristicAssert hasPermissions(int permissions) {
+  public BluetoothGattCharacteristicAssert hasPermissions(@BluetoothGattCharacteristicPermissions int permissions) {
     isNotNull();
     int actualPermissions = actual.getPermissions();
+    //noinspection ResourceType
     assertThat(actualPermissions) //
         .overridingErrorMessage("Expected permissions <%s> but was <%s>.",
             permissionsToString(permissions), permissionsToString(actualPermissions)) //
@@ -56,9 +57,10 @@ public class BluetoothGattCharacteristicAssert
     return this;
   }
 
-  public BluetoothGattCharacteristicAssert hasProperties(int properties) {
+  public BluetoothGattCharacteristicAssert hasProperties(@BluetoothGattCharacteristicProperties int properties) {
     isNotNull();
     int actualProperties = actual.getProperties();
+    //noinspection ResourceType
     assertThat(actualProperties) //
         .overridingErrorMessage("Expected properties <%s> but was <%s>.",
             propertiesToString(properties), propertiesToString(actualProperties)) //
@@ -85,9 +87,10 @@ public class BluetoothGattCharacteristicAssert
     return this;
   }
 
-  public BluetoothGattCharacteristicAssert hasWriteType(int writeType) {
+  public BluetoothGattCharacteristicAssert hasWriteType(@BluetoothGattCharacteristicWriteType int writeType) {
     isNotNull();
     int actualWriteType = actual.getWriteType();
+    //noinspection ResourceType
     assertThat(actualWriteType) //
         .overridingErrorMessage("Expected write type <%s> but was <%s>.",
             writeTypeToString(writeType), writeTypeToString(actualWriteType)) //
@@ -95,7 +98,7 @@ public class BluetoothGattCharacteristicAssert
     return this;
   }
 
-  public static String writeTypeToString(int writeType) {
+  public static String writeTypeToString(@BluetoothGattCharacteristicWriteType int writeType) {
     return buildNamedValueString(writeType) //
         .value(WRITE_TYPE_DEFAULT, "default")
         .value(WRITE_TYPE_NO_RESPONSE, "no_response")
@@ -103,7 +106,7 @@ public class BluetoothGattCharacteristicAssert
         .get();
   }
 
-  public static String permissionsToString(int permissions) {
+  public static String permissionsToString(@BluetoothGattCharacteristicPermissions int permissions) {
     return buildBitMaskString(permissions) //
         .flag(PERMISSION_READ, "read")
         .flag(PERMISSION_READ_ENCRYPTED, "read_encrypted")
@@ -116,7 +119,7 @@ public class BluetoothGattCharacteristicAssert
         .get();
   }
 
-  public static String propertiesToString(int properties) {
+  public static String propertiesToString(@BluetoothGattCharacteristicProperties int properties) {
     return buildBitMaskString(properties) //
         .flag(PROPERTY_BROADCAST, "broadcast")
         .flag(PROPERTY_EXTENDED_PROPS, "extended_props")

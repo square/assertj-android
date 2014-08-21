@@ -49,9 +49,10 @@ public abstract class AbstractViewGroupAssert<S extends AbstractViewGroupAssert<
     return myself;
   }
 
-  public S hasDescendantFocusability(int focusability) {
+  public S hasDescendantFocusability(@ViewGroupDescendantFocusability int focusability) {
     isNotNull();
     int actualFocusability = actual.getDescendantFocusability();
+    //noinspection ResourceType
     assertThat(actualFocusability) //
         .overridingErrorMessage("Expected descendant focusability <%s> but was <%s>",
             descendantFocusabilityToString(focusability),
@@ -70,9 +71,10 @@ public abstract class AbstractViewGroupAssert<S extends AbstractViewGroupAssert<
   }
 
   @TargetApi(JELLY_BEAN_MR2)
-  public S hasLayoutMode(int layoutMode) {
+  public S hasLayoutMode(@ViewGroupLayoutMode int layoutMode) {
     isNotNull();
     int actualLayoutMode = actual.getLayoutMode();
+    //noinspection ResourceType
     assertThat(actualLayoutMode) //
         .overridingErrorMessage("Expected layout mode <%s> but was <%s>.",
             layoutModeToString(layoutMode), layoutModeToString(actualLayoutMode)) //
@@ -80,9 +82,10 @@ public abstract class AbstractViewGroupAssert<S extends AbstractViewGroupAssert<
     return myself;
   }
 
-  public S hasPersistentDrawingCache(int cache) {
+  public S hasPersistentDrawingCache(@ViewGroupPersistentDrawingCache int cache) {
     isNotNull();
     int actualCache = actual.getPersistentDrawingCache();
+    //noinspection ResourceType
     assertThat(actualCache) //
         .overridingErrorMessage("Expected persistent drawing cache <%s> but was <%s>",
             persistentDrawingCacheToString(cache), persistentDrawingCacheToString(actualCache)) //
@@ -158,7 +161,7 @@ public abstract class AbstractViewGroupAssert<S extends AbstractViewGroupAssert<
     return myself;
   }
 
-  public static String descendantFocusabilityToString(int focusability) {
+  public static String descendantFocusabilityToString(@ViewGroupDescendantFocusability int focusability) {
     return buildNamedValueString(focusability)
         .value(FOCUS_AFTER_DESCENDANTS, "afterDescendants")
         .value(FOCUS_BEFORE_DESCENDANTS, "beforeDescendants")
@@ -166,7 +169,7 @@ public abstract class AbstractViewGroupAssert<S extends AbstractViewGroupAssert<
         .get();
   }
 
-  public static String persistentDrawingCacheToString(int cache) {
+  public static String persistentDrawingCacheToString(@ViewGroupPersistentDrawingCache int cache) {
     return buildNamedValueString(cache)
         .value(PERSISTENT_ALL_CACHES, "all")
         .value(PERSISTENT_ANIMATION_CACHE, "animation")
@@ -175,7 +178,7 @@ public abstract class AbstractViewGroupAssert<S extends AbstractViewGroupAssert<
         .get();
   }
 
-  public static String layoutModeToString(int layoutMode) {
+  public static String layoutModeToString(@ViewGroupLayoutMode int layoutMode) {
     return buildNamedValueString(layoutMode)
         .value(LAYOUT_MODE_CLIP_BOUNDS, "clip_bounds")
         .value(LAYOUT_MODE_OPTICAL_BOUNDS, "optical_bounds")

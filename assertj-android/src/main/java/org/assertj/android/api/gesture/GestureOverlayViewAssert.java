@@ -67,9 +67,10 @@ public class GestureOverlayViewAssert
     return this;
   }
 
-  public GestureOverlayViewAssert hasGestureStokeType(int type) {
+  public GestureOverlayViewAssert hasGestureStokeType(@GestureOverlayViewGestureStrokeType int type) {
     isNotNull();
     int actualType = actual.getGestureStrokeType();
+    //noinspection ResourceType
     assertThat(actualType) //
         .overridingErrorMessage("Expected gesture stroke type <%s> but was <%s>.",
             gestureStrokeTypeToString(type), gestureStrokeTypeToString(actualType)) //
@@ -87,9 +88,10 @@ public class GestureOverlayViewAssert
     return this;
   }
 
-  public GestureOverlayViewAssert hasOrientation(int orientation) {
+  public GestureOverlayViewAssert hasOrientation(@GestureOverlayViewOrientation int orientation) {
     isNotNull();
     int actualOrientation = actual.getOrientation();
+    //noinspection ResourceType
     assertThat(actualOrientation) //
         .overridingErrorMessage("Expected orientation <%s> but was <%s>.",
             orientationToString(orientation), orientationToString(actualOrientation)) //
@@ -171,14 +173,14 @@ public class GestureOverlayViewAssert
     return this;
   }
 
-  public static String gestureStrokeTypeToString(int type) {
+  public static String gestureStrokeTypeToString(@GestureOverlayViewGestureStrokeType int type) {
     return buildNamedValueString(type)
         .value(GESTURE_STROKE_TYPE_SINGLE, "single")
         .value(GESTURE_STROKE_TYPE_MULTIPLE, "multiple")
         .get();
   }
 
-  public static String orientationToString(int orientation) {
+  public static String orientationToString(@GestureOverlayViewOrientation int orientation) {
     return buildNamedValueString(orientation)
         .value(ORIENTATION_HORIZONTAL, "horizontal")
         .value(ORIENTATION_VERTICAL, "vertical")

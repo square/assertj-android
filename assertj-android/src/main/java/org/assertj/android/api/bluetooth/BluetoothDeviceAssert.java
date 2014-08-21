@@ -29,9 +29,10 @@ public class BluetoothDeviceAssert extends AbstractAssert<BluetoothDeviceAssert,
     return this;
   }
 
-  public BluetoothDeviceAssert hasBondState(int state) {
+  public BluetoothDeviceAssert hasBondState(@BluetoothDeviceBondState int state) {
     isNotNull();
     int actualState = actual.getBondState();
+    //noinspection ResourceType
     assertThat(actualState) //
         .overridingErrorMessage("Expected bond state <%s> but was <%s>.", bondStateToString(state),
             bondStateToString(actualState)) //
@@ -48,10 +49,12 @@ public class BluetoothDeviceAssert extends AbstractAssert<BluetoothDeviceAssert,
     return this;
   }
 
+
   @TargetApi(JELLY_BEAN_MR2)
-  public BluetoothDeviceAssert hasType(int type) {
+  public BluetoothDeviceAssert hasType(@BluetoothDeviceType int type) {
     isNotNull();
     int actualType = actual.getType();
+    //noinspection ResourceType
     assertThat(actualType) //
         .overridingErrorMessage("Expected type <%s> but was <%s>.", typeToString(type),
             typeToString(actualType)) //
@@ -59,8 +62,8 @@ public class BluetoothDeviceAssert extends AbstractAssert<BluetoothDeviceAssert,
     return this;
   }
 
-  public static String bondStateToString(int state) {
-    return buildNamedValueString(state) //
+  public static String bondStateToString(@BluetoothDeviceBondState int state) {
+    return buildNamedValueString(state)
         .value(BOND_NONE, "none")
         .value(BOND_BONDED, "bonded")
         .value(BOND_BONDING, "bonding")
@@ -68,7 +71,7 @@ public class BluetoothDeviceAssert extends AbstractAssert<BluetoothDeviceAssert,
   }
 
   @TargetApi(JELLY_BEAN_MR2)
-  public static String typeToString(int type) {
+  public static String typeToString(@BluetoothDeviceType int type) {
     return buildNamedValueString(type) //
         .value(DEVICE_TYPE_CLASSIC, "classic")
         .value(DEVICE_TYPE_DUAL, "dual")

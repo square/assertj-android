@@ -55,9 +55,10 @@ public class PopupWindowAssert extends AbstractAssert<PopupWindowAssert, PopupWi
     return this;
   }
 
-  public PopupWindowAssert hasInputMethodMode(int mode) {
+  public PopupWindowAssert hasInputMethodMode(@PopupWindowInputMethodMode int mode) {
     isNotNull();
     int actualMode = actual.getInputMethodMode();
+    //noinspection ResourceType
     assertThat(actualMode) //
         .overridingErrorMessage("Expected input method mode <%s> but was <%s>.",
             inputMethodModeToString(mode), inputMethodModeToString(actualMode)) //
@@ -197,7 +198,7 @@ public class PopupWindowAssert extends AbstractAssert<PopupWindowAssert, PopupWi
     return this;
   }
 
-  public static String inputMethodModeToString(int mode) {
+  public static String inputMethodModeToString(@PopupWindowInputMethodMode int mode) {
     return buildNamedValueString(mode)
         .value(PopupWindow.INPUT_METHOD_FROM_FOCUSABLE, "fromFocusable")
         .value(PopupWindow.INPUT_METHOD_NEEDED, "needed")

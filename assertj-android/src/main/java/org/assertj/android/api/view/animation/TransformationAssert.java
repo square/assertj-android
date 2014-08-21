@@ -36,9 +36,10 @@ public class TransformationAssert extends AbstractAssert<TransformationAssert, T
     return this;
   }
 
-  public TransformationAssert hasTransformationType(int type) {
+  public TransformationAssert hasTransformationType(@TransformationType int type) {
     isNotNull();
     int actualType = actual.getTransformationType();
+    //noinspection ResourceType
     assertThat(actualType) //
         .overridingErrorMessage("Expected transformation type <%s> but was <%s>.",
             transformationTypeToString(type), transformationTypeToString(actualType)) //
@@ -46,7 +47,7 @@ public class TransformationAssert extends AbstractAssert<TransformationAssert, T
     return this;
   }
 
-  public static String transformationTypeToString(int type) {
+  public static String transformationTypeToString(@TransformationType int type) {
     return buildNamedValueString(type)
         .value(TYPE_ALPHA, "alpha")
         .value(TYPE_BOTH, "both")
