@@ -561,6 +561,106 @@ public final class Assertions {
     return new org.assertj.android.api.preference.TwoStatePreferenceAssert(actual);
   }
 
+  public static org.assertj.android.api.telephony.CellIdentityCdmaAssert assertThat(
+      android.telephony.CellIdentityCdma actual) {
+    return new org.assertj.android.api.telephony.CellIdentityCdmaAssert(actual);
+  }
+
+  public static org.assertj.android.api.telephony.CellIdentityGsmAssert assertThat(
+      android.telephony.CellIdentityGsm actual) {
+    return new org.assertj.android.api.telephony.CellIdentityGsmAssert(actual);
+  }
+
+  public static org.assertj.android.api.telephony.CellIdentityLteAssert assertThat(
+      android.telephony.CellIdentityLte actual) {
+    return new org.assertj.android.api.telephony.CellIdentityLteAssert(actual);
+  }
+
+  public static org.assertj.android.api.telephony.CellIdentityWcdmaAssert assertThat(
+      android.telephony.CellIdentityWcdma actual) {
+    return new org.assertj.android.api.telephony.CellIdentityWcdmaAssert(actual);
+  }
+
+  public static org.assertj.android.api.telephony.CellInfoAssert assertThat(
+      android.telephony.CellInfo actual) {
+    return new org.assertj.android.api.telephony.CellInfoAssert(actual);
+  }
+
+  public static org.assertj.android.api.telephony.CellInfoCdmaAssert assertThat(
+      android.telephony.CellInfoCdma actual) {
+    return new org.assertj.android.api.telephony.CellInfoCdmaAssert(actual);
+  }
+
+  public static org.assertj.android.api.telephony.CellInfoGsmAssert assertThat(
+      android.telephony.CellInfoGsm actual) {
+    return new org.assertj.android.api.telephony.CellInfoGsmAssert(actual);
+  }
+
+  public static org.assertj.android.api.telephony.CellInfoLteAssert assertThat(
+      android.telephony.CellInfoLte actual) {
+    return new org.assertj.android.api.telephony.CellInfoLteAssert(actual);
+  }
+
+  public static org.assertj.android.api.telephony.CellInfoWcdmaAssert assertThat(
+      android.telephony.CellInfoWcdma actual) {
+    return new org.assertj.android.api.telephony.CellInfoWcdmaAssert(actual);
+  }
+
+  public static org.assertj.android.api.telephony.CellSignalStrengthCdmaAssert assertThat(
+      android.telephony.CellSignalStrengthCdma actual) {
+    return new org.assertj.android.api.telephony.CellSignalStrengthCdmaAssert(actual);
+  }
+
+  public static org.assertj.android.api.telephony.CellSignalStrengthGsmAssert assertThat(
+      android.telephony.CellSignalStrengthGsm actual) {
+    return new org.assertj.android.api.telephony.CellSignalStrengthGsmAssert(actual);
+  }
+
+  public static org.assertj.android.api.telephony.CellSignalStrengthLteAssert assertThat(
+      android.telephony.CellSignalStrengthLte actual) {
+    return new org.assertj.android.api.telephony.CellSignalStrengthLteAssert(actual);
+  }
+
+  public static org.assertj.android.api.telephony.CellSignalStrengthWcdmaAssert assertThat(
+      android.telephony.CellSignalStrengthWcdma actual) {
+    return new org.assertj.android.api.telephony.CellSignalStrengthWcdmaAssert(actual);
+  }
+
+  public static org.assertj.android.api.telephony.NeighboringCellInfoAssert assertThat(
+      android.telephony.NeighboringCellInfo actual) {
+    return new org.assertj.android.api.telephony.NeighboringCellInfoAssert(actual);
+  }
+
+  public static org.assertj.android.api.telephony.ServiceStateAssert assertThat(
+      android.telephony.ServiceState actual) {
+    return new org.assertj.android.api.telephony.ServiceStateAssert(actual);
+  }
+
+  public static org.assertj.android.api.telephony.SignalStrengthAssert assertThat(
+      android.telephony.SignalStrength actual) {
+    return new org.assertj.android.api.telephony.SignalStrengthAssert(actual);
+  }
+
+  public static org.assertj.android.api.telephony.SmsMessageAssert assertThat(
+      android.telephony.SmsMessage actual) {
+    return new org.assertj.android.api.telephony.SmsMessageAssert(actual);
+  }
+
+  public static org.assertj.android.api.telephony.TelephonyManagerAssert assertThat(
+      android.telephony.TelephonyManager actual) {
+    return new org.assertj.android.api.telephony.TelephonyManagerAssert(actual);
+  }
+
+  public static org.assertj.android.api.telephony.cdma.CdmaCellLocationAssert assertThat(
+      android.telephony.cdma.CdmaCellLocation actual) {
+    return new org.assertj.android.api.telephony.cdma.CdmaCellLocationAssert(actual);
+  }
+
+  public static org.assertj.android.api.telephony.gsm.GsmCellLocationAssert assertThat(
+      android.telephony.gsm.GsmCellLocation actual) {
+    return new org.assertj.android.api.telephony.gsm.GsmCellLocationAssert(actual);
+  }
+
   public static org.assertj.android.api.text.BidiFormatterAssert assertThat(
       android.text.BidiFormatter actual) {
     return new org.assertj.android.api.text.BidiFormatterAssert(actual);
