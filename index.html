@@ -3,9 +3,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>FEST Android by Square, Inc.</title>
+    <title>AssertJ Android by Square, Inc.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A set of FEST assertions geared toward testing Android." />
+    <meta name="description" content="A set of AssertJ assertions geared toward testing Android." />
     <link href="http://fonts.googleapis.com/css?family=Roboto:regular,medium,thin,italic,mediumitalic,bold" rel="stylesheet" title="roboto">
     <link href="static/bootstrap.min.css" rel="stylesheet">
     <link href="static/bootstrap-responsive.min.css" rel="stylesheet">
@@ -16,22 +16,22 @@
 <div class="container">
     <div class="row">
         <div class="span8 offset2 lead">
-            <h1>FEST Android</h1>
-            <h3>A set of FEST assertions geared toward testing Android.</h3>
+            <h1>AssertJ Android</h1>
+            <h3>A set of AssertJ assertions geared toward testing Android.</h3>
             <ul class="unstyled">
-                <li><a href="http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup&a=fest-android&v=LATEST" class="btn btn-large btn-inverse" id="download">Download</a></li>
+                <li><a href="http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.assertj&a=assertj-android&v=LATEST" class="btn btn-large btn-inverse" id="download">Download</a></li>
             </ul>
       </div>
     </div>
     <div class="row">
       <div class="span10 offset1">
-        <p>Writing tests is not the most glamorous part of developing an Android application but it is an invaluable one. Using libraries like JUnit and FEST provide a great starting point for writing tests.</p>
-        <p>This library is an extension of <a href="http://fest.easytesting.org/">FEST</a> which aims to make it even easier to test Android.</p>
+        <p>Writing tests is not the most glamorous part of developing an Android application but it is an invaluable one. Using libraries like JUnit and AssertJ provide a great starting point for writing tests.</p>
+        <p>This library is an extension of <a href="http://joel-costigliola.github.io/assertj/">AssertJ</a> which aims to make it even easier to test Android.</p>
       </div>
     </div>
     <div class="row examples section">
       <div class="span8 offset2">
-        <h5>FEST Android</h5>
+        <h5>AssertJ Android</h5>
         <pre class="prettyprint">assertThat(view).isGone();</pre>
       </div>
     </div>
@@ -41,20 +41,20 @@
         <pre class="prettyprint">assertEquals(View.GONE, view.getVisibility());</pre>
       </div>
       <div class="span6 bad">
-        <h5>Regular FEST</h5>
+        <h5>Regular AssertJ</h5>
         <pre class="prettyprint">assertThat(view.getVisibility()).isEqualTo(View.GONE);</pre>
       </div>
     </div>
     <div class="row section">
       <div class="span10 offset1">
-        <p>When failing, the <em>FEST Android</em> assertion produces an output which allows you to immediately recognize the problem: <code>Expected visibility &lt;gone> but was &lt;invisible>.</code></p>
-        <p>Compare that to the output of regular <em>FEST</em> <code>expected:&lt;[8]> but was:&lt;[4]></code> and regular <em>JUnit</em> <code>expected: &lt;8> but was: &lt;4></code> and you should immediately see the advantage.</p>
-        <p>Because <em>FEST Android</em> offers assertions directly on objects rather than properties they can be chained together.</p>
+        <p>When failing, the <em>AssertJ Android</em> assertion produces an output which allows you to immediately recognize the problem: <code>Expected visibility &lt;gone> but was &lt;invisible>.</code></p>
+        <p>Compare that to the output of regular <em>AssertJ</em> <code>expected:&lt;[8]> but was:&lt;[4]></code> and regular <em>JUnit</em> <code>expected: &lt;8> but was: &lt;4></code> and you should immediately see the advantage.</p>
+        <p>Because <em>AsserJ Android</em> offers assertions directly on objects rather than properties they can be chained together.</p>
       </div>
     </div>
     <div class="row examples section">
       <div class="span8 offset2">
-        <h5>FEST Android</h5>
+        <h5>AssertJ Android</h5>
         <pre class="prettyprint">assertThat(layout).isVisible()
     .isVertical()
     .hasChildCount(4)
@@ -70,7 +70,7 @@ assertEquals(4, layout.getChildCount());
 assertEquals(SHOW_DIVIDERS_MIDDLE, layout.getShowDividers());</pre>
       </div>
       <div class="span6 bad">
-        <h5>Regular FEST</h5>
+        <h5>Regular AssertJ</h5>
         <pre class="prettyprint">assertThat(layout.getVisibility()).isEqualTo(View.VISIBLE);
 assertThat(layout.getOrientation()).isEqualTo(VERTICAL);
 assertThat(layout.getChildCount()).isEqualTo(4);
@@ -85,7 +85,7 @@ assertThat(layout.getShowDividers()).isEqualTo(SHOW_DIVIDERS_MIDDLE);</pre>
     <div class="row section">
       <div class="span10 offset1">
         <p>To get started writing tests add the following import:</p>
-        <pre class="prettyprint">import static org.fest.assertions.api.ANDROID.assertThat;</pre>
+        <pre class="prettyprint">import static org.assertj.android.api.Assertions.assertThat;</pre>
       </div>
     </div>
     <div class="row section">
@@ -99,6 +99,10 @@ assertThat(layout.getShowDividers()).isEqualTo(SHOW_DIVIDERS_MIDDLE);</pre>
 }</pre>
         <p>Use the following pattern to set up your assertions.</p>
         <pre class="prettyprint">public class CustomLayoutAssert extends AbstractLinearLayoutAssert&lt;CustomLayoutAssert, CustomLayout> {
+  public static CustomLayoutAssert assertThat(CustomLayout actual) {
+    return new CustomLayoutAssert(actual);
+  }
+
   public CustomLayoutAssert(CustomLayout actual) {
     super(actual, CustomLayoutAssert.class);
   }
@@ -111,30 +115,25 @@ assertThat(layout.getShowDividers()).isEqualTo(SHOW_DIVIDERS_MIDDLE);</pre>
     return this;
   }
 }</pre>
-        <p>To include this new assertion, create your own class which extends from <code>ANDROID</code>.</p>
-        <pre class="prettyprint">public class MyAssertions extends ANDROID {
-  public static CustomLayoutAssert assertThat(CustomLayout actual) {
-    return new CustomLayoutAssert(actual);
-  }
-}</pre>
-        <p>For more information about writing custom assertions see the <a href="https://github.com/alexruiz/fest-assert-2.x/wiki/Creating-specific-assertions">official documentation</a>.</p>
+        <p>Now static import <code>CustomLayoutAssert.assertThat</code> in your test classes.</p>
+        <p>For more information about writing custom assertions see the <a href="http://joel-costigliola.github.io/assertj/assertj-core-custom-assertions.html">official documentation</a>.</p>
       </div>
     </div>
     <div class="row section">
       <div class="span10 offset1">
         <h5>Download</h5>
-        <p>Download <a id="download-section-link" href="http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup&a=fest-android&v=LATEST">the latest jar</a> or grab via Maven:</p>
+        <p>Download <a id="download-section-link" href="http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.assertj&a=assertj-android&v=LATEST">the latest jar</a> or grab via Maven:</p>
         <pre class="prettyprint">&lt;dependency>
-  &lt;groupId>com.squareup&lt;/groupId>
-  &lt;artifactId>fest-android&lt;/artifactId>
+  &lt;groupId>com.squareup.assertj&lt;/groupId>
+  &lt;artifactId>assertj-android&lt;/artifactId>
   &lt;version><span id="maven-version"><em>(insert latest version)</em></span>&lt;/version>
 &lt;/dependency></pre>
-        <p>If you are not using Maven or Gradle you will also need to include the latest <a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.easytesting%22%20a%3A%22fest-assert-core%22">FEST</a> jar in your build.
+        <p>If you are not using Maven or Gradle you will also need to include the latest <a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.assertf%22%20a%3A%22assertj-core%22">AssertJ</a> jar in your build.
         <p><em>Compilation requires Android 4.1 or newer.</em></p>
       </div>
     </div>
     <div class="span12 foot">
-        <a id="ribbon" href="https://github.com/square/fest-android"><img src="static/ribbon.png" alt="Fork me on GitHub"></a>
+        <a id="ribbon" href="https://github.com/square/assertj-android"><img src="static/ribbon.png" alt="Fork me on GitHub"></a>
         <p><a href="http://squareup.com"><img src="static/square.png" alt="by Square, Inc."></a></p>
     </div>
 </div>
@@ -144,7 +143,7 @@ assertThat(layout.getShowDividers()).isEqualTo(SHOW_DIVIDERS_MIDDLE);</pre>
 <script>
   prettyPrint();
 
-  $.fn.artifactVersion('com.squareup', 'fest-android', function(version, url) {
+  $.fn.artifactVersion('com.squareup.assertj', 'assertj-android', function(version, url) {
     $('#maven-version').text(version);
     $('#download').attr('href', url).text('Download v' + version);
     $('#download-section-link').attr('href', url);
