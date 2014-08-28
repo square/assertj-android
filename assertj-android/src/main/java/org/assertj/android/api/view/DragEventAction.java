@@ -2,6 +2,9 @@ package org.assertj.android.api.view;
 
 import android.support.annotation.IntDef;
 import android.view.DragEvent;
+import java.lang.annotation.Retention;
+
+import static java.lang.annotation.RetentionPolicy.SOURCE;
 
 @IntDef({
     DragEvent.ACTION_DRAG_ENDED,
@@ -11,5 +14,6 @@ import android.view.DragEvent;
     DragEvent.ACTION_DRAG_STARTED,
     DragEvent.ACTION_DROP
 })
+@Retention(SOURCE)
 @interface DragEventAction {
 }

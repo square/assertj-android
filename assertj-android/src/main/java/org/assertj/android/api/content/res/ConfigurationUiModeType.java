@@ -2,6 +2,9 @@ package org.assertj.android.api.content.res;
 
 import android.content.res.Configuration;
 import android.support.annotation.IntDef;
+import java.lang.annotation.Retention;
+
+import static java.lang.annotation.RetentionPolicy.SOURCE;
 
 @IntDef({
     Configuration.UI_MODE_TYPE_NORMAL,
@@ -12,5 +15,6 @@ import android.support.annotation.IntDef;
     Configuration.UI_MODE_TYPE_UNDEFINED,
     Configuration.UI_MODE_TYPE_WATCH
 })
+@Retention(SOURCE)
 public @interface ConfigurationUiModeType {
 }

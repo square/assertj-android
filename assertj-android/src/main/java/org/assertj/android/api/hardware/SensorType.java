@@ -2,6 +2,9 @@ package org.assertj.android.api.hardware;
 
 import android.hardware.Sensor;
 import android.support.annotation.IntDef;
+import java.lang.annotation.Retention;
+
+import static java.lang.annotation.RetentionPolicy.SOURCE;
 
 @IntDef({
     Sensor.TYPE_ACCELEROMETER,
@@ -27,5 +30,6 @@ import android.support.annotation.IntDef;
     Sensor.TYPE_STEP_DETECTOR,
     Sensor.TYPE_TEMPERATURE
 })
+@Retention(SOURCE)
 @interface SensorType {
 }

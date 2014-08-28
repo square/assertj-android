@@ -2,6 +2,9 @@ package org.assertj.android.api.view;
 
 import android.support.annotation.IntDef;
 import android.view.Window;
+import java.lang.annotation.Retention;
+
+import static java.lang.annotation.RetentionPolicy.SOURCE;
 
 @IntDef(
     flag = true,
@@ -19,5 +22,6 @@ import android.view.Window;
         Window.FEATURE_RIGHT_ICON,
         Window.FEATURE_SWIPE_TO_DISMISS
 })
+@Retention(SOURCE)
 @interface WindowFeature {
 }

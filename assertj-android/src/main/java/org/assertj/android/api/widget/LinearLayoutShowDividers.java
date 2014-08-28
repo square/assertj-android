@@ -2,6 +2,9 @@ package org.assertj.android.api.widget;
 
 import android.support.annotation.IntDef;
 import android.widget.LinearLayout;
+import java.lang.annotation.Retention;
+
+import static java.lang.annotation.RetentionPolicy.SOURCE;
 
 @IntDef(
     flag = true,
@@ -11,5 +14,6 @@ import android.widget.LinearLayout;
         LinearLayout.SHOW_DIVIDER_END
     }
 )
+@Retention(SOURCE)
 @interface LinearLayoutShowDividers {
 }

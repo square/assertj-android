@@ -2,6 +2,9 @@ package org.assertj.android.api.graphics;
 
 import android.graphics.Paint;
 import android.support.annotation.IntDef;
+import java.lang.annotation.Retention;
+
+import static java.lang.annotation.RetentionPolicy.SOURCE;
 
 @IntDef(
     flag = true,
@@ -16,5 +19,6 @@ import android.support.annotation.IntDef;
         Paint.SUBPIXEL_TEXT_FLAG,
         Paint.UNDERLINE_TEXT_FLAG
 })
+@Retention(SOURCE)
 @interface PaintFlags {
 }

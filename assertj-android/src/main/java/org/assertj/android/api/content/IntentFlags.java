@@ -2,6 +2,9 @@ package org.assertj.android.api.content;
 
 import android.content.Intent;
 import android.support.annotation.IntDef;
+import java.lang.annotation.Retention;
+
+import static java.lang.annotation.RetentionPolicy.SOURCE;
 
 @IntDef(
     flag = true,
@@ -30,5 +33,6 @@ import android.support.annotation.IntDef;
         Intent.FLAG_ACTIVITY_TASK_ON_HOME
     }
 )
+@Retention(SOURCE)
 @interface IntentFlags {
 }

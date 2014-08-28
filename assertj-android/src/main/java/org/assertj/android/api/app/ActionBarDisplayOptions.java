@@ -2,6 +2,9 @@ package org.assertj.android.api.app;
 
 import android.app.ActionBar;
 import android.support.annotation.IntDef;
+import java.lang.annotation.Retention;
+
+import static java.lang.annotation.RetentionPolicy.SOURCE;
 
 @IntDef(
     flag = true,
@@ -12,5 +15,6 @@ import android.support.annotation.IntDef;
         ActionBar.DISPLAY_SHOW_TITLE,
         ActionBar.DISPLAY_USE_LOGO
 })
+@Retention(SOURCE)
 @interface ActionBarDisplayOptions {
 }

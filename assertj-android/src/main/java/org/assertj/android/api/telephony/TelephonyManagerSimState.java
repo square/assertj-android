@@ -2,6 +2,9 @@ package org.assertj.android.api.telephony;
 
 import android.support.annotation.IntDef;
 import android.telephony.TelephonyManager;
+import java.lang.annotation.Retention;
+
+import static java.lang.annotation.RetentionPolicy.SOURCE;
 
 @IntDef({
     TelephonyManager.SIM_STATE_ABSENT,
@@ -11,5 +14,6 @@ import android.telephony.TelephonyManager;
     TelephonyManager.SIM_STATE_READY,
     TelephonyManager.SIM_STATE_UNKNOWN
 })
+@Retention(SOURCE)
 @interface TelephonyManagerSimState {
 }

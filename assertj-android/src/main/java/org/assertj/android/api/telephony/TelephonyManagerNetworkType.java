@@ -2,6 +2,9 @@ package org.assertj.android.api.telephony;
 
 import android.support.annotation.IntDef;
 import android.telephony.TelephonyManager;
+import java.lang.annotation.Retention;
+
+import static java.lang.annotation.RetentionPolicy.SOURCE;
 
 @IntDef({
     TelephonyManager.NETWORK_TYPE_1xRTT,
@@ -21,5 +24,6 @@ import android.telephony.TelephonyManager;
     TelephonyManager.NETWORK_TYPE_UMTS,
     TelephonyManager.NETWORK_TYPE_UNKNOWN
 })
+@Retention(SOURCE)
 @interface TelephonyManagerNetworkType {
 }
