@@ -1,12 +1,20 @@
 Change Log
 ==========
 
-Version 1.0.0 *(In Development)*
---------------------------------
+Version 1.0.0 *(2014-08-27)*
+----------------------------
 
 Convert project from 'fest-android' to 'assertj-android'.
 
- * New: Add-on modules for the support library, AppCompat, and GridLayout.
+ * New: Add-on modules!
+   * Support library (v4)
+   * Google Play Services
+   * AppCompat (v7)
+   * Media Router (v7)
+   * Grid Layout (v7)
+   * Recycler View (v7)
+   * Card View (v7)
+   * Pallete (v7)
 
 
 ----

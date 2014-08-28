@@ -97,6 +97,7 @@ Modules are also provided for the add-on Android libraries. Add the dependency
  * gridlayout-v7: `import static org.assertj.android.gridlayout.v7.api.Assertions.assertThat;`
  * cardview-v7: `import static org.assertj.android.cardview.v7.api.Assertions.assertThat;`
  * recyclerview-v7: `import static org.assertj.android.recyclerview.v7.api.Assertions.assertThat;`
+ * pallete-v7: `import static org.assertj.android.pallete.v7.api.Assertions.assertThat;`
 
 
 
@@ -183,6 +184,11 @@ androidTestCompile 'com.squareup.assertj:assertj-android-cardview-v7:1.0.0'
 ```
 
 recyclerview-v7 module:
+```groovy
+androidTestCompile 'com.squareup.assertj:assertj-android-recyclerview-v7:1.0.0'
+```
+
+pallete-v7 module:
 ```groovy
 androidTestCompile 'com.squareup.assertj:assertj-android-recyclerview-v7:1.0.0'
 ```
