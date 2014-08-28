@@ -152,7 +152,7 @@ Android module:
 androidTestCompile 'com.squareup.assertj:assertj-android:1.0.0'
 ```
 
-Support-v4 module:
+support-v4 module:
 ```groovy
 androidTestCompile 'com.squareup.assertj:assertj-android-support-v4:1.0.0'
 ```
@@ -162,27 +162,27 @@ Google Play Services module:
 androidTestCompile 'com.squareup.assertj:assertj-android-play-services:1.0.0'
 ```
 
-AppCompat-v7 module:
+appcompat-v7 module:
 ```groovy
 androidTestCompile 'com.squareup.assertj:assertj-android-appcompat-v7:1.0.0'
 ```
 
-MediaRouter-v7 module:
+mediarouter-v7 module:
 ```groovy
 androidTestCompile 'com.squareup.assertj:assertj-android-mediarouter-v7:1.0.0'
 ```
 
-GridLayout-v7 module:
+gridlayout-v7 module:
 ```groovy
 androidTestCompile 'com.squareup.assertj:assertj-android-gridlayout-v7:1.0.0'
 ```
 
-CardView-v7 module:
+cardview-v7 module:
 ```groovy
 androidTestCompile 'com.squareup.assertj:assertj-android-cardview-v7:1.0.0'
 ```
 
-RecyclerView-v7 module:
+recyclerview-v7 module:
 ```groovy
 androidTestCompile 'com.squareup.assertj:assertj-android-recyclerview-v7:1.0.0'
 ```
