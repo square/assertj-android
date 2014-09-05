@@ -188,7 +188,7 @@ androidTestCompile 'com.squareup.assertj:assertj-android-recyclerview-v7:1.0.0'
 
 pallete-v7 module:
 ```groovy
-androidTestCompile 'com.squareup.assertj:assertj-android-recyclerview-v7:1.0.0'
+androidTestCompile 'com.squareup.assertj:assertj-android-pallete-v7:1.0.0'
 ```
 
 
