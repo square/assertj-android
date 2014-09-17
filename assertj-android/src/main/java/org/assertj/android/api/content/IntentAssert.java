@@ -67,10 +67,10 @@ public class IntentAssert extends AbstractAssert<IntentAssert, Intent> {
 
   public IntentAssert hasFlags(@IntentFlags int flags) {
     isNotNull();
-    int expected = actual.getFlags();
+    int actualFlags = actual.getFlags();
     //noinspection ResourceType
-    assertThat(expected).overridingErrorMessage("Expected <%s> but was <%s>.",
-        flagsToString(expected), flagsToString(flags)).isEqualTo(flags);
+    assertThat(actualFlags).overridingErrorMessage("Expected <%s> but was <%s>.",
+        flagsToString(flags), flagsToString(actualFlags)).isEqualTo(flags);
     return this;
   }
 
