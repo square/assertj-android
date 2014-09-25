@@ -30,7 +30,8 @@ import static java.lang.annotation.RetentionPolicy.SOURCE;
         Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED,
         Intent.FLAG_ACTIVITY_REORDER_TO_FRONT,
         Intent.FLAG_ACTIVITY_SINGLE_TOP,
-        Intent.FLAG_ACTIVITY_TASK_ON_HOME
+        Intent.FLAG_ACTIVITY_TASK_ON_HOME,
+        Intent.FLAG_INCLUDE_STOPPED_PACKAGES
     }
 )
 @Retention(SOURCE)
