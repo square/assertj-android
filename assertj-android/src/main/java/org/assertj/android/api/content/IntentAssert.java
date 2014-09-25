@@ -30,6 +30,7 @@ import static android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION;
 import static android.content.Intent.FLAG_GRANT_WRITE_URI_PERMISSION;
 import static android.content.Intent.FLAG_RECEIVER_NO_ABORT;
 import static android.content.Intent.FLAG_RECEIVER_REGISTERED_ONLY;
+import static android.content.Intent.FLAG_INCLUDE_STOPPED_PACKAGES;
 import static org.assertj.android.internal.IntegerUtils.buildBitMaskString;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -131,6 +132,7 @@ public class IntentAssert extends AbstractAssert<IntentAssert, Intent> {
         .flag(FLAG_ACTIVITY_REORDER_TO_FRONT, "activity_reorder_to_front")
         .flag(FLAG_ACTIVITY_SINGLE_TOP, "activity_single_top")
         .flag(FLAG_ACTIVITY_TASK_ON_HOME, "activity_task_on_home")
+        .flag(FLAG_INCLUDE_STOPPED_PACKAGES, "include_stopped_packages")
         .get();
   }
 }
