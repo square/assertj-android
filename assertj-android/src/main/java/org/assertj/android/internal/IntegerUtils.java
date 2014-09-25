@@ -1,8 +1,8 @@
 package org.assertj.android.internal;
 
 import android.util.SparseArray;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import org.assertj.core.util.Strings;
 
 public final class IntegerUtils {
@@ -21,22 +21,19 @@ public final class IntegerUtils {
 
   public static final class BitMaskStringBuilder {
     private final int value;
-    private final Set<String> parts = new LinkedHashSet<>();
-    private int flags;
+    private final Map<Integer, String> parts = new LinkedHashMap<>();
 
     private BitMaskStringBuilder(int value) {
       this.value = value;
     }
 
     public BitMaskStringBuilder flag(int flag, String flagName) {
-      if ((flags & flag) != 0) {
-        throw new IllegalStateException(
-            "Duplicate flag detected: " + flagName + " with value " + Integer.toHexString(flag));
-      }
-      flags |= flag;
-
       if ((value & flag) != 0) {
-        parts.add(flagName);
+        if (parts.containsKey(flag)) {
+          parts.put(flag, parts.get(flag) + "|" + flagName);
+        } else {
+          parts.put(flag, flagName);
+        }
       }
       return this;
     }
@@ -45,7 +42,7 @@ public final class IntegerUtils {
       if (value == 0) {
         return "none";
       }
-      return Strings.join(parts).with(", ");
+      return Strings.join(parts.values()).with(", ");
     }
   }
 
