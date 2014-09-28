@@ -97,13 +97,19 @@ public class MarkerAssert extends AbstractAssert<MarkerAssert, Marker> {
     return this;
   }
 
-  public MarkerAssert isInfoWindowShown(boolean shown) {
+  public MarkerAssert hasInfoWindowShown() {
     isNotNull();
-    boolean actualShown = actual.isInfoWindowShown();
-    assertThat(actualShown) //
-        .overridingErrorMessage("Expected info window shown <%s> but was <%s>.", shown,
-            actualShown) //
-        .isEqualTo(shown);
+    assertThat(actual.isInfoWindowShown()) //
+        .overridingErrorMessage("Expected info window to be shown but was not.") //
+        .isTrue();
+    return this;
+  }
+
+  public MarkerAssert hasInfoWindowNotShown() {
+    isNotNull();
+    assertThat(actual.isInfoWindowShown()) //
+        .overridingErrorMessage("Expected info window to not be shown but was.") //
+        .isFalse();
     return this;
   }
 

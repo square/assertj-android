@@ -10,83 +10,131 @@ public class UiSettingsAssert extends AbstractAssert<UiSettingsAssert, UiSetting
     super(actual, UiSettings.class);
   }
 
-  public UiSettingsAssert hasCompassEnabled(boolean enabled) {
+  public UiSettingsAssert hasCompassEnabled() {
     isNotNull();
-    boolean actualEnabled = actual.isCompassEnabled();
-    assertThat(actualEnabled) //
-        .overridingErrorMessage("Expected compass enabled <%s> but was <%s>.", enabled,
-            actualEnabled) //
-        .isEqualTo(enabled);
+    assertThat(actual.isCompassEnabled()) //
+        .overridingErrorMessage("Expected compass to be enabled but was disabled.") //
+        .isTrue();
     return this;
   }
 
-  public UiSettingsAssert hasIndoorLevelPickerEnabled(boolean enabled) {
+  public UiSettingsAssert hasCompassDisabled() {
     isNotNull();
-    boolean actualEnabled = actual.isIndoorLevelPickerEnabled();
-    assertThat(actualEnabled) //
-        .overridingErrorMessage("Expected indoor level picker enabled <%s> but was <%s>.", enabled,
-            actualEnabled) //
-        .isEqualTo(enabled);
+    assertThat(actual.isCompassEnabled()) //
+        .overridingErrorMessage("Expected compass to be disabled but was enabled.") //
+        .isFalse();
     return this;
   }
 
-  public UiSettingsAssert hasMyLocationButtonEnabled(boolean enabled) {
+  public UiSettingsAssert hasIndoorLevelPickerEnabled() {
     isNotNull();
-    boolean actualEnabled = actual.isMyLocationButtonEnabled();
-    assertThat(actualEnabled) //
-        .overridingErrorMessage("Expected my location button enabled <%s> but was <%s>.", enabled,
-            actualEnabled) //
-        .isEqualTo(enabled);
+    assertThat(actual.isIndoorLevelPickerEnabled()) //
+        .overridingErrorMessage("Expected indoor level picker to be enabled but was disabled.") //
+        .isTrue();
     return this;
   }
 
-  public UiSettingsAssert hasRotateGesturesEnabled(boolean enabled) {
+  public UiSettingsAssert hasIndoorLevelPickerDisabled() {
     isNotNull();
-    boolean actualEnabled = actual.isRotateGesturesEnabled();
-    assertThat(actualEnabled) //
-        .overridingErrorMessage("Expected rotate gestures enabled <%s> but was <%s>.", enabled,
-            actualEnabled) //
-        .isEqualTo(enabled);
+    assertThat(actual.isIndoorLevelPickerEnabled()) //
+        .overridingErrorMessage("Expected indoor level picker to be disabled but was enabled.") //
+        .isFalse();
     return this;
   }
 
-  public UiSettingsAssert hasScrollGesturesEnabled(boolean enabled) {
+  public UiSettingsAssert hasMyLocationButtonEnabled() {
     isNotNull();
-    boolean actualEnabled = actual.isScrollGesturesEnabled();
-    assertThat(actualEnabled) //
-        .overridingErrorMessage("Expected scroll gestures enabled <%s> but was <%s>.", enabled,
-            actualEnabled) //
-        .isEqualTo(enabled);
+    assertThat(actual.isMyLocationButtonEnabled()) //
+        .overridingErrorMessage("Expected my location button to be enabled but was disabled.") //
+        .isTrue();
     return this;
   }
 
-  public UiSettingsAssert hasTiltGesturesEnabled(boolean enabled) {
+  public UiSettingsAssert hasMyLocationButtonDisabled() {
     isNotNull();
-    boolean actualEnabled = actual.isTiltGesturesEnabled();
-    assertThat(actualEnabled) //
-        .overridingErrorMessage("Expected tilt gestures enabled <%s> but was <%s>.", enabled,
-            actualEnabled) //
-        .isEqualTo(enabled);
+    assertThat(actual.isMyLocationButtonEnabled()) //
+        .overridingErrorMessage("Expected my location button to be disabled but was enabled.") //
+        .isFalse();
     return this;
   }
 
-  public UiSettingsAssert hasZoomControlsEnabled(boolean enabled) {
+  public UiSettingsAssert hasRotateGesturesEnabled() {
     isNotNull();
-    boolean actualEnabled = actual.isZoomControlsEnabled();
-    assertThat(actualEnabled) //
-        .overridingErrorMessage("Expected zoom controls enabled <%s> but was <%s>.", enabled,
-            actualEnabled) //
-        .isEqualTo(enabled);
+    assertThat(actual.isRotateGesturesEnabled()) //
+        .overridingErrorMessage("Expected rotate gestures to be enabled but was disabled.") //
+        .isTrue();
     return this;
   }
 
-  public UiSettingsAssert hasZoomGesturesEnabled(boolean enabled) {
+  public UiSettingsAssert hasRotateGesturesDisabled() {
     isNotNull();
-    boolean actualEnabled = actual.isZoomGesturesEnabled();
-    assertThat(actualEnabled) //
-        .overridingErrorMessage("Expected zoom gestures enabled <%s> but was <%s>.", enabled,
-            actualEnabled) //
-        .isEqualTo(enabled);
+    assertThat(actual.isRotateGesturesEnabled()) //
+        .overridingErrorMessage("Expected rotate gestures to be disabled but was enabled.") //
+        .isFalse();
+    return this;
+  }
+
+  public UiSettingsAssert hasScrollGesturesEnabled() {
+    isNotNull();
+    assertThat(actual.isScrollGesturesEnabled()) //
+        .overridingErrorMessage("Expected scroll gestures to be enabled but was disabled.") //
+        .isTrue();
+    return this;
+  }
+
+  public UiSettingsAssert hasScrollGesturesDisabled() {
+    isNotNull();
+    assertThat(actual.isScrollGesturesEnabled()) //
+        .overridingErrorMessage("Expected scroll gestures to be disabled but was enabled.") //
+        .isFalse();
+    return this;
+  }
+
+  public UiSettingsAssert hasTiltGesturesEnabled() {
+    isNotNull();
+    assertThat(actual.isTiltGesturesEnabled()) //
+        .overridingErrorMessage("Expected tilt gestures to be enabled but was disabled.") //
+        .isTrue();
+    return this;
+  }
+
+  public UiSettingsAssert hasTiltGesturesDisabled() {
+    isNotNull();
+    assertThat(actual.isTiltGesturesEnabled()) //
+        .overridingErrorMessage("Expected tilt gestures to be disabled but was enabled.") //
+        .isFalse();
+    return this;
+  }
+
+  public UiSettingsAssert hasZoomControlsEnabled() {
+    isNotNull();
+    assertThat(actual.isZoomControlsEnabled()) //
+        .overridingErrorMessage("Expected zoom controls to be enabled but was disabled.") //
+        .isTrue();
+    return this;
+  }
+
+  public UiSettingsAssert hasZoomControlsDisabled() {
+    isNotNull();
+    assertThat(actual.isZoomControlsEnabled()) //
+        .overridingErrorMessage("Expected zoom controls to be disabled but was enabled.") //
+        .isFalse();
+    return this;
+  }
+
+  public UiSettingsAssert hasZoomGesturesEnabled() {
+    isNotNull();
+    assertThat(actual.isZoomGesturesEnabled()) //
+        .overridingErrorMessage("Expected zoom gestures to be enabled but was disabled.") //
+        .isTrue();
+    return this;
+  }
+
+  public UiSettingsAssert hasZoomGesturesDisabled() {
+    isNotNull();
+    assertThat(actual.isZoomGesturesEnabled()) //
+        .overridingErrorMessage("Expected zoom gestures to be disabled but was enabled.") //
+        .isFalse();
     return this;
   }
 }

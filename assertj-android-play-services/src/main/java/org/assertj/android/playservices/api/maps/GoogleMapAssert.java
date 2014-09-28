@@ -39,43 +39,67 @@ public class GoogleMapAssert extends AbstractAssert<GoogleMapAssert, GoogleMap> 
     return this;
   }
 
-  public GoogleMapAssert hasBuildingsEnabled(boolean enabled) {
+  public GoogleMapAssert hasBuildingsEnabled() {
     isNotNull();
-    boolean actualEnabled = actual.isBuildingsEnabled();
-    assertThat(actualEnabled) //
-        .overridingErrorMessage("Expected buildings enabled <%s> but was <%s>.", enabled,
-            actualEnabled) //
-        .isEqualTo(enabled);
+    assertThat(actual.isBuildingsEnabled()) //
+        .overridingErrorMessage("Expected buildings to be enabled but was disabled.") //
+        .isTrue();
     return this;
   }
 
-  public GoogleMapAssert hasIndoorEnabled(boolean enabled) {
+  public GoogleMapAssert hasBuildingsDisabled() {
     isNotNull();
-    boolean actualEnabled = actual.isIndoorEnabled();
-    assertThat(actualEnabled) //
-        .overridingErrorMessage("Expected indoor enabled <%s> but was <%s>.", enabled,
-            actualEnabled) //
-        .isEqualTo(enabled);
+    assertThat(actual.isBuildingsEnabled()) //
+        .overridingErrorMessage("Expected buildings to be disabled but was enabled.") //
+        .isFalse();
     return this;
   }
 
-  public GoogleMapAssert hasMyLocationEnabled(boolean enabled) {
+  public GoogleMapAssert hasIndoorEnabled() {
     isNotNull();
-    boolean actualEnabled = actual.isMyLocationEnabled();
-    assertThat(actualEnabled) //
-        .overridingErrorMessage("Expected my location enabled <%s> but was <%s>.", enabled,
-            actualEnabled) //
-        .isEqualTo(enabled);
+    assertThat(actual.isIndoorEnabled()) //
+        .overridingErrorMessage("Expected indoor to be enabled but was disabled.") //
+        .isTrue();
     return this;
   }
 
-  public GoogleMapAssert hasTrafficEnabled(boolean enabled) {
+  public GoogleMapAssert hasIndoorDisabled() {
     isNotNull();
-    boolean actualEnabled = actual.isTrafficEnabled();
-    assertThat(actualEnabled) //
-        .overridingErrorMessage("Expected traffic enabled <%s> but was <%s>.", enabled,
-            actualEnabled) //
-        .isEqualTo(enabled);
+    assertThat(actual.isIndoorEnabled()) //
+        .overridingErrorMessage("Expected indoor to be disabled but was enabled.") //
+        .isFalse();
+    return this;
+  }
+
+  public GoogleMapAssert hasMyLocationEnabled() {
+    isNotNull();
+    assertThat(actual.isMyLocationEnabled()) //
+        .overridingErrorMessage("Expected my location to be enabled but was disabled.") //
+        .isTrue();
+    return this;
+  }
+
+  public GoogleMapAssert hasMyLocationDisabled() {
+    isNotNull();
+    assertThat(actual.isMyLocationEnabled()) //
+        .overridingErrorMessage("Expected my location to be disabled but was enabled.") //
+        .isFalse();
+    return this;
+  }
+
+  public GoogleMapAssert hasTrafficEnabled() {
+    isNotNull();
+    assertThat(actual.isTrafficEnabled()) //
+        .overridingErrorMessage("Expected traffic to be enabled but was disabled.") //
+        .isTrue();
+    return this;
+  }
+
+  public GoogleMapAssert hasTrafficDisabled() {
+    isNotNull();
+    assertThat(actual.isTrafficEnabled()) //
+        .overridingErrorMessage("Expected traffic to be disabled but was enabled.") //
+        .isFalse();
     return this;
   }
 }
