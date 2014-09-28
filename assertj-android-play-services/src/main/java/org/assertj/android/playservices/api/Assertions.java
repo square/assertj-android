@@ -21,6 +21,26 @@ public final class Assertions {
     return new org.assertj.android.playservices.api.location.LocationRequestAssert(actual);
   }
 
+  public static org.assertj.android.playservices.api.maps.CameraPositionAssert assertThat(
+      com.google.android.gms.maps.model.CameraPosition actual) {
+    return new org.assertj.android.playservices.api.maps.CameraPositionAssert(actual);
+  }
+
+  public static org.assertj.android.playservices.api.maps.GoogleMapAssert assertThat(
+      com.google.android.gms.maps.GoogleMap actual) {
+    return new org.assertj.android.playservices.api.maps.GoogleMapAssert(actual);
+  }
+
+  public static org.assertj.android.playservices.api.maps.MarkerAssert assertThat(
+      com.google.android.gms.maps.model.Marker actual) {
+    return new org.assertj.android.playservices.api.maps.MarkerAssert(actual);
+  }
+
+  public static org.assertj.android.playservices.api.maps.UiSettingsAssert assertThat(
+      com.google.android.gms.maps.UiSettings actual) {
+    return new org.assertj.android.playservices.api.maps.UiSettingsAssert(actual);
+  }
+
   private Assertions() {
     throw new AssertionError("No instances.");
   }
