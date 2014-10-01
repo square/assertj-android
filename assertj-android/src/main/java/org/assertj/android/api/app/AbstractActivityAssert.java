@@ -5,9 +5,26 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import org.assertj.android.api.content.AbstractContextAssert;
 
+import static android.content.pm.ActivityInfo.SCREEN_ORIENTATION_BEHIND;
+import static android.content.pm.ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR;
+import static android.content.pm.ActivityInfo.SCREEN_ORIENTATION_FULL_USER;
+import static android.content.pm.ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
+import static android.content.pm.ActivityInfo.SCREEN_ORIENTATION_LOCKED;
+import static android.content.pm.ActivityInfo.SCREEN_ORIENTATION_NOSENSOR;
+import static android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
+import static android.content.pm.ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE;
+import static android.content.pm.ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT;
+import static android.content.pm.ActivityInfo.SCREEN_ORIENTATION_SENSOR;
+import static android.content.pm.ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE;
+import static android.content.pm.ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT;
+import static android.content.pm.ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED;
+import static android.content.pm.ActivityInfo.SCREEN_ORIENTATION_USER;
+import static android.content.pm.ActivityInfo.SCREEN_ORIENTATION_USER_LANDSCAPE;
+import static android.content.pm.ActivityInfo.SCREEN_ORIENTATION_USER_PORTRAIT;
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR1;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR2;
+import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public abstract class AbstractActivityAssert<S extends AbstractActivityAssert<S, A>, A extends Activity>
@@ -16,13 +33,12 @@ public abstract class AbstractActivityAssert<S extends AbstractActivityAssert<S,
     super(actual, selfType);
   }
 
-  public S hasRequestedOrientation(int orientation) {
+  public S hasRequestedOrientation(@ActivityScreenOrientation int orientation) {
     isNotNull();
     int actualOrientation = actual.getRequestedOrientation();
     assertThat(actualOrientation) //
-        // TODO use string of orientations
-        .overridingErrorMessage("Expected orientation <%s> but was <%s>.", orientation,
-            actualOrientation) //
+        .overridingErrorMessage("Expected orientation <%s> but was <%s>.",
+            screenOrientationToString(orientation), screenOrientationToString(actualOrientation)) //
         .isEqualTo(orientation);
     return myself;
   }
@@ -159,5 +175,26 @@ public abstract class AbstractActivityAssert<S extends AbstractActivityAssert<S,
         .overridingErrorMessage("Expected not to be task root but was task root.") //
         .isFalse();
     return myself;
+  }
+
+  public static String screenOrientationToString(@ActivityScreenOrientation int orientation) {
+    return buildNamedValueString(orientation)
+        .value(SCREEN_ORIENTATION_UNSPECIFIED, "unspecified")
+        .value(SCREEN_ORIENTATION_LANDSCAPE, "landscape")
+        .value(SCREEN_ORIENTATION_PORTRAIT, "portrait")
+        .value(SCREEN_ORIENTATION_USER, "user")
+        .value(SCREEN_ORIENTATION_BEHIND, "behind")
+        .value(SCREEN_ORIENTATION_SENSOR, "sensor")
+        .value(SCREEN_ORIENTATION_NOSENSOR, "nosensor")
+        .value(SCREEN_ORIENTATION_SENSOR_LANDSCAPE, "sensor_landscape")
+        .value(SCREEN_ORIENTATION_SENSOR_PORTRAIT, "sensor_portrait")
+        .value(SCREEN_ORIENTATION_REVERSE_LANDSCAPE, "reverse_landscape")
+        .value(SCREEN_ORIENTATION_REVERSE_PORTRAIT, "reverse_portrait")
+        .value(SCREEN_ORIENTATION_FULL_SENSOR, "full_sensor")
+        .value(SCREEN_ORIENTATION_USER_LANDSCAPE, "user_landscape")
+        .value(SCREEN_ORIENTATION_USER_PORTRAIT, "user_portrait")
+        .value(SCREEN_ORIENTATION_FULL_USER, "full_user")
+        .value(SCREEN_ORIENTATION_LOCKED, "locked")
+        .get();
   }
 }

@@ -4,12 +4,44 @@ import android.annotation.TargetApi;
 import android.graphics.Typeface;
 import android.text.TextUtils;
 import android.widget.TextView;
-import org.assertj.android.api.view.AbstractViewAssert;
 import java.util.regex.Pattern;
+import org.assertj.android.api.view.AbstractViewAssert;
 
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR1;
+import static android.view.Gravity.BOTTOM;
+import static android.view.Gravity.CENTER;
+import static android.view.Gravity.CENTER_HORIZONTAL;
+import static android.view.Gravity.CENTER_VERTICAL;
+import static android.view.Gravity.CLIP_HORIZONTAL;
+import static android.view.Gravity.CLIP_VERTICAL;
+import static android.view.Gravity.END;
+import static android.view.Gravity.FILL;
+import static android.view.Gravity.FILL_HORIZONTAL;
+import static android.view.Gravity.FILL_VERTICAL;
+import static android.view.Gravity.LEFT;
+import static android.view.Gravity.NO_GRAVITY;
+import static android.view.Gravity.RIGHT;
+import static android.view.Gravity.START;
+import static android.view.Gravity.TOP;
+import static android.view.inputmethod.EditorInfo.IME_ACTION_DONE;
+import static android.view.inputmethod.EditorInfo.IME_ACTION_GO;
+import static android.view.inputmethod.EditorInfo.IME_ACTION_NEXT;
+import static android.view.inputmethod.EditorInfo.IME_ACTION_NONE;
+import static android.view.inputmethod.EditorInfo.IME_ACTION_PREVIOUS;
+import static android.view.inputmethod.EditorInfo.IME_ACTION_SEARCH;
+import static android.view.inputmethod.EditorInfo.IME_ACTION_SEND;
+import static android.view.inputmethod.EditorInfo.IME_ACTION_UNSPECIFIED;
+import static android.view.inputmethod.EditorInfo.IME_FLAG_FORCE_ASCII;
+import static android.view.inputmethod.EditorInfo.IME_FLAG_NAVIGATE_NEXT;
+import static android.view.inputmethod.EditorInfo.IME_FLAG_NAVIGATE_PREVIOUS;
+import static android.view.inputmethod.EditorInfo.IME_FLAG_NO_ACCESSORY_ACTION;
+import static android.view.inputmethod.EditorInfo.IME_FLAG_NO_ENTER_ACTION;
+import static android.view.inputmethod.EditorInfo.IME_FLAG_NO_EXTRACT_UI;
+import static android.view.inputmethod.EditorInfo.IME_FLAG_NO_FULLSCREEN;
+import static android.view.inputmethod.EditorInfo.IME_NULL;
+import static org.assertj.android.internal.IntegerUtils.buildBitMaskString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S, A>, A extends TextView>
@@ -189,12 +221,13 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
     return myself;
   }
 
-  public S hasGravity(int gravity) {
+  public S hasGravity(@TextViewGravity int gravity) {
     isNotNull();
     int actualGravity = actual.getGravity();
-    // TODO tostring the flags for output
+    //noinspection ResourceType
     assertThat(actualGravity) //
-        .overridingErrorMessage("Expected gravity <%s> but was <%s>.", gravity, actualGravity) //
+        .overridingErrorMessage("Expected gravity <%s> but was <%s>.", gravityToString(gravity),
+            gravityToString(actualGravity)) //
         .isEqualTo(gravity);
     return myself;
   }
@@ -248,13 +281,13 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
     return hasImeActionLabel(actual.getContext().getString(resId));
   }
 
-  public S hasImeOptions(int options) {
+  public S hasImeOptions(@TextViewImeOptions int options) {
     isNotNull();
     int actualOptions = actual.getImeOptions();
+    //noinspection ResourceType
     assertThat(actualOptions) //
-        // TODO tostring flags values
-        .overridingErrorMessage("Expected IME options <%s> but was <%s>.", options,
-            actualOptions) //
+        .overridingErrorMessage("Expected IME options <%s> but was <%s>.",
+            imeOptionsToString(options), imeOptionsToString(actualOptions)) //
         .isEqualTo(options);
     return myself;
   }
@@ -792,5 +825,46 @@ public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S,
         .overridingErrorMessage("Expected to not be the input method target but was.") //
         .isFalse();
     return myself;
+  }
+
+  public static String gravityToString(@TextViewGravity int gravity) {
+    return buildBitMaskString(gravity)
+        .flag(NO_GRAVITY, "no_gravity")
+        .flag(TOP, "top")
+        .flag(BOTTOM, "bottom")
+        .flag(LEFT, "left")
+        .flag(RIGHT, "right")
+        .flag(CENTER_VERTICAL, "center_vertical")
+        .flag(FILL_VERTICAL, "fill_vertical")
+        .flag(CENTER_HORIZONTAL, "center_horizontal")
+        .flag(FILL_HORIZONTAL, "fill_horizontal")
+        .flag(CENTER, "center")
+        .flag(FILL, "fill")
+        .flag(CLIP_VERTICAL, "clip_vertical")
+        .flag(CLIP_HORIZONTAL, "clip_horizontal")
+        .flag(START, "start")
+        .flag(END, "end")
+        .get();
+  }
+
+  public static String imeOptionsToString(@TextViewImeOptions int options) {
+    return buildBitMaskString(options)
+        .flag(IME_ACTION_UNSPECIFIED, "action_unspecified")
+        .flag(IME_ACTION_NONE, "action_none")
+        .flag(IME_ACTION_GO, "action_go")
+        .flag(IME_ACTION_SEARCH, "action_search")
+        .flag(IME_ACTION_SEND, "action_send")
+        .flag(IME_ACTION_NEXT, "action_next")
+        .flag(IME_ACTION_DONE, "action_done")
+        .flag(IME_ACTION_PREVIOUS, "action_previous")
+        .flag(IME_FLAG_NO_FULLSCREEN, "flag_no_fullscreen")
+        .flag(IME_FLAG_NAVIGATE_PREVIOUS, "flag_navigate_previous")
+        .flag(IME_FLAG_NAVIGATE_NEXT, "flag_navigate_next")
+        .flag(IME_FLAG_NO_EXTRACT_UI, "flag_no_extract_ui")
+        .flag(IME_FLAG_NO_ACCESSORY_ACTION, "flag_no_accessory_action")
+        .flag(IME_FLAG_NO_ENTER_ACTION, "flag_no_enter_action")
+        .flag(IME_FLAG_FORCE_ASCII, "flag_force_ascii")
+        .flag(IME_NULL, "null")
+        .get();
   }
 }

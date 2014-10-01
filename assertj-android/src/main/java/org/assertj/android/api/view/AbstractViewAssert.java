@@ -33,6 +33,19 @@ import static android.view.View.SCROLLBARS_OUTSIDE_OVERLAY;
 import static android.view.View.SCROLLBAR_POSITION_DEFAULT;
 import static android.view.View.SCROLLBAR_POSITION_LEFT;
 import static android.view.View.SCROLLBAR_POSITION_RIGHT;
+import static android.view.View.TEXT_ALIGNMENT_CENTER;
+import static android.view.View.TEXT_ALIGNMENT_GRAVITY;
+import static android.view.View.TEXT_ALIGNMENT_INHERIT;
+import static android.view.View.TEXT_ALIGNMENT_TEXT_END;
+import static android.view.View.TEXT_ALIGNMENT_TEXT_START;
+import static android.view.View.TEXT_ALIGNMENT_VIEW_END;
+import static android.view.View.TEXT_ALIGNMENT_VIEW_START;
+import static android.view.View.TEXT_DIRECTION_ANY_RTL;
+import static android.view.View.TEXT_DIRECTION_FIRST_STRONG;
+import static android.view.View.TEXT_DIRECTION_INHERIT;
+import static android.view.View.TEXT_DIRECTION_LOCALE;
+import static android.view.View.TEXT_DIRECTION_LTR;
+import static android.view.View.TEXT_DIRECTION_RTL;
 import static android.view.View.VISIBLE;
 import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -631,25 +644,24 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
   }
 
   @TargetApi(JELLY_BEAN_MR1)
-  public S hasTextAlignment(int alignment) {
+  public S hasTextAlignment(@ViewTextAlignment int alignment) {
     isNotNull();
     int actualAlignment = actual.getTextAlignment();
     assertThat(actualAlignment) //
-        // TODO use tostring helper
-        .overridingErrorMessage("Expected text alignment <%s> but was <%s>", alignment,
-            actualAlignment) //
+        .overridingErrorMessage("Expected text alignment <%s> but was <%s>",
+            textAlignmentToString(alignment), textAlignmentToString(actualAlignment)) //
         .isEqualTo(alignment);
     return myself;
   }
 
   @TargetApi(JELLY_BEAN_MR1)
-  public S hasTextDirection(int direction) {
+  public S hasTextDirection(@ViewTextDirection int direction) {
     isNotNull();
     int actualDirection = actual.getTextDirection();
+    //noinspection ResourceType
     assertThat(actualDirection) //
-        // TODO use tostring helper
-        .overridingErrorMessage("Expected text direction <%s> but was <%s>", direction,
-            actualDirection) //
+        .overridingErrorMessage("Expected text direction <%s> but was <%s>",
+            textDirectionToString(direction), textDirectionToString(actualDirection)) //
         .isEqualTo(direction);
     return myself;
   }
@@ -1556,6 +1568,29 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
         .value(SCROLLBAR_POSITION_DEFAULT, "default")
         .value(SCROLLBAR_POSITION_LEFT, "left")
         .value(SCROLLBAR_POSITION_RIGHT, "right")
+        .get();
+  }
+
+  public static String textAlignmentToString(@ViewTextAlignment int alignment) {
+    return buildNamedValueString(alignment)
+        .value(TEXT_ALIGNMENT_INHERIT, "inherit")
+        .value(TEXT_ALIGNMENT_GRAVITY, "gravity")
+        .value(TEXT_ALIGNMENT_TEXT_START, "text_start")
+        .value(TEXT_ALIGNMENT_TEXT_END, "text_end")
+        .value(TEXT_ALIGNMENT_CENTER, "center")
+        .value(TEXT_ALIGNMENT_VIEW_START, "view_start")
+        .value(TEXT_ALIGNMENT_VIEW_END, "view_end")
+        .get();
+  }
+
+  public static String textDirectionToString(@ViewTextDirection int direction) {
+    return buildNamedValueString(direction)
+        .value(TEXT_DIRECTION_INHERIT, "inherit")
+        .value(TEXT_DIRECTION_FIRST_STRONG, "first_strong")
+        .value(TEXT_DIRECTION_ANY_RTL, "any_right_to_left")
+        .value(TEXT_DIRECTION_LTR, "left_to_right")
+        .value(TEXT_DIRECTION_RTL, "right_to_left")
+        .value(TEXT_DIRECTION_LOCALE, "locale")
         .get();
   }
 }
