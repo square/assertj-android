@@ -5,6 +5,24 @@ import android.graphics.Point;
 import android.view.Display;
 import org.assertj.core.api.AbstractAssert;
 
+import static android.graphics.PixelFormat.A_8;
+import static android.graphics.PixelFormat.JPEG;
+import static android.graphics.PixelFormat.LA_88;
+import static android.graphics.PixelFormat.L_8;
+import static android.graphics.PixelFormat.OPAQUE;
+import static android.graphics.PixelFormat.RGBA_4444;
+import static android.graphics.PixelFormat.RGBA_5551;
+import static android.graphics.PixelFormat.RGBA_8888;
+import static android.graphics.PixelFormat.RGBX_8888;
+import static android.graphics.PixelFormat.RGB_332;
+import static android.graphics.PixelFormat.RGB_565;
+import static android.graphics.PixelFormat.RGB_888;
+import static android.graphics.PixelFormat.TRANSLUCENT;
+import static android.graphics.PixelFormat.TRANSPARENT;
+import static android.graphics.PixelFormat.UNKNOWN;
+import static android.graphics.PixelFormat.YCbCr_420_SP;
+import static android.graphics.PixelFormat.YCbCr_422_I;
+import static android.graphics.PixelFormat.YCbCr_422_SP;
 import static android.os.Build.VERSION_CODES.FROYO;
 import static android.os.Build.VERSION_CODES.HONEYCOMB_MR2;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR1;
@@ -55,8 +73,8 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
     int actualFlags = actual.getFlags();
     //noinspection ResourceType
     assertThat(actualFlags) //
-        .overridingErrorMessage("Expected flags <%s> but was <%s>", flagsToStr(flags),
-            flagsToStr(actualFlags)) //
+        .overridingErrorMessage("Expected flags <%s> but was <%s>", flagsToString(flags),
+            flagsToString(actualFlags)) //
         .isEqualTo(flags);
     return this;
   }
@@ -115,12 +133,13 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
     return this;
   }
 
-  public DisplayAssert hasPixelFormat(int format) {
+  public DisplayAssert hasPixelFormat(@DisplayPixelFormat int format) {
     isNotNull();
     int actualFormat = actual.getPixelFormat();
-    // TODO convert to string names
+    //noinspection ResourceType
     assertThat(actualFormat) //
-        .overridingErrorMessage("Expected pixel format <%s> but was <%s>", format, actualFormat) //
+        .overridingErrorMessage("Expected pixel format <%s> but was <%s>",
+            pixelFormatToString(format), pixelFormatToString(actualFormat)) //
         .isEqualTo(format);
     return this;
   }
@@ -233,12 +252,35 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
         .get();
   }
 
-  public static String flagsToStr(@DisplayFlags int flags) {
+  public static String flagsToString(@DisplayFlags int flags) {
     return buildBitMaskString(flags) //
         .flag(FLAG_PRESENTATION, "presentation")
         .flag(FLAG_PRIVATE, "private")
         .flag(FLAG_SECURE, "secure")
         .flag(FLAG_SUPPORTS_PROTECTED_BUFFERS, "supports_protected_buffers")
+        .get();
+  }
+
+  public static String pixelFormatToString(@DisplayPixelFormat int format) {
+    return buildNamedValueString(format)
+        .value(UNKNOWN, "unknown")
+        .value(TRANSLUCENT, "translucent")
+        .value(TRANSPARENT, "transparent")
+        .value(OPAQUE, "opaque")
+        .value(RGBA_8888, "rgba_8888")
+        .value(RGBX_8888, "rgbx_8888")
+        .value(RGB_888, "rgb_888")
+        .value(RGB_565, "rgb_565")
+        .value(RGBA_5551, "rgba_5551")
+        .value(RGBA_4444, "rgba_4444")
+        .value(A_8, "a_8")
+        .value(L_8, "l_8")
+        .value(LA_88, "la_88")
+        .value(RGB_332, "rgb_332")
+        .value(YCbCr_422_SP, "ycbcr_422_sp")
+        .value(YCbCr_420_SP, "ycbcr_420_sp")
+        .value(YCbCr_422_I, "ycbcr_422_i")
+        .value(JPEG, "jpeg")
         .get();
   }
 }
