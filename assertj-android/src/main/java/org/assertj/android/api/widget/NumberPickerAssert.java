@@ -44,7 +44,7 @@ public class NumberPickerAssert
 
   public NumberPickerAssert hasValue(int value) {
     isNotNull();
-    int actualValue = actual.getMaxValue();
+    int actualValue = actual.getValue();
     assertThat(actualValue) //
         .overridingErrorMessage("Expected value <%s> but was <%s>.", value, actualValue) //
         .isEqualTo(value);
