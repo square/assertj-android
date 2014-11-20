@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 
 dependencies {
   compile project(':assertj-android')
-  compile 'com.android.support:mediarouter-v7:20.0.0'
+  compile 'com.android.support:mediarouter-v7:21.0.2'
 }
 
 android {

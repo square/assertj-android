@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 
 dependencies {
   compile project(':assertj-android')
-  compile 'com.android.support:palette-v7:21.0.0-rc1'
+  compile 'com.android.support:palette-v7:21.0.2'
 }
 
 android {
@@ -10,7 +10,7 @@ android {
   buildToolsVersion rootProject.ext.buildToolsVersion
 
   defaultConfig {
-    minSdkVersion 'L'
+    minSdkVersion 21
   }
 
   compileOptions {

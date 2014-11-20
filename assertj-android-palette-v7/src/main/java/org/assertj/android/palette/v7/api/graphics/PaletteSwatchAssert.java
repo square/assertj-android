@@ -1,20 +1,20 @@
 package org.assertj.android.palette.v7.api.graphics;
 
-import android.support.v7.graphics.PaletteItem;
+import android.support.v7.graphics.Palette;
 
 import org.assertj.core.api.AbstractAssert;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Assertions for {@link PaletteItem} instances.
+ * Assertions for {@link Palette.Swatch} instances.
  */
-public class PaletteItemAssert extends AbstractAssert<PaletteItemAssert, PaletteItem> {
-  public PaletteItemAssert(PaletteItem actual) {
-    super(actual, PaletteItemAssert.class);
+public class PaletteSwatchAssert extends AbstractAssert<PaletteSwatchAssert, Palette.Swatch> {
+  public PaletteSwatchAssert(Palette.Swatch actual) {
+    super(actual, PaletteSwatchAssert.class);
   }
 
-  public PaletteItemAssert hasRgb(int rgb) {
+  public PaletteSwatchAssert hasRgb(int rgb) {
     isNotNull();
     int actualRgb = actual.getRgb();
     assertThat(actualRgb) //

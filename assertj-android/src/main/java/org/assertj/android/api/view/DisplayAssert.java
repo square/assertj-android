@@ -31,7 +31,8 @@ import static android.view.Display.FLAG_PRESENTATION;
 import static android.view.Display.FLAG_PRIVATE;
 import static android.view.Display.FLAG_SECURE;
 import static android.view.Display.FLAG_SUPPORTS_PROTECTED_BUFFERS;
-import static android.view.Display.STATE_DOZING;
+import static android.view.Display.STATE_DOZE;
+import static android.view.Display.STATE_DOZE_SUSPEND;
 import static android.view.Display.STATE_OFF;
 import static android.view.Display.STATE_ON;
 import static android.view.Display.STATE_UNKNOWN;
@@ -245,7 +246,8 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
   @TargetApi(KITKAT_WATCH)
   public static String stateToString(@DisplayState int state) {
     return buildNamedValueString(state)
-        .value(STATE_DOZING, "dozing")
+        .value(STATE_DOZE, "dozing")
+        .value(STATE_DOZE_SUSPEND, "doze suspend")
         .value(STATE_OFF, "off")
         .value(STATE_ON, "on")
         .value(STATE_UNKNOWN, "unknown")
