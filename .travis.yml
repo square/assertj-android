@@ -8,7 +8,6 @@ android:
     - android-21
   licenses:
     - android-sdk-license-5be876d5
-    - android-sdk-preview-license-52d11cd2
 
 branches:
   except:
