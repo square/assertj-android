@@ -11,5 +11,5 @@ import static java.lang.annotation.RetentionPolicy.SOURCE;
     LinearLayout.VERTICAL
 })
 @Retention(SOURCE)
-@interface LinearLayoutOrientation {
+public @interface LinearLayoutOrientation {
 }

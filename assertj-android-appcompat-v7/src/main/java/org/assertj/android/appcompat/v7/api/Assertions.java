@@ -1,4 +1,4 @@
-// Copyright 2014 Square, Inc.
+// Copyright 2015 Square, Inc.
 //
 // This class is generated. Do not modify directly!
 package org.assertj.android.appcompat.v7.api;
@@ -14,6 +14,11 @@ public final class Assertions {
   public static org.assertj.android.appcompat.v7.api.view.ActionModeAssert assertThat(
       android.support.v7.view.ActionMode actual) {
     return new org.assertj.android.appcompat.v7.api.view.ActionModeAssert(actual);
+  }
+
+  public static org.assertj.android.appcompat.v7.api.widget.LinearLayoutCompatAssert assertThat(
+      android.support.v7.widget.LinearLayoutCompat actual) {
+    return new org.assertj.android.appcompat.v7.api.widget.LinearLayoutCompatAssert(actual);
   }
 
   public static org.assertj.android.appcompat.v7.api.widget.SearchViewAssert assertThat(
