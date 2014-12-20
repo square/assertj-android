@@ -9,6 +9,24 @@ android:
   licenses:
     - android-sdk-license-5be876d5
 
+jdk:
+  - oraclejdk7
+  - oraclejdk8
+
+before_install:
+  - ./check-missing-assertions.sh
+
+script:
+  - ./gradlew clean check
+
+after_success:
+  - .buildscript/deploy_snapshot.sh
+
+env:
+  global:
+    - secure: "Z09ZjFkdbvkqpqwzeqz1W9/yPo5IKtsPeRDjplXVeNSZGBLm/YOyzKHZ2htROIrck31Edl/k79fC9P9jaL98VrI4EfzeAg1pXWeQWjqpPoBsyI8kYIf5OmJecOqxFhcE7hTJNI7XxmfzMpMkK8946oegWna9Bf1WWDgW/7iHHgo="
+    - secure: "icw0oEYt9x2BJ5f1m3nFVV+QkBfDAYs/H6toNeqf/jFuPSbyl+TNTCKTUJj4BKCwmMjLsDSsR3TZi4iKfTQu6x1A8w+2u7gw/wQrFY2tzPqW7/BlOMFEGS/tWpRmw1sLwqQEFd+Fa2Redy2xQywcwFAgjN0zFTfFOQU4UBIcAQo="
+
 branches:
   except:
     - gh-pages
@@ -16,8 +34,8 @@ branches:
 notifications:
   email: false
 
-before_install:
- - ./check-missing-assertions.sh
+sudo: false
 
-script:
- - ./gradlew clean check
+cache:
+  directories:
+    - $HOME/.gradle

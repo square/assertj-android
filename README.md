@@ -191,6 +191,8 @@ pallete-v7 module:
 androidTestCompile 'com.squareup.assertj:assertj-android-pallete-v7:1.0.0'
 ```
 
+Snapshots of the development version are available in [Sonatype's `snapshots` repository][snap].
+
 
 
 License
@@ -215,3 +217,4 @@ License
 
  [1]: http://joel-costigliola.github.io/assertj/
  [2]: http://joel-costigliola.github.io/assertj/assertj-core-custom-assertions.html
+ [snap]: https://oss.sonatype.org/content/repositories/snapshots/
