@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.widget.ListView;
 
 import static android.os.Build.VERSION_CODES.GINGERBREAD;
+import static android.os.Build.VERSION_CODES.KITKAT;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public abstract class AbstractListViewAssert<S extends AbstractListViewAssert<S, A>, A extends ListView>
@@ -68,6 +69,42 @@ public abstract class AbstractListViewAssert<S extends AbstractListViewAssert<S,
     assertThat(actualHeader) //
         .overridingErrorMessage("Expected overscroll header <%s> but was <%s>.", header, actualHeader) //
         .isSameAs(header);
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S hasFooterDividersEnabled() {
+    isNotNull();
+    assertThat(actual.areFooterDividersEnabled()) //
+        .overridingErrorMessage("Expected to have footer dividers enabled but were not.") //
+        .isTrue();
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S hasFooterDividersDisabled() {
+    isNotNull();
+    assertThat(actual.areFooterDividersEnabled()) //
+        .overridingErrorMessage("Expected to have footer dividers disabled but were not.") //
+        .isFalse();
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S hasHeaderDividersEnabled() {
+    isNotNull();
+    assertThat(actual.areHeaderDividersEnabled()) //
+        .overridingErrorMessage("Expected to have header dividers enabled but were not.") //
+        .isTrue();
+    return myself;
+  }
+
+  @TargetApi(KITKAT)
+  public S hasHeaderDividersDisabled() {
+    isNotNull();
+    assertThat(actual.areHeaderDividersEnabled()) //
+        .overridingErrorMessage("Expected to have header dividers disabled but were not.") //
+        .isFalse();
     return myself;
   }
 }
