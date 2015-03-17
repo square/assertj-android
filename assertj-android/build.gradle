@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 
 dependencies {
   compile 'org.assertj:assertj-core:1.7.0'
-  compile 'com.android.support:support-annotations:21.0.2'
+  compile 'com.android.support:support-annotations:22.0.0'
 }
 
 android {
