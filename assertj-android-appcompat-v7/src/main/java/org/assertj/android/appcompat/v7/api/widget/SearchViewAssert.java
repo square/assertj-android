@@ -3,12 +3,11 @@ package org.assertj.android.appcompat.v7.api.widget;
 
 import android.support.v4.widget.CursorAdapter;
 import android.support.v7.widget.SearchView;
-import org.assertj.android.api.view.AbstractViewGroupAssert;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link SearchView} instances. */
-public class SearchViewAssert extends AbstractViewGroupAssert<SearchViewAssert, SearchView> {
+public class SearchViewAssert extends AbstractLinearLayoutCompatAssert<SearchViewAssert, SearchView> {
   public SearchViewAssert(SearchView actual) {
     super(actual, SearchViewAssert.class);
   }

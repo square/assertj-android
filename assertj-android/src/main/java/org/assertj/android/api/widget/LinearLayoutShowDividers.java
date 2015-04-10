@@ -15,5 +15,5 @@ import static java.lang.annotation.RetentionPolicy.SOURCE;
     }
 )
 @Retention(SOURCE)
-@interface LinearLayoutShowDividers {
+public @interface LinearLayoutShowDividers {
 }
