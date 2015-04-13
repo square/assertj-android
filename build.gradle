@@ -11,7 +11,7 @@ subprojects {
   repositories {
     mavenCentral()
   }
-  
+
   group = GROUP
   version = VERSION_NAME
 }
@@ -20,4 +20,18 @@ ext {
   minSdkVersion = 9
   compileSdkVersion = 22
   buildToolsVersion = '22.0.0'
+}
+
+subprojects {
+  afterEvaluate {
+    android.libraryVariants.all { variant ->
+      def task = project.tasks.create "jar${variant.name.capitalize()}", Jar
+      task.description = "Create jar artifact for ${variant.name}"
+      task.dependsOn variant.javaCompile
+      task.from variant.javaCompile.destinationDir
+      task.destinationDir = project.file("${project.buildDir}/outputs/jar")
+      task.archiveName = "${project.name}-${variant.baseName}.jar"
+      artifacts.add('archives', task);
+    }
+  }
 }
