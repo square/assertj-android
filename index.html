@@ -49,7 +49,7 @@
       <div class="span10 offset1">
         <p>When failing, the <em>AssertJ Android</em> assertion produces an output which allows you to immediately recognize the problem: <code>Expected visibility &lt;gone> but was &lt;invisible>.</code></p>
         <p>Compare that to the output of regular <em>AssertJ</em> <code>expected:&lt;[8]> but was:&lt;[4]></code> and regular <em>JUnit</em> <code>expected: &lt;8> but was: &lt;4></code> and you should immediately see the advantage.</p>
-        <p>Because <em>AsserJ Android</em> offers assertions directly on objects rather than properties they can be chained together.</p>
+        <p>Because <em>AssertJ Android</em> offers assertions directly on objects rather than properties they can be chained together.</p>
       </div>
     </div>
     <div class="row examples section">
@@ -94,7 +94,7 @@ assertThat(layout.getShowDividers()).isEqualTo(SHOW_DIVIDERS_MIDDLE);</pre>
         <p>Modules are also provided for the add-on Android libraries. Add the dependency (listed below) and use the following imports:</p>
         <ul>
           <li><p>support-v4</p><pre class="prettyprint">import static org.assertj.android.support.v4.api.Assertions.assertThat;</pre></li>
-          <li><p>Google Play Services</p><pre class="prettyprint">import static org.assertj.android.platservices.api.Assertions.assertThat;</pre></li>
+          <li><p>Google Play Services</p><pre class="prettyprint">import static org.assertj.android.playservices.api.Assertions.assertThat;</pre></li>
           <li><p>appcompat-v7</p><pre class="prettyprint">import static org.assertj.android.appcompat.v7.api.Assertions.assertThat;</pre></li>
           <li><p>mediarouter-v7</p><pre class="prettyprint">import static org.assertj.android.mediarouter.v7.api.Assertions.assertThat;</pre></li>
           <li><p>gridlayout-v7</p><pre class="prettyprint">import static org.assertj.android.gridlayout.v7.api.Assertions.assertThat;</pre></li>
