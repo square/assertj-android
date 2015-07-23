@@ -1,3 +1,5 @@
+rootProject.name = 'assertj-android-root'
+
 include ':assertj-android'
 include ':assertj-android-appcompat-v7'
 include ':assertj-android-cardview-v7'
