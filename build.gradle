@@ -20,6 +20,19 @@ ext {
   minSdkVersion = 9
   compileSdkVersion = 22
   buildToolsVersion = '22.0.1'
+
+  assertj = 'org.assertj:assertj-core:1.7.1'
+  supportAnnotations = 'com.android.support:support-annotations:22.0.0'
+  supportV4 = 'com.android.support:support-v4:22.0.0'
+  supportAppCompat = 'com.android.support:appcompat-v7:22.0.0'
+  supportCardView = 'com.android.support:cardview-v7:22.0.0'
+  supportGridLayout = 'com.android.support:gridlayout-v7:22.0.0'
+  supportMediaRouter = 'com.android.support:mediarouter-v7:22.0.0'
+  supportPalette = 'com.android.support:palette-v7:22.0.0'
+  supportRecyclerView = 'com.android.support:recyclerview-v7:22.0.0'
+
+  playServices = 'com.google.android.gms:play-services:6.1.71'
+
 }
 
 subprojects {

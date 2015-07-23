@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 
 dependencies {
   compile project(':assertj-android')
-  compile 'com.android.support:recyclerview-v7:22.0.0'
+  compile rootProject.ext.supportRecyclerView
 }
 
 android {

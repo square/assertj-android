@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 
 dependencies {
   compile project(':assertj-android')
-  compile 'com.android.support:gridlayout-v7:22.0.0'
+  compile rootProject.ext.supportGridLayout
 }
 
 android {
