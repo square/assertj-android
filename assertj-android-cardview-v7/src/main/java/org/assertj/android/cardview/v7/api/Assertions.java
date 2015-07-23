@@ -1,4 +1,4 @@
-// Copyright 2014 Square, Inc.
+// Copyright 2015 Square, Inc.
 //
 // This class is generated. Do not modify directly!
 package org.assertj.android.cardview.v7.api;
