@@ -1,6 +1,19 @@
 Change Log
 ==========
 
+Version 1.0.1 *(2015-07-23)*
+----------------------------
+
+ * Add assertions for `CameraPosition`, `GoogleMap`, `Marker`, and `UiSettings` to Play Services.
+ * Change methods taking a `boolean` to have individual "enabled" and "disabled" assertions in
+   Play Services.
+ * Add string conversions for `Activity`, `Display`, `TextView` and `View` flag assertions messages.
+ * Moved assertions from `ListViewAssert` to `AbstractListViewAssert`.
+ * Fix: Use correct value from view for `NumberPickerAssert.hasValue`.
+ * Fix: Correct `Intent.hasFlags` assert and update its known flags.
+ * Fix: Update AppCompat's `SearchView` assertion to reflect it extending from `LinearLayout`.
+
+
 Version 1.0.0 *(2014-08-27)*
 ----------------------------
 

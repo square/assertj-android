@@ -148,47 +148,47 @@ Download
 
 Android module:
 ```groovy
-androidTestCompile 'com.squareup.assertj:assertj-android:1.0.0'
+androidTestCompile 'com.squareup.assertj:assertj-android:1.0.1'
 ```
 
 support-v4 module:
 ```groovy
-androidTestCompile 'com.squareup.assertj:assertj-android-support-v4:1.0.0'
+androidTestCompile 'com.squareup.assertj:assertj-android-support-v4:1.0.1'
 ```
 
 Google Play Services module:
 ```groovy
-androidTestCompile 'com.squareup.assertj:assertj-android-play-services:1.0.0'
+androidTestCompile 'com.squareup.assertj:assertj-android-play-services:1.0.1'
 ```
 
 appcompat-v7 module:
 ```groovy
-androidTestCompile 'com.squareup.assertj:assertj-android-appcompat-v7:1.0.0'
+androidTestCompile 'com.squareup.assertj:assertj-android-appcompat-v7:1.0.1'
 ```
 
 mediarouter-v7 module:
 ```groovy
-androidTestCompile 'com.squareup.assertj:assertj-android-mediarouter-v7:1.0.0'
+androidTestCompile 'com.squareup.assertj:assertj-android-mediarouter-v7:1.0.1'
 ```
 
 gridlayout-v7 module:
 ```groovy
-androidTestCompile 'com.squareup.assertj:assertj-android-gridlayout-v7:1.0.0'
+androidTestCompile 'com.squareup.assertj:assertj-android-gridlayout-v7:1.0.1'
 ```
 
 cardview-v7 module:
 ```groovy
-androidTestCompile 'com.squareup.assertj:assertj-android-cardview-v7:1.0.0'
+androidTestCompile 'com.squareup.assertj:assertj-android-cardview-v7:1.0.1'
 ```
 
 recyclerview-v7 module:
 ```groovy
-androidTestCompile 'com.squareup.assertj:assertj-android-recyclerview-v7:1.0.0'
+androidTestCompile 'com.squareup.assertj:assertj-android-recyclerview-v7:1.0.1'
 ```
 
 palette-v7 module:
 ```groovy
-androidTestCompile 'com.squareup.assertj:assertj-android-palette-v7:1.0.0'
+androidTestCompile 'com.squareup.assertj:assertj-android-palette-v7:1.0.1'
 ```
 
 Snapshots of the development version are available in [Sonatype's `snapshots` repository][snap].
