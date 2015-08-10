@@ -10,7 +10,7 @@ android {
   buildToolsVersion rootProject.ext.buildToolsVersion
 
   defaultConfig {
-    minSdkVersion 21
+    minSdkVersion rootProject.ext.minSdkVersion
   }
 
   compileOptions {
