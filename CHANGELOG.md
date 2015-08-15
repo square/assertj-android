@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+Version 1.1.0 *(2015-08-15)*
+----------------------------
+
+ * New: Design library add-on module! Includes assertions for `NavigationView`, `Snackbar`,
+   `TabLayout`, and `TabLayout.Tab`.
+ * Fix: Correct `minSdkVersion` declared in Card View, Palette, and Recycler View modules.
+
+
 Version 1.0.1 *(2015-07-23)*
 ----------------------------
 
