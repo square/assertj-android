@@ -35,7 +35,7 @@ public class TabLayoutAssert extends
 
   public TabLayoutAssert hasTabMode(@TabMode int mode) {
     isNotNull();
-    int actualMode = actual.getTabCount();
+    int actualMode = actual.getTabMode();
     //noinspection ResourceType
     assertThat(actualMode) //
         .overridingErrorMessage("Expected tab mode of <%s> but was <%s>.", modeToString(mode),
