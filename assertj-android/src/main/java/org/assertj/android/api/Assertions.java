@@ -481,6 +481,11 @@ public final class Assertions {
     return new org.assertj.android.api.location.LocationProviderAssert(actual);
   }
 
+  public static org.assertj.android.api.net.UriAssert assertThat(
+      android.net.Uri actual) {
+    return new org.assertj.android.api.net.UriAssert(actual);
+  }
+
   public static org.assertj.android.api.os.AsyncTaskAssert assertThat(
       android.os.AsyncTask actual) {
     return new org.assertj.android.api.os.AsyncTaskAssert(actual);
