@@ -57,6 +57,17 @@ public class NotificationAssert extends AbstractAssert<NotificationAssert, Notif
     isNotNull();
     int actualFlags = actual.flags;
     //noinspection ResourceType
+    assertThat(actualFlags & flags) //
+        .overridingErrorMessage("Expected flags <%s> but was <%s>.", flagsToString(flags),
+            flagsToString(actualFlags & flags)) //
+        .isEqualTo(flags);
+    return this;
+  }
+
+  public NotificationAssert hasOnlyFlags(@NotificationFlags int flags) {
+    isNotNull();
+    int actualFlags = actual.flags;
+    //noinspection ResourceType
     assertThat(actualFlags) //
         .overridingErrorMessage("Expected flags <%s> but was <%s>.", flagsToString(flags),
             flagsToString(actualFlags)) //
