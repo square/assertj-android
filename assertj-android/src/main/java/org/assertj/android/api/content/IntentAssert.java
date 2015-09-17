@@ -66,6 +66,15 @@ public class IntentAssert extends AbstractAssert<IntentAssert, Intent> {
     return this;
   }
 
+  public IntentAssert hasExtra(String name, Object expectedValue) {
+    hasExtra(name);
+    Object actualValue = this.actual.getExtras().get(name);
+    assertThat(actualValue)
+        .overridingErrorMessage("Expected extra <%s> to be <%s> but was <%s>.", name, expectedValue, actualValue)
+        .isEqualTo(expectedValue);
+    return this;
+  }
+
   public IntentAssert hasFlags(@IntentFlags int flags) {
     isNotNull();
     int actualFlags = actual.getFlags();
