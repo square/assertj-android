@@ -1,6 +1,16 @@
 Change Log
 ==========
 
+Version 1.1.1 *(2015-10-17)*
+----------------------------
+
+ * Add assertion for `Uri`.
+ * New: Overload for `IntentAssert.hasExtra` which takes a value to compare.
+ * Fix: `NotificationAssert.hasFlags` now checks to see if the specified flags are set while allowing
+   unspecified flags to also be set. Use `hasOnlyFlags` to check for an exact match.
+ * Fix: `TabLayoutAssert.hasTabMode` now correctly compares against the tab mode instead of count.
+
+
 Version 1.1.0 *(2015-08-15)*
 ----------------------------
 
