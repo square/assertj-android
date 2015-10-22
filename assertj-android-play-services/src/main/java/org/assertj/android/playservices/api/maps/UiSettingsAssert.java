@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class UiSettingsAssert extends AbstractAssert<UiSettingsAssert, UiSettings> {
   public UiSettingsAssert(UiSettings actual) {
-    super(actual, UiSettings.class);
+    super(actual, UiSettingsAssert.class);
   }
 
   public UiSettingsAssert hasCompassEnabled() {

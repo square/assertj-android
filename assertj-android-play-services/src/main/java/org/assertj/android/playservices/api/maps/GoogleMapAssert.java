@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class GoogleMapAssert extends AbstractAssert<GoogleMapAssert, GoogleMap> {
   public GoogleMapAssert(GoogleMap actual) {
-    super(actual, GoogleMap.class);
+    super(actual, GoogleMapAssert.class);
   }
 
   public GoogleMapAssert hasMapType(int mapType) {
