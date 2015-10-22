@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class CameraPositionAssert extends AbstractAssert<CameraPositionAssert, CameraPosition> {
   public CameraPositionAssert(CameraPosition actual) {
-    super(actual, CameraPosition.class);
+    super(actual, CameraPositionAssert.class);
   }
 
   public CameraPositionAssert hasBearing(float bearing) {

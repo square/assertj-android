@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class MarkerAssert extends AbstractAssert<MarkerAssert, Marker> {
   public MarkerAssert(Marker actual) {
-    super(actual, Marker.class);
+    super(actual, MarkerAssert.class);
   }
 
   public MarkerAssert hasAlpha(float alpha) {
