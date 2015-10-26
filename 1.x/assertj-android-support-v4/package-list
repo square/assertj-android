@@ -1,0 +1,8 @@
+org.assertj.android.support.v4.api
+org.assertj.android.support.v4.api.app
+org.assertj.android.support.v4.api.content
+org.assertj.android.support.v4.api.media
+org.assertj.android.support.v4.api.print
+org.assertj.android.support.v4.api.util
+org.assertj.android.support.v4.api.view
+org.assertj.android.support.v4.api.widget
