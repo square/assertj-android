@@ -120,7 +120,7 @@ Use the following pattern to set up your assertions.
 ```java
 public class CustomLayoutAssert extends AbstractLinearLayoutAssert<CustomLayoutAssert, CustomLayout> {
   public static CustomLayoutAssert assertThat(CustomLayout actual) {
-    return new CustomLayout(actual);
+    return new CustomLayoutAssert(actual);
   }
 
   public CustomLayoutAssert(CustomLayout actual) {
