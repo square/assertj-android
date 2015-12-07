@@ -19,7 +19,7 @@ subprojects {
 ext {
   minSdkVersion = 9
   compileSdkVersion = 22
-  buildToolsVersion = '22.0.1'
+  buildToolsVersion = '23.0.2'
 
   assertj = 'org.assertj:assertj-core:1.7.1'
   supportAnnotations = 'com.android.support:support-annotations:22.2.1'
