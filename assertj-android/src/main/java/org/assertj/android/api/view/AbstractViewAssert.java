@@ -497,7 +497,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     float actualRotation = actual.getRotation();
     assertThat(actualRotation) //
         .overridingErrorMessage("Expected rotation <%s> but was <%s>", rotation, actualRotation) //
-        .isSameAs(rotation);
+        .isEqualTo(rotation);
     return myself;
   }
 
@@ -508,7 +508,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     assertThat(actualRotation) //
         .overridingErrorMessage("Expected x rotation <%s> but was <%s>", rotation,
             actualRotation) //
-        .isSameAs(rotation);
+        .isEqualTo(rotation);
     return myself;
   }
 
@@ -519,7 +519,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     assertThat(actualRotation) //
         .overridingErrorMessage("Expected y rotation <%s> but was <%s>", rotation,
             actualRotation) //
-        .isSameAs(rotation);
+        .isEqualTo(rotation);
     return myself;
   }
 
@@ -529,7 +529,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     float actualScale = actual.getScaleX();
     assertThat(actualScale) //
         .overridingErrorMessage("Expected x scale <%s> but was <%s>", scale, actualScale) //
-        .isSameAs(scale);
+        .isEqualTo(scale);
     return myself;
   }
 
@@ -539,7 +539,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     float actualScale = actual.getScaleY();
     assertThat(actualScale) //
         .overridingErrorMessage("Expected y scale <%s> but was <%s>", scale, actualScale) //
-        .isSameAs(scale);
+        .isEqualTo(scale);
     return myself;
   }
 
