@@ -14,7 +14,7 @@ import static java.lang.annotation.RetentionPolicy.SOURCE;
         BluetoothGattCharacteristic.PERMISSION_READ_ENCRYPTED_MITM,
         BluetoothGattCharacteristic.PERMISSION_WRITE,
         BluetoothGattCharacteristic.PERMISSION_WRITE_ENCRYPTED,
-        BluetoothGattCharacteristic.PERMISSION_READ_ENCRYPTED_MITM,
+        BluetoothGattCharacteristic.PERMISSION_WRITE_ENCRYPTED_MITM,
         BluetoothGattCharacteristic.PERMISSION_WRITE_SIGNED,
         BluetoothGattCharacteristic.PERMISSION_WRITE_SIGNED_MITM
     }
