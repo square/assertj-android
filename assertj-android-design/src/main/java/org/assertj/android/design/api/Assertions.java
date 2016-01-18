@@ -1,4 +1,4 @@
-// Copyright 2015 Square, Inc.
+// Copyright 2016 Square, Inc.
 //
 // This class is generated. Do not modify directly!
 package org.assertj.android.design.api;
@@ -24,6 +24,11 @@ public final class Assertions {
   public static org.assertj.android.design.api.widget.TabLayoutAssert assertThat(
       android.support.design.widget.TabLayout actual) {
     return new org.assertj.android.design.api.widget.TabLayoutAssert(actual);
+  }
+
+  public static org.assertj.android.design.api.widget.TextInputLayoutAssert assertThat(
+      android.support.design.widget.TextInputLayout actual) {
+    return new org.assertj.android.design.api.widget.TextInputLayoutAssert(actual);
   }
 
   private Assertions() {
