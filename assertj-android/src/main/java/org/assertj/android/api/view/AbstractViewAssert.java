@@ -14,6 +14,7 @@ import static android.os.Build.VERSION_CODES.JELLY_BEAN;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR1;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR2;
 import static android.os.Build.VERSION_CODES.KITKAT;
+import static android.os.Build.VERSION_CODES.LOLLIPOP;
 import static android.view.View.GONE;
 import static android.view.View.INVISIBLE;
 import static android.view.View.LAYER_TYPE_HARDWARE;
@@ -136,6 +137,17 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
         .overridingErrorMessage("Expected drawing cache quality <%s> but was <%s>", quality,
             actualQuality) //
         .isEqualTo(quality);
+    return myself;
+  }
+
+  @TargetApi(LOLLIPOP)
+  public S hasElevation(float elevation) {
+    isNotNull();
+    float actualElevation = actual.getElevation();
+    assertThat(actualElevation) //
+        .overridingErrorMessage("Expected elevation <%s> but was <%s>", elevation,
+            actualElevation) //
+        .isEqualTo(elevation);
     return myself;
   }
 
@@ -697,6 +709,17 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     return myself;
   }
 
+  @TargetApi(LOLLIPOP)
+  public S hasTranslationZ(float translation) {
+    isNotNull();
+    float actualTranslation = actual.getTranslationZ();
+    assertThat(actualTranslation) //
+        .overridingErrorMessage("Expected z translation <%s> but was <%s>", translation,
+            actualTranslation) //
+        .isEqualTo(translation);
+    return myself;
+  }
+
   public S hasVerticalFadingEdgeLength(int length) {
     isNotNull();
     int actualLength = actual.getVerticalFadingEdgeLength();
@@ -834,6 +857,16 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     assertThat(actualY) //
         .overridingErrorMessage("Expected y <%s> but was <%s>", y, actualY) //
         .isEqualTo(y);
+    return myself;
+  }
+
+  @TargetApi(LOLLIPOP)
+  public S hasZ(float z) {
+    isNotNull();
+    float actualZ = actual.getZ();
+    assertThat(actualZ) //
+        .overridingErrorMessage("Expected z <%s> but was <%s>", z, actualZ) //
+        .isEqualTo(z);
     return myself;
   }
 
