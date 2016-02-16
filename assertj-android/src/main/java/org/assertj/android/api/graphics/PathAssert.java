@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /** Assertions for {@link Path} instances. */
 public class PathAssert extends AbstractAssert<PathAssert, Path> {
   public PathAssert(Path actual) {
-    super(actual, PaintAssert.class);
+    super(actual, PathAssert.class);
   }
 
   public PathAssert hasFillType(Path.FillType type) {
