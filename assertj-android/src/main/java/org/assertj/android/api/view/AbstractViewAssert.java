@@ -642,7 +642,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     Object actualTag = actual.getTag(key);
     assertThat(actualTag) //
         .overridingErrorMessage("Expected tag <%s> at key %s but was <%s>", tag, key, actualTag) //
-        .isSameAs(tag);
+        .isEqualTo(tag);
     return myself;
   }
 
@@ -651,7 +651,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
     Object actualTag = actual.getTag();
     assertThat(actualTag) //
         .overridingErrorMessage("Expected tag <%s> but was <%s>", tag, actualTag) //
-        .isSameAs(tag);
+        .isEqualTo(tag);
     return myself;
   }
 
