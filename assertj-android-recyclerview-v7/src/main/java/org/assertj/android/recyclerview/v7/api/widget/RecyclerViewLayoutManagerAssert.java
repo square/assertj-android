@@ -48,7 +48,7 @@ public class RecyclerViewLayoutManagerAssert
   public RecyclerViewLayoutManagerAssert canScrollVertically() {
     isNotNull();
     assertThat(actual.canScrollVertically()) //
-        .overridingErrorMessage("Expected to be able to scroll verticall but can not.") //
+        .overridingErrorMessage("Expected to be able to scroll vertically but can not.") //
         .isTrue();
     return this;
   }
