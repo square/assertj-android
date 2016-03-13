@@ -46,7 +46,7 @@ public class BluetoothClassAssert extends AbstractAssert<BluetoothClassAssert, B
     assertThat(actual.hasService(service)) //
         .overridingErrorMessage("Expected to not have service <%s> but did.",
             serviceToString(service)) //
-        .isTrue();
+        .isFalse();
     return this;
   }
 
