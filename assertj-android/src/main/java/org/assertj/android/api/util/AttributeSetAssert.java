@@ -36,7 +36,7 @@ public class AttributeSetAssert extends AbstractAssert<AttributeSetAssert, Attri
     isNotNull();
     String actualValue = actual.getIdAttribute();
     assertThat(actualValue) //
-        .overridingErrorMessage("Exepcted ID attribute value <%s> but was <%s>.", value,
+        .overridingErrorMessage("Exepected ID attribute value <%s> but was <%s>.", value,
             actualValue) //
         .isEqualTo(value);
     return this;
