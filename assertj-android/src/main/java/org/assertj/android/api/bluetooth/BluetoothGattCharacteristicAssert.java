@@ -71,7 +71,7 @@ public class BluetoothGattCharacteristicAssert
   public BluetoothGattCharacteristicAssert hasUuid(UUID uuid) {
     isNotNull();
     UUID actualUuid = actual.getUuid();
-    assertThat(uuid) //
+    assertThat(actualUuid) //
         .overridingErrorMessage("Expected UUID <%s> but was <%s>.", uuid, actualUuid) //
         .isEqualTo(uuid);
     return this;
