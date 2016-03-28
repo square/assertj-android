@@ -90,7 +90,7 @@ public class AddressAssert extends AbstractAssert<AddressAssert, Address> {
     isNotNull();
     double actualLongitude = actual.getLongitude();
     assertThat(actualLongitude) //
-        .overridingErrorMessage("Expected latitude <%s> but was <%s>.", longitude,
+        .overridingErrorMessage("Expected longitude <%s> but was <%s>.", longitude,
             actualLongitude) //
         .isEqualTo(longitude);
     return this;
