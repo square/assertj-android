@@ -55,7 +55,7 @@ public class DisplayAssert extends AbstractAssert<DisplayAssert, Display> {
     int actualId = actual.getDisplayId();
     assertThat(actualId) //
         .overridingErrorMessage("Expected ID <%s> but was <%s>", id, actualId) //
-        .isEqualTo(actualId);
+        .isEqualTo(id);
     return this;
   }
 
