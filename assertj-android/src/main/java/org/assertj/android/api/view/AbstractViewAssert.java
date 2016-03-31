@@ -1427,7 +1427,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
   @TargetApi(KITKAT)
   public S canResolveTextAlignment() {
     isNotNull();
-    assertThat(actual.canResolveLayoutDirection()) //
+    assertThat(actual.canResolveTextAlignment()) //
         .overridingErrorMessage("Expected to  be able to resolve text alignment but cannot.") //
         .isTrue();
     return myself;
@@ -1436,7 +1436,7 @@ public abstract class AbstractViewAssert<S extends AbstractViewAssert<S, A>, A e
   @TargetApi(KITKAT)
   public S canNotResolveTextAlignment() {
     isNotNull();
-    assertThat(actual.canResolveLayoutDirection()) //
+    assertThat(actual.canResolveTextAlignment()) //
         .overridingErrorMessage("Expected to not be able to resolve text alignment but can.") //
         .isFalse();
     return myself;
