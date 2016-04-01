@@ -127,7 +127,7 @@ public abstract class AbstractAccessibilityRecordAssert<S extends AbstractAccess
     isNotNull();
     int actualScroll = actual.getScrollY();
     assertThat(actualScroll) //
-        .overridingErrorMessage("Expected maximum Y scroll <%s> but was <%s>.", scroll,
+        .overridingErrorMessage("Expected Y scroll <%s> but was <%s>.", scroll,
             actualScroll) //
         .isEqualTo(scroll);
     return this;
