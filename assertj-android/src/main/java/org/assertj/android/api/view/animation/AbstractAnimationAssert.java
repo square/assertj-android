@@ -116,7 +116,7 @@ public abstract class AbstractAnimationAssert<S extends AbstractAnimationAssert<
     long actualTime = actual.getStartTime();
     assertThat(actualTime) //
         .overridingErrorMessage("Expected start time <%s> but was <%s>.", time, actualTime) //
-        .isEqualTo(actualTime);
+        .isEqualTo(time);
     return myself;
   }
 
@@ -213,7 +213,7 @@ public abstract class AbstractAnimationAssert<S extends AbstractAnimationAssert<
   public S isChangingTransformationMatrix() {
     isNotNull();
     assertThat(actual.willChangeTransformationMatrix()) //
-        .overridingErrorMessage("Expected to be changing bounds but was not.") //
+        .overridingErrorMessage("Expected to be changing transformation matrix but was not.") //
         .isTrue();
     return myself;
   }
@@ -221,7 +221,7 @@ public abstract class AbstractAnimationAssert<S extends AbstractAnimationAssert<
   public S isNotChangingTransformationMatrix() {
     isNotNull();
     assertThat(actual.willChangeTransformationMatrix()) //
-        .overridingErrorMessage("Expected to not be changing bounds but was.") //
+        .overridingErrorMessage("Expected to not be changing transformation matrix but was.") //
         .isFalse();
     return myself;
   }
