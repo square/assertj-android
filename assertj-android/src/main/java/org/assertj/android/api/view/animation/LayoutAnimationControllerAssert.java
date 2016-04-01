@@ -8,7 +8,7 @@ import android.view.animation.LayoutAnimationController;
  * <p>
  * This class is final. To extend use {@link AbstractLayoutAnimationControllerAssert}.
  */
-public class LayoutAnimationControllerAssert extends
+public final class LayoutAnimationControllerAssert extends
     AbstractLayoutAnimationControllerAssert<LayoutAnimationControllerAssert, LayoutAnimationController> {
   public LayoutAnimationControllerAssert(LayoutAnimationController actual) {
     super(actual, LayoutAnimationControllerAssert.class);
