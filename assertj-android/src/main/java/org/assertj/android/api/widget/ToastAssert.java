@@ -27,7 +27,7 @@ public class ToastAssert extends AbstractAssert<ToastAssert, Toast> {
     int actualGravity = actual.getGravity();
     assertThat(actualGravity) //
         .overridingErrorMessage("Expected gravity <%s> but was <%s>.", gravity, actualGravity) //
-        .isEqualTo(actualGravity);
+        .isEqualTo(gravity);
     return this;
   }
 
