@@ -84,6 +84,15 @@ public class IntentAssert extends AbstractAssert<IntentAssert, Intent> {
     return this;
   }
 
+  public IntentAssert hasPackage(String packageName) {
+    isNotNull();
+    String actualPackage = actual.getPackage();
+    assertThat(packageName)
+        .overridingErrorMessage("Expected package <%s> but was <%s>.", packageName, actualPackage)
+        .isEqualTo(actualPackage);
+    return this;
+    }
+
   public IntentAssert hasData(String uri) {
     return hasData(Uri.parse(uri));
   }
