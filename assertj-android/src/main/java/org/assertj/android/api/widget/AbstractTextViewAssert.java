@@ -41,7 +41,7 @@ import static android.view.inputmethod.EditorInfo.IME_FLAG_NO_ENTER_ACTION;
 import static android.view.inputmethod.EditorInfo.IME_FLAG_NO_EXTRACT_UI;
 import static android.view.inputmethod.EditorInfo.IME_FLAG_NO_FULLSCREEN;
 import static android.view.inputmethod.EditorInfo.IME_NULL;
-import static org.assertj.android.internal.IntegerUtils.buildBitMaskString;
+import static org.assertj.android.internal.BitmaskUtils.buildBitMaskString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public abstract class AbstractTextViewAssert<S extends AbstractTextViewAssert<S, A>, A extends TextView>

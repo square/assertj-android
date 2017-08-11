@@ -8,7 +8,7 @@ import static android.gesture.GestureOverlayView.GESTURE_STROKE_TYPE_MULTIPLE;
 import static android.gesture.GestureOverlayView.GESTURE_STROKE_TYPE_SINGLE;
 import static android.gesture.GestureOverlayView.ORIENTATION_HORIZONTAL;
 import static android.gesture.GestureOverlayView.ORIENTATION_VERTICAL;
-import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
+import static org.assertj.android.internal.BitmaskUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link GestureOverlayView} instances. */

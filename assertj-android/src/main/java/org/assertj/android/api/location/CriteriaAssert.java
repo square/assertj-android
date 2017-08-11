@@ -15,7 +15,7 @@ import static android.location.Criteria.POWER_HIGH;
 import static android.location.Criteria.POWER_LOW;
 import static android.location.Criteria.POWER_MEDIUM;
 import static android.os.Build.VERSION_CODES.GINGERBREAD;
-import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
+import static org.assertj.android.internal.BitmaskUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link Criteria} instances. */

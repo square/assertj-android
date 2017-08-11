@@ -8,7 +8,7 @@ import android.widget.PopupWindow;
 import org.assertj.core.api.AbstractAssert;
 
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
-import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
+import static org.assertj.android.internal.BitmaskUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link PopupWindow} instances. */

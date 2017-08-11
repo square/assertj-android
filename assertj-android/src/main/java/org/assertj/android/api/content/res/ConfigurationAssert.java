@@ -17,7 +17,7 @@ import static android.content.res.Configuration.UI_MODE_TYPE_WATCH;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR1;
 import static android.os.Build.VERSION_CODES.KITKAT;
 import static org.assertj.android.api.view.AbstractViewAssert.layoutDirectionToString;
-import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
+import static org.assertj.android.internal.BitmaskUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link Configuration} instances. */

@@ -3,7 +3,7 @@ package org.assertj.android.api.bluetooth;
 import android.bluetooth.BluetoothClass;
 import org.assertj.core.api.AbstractAssert;
 
-import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
+import static org.assertj.android.internal.BitmaskUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class BluetoothClassAssert extends AbstractAssert<BluetoothClassAssert, BluetoothClass> {

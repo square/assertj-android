@@ -31,7 +31,7 @@ import static android.content.Intent.FLAG_GRANT_WRITE_URI_PERMISSION;
 import static android.content.Intent.FLAG_RECEIVER_NO_ABORT;
 import static android.content.Intent.FLAG_RECEIVER_REGISTERED_ONLY;
 import static android.content.Intent.FLAG_INCLUDE_STOPPED_PACKAGES;
-import static org.assertj.android.internal.IntegerUtils.buildBitMaskString;
+import static org.assertj.android.internal.BitmaskUtils.buildBitMaskString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link Intent} instances. */

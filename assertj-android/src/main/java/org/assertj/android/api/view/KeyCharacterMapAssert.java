@@ -10,7 +10,7 @@ import static android.view.KeyCharacterMap.FULL;
 import static android.view.KeyCharacterMap.NUMERIC;
 import static android.view.KeyCharacterMap.PREDICTIVE;
 import static android.view.KeyCharacterMap.SPECIAL_FUNCTION;
-import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
+import static org.assertj.android.internal.BitmaskUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class KeyCharacterMapAssert extends AbstractAssert<KeyCharacterMapAssert, KeyCharacterMap> {

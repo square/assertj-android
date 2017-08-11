@@ -6,7 +6,7 @@ import android.preference.RingtonePreference;
 import static android.media.RingtoneManager.TYPE_ALARM;
 import static android.media.RingtoneManager.TYPE_NOTIFICATION;
 import static android.media.RingtoneManager.TYPE_RINGTONE;
-import static org.assertj.android.internal.IntegerUtils.buildBitMaskString;
+import static org.assertj.android.internal.BitmaskUtils.buildBitMaskString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link RingtonePreference} instances. */

@@ -15,7 +15,7 @@ import static android.bluetooth.BluetoothGattDescriptor.PERMISSION_WRITE_ENCRYPT
 import static android.bluetooth.BluetoothGattDescriptor.PERMISSION_WRITE_SIGNED;
 import static android.bluetooth.BluetoothGattDescriptor.PERMISSION_WRITE_SIGNED_MITM;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR2;
-import static org.assertj.android.internal.IntegerUtils.buildBitMaskString;
+import static org.assertj.android.internal.BitmaskUtils.buildBitMaskString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @TargetApi(JELLY_BEAN_MR2)

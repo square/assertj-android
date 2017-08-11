@@ -10,7 +10,7 @@ import static android.os.Build.VERSION_CODES.HONEYCOMB_MR1;
 import static android.view.animation.Animation.INFINITE;
 import static android.view.animation.Animation.RESTART;
 import static android.view.animation.Animation.REVERSE;
-import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
+import static org.assertj.android.internal.BitmaskUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public abstract class AbstractAnimationAssert<S extends AbstractAnimationAssert<S, A>, A extends Animation>

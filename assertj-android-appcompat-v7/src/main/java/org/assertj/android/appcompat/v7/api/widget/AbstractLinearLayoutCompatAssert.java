@@ -13,8 +13,8 @@ import static android.widget.LinearLayout.SHOW_DIVIDER_BEGINNING;
 import static android.widget.LinearLayout.SHOW_DIVIDER_END;
 import static android.widget.LinearLayout.SHOW_DIVIDER_MIDDLE;
 import static android.widget.LinearLayout.VERTICAL;
-import static org.assertj.android.internal.IntegerUtils.buildBitMaskString;
-import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
+import static org.assertj.android.internal.BitmaskUtils.buildBitMaskString;
+import static org.assertj.android.internal.BitmaskUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public abstract class AbstractLinearLayoutCompatAssert<S extends AbstractLinearLayoutCompatAssert<S, A>, A extends LinearLayoutCompat>

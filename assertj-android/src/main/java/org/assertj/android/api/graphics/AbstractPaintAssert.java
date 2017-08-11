@@ -5,7 +5,6 @@ import android.annotation.TargetApi;
 import android.graphics.MaskFilter;
 import android.graphics.Paint;
 import android.graphics.PathEffect;
-import android.graphics.Rasterizer;
 import android.graphics.Shader;
 import android.graphics.Typeface;
 import java.util.Locale;
@@ -23,7 +22,7 @@ import static android.graphics.Paint.SUBPIXEL_TEXT_FLAG;
 import static android.graphics.Paint.UNDERLINE_TEXT_FLAG;
 import static android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR1;
-import static org.assertj.android.internal.IntegerUtils.buildBitMaskString;
+import static org.assertj.android.internal.BitmaskUtils.buildBitMaskString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public abstract class AbstractPaintAssert<S extends AbstractPaintAssert<S, A>, A extends Paint>
@@ -115,16 +114,6 @@ public abstract class AbstractPaintAssert<S extends AbstractPaintAssert<S, A>, A
     assertThat(actualEffect) //
         .overridingErrorMessage("Expected path effect <%s> but was <%s>.", effect, actualEffect) //
         .isSameAs(effect);
-    return myself;
-  }
-
-  public S hasRasterizer(Rasterizer rasterizer) {
-    isNotNull();
-    Rasterizer actualRasterizer = actual.getRasterizer();
-    assertThat(actualRasterizer) //
-        .overridingErrorMessage("Expected rasterizer <%s> but was <%s>.", rasterizer,
-            actualRasterizer) //
-        .isSameAs(rasterizer);
     return myself;
   }
 

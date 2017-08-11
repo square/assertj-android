@@ -14,8 +14,8 @@ import static android.app.ActionBar.NAVIGATION_MODE_STANDARD;
 import static android.app.ActionBar.NAVIGATION_MODE_TABS;
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
 import static android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH;
-import static org.assertj.android.internal.IntegerUtils.buildBitMaskString;
-import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
+import static org.assertj.android.internal.BitmaskUtils.buildBitMaskString;
+import static org.assertj.android.internal.BitmaskUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link ActionBar} instances. */

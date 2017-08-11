@@ -12,7 +12,7 @@ import static android.bluetooth.BluetoothDevice.DEVICE_TYPE_DUAL;
 import static android.bluetooth.BluetoothDevice.DEVICE_TYPE_LE;
 import static android.bluetooth.BluetoothDevice.DEVICE_TYPE_UNKNOWN;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR2;
-import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
+import static org.assertj.android.internal.BitmaskUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class BluetoothDeviceAssert extends AbstractAssert<BluetoothDeviceAssert, BluetoothDevice> {

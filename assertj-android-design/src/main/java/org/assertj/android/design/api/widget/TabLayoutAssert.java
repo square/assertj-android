@@ -3,7 +3,7 @@ package org.assertj.android.design.api.widget;
 import android.support.design.widget.TabLayout;
 import org.assertj.android.api.widget.AbstractHorizontalScrollViewAssert;
 
-import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
+import static org.assertj.android.internal.BitmaskUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link TabLayout} instances. */
