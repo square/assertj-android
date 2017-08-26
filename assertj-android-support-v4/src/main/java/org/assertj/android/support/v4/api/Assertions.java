@@ -1,4 +1,4 @@
-// Copyright 2015 Square, Inc.
+// Copyright 2017 Square, Inc.
 //
 // This class is generated. Do not modify directly!
 package org.assertj.android.support.v4.api;
@@ -51,14 +51,9 @@ public final class Assertions {
     return new org.assertj.android.support.v4.api.content.LoaderAssert(actual);
   }
 
-  public static org.assertj.android.support.v4.api.media.TransportControllerAssert assertThat(
-      android.support.v4.media.TransportController actual) {
-    return new org.assertj.android.support.v4.api.media.TransportControllerAssert(actual);
-  }
-
-  public static org.assertj.android.support.v4.api.media.TransportMediatorAssert assertThat(
-      android.support.v4.media.TransportMediator actual) {
-    return new org.assertj.android.support.v4.api.media.TransportMediatorAssert(actual);
+  public static org.assertj.android.support.v4.api.media.MediaControllerCompatAssert assertThat(
+      android.support.v4.media.session.MediaControllerCompat actual) {
+    return new org.assertj.android.support.v4.api.media.MediaControllerCompatAssert(actual);
   }
 
   public static org.assertj.android.support.v4.api.print.PrintHelperAssert assertThat(

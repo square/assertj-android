@@ -1,33 +1,32 @@
 package org.assertj.android.internal;
 
-import android.util.SparseArray;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import org.assertj.core.util.Strings;
 
-public final class IntegerUtils {
+public final class BitmaskUtils {
   /**
    * Convenience builder for printing out a human-readable list of all of the individual values
    * in a bitmask.
    */
-  public static BitMaskStringBuilder buildBitMaskString(int value) {
+  public static BitMaskStringBuilder buildBitMaskString(long value) {
     return new BitMaskStringBuilder(value);
   }
 
-  /** Convenience builder for printing out a human-readable string of an integer. */
-  public static NamedValueStringBuilder buildNamedValueString(int value) {
+  /** Convenience builder for printing out a human-readable string of a bitmask. */
+  public static NamedValueStringBuilder buildNamedValueString(long value) {
     return new NamedValueStringBuilder(value);
   }
 
   public static final class BitMaskStringBuilder {
-    private final int value;
-    private final Map<Integer, String> parts = new LinkedHashMap<>();
+    private final long value;
+    private final Map<Long, String> parts = new LinkedHashMap<>();
 
-    private BitMaskStringBuilder(int value) {
+    private BitMaskStringBuilder(long value) {
       this.value = value;
     }
 
-    public BitMaskStringBuilder flag(int flag, String flagName) {
+    public BitMaskStringBuilder flag(long flag, String flagName) {
       if ((value & flag) != 0) {
         if (parts.containsKey(flag)) {
           parts.put(flag, parts.get(flag) + "|" + flagName);
@@ -47,25 +46,29 @@ public final class IntegerUtils {
   }
 
   public static final class NamedValueStringBuilder {
-    private final int value;
-    private final SparseArray<String> valueNames = new SparseArray<>();
+    private final long value;
+    private final Map<Long, String> valueNames = new LinkedHashMap<>();
 
-    private NamedValueStringBuilder(int value) {
+    private NamedValueStringBuilder(long value) {
       this.value = value;
     }
 
-    public NamedValueStringBuilder value(int value, String name) {
+    public NamedValueStringBuilder value(long value, String name) {
       String dupe = valueNames.get(value);
       if (dupe != null) {
         throw new IllegalStateException(
-            "Duplicate value " + value + " with name " + dupe + " and " + name);
+                "Duplicate value " + value + " with name " + dupe + " and " + name);
       }
       valueNames.put(value, name);
       return this;
     }
 
     public String getOrValue() {
-      return valueNames.get(value, String.valueOf(value));
+      String name = valueNames.get(value);
+      if (name == null) {
+        name = String.valueOf(value);
+      }
+      return name;
     }
 
     public String get() {
@@ -77,7 +80,7 @@ public final class IntegerUtils {
     }
   }
 
-  private IntegerUtils() {
+  private BitmaskUtils() {
     throw new AssertionError("No instances.");
   }
 }

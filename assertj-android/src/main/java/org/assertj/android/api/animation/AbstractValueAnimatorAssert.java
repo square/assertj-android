@@ -9,7 +9,7 @@ import static android.animation.ValueAnimator.RESTART;
 import static android.animation.ValueAnimator.REVERSE;
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
 import static android.os.Build.VERSION_CODES.HONEYCOMB_MR1;
-import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
+import static org.assertj.android.internal.BitmaskUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @TargetApi(HONEYCOMB)

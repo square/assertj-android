@@ -7,7 +7,7 @@ import static android.support.v7.widget.GridLayout.ALIGN_BOUNDS;
 import static android.support.v7.widget.GridLayout.ALIGN_MARGINS;
 import static android.support.v7.widget.GridLayout.HORIZONTAL;
 import static android.support.v7.widget.GridLayout.VERTICAL;
-import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
+import static org.assertj.android.internal.BitmaskUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link android.support.v7.widget.GridLayout} instances. */

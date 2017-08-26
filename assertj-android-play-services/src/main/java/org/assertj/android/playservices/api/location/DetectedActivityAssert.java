@@ -11,7 +11,7 @@ import static com.google.android.gms.location.DetectedActivity.STILL;
 import static com.google.android.gms.location.DetectedActivity.TILTING;
 import static com.google.android.gms.location.DetectedActivity.UNKNOWN;
 import static com.google.android.gms.location.DetectedActivity.WALKING;
-import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
+import static org.assertj.android.internal.BitmaskUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class DetectedActivityAssert

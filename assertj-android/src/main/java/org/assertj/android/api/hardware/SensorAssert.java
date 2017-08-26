@@ -29,7 +29,7 @@ import static android.hardware.Sensor.TYPE_STEP_DETECTOR;
 import static android.hardware.Sensor.TYPE_TEMPERATURE;
 import static android.os.Build.VERSION_CODES.GINGERBREAD;
 import static android.os.Build.VERSION_CODES.KITKAT;
-import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
+import static org.assertj.android.internal.BitmaskUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link Sensor} instances. */

@@ -10,7 +10,7 @@ import static android.widget.GridView.NO_STRETCH;
 import static android.widget.GridView.STRETCH_COLUMN_WIDTH;
 import static android.widget.GridView.STRETCH_SPACING;
 import static android.widget.GridView.STRETCH_SPACING_UNIFORM;
-import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
+import static org.assertj.android.internal.BitmaskUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link GridView} instances. */

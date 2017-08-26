@@ -9,7 +9,7 @@ import static android.support.v4.print.PrintHelper.ORIENTATION_LANDSCAPE;
 import static android.support.v4.print.PrintHelper.ORIENTATION_PORTRAIT;
 import static android.support.v4.print.PrintHelper.SCALE_MODE_FILL;
 import static android.support.v4.print.PrintHelper.SCALE_MODE_FIT;
-import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
+import static org.assertj.android.internal.BitmaskUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class PrintHelperAssert extends AbstractAssert<PrintHelperAssert, PrintHelper> {

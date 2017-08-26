@@ -18,7 +18,7 @@ import static android.view.Window.FEATURE_OPTIONS_PANEL;
 import static android.view.Window.FEATURE_PROGRESS;
 import static android.view.Window.FEATURE_RIGHT_ICON;
 import static android.view.Window.FEATURE_SWIPE_TO_DISMISS;
-import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
+import static org.assertj.android.internal.BitmaskUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link Window} instances. */

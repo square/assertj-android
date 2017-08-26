@@ -6,7 +6,7 @@ import org.assertj.core.api.AbstractAssert;
 import static android.support.v7.media.MediaSessionStatus.SESSION_STATE_ACTIVE;
 import static android.support.v7.media.MediaSessionStatus.SESSION_STATE_ENDED;
 import static android.support.v7.media.MediaSessionStatus.SESSION_STATE_INVALIDATED;
-import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
+import static org.assertj.android.internal.BitmaskUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class MediaSessionStatusAssert

@@ -45,7 +45,7 @@ import static android.telephony.TelephonyManager.SIM_STATE_PIN_REQUIRED;
 import static android.telephony.TelephonyManager.SIM_STATE_PUK_REQUIRED;
 import static android.telephony.TelephonyManager.SIM_STATE_READY;
 import static android.telephony.TelephonyManager.SIM_STATE_UNKNOWN;
-import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
+import static org.assertj.android.internal.BitmaskUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class TelephonyManagerAssert

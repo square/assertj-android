@@ -11,7 +11,7 @@ import static android.support.v7.media.MediaItemStatus.PLAYBACK_STATE_INVALIDATE
 import static android.support.v7.media.MediaItemStatus.PLAYBACK_STATE_PAUSED;
 import static android.support.v7.media.MediaItemStatus.PLAYBACK_STATE_PENDING;
 import static android.support.v7.media.MediaItemStatus.PLAYBACK_STATE_PLAYING;
-import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
+import static org.assertj.android.internal.BitmaskUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class MediaItemStatusAssert extends AbstractAssert<MediaItemStatusAssert, MediaItemStatus> {

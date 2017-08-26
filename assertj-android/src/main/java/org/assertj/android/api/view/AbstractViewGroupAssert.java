@@ -15,7 +15,7 @@ import static android.view.ViewGroup.PERSISTENT_ALL_CACHES;
 import static android.view.ViewGroup.PERSISTENT_ANIMATION_CACHE;
 import static android.view.ViewGroup.PERSISTENT_NO_CACHE;
 import static android.view.ViewGroup.PERSISTENT_SCROLLING_CACHE;
-import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
+import static org.assertj.android.internal.BitmaskUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public abstract class AbstractViewGroupAssert<S extends AbstractViewGroupAssert<S, A>, A extends ViewGroup>

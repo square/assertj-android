@@ -9,7 +9,7 @@ import static android.widget.GridLayout.ALIGN_BOUNDS;
 import static android.widget.GridLayout.ALIGN_MARGINS;
 import static android.widget.GridLayout.HORIZONTAL;
 import static android.widget.GridLayout.VERTICAL;
-import static org.assertj.android.internal.IntegerUtils.buildNamedValueString;
+import static org.assertj.android.internal.BitmaskUtils.buildNamedValueString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Assertions for {@link GridLayout} instances. */
