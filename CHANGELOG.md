@@ -1,6 +1,29 @@
 Change Log
 ==========
 
+Version 1.2.0 *(2017-08-26)*
+----------------------------
+
+ * Support libraries updated to 26.
+ * New assertions!
+   * `android.support.design.widget.TextInputLayout`
+   * `android.support.v4.media.MediaMetadataCompat`
+ * New: `ViewAssert` gains assertions for `elevation`, `z`, and `translationZ`.
+ * New: `TimePickerAssert` gains assertions for `hour` and `minute`.
+ * New: `IntentAssert` gains assertions for `pacakge`.
+ * Fix: `ViewAssert.hasTag` now checks based on equality, not identity.
+ * Fix: `BluetoothClassAssert.doesNotHave` to correctly assert negatively.
+ * Fix: `BluetoothGattCharacteristicAssert.hasUuid` to assert against actual value.
+ * Fix: `BluetoothGattDescriptorAssert.hasUuid` to assert against actual value.
+ * Fix: `BluetoothGattServiceAssert.hasUuid` to assert against actual value.
+ * Fix: `ViewAssert.canResolveTextAlignment` and `canNotResolveTextAlignment` to check the correct property.
+ * Fix: `DisplayAssert.hasDisplayId` to assert against actual value.
+ * Fix: `ToastAssert.hasGravity` to assert against actual value.
+ * Fix: `AnimationAssert.hasStartTime` to assert against actual value.
+ * Fix: `RecyclerViewLayoutManagerAssert.hasMinimumWidth` and `hasMinimumHeight` to assert against actual value.
+ * Fix: `MediaRouteDiscoveryRequestAssert` now assert against actual values.
+
+
 Version 1.1.1 *(2015-10-17)*
 ----------------------------
 
