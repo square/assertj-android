@@ -3,6 +3,14 @@ AssertJ Android
 
 A set of AssertJ assertions geared toward testing Android.
 
+## Deprecated
+
+The support libraries and play services are developing at a rate which this library cannot sustain. Additionally, we no longer think AssertJ's model for supporting alternate assertions is a good practice.
+
+We recommend using [Truth](https://github.com/google/truth) which has vastly superior extensibility model which, when coupled with things like Kotlin's `apply` method create a really nice assertion experience.
+
+---
+
 Writing tests is not the most glamorous part of developing an Android
 application but it is an invaluable one. Using libraries like JUnit and AssertJ
 provide a great starting point for writing tests.
